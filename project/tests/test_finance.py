@@ -33,6 +33,28 @@ class FinanceTests(unittest.TestCase):
         d=self.snap(i=[self.income(received='2026-09-10')]);self.assertEqual(d['balance'],0);self.assertEqual(d['expected_income'],100)
     def test_receipt_unknown(self):
         d=self.snap(i=[self.income(received=None)]);self.assertEqual(d['balance'],0);self.assertTrue(d['issues'])
+    def test_legacy_income_uses_month_without_writing_database(self):
+        legacy = self.income(received=None, month="09/2026")
+        d = self.snap(i=[legacy], e=[])
+        self.assertEqual(d["income"], 100)
+        self.assertEqual(d["balance"], 100)
+        self.assertTrue(any("competência cadastrada" in issue for issue in d["issues"]))
+
+    def test_legacy_paid_expense_uses_due_date(self):
+        legacy = self.expense(payment_status="paid", paid_at=None, due="02/09/2026")
+        d = self.snap(e=[legacy])
+        self.assertEqual(d["expense"], 714)
+        self.assertEqual(d["balance"], -614)
+        self.assertTrue(any("vencimento como data efetiva" in issue for issue in d["issues"]))
+
+    def test_prior_month_overdue_is_separate_from_projection(self):
+        old = self.expense(due="31/08/2026")
+        d = self.snap(e=[old])
+        self.assertEqual(d["pending_month"], 0)
+        self.assertEqual(d["projected_balance"], 100)
+        self.assertEqual(d["prior_overdue"], 714)
+        self.assertEqual(d["prior_overdue_rows"][0]["id"], "e")
+
     def test_paid_later_month(self):
         e=self.expense(50,'25/08/2026',payment_status='paid',paid_at='2026-09-02')
         self.assertEqual(self.snap(e=[e])['expense'],50)

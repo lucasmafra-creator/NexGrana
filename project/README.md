@@ -1,6 +1,6 @@
-# NexGrana 0.19.0 SOL — Virada RC2 validada
+# NexGrana 0.19.0 SOL — Virada RC3 compatibilidade validada
 
-Esta pasta continua a linha 0.18.1/RC2 e implementa a especificação refinada pelo Astra sem recomeçar o projeto. A RC2 passou pela suíte automatizada completa em Python 3.11 e 3.14, incluindo Flet, Supabase, fluxo assíncrono do Nex e testes SQL/RLS. Windows e Android reais ainda exigem o teste manual descrito abaixo antes de publicação.
+Esta pasta continua a linha 0.18.1/RC2 e implementa a especificação refinada pelo Astra sem recomeçar o projeto. A RC3 passou pela suíte automatizada completa em Python 3.11 e 3.14, incluindo Flet, Supabase, fluxo assíncrono do Nex e testes SQL/RLS. Windows e Android reais ainda exigem o teste manual descrito abaixo antes de publicação.
 
 ## O que mudou nesta rodada
 
@@ -14,22 +14,23 @@ Esta pasta continua a linha 0.18.1/RC2 e implementa a especificação refinada p
 - **Análises:** comparação do mês atual usa o mesmo recorte de dias do mês anterior, evitando comparar mês parcial com mês completo sem aviso.
 - **Monetização gratuita:** nenhuma função paga, Premium ou paywall. Arquitetura mínima para recomendações/ofertas/afiliados separa utilidade financeira de monetização. Analytics remoto permanece desativado.
 - **LGPD/segurança:** preserva Vault, isolamento por família/RLS, consentimentos opcionais, bloqueio de importação destrutiva e princípios de minimização. Nenhuma migration é aplicada automaticamente ao Supabase real.
+- **Compatibilidade financeira legada:** rendas anteriores à 0.18 preservam a competência cadastrada quando ainda não têm dia exato; despesas explicitamente pagas preservam o vencimento quando `paid_at` está ausente. Pendências de meses anteriores ficam separadas das próximas contas do mês, sem alterar dados automaticamente no Supabase.
 
-## Validação automatizada da RC2
+## Validação automatizada da RC3
 
 Executada no GitHub Actions em Python 3.11 e 3.14:
 
 ```text
 versão/manifesto Nex: OK
 compileall: OK
-53 testes Python: OK
+56 testes Python: OK
 migrations SQL 0.18, 0.18.1 e 0.19: OK
 testes RLS, isolamento familiar e atomicidade: OK
 pip check: OK
 ZIP e SHA-256: gerados após aprovação de toda a matriz
 ```
 
-As correções e os limites da validação estão documentados em `CORRECOES_0_19_0_RC2.md` e `VALIDACAO_0_19_0_SOL.md`.
+As correções e os limites da validação estão documentados em `CORRECOES_0_19_0_RC2.md`, `CORRECOES_0_19_0_RC3.md` e `VALIDACAO_0_19_0_SOL.md`.
 
 ## Antes de usar com seu banco
 

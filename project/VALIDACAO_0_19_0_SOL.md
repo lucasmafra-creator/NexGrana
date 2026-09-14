@@ -1,4 +1,4 @@
-# Validação — NexGrana 0.19.0 SOL Virada RC2
+# Validação — NexGrana 0.19.0 SOL Virada RC3
 
 Data da validação automatizada: 14/09/2026.
 
@@ -12,7 +12,7 @@ Resultados em ambas as versões:
 - manifesto e variantes canônicas do Nex: OK;
 - compilação completa de `src`: OK;
 - `pip check`: OK;
-- 53 testes Python: OK;
+- 56 testes Python: OK;
 - telas testadas em 360, 390, 430, 768, 1366 e 1920 px: OK;
 - diálogos principais: OK;
 - dispatcher assíncrono e respostas do Nex: OK;
@@ -35,7 +35,7 @@ A sequência testada foi:
 
 Os testes cobrem isolamento entre famílias, bloqueio de leitura anônima, referências cruzadas, elevação indevida de membro, idempotência, rateios inválidos, rollback atômico, contribuições de meta e fechamento de compra.
 
-## Correções confirmadas na RC2
+## Correções confirmadas na RC3
 
 - ícone incompatível `EVENT_UPCOMING` substituído por `EVENT`;
 - `helper_text` incompatível substituído por `helper`;
@@ -69,3 +69,8 @@ py -m flet.cli run src
 ```
 
 Somente depois do teste manual deve-se gerar Windows/APK usando os comandos de `COMANDOS_0_19_0_WINDOWS_ANDROID.txt`.
+
+
+## Compatibilidade financeira legada
+
+A RC3 inclui regressões para renda anterior à coluna `received_at`, despesa já marcada como paga sem `paid_at` e separação de pendências anteriores da projeção do mês. O runtime não executa UPDATE automático no Supabase; datas inferidas são usadas somente no cálculo e sinalizadas para revisão.

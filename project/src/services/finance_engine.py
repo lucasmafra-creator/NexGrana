@@ -44,11 +44,27 @@ def split_amount(value, members):
     return [(mid, Decimal(base + (i < remainder)) / 100) for i, mid in enumerate(ids)]
 
 
+def effective_income(row):
+    """Resolve a data de renda preservando registros anteriores à versão 0.18."""
+    if row.get("received_at"):
+        return day(row["received_at"]), False
+    text = str(row.get("month") or "")
+    try:
+        month, year = map(int, text.split("/"))
+        return date(year, month, 1), True
+    except (TypeError, ValueError):
+        return None, False
+
+
 def effective_expense(row):
     if row.get("payment_status") == "cancelled":
         return None
     if row.get("payment_status") == "paid":
-        return day(row.get("paid_at")) if row.get("paid_at") else None
+        # paid_at foi adicionado depois de payment_status. Uma despesa já
+        # confirmada como paga continua paga; no legado, usamos o vencimento
+        # somente durante o cálculo, sem alterar o registro no Supabase.
+        raw = row.get("paid_at") or row.get("expense_date")
+        return day(raw) if raw else None
     if row.get("automatic_debit"):
         return day(row["expense_date"])
     return None
@@ -119,7 +135,7 @@ def snapshot(incomes, expenses, month, members=(), today=None):
     totals = defaultdict(Decimal)
     mi, me, mp, mb = (defaultdict(Decimal) for _ in range(4))
     categories = defaultdict(Decimal)
-    pending_rows, issues = [], []
+    pending_rows, prior_overdue_rows, issues = [], [], []
     seen = set()
 
     for row in incomes:
@@ -130,10 +146,12 @@ def snapshot(incomes, expenses, month, members=(), today=None):
         value, mid = amount(row["amount"]), str(row.get("member_id") or "unassigned")
         if row.get("receipt_status") == "cancelled":
             continue
-        if not row.get("received_at"):
-            issues.append("Renda sem data de recebimento: confirme em Transações.")
+        received, legacy_income = effective_income(row)
+        if received is None:
+            issues.append("Renda sem data nem competência válida: confirme em Transações.")
             continue
-        received = day(row["received_at"])
+        if legacy_income:
+            issues.append("Renda histórica usando a competência cadastrada; edite-a para informar o dia exato.")
         if row.get("receipt_status", "received") == "received" and received <= cutoff:
             totals["balance"] += value
             mb[mid] += value
@@ -153,6 +171,8 @@ def snapshot(incomes, expenses, month, members=(), today=None):
         if row.get("payment_status") == "cancelled":
             continue
         value, due, paid = amount(row["amount"]), day(row["expense_date"]), effective_expense(row)
+        if row.get("payment_status") == "paid" and not row.get("paid_at"):
+            issues.append("Despesa histórica paga usando o vencimento como data efetiva; edite-a para informar o dia exato.")
         shares = [(str(s["member_id"]), amount(s["amount"])) for s in row.get("expense_shares", [])]
         if not shares:
             shares = [(str(row.get("payer_member_id") or "unassigned"), value)]
@@ -175,6 +195,11 @@ def snapshot(incomes, expenses, month, members=(), today=None):
                 categories[row.get("category") or "Outros"] += value
                 for mid, share in shares:
                     me[mid] += share
+        elif due < start:
+            # Pendências anteriores continuam visíveis para revisão, mas não
+            # entram novamente nas próximas contas da competência selecionada.
+            totals["prior_overdue"] += value
+            prior_overdue_rows.append(row)
         elif due <= end:
             totals["pending_month"] += value
             pending_rows.append(row)
@@ -191,6 +216,7 @@ def snapshot(incomes, expenses, month, members=(), today=None):
         "registered_expense",
         "pending_month",
         "overdue",
+        "prior_overdue",
         "expected_income",
     ):
         totals[key] += ZERO
@@ -210,6 +236,7 @@ def snapshot(incomes, expenses, month, members=(), today=None):
         member_names={str(m["id"]): m["display_name"] for m in members},
         categories=sorted(((k, float(v)) for k, v in categories.items()), key=lambda x: -x[1]),
         pending_rows=sorted(pending_rows, key=lambda r: day(r["expense_date"])),
+        prior_overdue_rows=sorted(prior_overdue_rows, key=lambda r: day(r["expense_date"])),
         issues=sorted(set(issues)),
         as_of=cutoff.isoformat(),
     )
