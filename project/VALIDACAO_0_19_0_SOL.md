@@ -1,29 +1,38 @@
-# Validação — NexGrana 0.19.0 SOL Virada RC3
+# Validação — NexGrana 0.19.0 SOL Virada RC4
 
 Data da validação automatizada: 14/09/2026.
 
-## Resultado aprovado
+## Contrato financeiro validado
 
-A branch de revisão executou uma matriz limpa em Python 3.11 e Python 3.14 com as dependências fixadas em `requirements.txt`.
+A RC4 elimina o carregamento cumulativo de rendas e despesas antigas. O recorte é exclusivamente a competência selecionada:
 
-Resultados em ambas as versões:
+1. renda da competência é somada ao saldo;
+2. despesa da mesma competência é futura até a véspera do vencimento;
+3. no dia do vencimento ela reduz o saldo atual;
+4. saldo familiar é exatamente a soma dos saldos individuais;
+5. movimentos de outros meses são ignorados nesse saldo;
+6. nenhuma data é inferida e nenhum registro é alterado pelo cálculo.
 
-- versão 0.19.0 e arquivos obrigatórios: OK;
-- manifesto e variantes canônicas do Nex: OK;
+A regressão usa os valores reais informados: Mafra R$ 200,79, Karol R$ 82,65, família R$ 283,44. Também testa uma despesa de R$ 10,00 no dia 20 antes e no dia do vencimento.
+
+## Resultado automatizado esperado
+
+A branch executa a matriz em Python 3.11 e 3.14:
+
+- versão, manifesto e arquivos obrigatórios: OK;
 - compilação completa de `src`: OK;
 - `pip check`: OK;
-- 56 testes Python: OK;
-- telas testadas em 360, 390, 430, 768, 1366 e 1920 px: OK;
-- diálogos principais: OK;
-- dispatcher assíncrono e respostas do Nex: OK;
+- 58 testes Python: OK;
+- telas em 360, 390, 430, 768, 1366 e 1920 px: OK;
+- diálogos e dispatcher assíncrono do Nex: OK;
 - falha de conexão sem inventar valores: OK;
 - migrations e testes SQL/RLS: OK;
 - integridade interna do ZIP: OK;
 - SHA-256 do pacote: gerado automaticamente.
 
-## SQL e segurança validados
+## SQL e segurança
 
-A sequência testada foi:
+A sequência coberta permanece:
 
 1. `supabase_schema.sql`;
 2. `SUPABASE_PATCH_V2_RC.sql`;
@@ -33,34 +42,9 @@ A sequência testada foi:
 6. `MIGRATION_0_18_1.sql`;
 7. `MIGRATION_0_19.sql`.
 
-Os testes cobrem isolamento entre famílias, bloqueio de leitura anônima, referências cruzadas, elevação indevida de membro, idempotência, rateios inválidos, rollback atômico, contribuições de meta e fechamento de compra.
+Nenhuma migration é aplicada automaticamente ao banco real.
 
-## Correções confirmadas na RC3
-
-- ícone incompatível `EVENT_UPCOMING` substituído por `EVENT`;
-- `helper_text` incompatível substituído por `helper`;
-- testes atualizados para o dispatcher assíncrono real;
-- falha de renderização não interrompe mais a resposta segura do Nex;
-- teste SQL deixou de apontar para arquivo inexistente;
-- migrations 0.18.1 e 0.19 passaram a fazer parte da validação SQL;
-- manifesto de arquivos e hashes é regenerado durante o empacotamento.
-
-## Ainda exige teste manual
-
-A automação não substitui estes testes em dispositivo real:
-
-- renderização e navegação no Windows;
-- teclado/IME, navegação inferior e botão Enviar no Android;
-- câmera e permissões Android;
-- geração final de `.exe` e `.apk`;
-- login e operações contra um projeto Supabase de homologação;
-- troca simultânea de perfil em dois aparelhos;
-- acessibilidade com leitor de tela e fonte ampliada;
-- desempenho p50/p95 no notebook e celular do usuário.
-
-Nenhuma migration é aplicada automaticamente a um Supabase real.
-
-## Teste recomendado no Windows
+## Teste manual no Windows
 
 ```bat
 py -m pip install -r requirements.txt
@@ -68,9 +52,10 @@ py validate_release.py --full
 py -m flet.cli run src
 ```
 
-Somente depois do teste manual deve-se gerar Windows/APK usando os comandos de `COMANDOS_0_19_0_WINDOWS_ANDROID.txt`.
+Confira no app:
 
-
-## Compatibilidade financeira legada
-
-A RC3 inclui regressões para renda anterior à coluna `received_at`, despesa já marcada como paga sem `paid_at` e separação de pendências anteriores da projeção do mês. O runtime não executa UPDATE automático no Supabase; datas inferidas são usadas somente no cálculo e sinalizadas para revisão.
+- Mafra: R$ 200,79;
+- Karol: R$ 82,65;
+- família: R$ 283,44;
+- despesas posteriores ao dia atual apenas em “futuras”;
+- no vencimento, a despesa deixa “futuras” e reduz o saldo.

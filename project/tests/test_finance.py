@@ -3,75 +3,193 @@ from pathlib import Path
 import unittest
 from datetime import date
 from decimal import Decimal
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
-from services.finance_engine import snapshot, split_amount, expense_status, goal_scenarios, affordable_acquisitions, amount, day, monthly_goal_commitments, analysis_summary
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from services.finance_engine import (
+    snapshot,
+    split_amount,
+    expense_status,
+    goal_scenarios,
+    affordable_acquisitions,
+    amount,
+    day,
+    monthly_goal_commitments,
+    analysis_summary,
+)
+
 
 class FinanceTests(unittest.TestCase):
-    def income(self,value=100,received='2026-08-31',mid='mafra',**kw):
-        return dict(id='i',amount=value,member_id=mid,received_at=received,receipt_status='received',**kw)
-    def expense(self,value=714,due='07/09/2026',**kw):
-        return dict(id='e',amount=value,expense_date=due,payer_member_id='mafra',payment_status=kw.pop('payment_status','scheduled'),**kw)
-    def snap(self,i=None,e=None,month='09/2026',today=date(2026,9,3)):
-        return snapshot([self.income()] if i is None else i,e or [],month,today=today)
-    def test_rollover(self):
-        self.assertEqual(self.snap()['balance'],100)
-        self.assertEqual(self.snap(month='08/2026',today=date(2026,8,31))['balance'],100)
-        self.assertEqual(self.snap()['member_balance']['mafra'],100)
-    def test_future_does_not_debit(self):
-        d=self.snap(e=[self.expense()]);self.assertEqual(d['balance'],100);self.assertEqual(d['projected_balance'],-614)
-    def test_overdue_is_not_paid(self):
-        d=self.snap(e=[self.expense(due='01/09/2026')]);self.assertEqual(d['balance'],100);self.assertEqual(d['overdue'],714)
-    def test_manual_payment(self):
-        d=self.snap(e=[self.expense(payment_status='paid',paid_at='2026-09-02')]);self.assertEqual(d['balance'],-614);self.assertEqual(d['pending_month'],0)
-    def test_cancelled(self):
-        d=self.snap(e=[self.expense(payment_status='cancelled')]);self.assertEqual(d['balance'],100);self.assertEqual(d['pending_month'],0)
-    def test_automatic(self):
-        d=self.snap(e=[self.expense(due='01/09/2026',automatic_debit=True)]);self.assertEqual(d['balance'],-614)
-    def test_auto_future(self):
-        self.assertEqual(self.snap(e=[self.expense(automatic_debit=True)])['balance'],100)
-    def test_receipt_future(self):
-        d=self.snap(i=[self.income(received='2026-09-10')]);self.assertEqual(d['balance'],0);self.assertEqual(d['expected_income'],100)
-    def test_receipt_unknown(self):
-        d=self.snap(i=[self.income(received=None)]);self.assertEqual(d['balance'],0);self.assertTrue(d['issues'])
-    def test_legacy_income_uses_month_without_writing_database(self):
-        legacy = self.income(received=None, month="09/2026")
-        d = self.snap(i=[legacy], e=[])
-        self.assertEqual(d["income"], 100)
-        self.assertEqual(d["balance"], 100)
-        self.assertTrue(any("competência cadastrada" in issue for issue in d["issues"]))
+    def income(self, value=100, received="2026-09-01", mid="mafra", month="09/2026", rid="i", **kw):
+        return dict(
+            id=rid,
+            amount=value,
+            member_id=mid,
+            month=month,
+            received_at=received,
+            receipt_status="received",
+            **kw,
+        )
 
-    def test_legacy_paid_expense_uses_due_date(self):
-        legacy = self.expense(payment_status="paid", paid_at=None, due="02/09/2026")
-        d = self.snap(e=[legacy])
-        self.assertEqual(d["expense"], 714)
-        self.assertEqual(d["balance"], -614)
-        self.assertTrue(any("vencimento como data efetiva" in issue for issue in d["issues"]))
+    def expense(self, value=714, due="07/09/2026", payer="mafra", rid="e", **kw):
+        return dict(
+            id=rid,
+            amount=value,
+            expense_date=due,
+            payer_member_id=payer,
+            payment_status=kw.pop("payment_status", "scheduled"),
+            **kw,
+        )
 
-    def test_prior_month_overdue_is_separate_from_projection(self):
-        old = self.expense(due="31/08/2026")
-        d = self.snap(e=[old])
-        self.assertEqual(d["pending_month"], 0)
-        self.assertEqual(d["projected_balance"], 100)
-        self.assertEqual(d["prior_overdue"], 714)
-        self.assertEqual(d["prior_overdue_rows"][0]["id"], "e")
+    def snap(self, i=None, e=None, month="09/2026", today=date(2026, 9, 3)):
+        return snapshot([self.income()] if i is None else i, e or [], month, today=today)
 
-    def test_paid_later_month(self):
-        e=self.expense(50,'25/08/2026',payment_status='paid',paid_at='2026-09-02')
-        self.assertEqual(self.snap(e=[e])['expense'],50)
-        self.assertEqual(self.snap(e=[e],month='08/2026')['balance'],100)
-    def test_shared_once(self):
-        e=self.expense(60,payment_status='paid',paid_at='2026-09-02',expense_shares=[{'member_id':'mafra','amount':30},{'member_id':'karol','amount':30}])
-        d=self.snap(e=[e]);self.assertEqual(d['balance'],40);self.assertEqual(sum(d['member_balance'].values()),40)
-    def test_invalid_share_does_not_change_family(self):
-        e=self.expense(60,payment_status='paid',paid_at='2026-09-02',expense_shares=[{'member_id':'mafra','amount':80}])
-        d=self.snap(e=[e]);self.assertEqual(sum(d['member_balance'].values()),40);self.assertTrue(d['issues'])
+    def test_monthly_income_enters_balance(self):
+        data = self.snap()
+        self.assertEqual(data["income"], 100)
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["member_balance"]["mafra"], 100)
+
+    def test_other_month_income_is_ignored(self):
+        august = self.income(received="2026-08-31", month="08/2026")
+        data = self.snap(i=[august])
+        self.assertEqual(data["income"], 0)
+        self.assertEqual(data["balance"], 0)
+
+    def test_future_expense_does_not_debit(self):
+        data = self.snap(e=[self.expense()])
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["pending_month"], 714)
+        self.assertEqual(data["projected_balance"], -614)
+
+    def test_due_date_debits_automatically(self):
+        data = self.snap(e=[self.expense(due="01/09/2026")])
+        self.assertEqual(data["expense"], 714)
+        self.assertEqual(data["balance"], -614)
+        self.assertEqual(data["pending_month"], 0)
+
+    def test_expense_changes_exactly_on_day_twenty(self):
+        bill = self.expense(10, due="20/09/2026")
+        before = self.snap(e=[bill], today=date(2026, 9, 19))
+        on_due = self.snap(e=[bill], today=date(2026, 9, 20))
+        self.assertEqual(before["balance"], 100)
+        self.assertEqual(before["pending_month"], 10)
+        self.assertEqual(on_due["balance"], 90)
+        self.assertEqual(on_due["pending_month"], 0)
+        self.assertEqual(expense_status(bill, date(2026, 9, 19)), "scheduled")
+        self.assertEqual(expense_status(bill, date(2026, 9, 20)), "paid")
+
+    def test_paid_flag_does_not_debit_before_due_date(self):
+        bill = self.expense(payment_status="paid", paid_at="2026-09-02")
+        data = self.snap(e=[bill])
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["pending_month"], 714)
+
+    def test_cancelled_expense_is_ignored(self):
+        data = self.snap(e=[self.expense(payment_status="cancelled")])
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["pending_month"], 0)
+
+    def test_automatic_due_expense_debits(self):
+        data = self.snap(e=[self.expense(due="01/09/2026", automatic_debit=True)])
+        self.assertEqual(data["balance"], -614)
+
+    def test_automatic_future_expense_stays_future(self):
+        data = self.snap(e=[self.expense(automatic_debit=True)])
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["pending_month"], 714)
+
+    def test_income_is_summed_by_competence_without_inventing_day(self):
+        data = self.snap(i=[self.income(received="2026-09-30")])
+        self.assertEqual(data["income"], 100)
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["expected_income"], 0)
+
+    def test_income_with_month_and_no_date_is_valid(self):
+        data = self.snap(i=[self.income(received=None)])
+        self.assertEqual(data["income"], 100)
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["issues"], [])
+
+    def test_income_without_month_or_date_is_rejected(self):
+        data = self.snap(i=[self.income(received=None, month=None)])
+        self.assertEqual(data["income"], 0)
+        self.assertEqual(data["balance"], 0)
+        self.assertTrue(data["issues"])
+
+    def test_prior_month_expense_is_ignored(self):
+        data = self.snap(e=[self.expense(due="31/08/2026")])
+        self.assertEqual(data["expense"], 0)
+        self.assertEqual(data["pending_month"], 0)
+        self.assertEqual(data["balance"], 100)
+        self.assertEqual(data["prior_overdue"], 0)
+
+    def test_payment_date_does_not_move_expense_between_months(self):
+        old = self.expense(50, due="25/08/2026", payment_status="paid", paid_at="2026-09-02")
+        september = self.snap(e=[old])
+        august = self.snap(i=[], e=[old], month="08/2026", today=date(2026, 9, 3))
+        self.assertEqual(september["expense"], 0)
+        self.assertEqual(september["balance"], 100)
+        self.assertEqual(august["expense"], 50)
+        self.assertEqual(august["balance"], -50)
+
+    def test_shared_expense_is_subtracted_once(self):
+        bill = self.expense(
+            60,
+            due="01/09/2026",
+            expense_shares=[
+                {"member_id": "mafra", "amount": 30},
+                {"member_id": "karol", "amount": 30},
+            ],
+        )
+        data = self.snap(e=[bill])
+        self.assertEqual(data["balance"], 40)
+        self.assertEqual(sum(data["member_balance"].values()), 40)
+
+    def test_invalid_share_does_not_change_family_total(self):
+        bill = self.expense(
+            60,
+            due="01/09/2026",
+            expense_shares=[{"member_id": "mafra", "amount": 80}],
+        )
+        data = self.snap(e=[bill])
+        self.assertEqual(sum(data["member_balance"].values()), 40)
+        self.assertEqual(data["balance"], 40)
+        self.assertTrue(data["issues"])
+
     def test_rounding_shares(self):
-        s=split_amount('100',['a','b','c']);self.assertEqual(sum(x[1] for x in s),100);self.assertEqual(s[0][1],Decimal('33.34'))
-    def test_duplicate_ids(self):
-        i=self.income();self.assertEqual(self.snap(i=[i,i])['balance'],100)
-    def test_installments_are_distinct(self):
-        e1=self.expense(40,'01/09/2026',payment_status='paid',paid_at='2026-09-01');e2={**e1,'id':'e2','expense_date':'01/10/2026','payment_status':'scheduled','paid_at':None}
-        self.assertEqual(self.snap(e=[e1,e2])['balance'],60)
+        shares = split_amount("100", ["a", "b", "c"])
+        self.assertEqual(sum(item[1] for item in shares), 100)
+        self.assertEqual(shares[0][1], Decimal("33.34"))
+
+    def test_duplicate_ids_are_counted_once(self):
+        row = self.income()
+        self.assertEqual(self.snap(i=[row, row])["balance"], 100)
+
+    def test_installments_in_other_month_are_ignored(self):
+        september = self.expense(40, "01/09/2026", rid="e1")
+        october = self.expense(40, "01/10/2026", rid="e2")
+        self.assertEqual(self.snap(e=[september, october])["balance"], 60)
+
+    def test_mafra_karol_balance_and_future_bill_exactly(self):
+        incomes = [
+            self.income("2016.00", mid="mafra", rid="income-mafra"),
+            self.income("1783.09", mid="karol", rid="income-karol"),
+        ]
+        expenses = [
+            self.expense("1815.21", due="01/09/2026", payer="mafra", rid="expense-mafra"),
+            self.expense("1700.44", due="01/09/2026", payer="karol", rid="expense-karol"),
+            self.expense("10.00", due="20/09/2026", payer="mafra", rid="future-20"),
+        ]
+        data = snapshot(incomes, expenses, "09/2026", today=date(2026, 9, 14))
+        self.assertAlmostEqual(data["income"], 3799.09, places=2)
+        self.assertAlmostEqual(data["expense"], 3515.65, places=2)
+        self.assertAlmostEqual(data["balance"], 283.44, places=2)
+        self.assertAlmostEqual(data["member_balance"]["mafra"], 200.79, places=2)
+        self.assertAlmostEqual(data["member_balance"]["karol"], 82.65, places=2)
+        self.assertAlmostEqual(sum(data["member_balance"].values()), data["balance"], places=2)
+        self.assertAlmostEqual(data["pending_month"], 10.00, places=2)
+        self.assertAlmostEqual(data["projected_balance"], 273.44, places=2)
+
     def test_price_limit_is_full_price(self):
         data=dict(balance=10000,projected_balance=10000,projected_monthly_result=10000)
         items=[dict(item='PS5',estimated=4000,saved=3980,priority='Alta'),dict(item='Livro',estimated=50,saved=0)]

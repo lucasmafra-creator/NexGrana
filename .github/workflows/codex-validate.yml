@@ -75,7 +75,7 @@ jobs:
           root = Path("project")
           release = Path("release")
           release.mkdir(exist_ok=True)
-          output = release / "NexGrana_0_19_0_SOL_Virada_RC3_COMPAT_VALIDADA.zip"
+          output = release / "NexGrana_0_19_0_SOL_Virada_RC4_SALDO_VALIDADA.zip"
           manifest_path = root / "MANIFEST_RELEASE_0_19_0.json"
           ignored_dirs = {"__pycache__", ".pytest_cache", ".git", "node_modules", "validation"}
           ignored_suffixes = {".pyc", ".bak"}
@@ -102,11 +102,11 @@ jobs:
           manifest = {
               "product": "NexGrana",
               "version": "0.19.0",
-              "channel": "SOL_Virada_RC3_legacy_compat_validated",
+              "channel": "SOL_Virada_RC4_monthly_balance_validated",
               "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "validation": {
                   "python_versions": ["3.11", "3.14"],
-                  "python_tests": 56,
+                  "python_tests": 58,
                   "sql_rls": "passed",
                   "zip_integrity": "passed",
               },
@@ -150,5 +150,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add project/MANIFEST_RELEASE_0_19_0.json release
-          git commit -m "release: refresh validated NexGrana 0.19.0 RC3 compatibility package"
+          git commit -m "release: refresh validated NexGrana 0.19.0 RC4 monthly balance package"
           git push

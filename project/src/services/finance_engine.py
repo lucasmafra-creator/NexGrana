@@ -1,9 +1,10 @@
 """Motor financeiro determinístico do NexGrana.
 
-Todos os cálculos monetários são feitos com ``Decimal`` em centavos.  Telas,
+Todos os cálculos monetários são feitos com ``Decimal`` em centavos. Telas,
 Nex e planejamento devem consumir este módulo em vez de repetir fórmulas.
-Competência (``month``) organiza relatórios; ela nunca confirma pagamento ou
-recebimento por si só.
+O saldo é mensal e verificável: soma as rendas da competência selecionada e
+subtrai somente despesas dessa competência cuja data de vencimento já chegou.
+Despesas posteriores ao dia de corte aparecem apenas como futuras.
 """
 from collections import defaultdict
 from datetime import date, datetime
@@ -45,39 +46,24 @@ def split_amount(value, members):
 
 
 def effective_income(row):
-    """Resolve a data de renda preservando registros anteriores à versão 0.18."""
+    """Retorna apenas a data explicitamente registrada; nunca inventa uma data."""
     if row.get("received_at"):
         return day(row["received_at"]), False
-    text = str(row.get("month") or "")
-    try:
-        month, year = map(int, text.split("/"))
-        return date(year, month, 1), True
-    except (TypeError, ValueError):
-        return None, False
+    return None, False
 
 
 def effective_expense(row):
+    """A despesa torna-se efetiva na própria data de vencimento."""
     if row.get("payment_status") == "cancelled":
         return None
-    if row.get("payment_status") == "paid":
-        # paid_at foi adicionado depois de payment_status. Uma despesa já
-        # confirmada como paga continua paga; no legado, usamos o vencimento
-        # somente durante o cálculo, sem alterar o registro no Supabase.
-        raw = row.get("paid_at") or row.get("expense_date")
-        return day(raw) if raw else None
-    if row.get("automatic_debit"):
-        return day(row["expense_date"])
-    return None
+    return day(row["expense_date"])
 
 
 def expense_status(row, today=None):
     today = today or date.today()
     if row.get("payment_status") == "cancelled":
         return "cancelled"
-    effective = effective_expense(row)
-    if effective and effective <= today:
-        return "paid"
-    return "overdue" if day(row["expense_date"]) < today else "scheduled"
+    return "paid" if day(row["expense_date"]) <= today else "scheduled"
 
 
 def _months_until(target, today=None):
@@ -126,87 +112,95 @@ def monthly_goal_commitments(
 
 
 def snapshot(incomes, expenses, month, members=(), today=None):
-    """Foto de caixa na competência selecionada com saldo contínuo."""
+    """Calcula exclusivamente a competência selecionada, sem carregar históricos.
+
+    Regra de caixa:
+    - toda renda cadastrada na competência entra no saldo;
+    - uma despesa da competência só reduz o saldo quando o vencimento chega;
+    - antes do vencimento, ela aparece em pending_month e reduz apenas a
+      projeção;
+    - meses anteriores e posteriores nunca são carregados para o saldo atual.
+    """
     today = today or date.today()
     m, y = map(int, month.split("/"))
-    start, end = date(y, m, 1), date(y, m, calendar.monthrange(y, m)[1])
+    start = date(y, m, 1)
+    end = date(y, m, calendar.monthrange(y, m)[1])
     cutoff = min(today, end)
-    opening_cutoff = min(start, cutoff)
+
     totals = defaultdict(Decimal)
     mi, me, mp, mb = (defaultdict(Decimal) for _ in range(4))
     categories = defaultdict(Decimal)
-    pending_rows, prior_overdue_rows, issues = [], [], []
+    pending_rows, issues = [], []
     seen = set()
 
     for row in incomes:
         rid = row.get("id")
         if rid and ("i", rid) in seen:
             continue
-        seen.add(("i", rid))
-        value, mid = amount(row["amount"]), str(row.get("member_id") or "unassigned")
+        if rid:
+            seen.add(("i", rid))
         if row.get("receipt_status") == "cancelled":
             continue
-        received, legacy_income = effective_income(row)
-        if received is None:
-            issues.append("Renda sem data nem competência válida: confirme em Transações.")
+
+        competence = str(row.get("month") or "").strip()
+        if competence:
+            try:
+                cm, cy = map(int, competence.split("/"))
+                date(cy, cm, 1)
+                competence = f"{cm:02d}/{cy:04d}"
+            except (TypeError, ValueError):
+                competence = ""
+        if not competence and row.get("received_at"):
+            competence = day(row["received_at"]).strftime("%m/%Y")
+        if not competence:
+            issues.append("Renda sem competência ou data registrada: confirme em Transações.")
             continue
-        if legacy_income:
-            issues.append("Renda histórica usando a competência cadastrada; edite-a para informar o dia exato.")
-        if row.get("receipt_status", "received") == "received" and received <= cutoff:
-            totals["balance"] += value
-            mb[mid] += value
-            if received < opening_cutoff:
-                totals["opening_balance"] += value
-            if start <= received <= end:
-                totals["income"] += value
-                mi[mid] += value
-        elif cutoff < received <= end:
-            totals["expected_income"] += value
+        if competence != month:
+            continue
+
+        value = amount(row["amount"])
+        mid = str(row.get("member_id") or "unassigned")
+        totals["income"] += value
+        totals["balance"] += value
+        mi[mid] += value
+        mb[mid] += value
 
     for row in expenses:
         rid = row.get("id")
         if rid and ("e", rid) in seen:
             continue
-        seen.add(("e", rid))
+        if rid:
+            seen.add(("e", rid))
         if row.get("payment_status") == "cancelled":
             continue
-        value, due, paid = amount(row["amount"]), day(row["expense_date"]), effective_expense(row)
-        if row.get("payment_status") == "paid" and not row.get("paid_at"):
-            issues.append("Despesa histórica paga usando o vencimento como data efetiva; edite-a para informar o dia exato.")
-        shares = [(str(s["member_id"]), amount(s["amount"])) for s in row.get("expense_shares", [])]
+
+        due = day(row["expense_date"])
+        if not (start <= due <= end):
+            continue
+
+        value = amount(row["amount"])
+        totals["registered_expense"] += value
+        shares = [(str(item["member_id"]), amount(item["amount"])) for item in row.get("expense_shares", [])]
         if not shares:
             shares = [(str(row.get("payer_member_id") or "unassigned"), value)]
         else:
-            shared = sum((v for _, v in shares), ZERO)
+            shared = sum((share for _, share in shares), ZERO)
             if shared != value:
                 issues.append("Rateio inconsistente: diferença mantida em Não atribuído.")
                 shares.append(("unassigned", value - shared))
 
-        if start <= due <= end:
-            totals["registered_expense"] += value
-        if paid and paid <= cutoff:
+        if due <= cutoff:
+            totals["expense"] += value
             totals["balance"] -= value
+            categories[row.get("category") or "Outros"] += value
             for mid, share in shares:
+                me[mid] += share
                 mb[mid] -= share
-            if paid < opening_cutoff:
-                totals["opening_balance"] -= value
-            if start <= paid <= end:
-                totals["expense"] += value
-                categories[row.get("category") or "Outros"] += value
-                for mid, share in shares:
-                    me[mid] += share
-        elif due < start:
-            # Pendências anteriores continuam visíveis para revisão, mas não
-            # entram novamente nas próximas contas da competência selecionada.
-            totals["prior_overdue"] += value
-            prior_overdue_rows.append(row)
-        elif due <= end:
+        else:
             totals["pending_month"] += value
             pending_rows.append(row)
             for mid, share in shares:
                 mp[mid] += share
-            if due < cutoff:
-                totals["overdue"] += value
 
     for key in (
         "balance",
@@ -220,23 +214,27 @@ def snapshot(incomes, expenses, month, members=(), today=None):
         "expected_income",
     ):
         totals[key] += ZERO
-    totals["projected_balance"] = totals["balance"] - totals["pending_month"]
-    totals["monthly_result"] = totals["income"] - totals["expense"]
-    totals["projected_monthly_result"] = totals["monthly_result"] - totals["pending_month"]
 
-    result = {k: float(v) for k, v in totals.items()}
+    totals["projected_balance"] = totals["balance"] - totals["pending_month"]
+    totals["monthly_result"] = totals["balance"]
+    totals["projected_monthly_result"] = totals["projected_balance"]
+
+    result = {key: float(value) for key, value in totals.items()}
     for key, data in (
         ("member_income", mi),
         ("member_expense", me),
         ("member_pending", mp),
         ("member_balance", mb),
     ):
-        result[key] = {k: float(v) for k, v in data.items()}
+        result[key] = {member_id: float(value) for member_id, value in data.items()}
     result.update(
-        member_names={str(m["id"]): m["display_name"] for m in members},
-        categories=sorted(((k, float(v)) for k, v in categories.items()), key=lambda x: -x[1]),
-        pending_rows=sorted(pending_rows, key=lambda r: day(r["expense_date"])),
-        prior_overdue_rows=sorted(prior_overdue_rows, key=lambda r: day(r["expense_date"])),
+        member_names={str(member["id"]): member["display_name"] for member in members},
+        categories=sorted(
+            ((category, float(value)) for category, value in categories.items()),
+            key=lambda item: -item[1],
+        ),
+        pending_rows=sorted(pending_rows, key=lambda row: day(row["expense_date"])),
+        prior_overdue_rows=[],
         issues=sorted(set(issues)),
         as_of=cutoff.isoformat(),
     )

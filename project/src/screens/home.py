@@ -173,7 +173,6 @@ class HomeScreen:
         d=self.dashboard_data()
         phone=self._layout_bucket()=="phone"
         future=float(d.get("pending_month") or 0)
-        prior_overdue=float(d.get("prior_overdue") or 0)
         next_bill=(d.get("pending_rows") or [None])[0]
         family_balance=float(d.get("balance") or 0)
         projected=float(d.get("projected_balance") or 0)
@@ -199,29 +198,27 @@ class HomeScreen:
             content=ft.Column(spacing=10,controls=[
                 ft.Row(alignment=ft.MainAxisAlignment.SPACE_BETWEEN,controls=[
                     ft.Column(expand=True,spacing=2,controls=[
-                        ft.Text("Disponível para a família hoje",size=11,color=self.muted_color()),
+                        ft.Text("Saldo atual da família neste mês",size=11,color=self.muted_color()),
                         ft.Text(brl(family_balance),size=32 if not phone else 28,weight=ft.FontWeight.BOLD,color="#55E6A5" if family_balance>=0 else ft.Colors.RED),
-                        ft.Text(f"Depois dos compromissos deste mês: {brl(projected)}",size=9,color=self.muted_color()),
+                        ft.Text(f"Projetado após despesas futuras deste mês: {brl(projected)}",size=9,color=self.muted_color()),
                     ]),
                     ft.Icon(ft.Icons.ACCOUNT_BALANCE_WALLET_OUTLINED,color="#8B7CFF",size=34),
                 ]),
                 ft.Container(padding=10,border_radius=13,bgcolor=self.surface_alt_color(),content=ft.Row(controls=[
                     ft.Icon(ft.Icons.EVENT,color=ft.Colors.ORANGE,size=18),
                     ft.Column(expand=True,spacing=1,controls=[
-                        ft.Text("Próximo compromisso deste mês",size=9,color=self.muted_color()),
+                        ft.Text("Próxima despesa futura deste mês",size=9,color=self.muted_color()),
                         ft.Text((f"{next_bill.get('description','Conta')} • {brl(next_bill.get('amount',0))} • {next_bill.get('expense_date','')}" if next_bill else "Nenhuma conta pendente registrada."),size=11,weight=ft.FontWeight.BOLD,max_lines=2,overflow=ft.TextOverflow.ELLIPSIS),
                     ]),
                     ft.TextButton("Ver",on_click=lambda e:self._go_movement_tab(1)),
                 ])),
-                ft.Text(f"Neste mês entraram {brl(d.get('income',0))} e saíram {brl(d.get('expense',0))} já efetivados.",size=10,color=self.muted_color()),
+                ft.Text(f"Neste mês entraram {brl(d.get('income',0))} e saíram {brl(d.get('expense',0))} até hoje.",size=10,color=self.muted_color()),
             ])
         )
 
         attention=[]
         if next_bill:
             attention.append(("📅","Conta chegando",f"{next_bill.get('description','Conta')} vence em {next_bill.get('expense_date','')} • {brl(next_bill.get('amount',0))}"))
-        if prior_overdue:
-            attention.append(("⏰","Pendências anteriores para revisar",f"Há {brl(prior_overdue)} registrados antes deste mês. Confirme pagamentos ou cancelamentos em Transações."))
         top=(d.get("categories") or [])[:1]
         if top:
             attention.append(("👀","Maior gasto do mês",f"{top[0][0]} está em {brl(top[0][1])}. Toque em Análises para entender o impacto."))
