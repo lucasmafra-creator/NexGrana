@@ -1,0 +1,142 @@
+name: Codex - Gerar downloads Windows e Android
+
+on:
+  push:
+    branches:
+      - codex/revisao-nexgrana-019
+    paths:
+      - ".github/workflows/codex-build-downloads.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: project
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: project/requirements.txt
+
+      - name: Dependencias
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip check
+
+      - name: Validar RC4
+        run: python validate_release.py --full
+
+      - name: Compilar Windows
+        run: python build_multiplataforma.py windows --timeout 5400
+
+      - name: Empacotar Windows
+        shell: pwsh
+        run: |
+          $latest = Get-ChildItem -Path dist -Directory | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if (-not $latest) { throw "Pasta de build nao encontrada" }
+          $windows = Join-Path $latest.FullName "windows"
+          $exe = Get-ChildItem -Path $windows -Recurse -Filter "*.exe" | Select-Object -First 1
+          if (-not $exe) { throw "Executavel Windows nao encontrado" }
+          $output = Join-Path $env:RUNNER_TEMP "NexGrana_0_19_0_RC4_Windows.zip"
+          Compress-Archive -Path (Join-Path $windows "*") -DestinationPath $output -CompressionLevel Optimal
+          Get-FileHash -Algorithm SHA256 $output
+          "WINDOWS_PACKAGE=$output" >> $env:GITHUB_ENV
+
+      - name: Guardar Windows
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexgrana-rc4-windows
+          path: ${{ env.WINDOWS_PACKAGE }}
+          if-no-files-found: error
+          retention-days: 30
+
+  android:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: project
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: project/requirements.txt
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Dependencias
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip check
+
+      - name: Validar RC4
+        run: python validate_release.py --full
+
+      - name: Compilar APK
+        run: python build_multiplataforma.py apk --timeout 5400
+
+      - name: Preparar APK
+        run: |
+          apk="$(find dist -type f -name '*.apk' -print -quit)"
+          test -n "$apk"
+          cp "$apk" "$RUNNER_TEMP/NexGrana_0_19_0_RC4_Android.apk"
+          sha256sum "$RUNNER_TEMP/NexGrana_0_19_0_RC4_Android.apk"
+
+      - name: Guardar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexgrana-rc4-android
+          path: ${{ runner.temp }}/NexGrana_0_19_0_RC4_Android.apk
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    if: github.actor != 'github-actions[bot]'
+    needs: [windows, android]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: codex/revisao-nexgrana-019
+
+      - name: Baixar builds aprovados
+        uses: actions/download-artifact@v4
+        with:
+          pattern: nexgrana-rc4-*
+          path: release/rc4
+          merge-multiple: true
+
+      - name: Conferir e publicar downloads
+        run: |
+          test -f release/rc4/NexGrana_0_19_0_RC4_Windows.zip
+          test -f release/rc4/NexGrana_0_19_0_RC4_Android.apk
+          sha256sum release/rc4/NexGrana_0_19_0_RC4_Windows.zip release/rc4/NexGrana_0_19_0_RC4_Android.apk > release/SHA256_BUILDS_RC4.txt
+          cat release/SHA256_BUILDS_RC4.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add release/rc4 release/SHA256_BUILDS_RC4.txt
+          git commit -m "release: publish NexGrana 0.19.0 RC4 Windows and Android downloads"
+          git push
