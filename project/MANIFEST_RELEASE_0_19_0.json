@@ -1,14 +1,14 @@
 {
   "product": "NexGrana",
   "version": "0.19.0",
-  "channel": "SOL_Virada_RC3_legacy_compat_validated",
-  "generated_at_utc": "2026-09-14T17:04:06.660533+00:00",
+  "channel": "SOL_Virada_RC4_monthly_balance_validated",
+  "generated_at_utc": "2026-09-14T17:23:38.218438+00:00",
   "validation": {
     "python_versions": [
       "3.11",
       "3.14"
     ],
-    "python_tests": 56,
+    "python_tests": 58,
     "sql_rls": "passed",
     "zip_integrity": "passed"
   },
@@ -42,6 +42,11 @@
       "path": "CORRECOES_0_19_0_RC3.md",
       "bytes": 1012,
       "sha256": "168b86318949055e3cce92b1304e5dfcc285f63c1d95e5acd621eea2ad33eb04"
+    },
+    {
+      "path": "CORRECOES_0_19_0_RC4.md",
+      "bytes": 877,
+      "sha256": "17042f62a773b82e3ff44ada58349565298f9fac8785999fa49d388f3d97b17a"
     },
     {
       "path": "LEIA_PRIMEIRO_0_19_0_SOL.txt",
@@ -90,8 +95,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4451,
-      "sha256": "e62aa72dadbcf3a2fc450ae30d49d9cf05f8e0ac93f581c02f269d60ecac790f"
+      "bytes": 2038,
+      "sha256": "21eba1878ee7861343de83789383a557842ec8290863174dcaec02f968665dc3"
     },
     {
       "path": "README_SETUP_CLOUD.md",
@@ -125,8 +130,8 @@
     },
     {
       "path": "VALIDACAO_0_19_0_SOL.md",
-      "bytes": 2895,
-      "sha256": "51b26f776dc95774eecd32ac3dd750038f254df3427c4a4aa8bcbeac4f563584"
+      "bytes": 1922,
+      "sha256": "69b9b11a2893ea01d827da848f16b575490ebc76fbbedcbafd36d99ebc0be74c"
     },
     {
       "path": "build_multiplataforma.py",
@@ -435,8 +440,8 @@
     },
     {
       "path": "src/screens/home.py",
-      "bytes": 17561,
-      "sha256": "93fe8651159dd86372cfbb8409b31ba966383f6a7b5fa0baec07ee5b41fcc93e"
+      "bytes": 17299,
+      "sha256": "b8da277bf80262834168988ef88d0d53fda396607d9cc775bc48a349d7c7b6c5"
     },
     {
       "path": "src/screens/market.py",
@@ -480,8 +485,8 @@
     },
     {
       "path": "src/services/finance_engine.py",
-      "bytes": 14962,
-      "sha256": "1dd7db6d983bcafe0ecf529dc778ae20ac9142c727134974299f87a2885d1f7d"
+      "bytes": 14026,
+      "sha256": "55d201c29b1682c786973c3fb1500e4e7c790d9447b534b77d0232968c10918b"
     },
     {
       "path": "src/services/market.py",
@@ -550,8 +555,8 @@
     },
     {
       "path": "tests/test_finance.py",
-      "bytes": 8021,
-      "sha256": "4875e5174f7772610218358283f240250e47753a0a3717f622ca9c347749dfa8"
+      "bytes": 11088,
+      "sha256": "9908fa92fd201cd8e854fcf3b92b9171ea9d0d4afd380e5acd716f8d4a7a4aa2"
     },
     {
       "path": "tests/test_market_cloud.py",
@@ -589,6 +594,6 @@
       "sha256": "5a30ed90f8d7d4ea4e5cebefc987ca755684c4c4a858a4edc7480e4e32e05ef3"
     }
   ],
-  "file_count": 115,
-  "total_bytes": 3252308
+  "file_count": 116,
+  "total_bytes": 3251668
 }
