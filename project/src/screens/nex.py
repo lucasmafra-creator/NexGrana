@@ -100,7 +100,10 @@ class NexScreen:
         self.chat_messages.append({"role":"user","text":q,"request_id":request_id})
         self.chat_messages=self.chat_messages[-120:]
         if not self._refresh_nex_runtime():
-            self.render()
+            try:
+                self.render()
+            except Exception:
+                logger.warning("nex_render_before_dispatch_failed")
         try:
             await asyncio.sleep(0)
             context=Context(
