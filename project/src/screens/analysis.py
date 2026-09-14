@@ -40,7 +40,7 @@ class AnalysisScreen:
                 controls=[
                     self._analysis_metric("Entrou", brl(a["income"]), "Renda efetivamente recebida", ft.Icons.SOUTH_WEST, ft.Colors.GREEN, phone),
                     self._analysis_metric("Saiu", brl(a["paid_expense"]), "Gastos já efetivados", ft.Icons.NORTH_EAST, ft.Colors.RED, phone),
-                    self._analysis_metric("Ainda vence", brl(a["pending_expense"]), "Compromissos futuros do mês", ft.Icons.EVENT_UPCOMING, ft.Colors.ORANGE, phone),
+                    self._analysis_metric("Ainda vence", brl(a["pending_expense"]), "Compromissos futuros do mês", ft.Icons.EVENT, ft.Colors.ORANGE, phone),
                     self._analysis_metric("Seguro para decidir", brl(a["safe_margin"]), "Após contas, reserva e esforço mensal das metas", ft.Icons.SHIELD_OUTLINED, "#8B7CFF", phone),
                 ],
             ),

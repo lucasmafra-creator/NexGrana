@@ -205,7 +205,7 @@ class HomeScreen:
                     ft.Icon(ft.Icons.ACCOUNT_BALANCE_WALLET_OUTLINED,color="#8B7CFF",size=34),
                 ]),
                 ft.Container(padding=10,border_radius=13,bgcolor=self.surface_alt_color(),content=ft.Row(controls=[
-                    ft.Icon(ft.Icons.EVENT_UPCOMING,color=ft.Colors.ORANGE,size=18),
+                    ft.Icon(ft.Icons.EVENT,color=ft.Colors.ORANGE,size=18),
                     ft.Column(expand=True,spacing=1,controls=[
                         ft.Text("Próximo compromisso",size=9,color=self.muted_color()),
                         ft.Text((f"{next_bill.get('description','Conta')} • {brl(next_bill.get('amount',0))} • {next_bill.get('expense_date','')}" if next_bill else "Nenhuma conta pendente registrada."),size=11,weight=ft.FontWeight.BOLD,max_lines=2,overflow=ft.TextOverflow.ELLIPSIS),

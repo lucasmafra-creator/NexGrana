@@ -17,7 +17,7 @@ grant usage on schema auth to authenticated,anon; grant execute on function auth
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 
-for (const file of ['supabase_schema.sql','supabase_patch_v1_3.sql','SUPABASE_PATCH_V2_RC.sql','SUPABASE_SECURITY_0_17.sql','MIGRATION_0_18.sql','SQL_ATOMIC_0_18.sql','MIGRATION_0_18.sql','SQL_ATOMIC_0_18.sql']) {
+for (const file of ['supabase_schema.sql','SUPABASE_PATCH_V2_RC.sql','SUPABASE_SECURITY_0_17.sql','MIGRATION_0_18.sql','SQL_ATOMIC_0_18.sql','MIGRATION_0_18_1.sql','MIGRATION_0_19.sql']) {
 
  try {await db.exec(fs.readFileSync(root+file,'utf8').replace('create extension if not exists pgcrypto;',''));console.log('PASS migration '+file);}
 

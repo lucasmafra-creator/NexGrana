@@ -4,7 +4,7 @@ class PlanningScreen:
     def goal_edit_dialog(self, row):
         name=ft.TextField(label="Nome da meta",value=row.get("name") or "")
         target=ft.TextField(label="Valor objetivo",value=str(row.get("target_amount") or 0).replace(".",","),keyboard_type=ft.KeyboardType.NUMBER)
-        saved=ft.TextField(label="Já guardado",value=str(row.get("saved_amount") or 0).replace(".",","),disabled=True,helper_text="Use ‘Aportar’ para preservar o histórico e evitar conflito entre integrantes.")
+        saved=ft.TextField(label="Já guardado",value=str(row.get("saved_amount") or 0).replace(".",","),disabled=True,helper="Use ‘Aportar’ para preservar o histórico e evitar conflito entre integrantes.")
         raw=str(row.get("target_date") or "")
         try:
             dt=datetime.fromisoformat(raw[:10]).strftime("%d/%m/%Y")
