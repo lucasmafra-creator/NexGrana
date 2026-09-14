@@ -1,9 +1,6 @@
 name: Codex - Extrair NexGrana RC1
 
 on:
-  push:
-    branches:
-      - codex/revisao-nexgrana-019
   workflow_dispatch:
 
 permissions:
