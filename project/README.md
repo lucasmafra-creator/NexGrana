@@ -1,6 +1,6 @@
-# NexGrana 0.19.0 SOL — Virada (candidata de teste)
+# NexGrana 0.19.0 SOL — Virada RC2 validada
 
-Esta pasta continua a linha 0.18.1/RC2 e implementa a especificação refinada pelo Astra sem recomeçar o projeto. É uma **candidata de teste**, não uma release pública: neste ambiente não foi possível executar Flet/Supabase nem gerar Windows/APK.
+Esta pasta continua a linha 0.18.1/RC2 e implementa a especificação refinada pelo Astra sem recomeçar o projeto. A RC2 passou pela suíte automatizada completa em Python 3.11 e 3.14, incluindo Flet, Supabase, fluxo assíncrono do Nex e testes SQL/RLS. Windows e Android reais ainda exigem o teste manual descrito abaixo antes de publicação.
 
 ## O que mudou nesta rodada
 
@@ -15,18 +15,21 @@ Esta pasta continua a linha 0.18.1/RC2 e implementa a especificação refinada p
 - **Monetização gratuita:** nenhuma função paga, Premium ou paywall. Arquitetura mínima para recomendações/ofertas/afiliados separa utilidade financeira de monetização. Analytics remoto permanece desativado.
 - **LGPD/segurança:** preserva Vault, isolamento por família/RLS, consentimentos opcionais, bloqueio de importação destrutiva e princípios de minimização. Nenhuma migration é aplicada automaticamente ao Supabase real.
 
-## Validação disponível neste ambiente
+## Validação automatizada da RC2
+
+Executada no GitHub Actions em Python 3.11 e 3.14:
 
 ```text
-python validate_release.py
-→ versão/manifesto Nex: OK
-→ compileall: OK
-→ 44 testes de núcleo: OK
+versão/manifesto Nex: OK
+compileall: OK
+53 testes Python: OK
+migrations SQL 0.18, 0.18.1 e 0.19: OK
+testes RLS, isolamento familiar e atomicidade: OK
+pip check: OK
+ZIP e SHA-256: gerados após aprovação de toda a matriz
 ```
 
-A descoberta completa encontra 46 entradas, mas `test_ui` e `test_market_cloud` não carregam aqui porque os pacotes `flet` e `supabase` não estão instalados neste runtime. Isso **não** conta como aprovação desses testes.
-
-Consulte `VALIDACAO_0_19_0_SOL.md` para a lista honesta do que foi e não foi validado.
+As correções e os limites da validação estão documentados em `CORRECOES_0_19_0_RC2.md` e `VALIDACAO_0_19_0_SOL.md`.
 
 ## Antes de usar com seu banco
 

@@ -1,42 +1,66 @@
-# Validação — NexGrana 0.19.0 SOL
+# Validação — NexGrana 0.19.0 SOL Virada RC2
 
-## Executado aqui
+Data da validação automatizada: 14/09/2026.
 
-### Sintaxe/compilação
-- `python -m compileall -q src` → OK.
-- `validate_release.py` confere versão 0.19.0, arquivos críticos, variantes do Nex e rejeita GIF como variante ativa.
+## Resultado aprovado
 
-### Testes de núcleo
-`python validate_release.py` executou 44 testes e todos passaram:
-- motor financeiro/rollover/status de pagamento/rateio/reservas/metas;
-- backup local/Vault/criptografia;
-- fila de sync em fundação, retry/conflito/idempotência;
-- afiliados/ofertas;
-- Nex Engine determinístico;
-- analytics privacy-first;
-- performance monitor;
-- Trilha Nex de 10 etapas.
+A branch de revisão executou uma matriz limpa em Python 3.11 e Python 3.14 com as dependências fixadas em `requirements.txt`.
 
-### Descoberta completa
-`python -m unittest discover -s tests -v` encontrou 46 entradas. Duas não foram carregadas neste ambiente:
-- `test_market_cloud`: `supabase` ausente;
-- `test_ui`: `flet` ausente.
+Resultados em ambas as versões:
 
-Isso é limitação do runtime desta sessão e **não comprova** que os testes pendentes passam.
+- versão 0.19.0 e arquivos obrigatórios: OK;
+- manifesto e variantes canônicas do Nex: OK;
+- compilação completa de `src`: OK;
+- `pip check`: OK;
+- 53 testes Python: OK;
+- telas testadas em 360, 390, 430, 768, 1366 e 1920 px: OK;
+- diálogos principais: OK;
+- dispatcher assíncrono e respostas do Nex: OK;
+- falha de conexão sem inventar valores: OK;
+- migrations e testes SQL/RLS: OK;
+- integridade interna do ZIP: OK;
+- SHA-256 do pacote: gerado automaticamente.
 
-## Não validado aqui
-- Flet renderizado em Windows/Android.
-- comportamento real do teclado/IME no Android;
-- câmera/permissões Android;
-- build `.exe` e `.apk`;
-- Supabase/PostgREST/RLS em projeto real ou staging;
-- `MIGRATION_0_19.sql` aplicada;
-- concorrência real em duas conexões;
-- performance p50/p95 em hardware do usuário;
-- acessibilidade com leitor de tela/fonte ampliada em aparelho;
-- pack final 3D/Rive do Nex (não existe nesta candidata).
+## SQL e segurança validados
 
-## Teste obrigatório no PC do usuário
+A sequência testada foi:
+
+1. `supabase_schema.sql`;
+2. `SUPABASE_PATCH_V2_RC.sql`;
+3. `SUPABASE_SECURITY_0_17.sql`;
+4. `MIGRATION_0_18.sql`;
+5. `SQL_ATOMIC_0_18.sql`;
+6. `MIGRATION_0_18_1.sql`;
+7. `MIGRATION_0_19.sql`.
+
+Os testes cobrem isolamento entre famílias, bloqueio de leitura anônima, referências cruzadas, elevação indevida de membro, idempotência, rateios inválidos, rollback atômico, contribuições de meta e fechamento de compra.
+
+## Correções confirmadas na RC2
+
+- ícone incompatível `EVENT_UPCOMING` substituído por `EVENT`;
+- `helper_text` incompatível substituído por `helper`;
+- testes atualizados para o dispatcher assíncrono real;
+- falha de renderização não interrompe mais a resposta segura do Nex;
+- teste SQL deixou de apontar para arquivo inexistente;
+- migrations 0.18.1 e 0.19 passaram a fazer parte da validação SQL;
+- manifesto de arquivos e hashes é regenerado durante o empacotamento.
+
+## Ainda exige teste manual
+
+A automação não substitui estes testes em dispositivo real:
+
+- renderização e navegação no Windows;
+- teclado/IME, navegação inferior e botão Enviar no Android;
+- câmera e permissões Android;
+- geração final de `.exe` e `.apk`;
+- login e operações contra um projeto Supabase de homologação;
+- troca simultânea de perfil em dois aparelhos;
+- acessibilidade com leitor de tela e fonte ampliada;
+- desempenho p50/p95 no notebook e celular do usuário.
+
+Nenhuma migration é aplicada automaticamente a um Supabase real.
+
+## Teste recomendado no Windows
 
 ```bat
 py -m pip install -r requirements.txt
@@ -44,16 +68,4 @@ py validate_release.py --full
 py -m flet.cli run src
 ```
 
-Depois, no Android, verificar no mínimo:
-1. abrir Nex;
-2. focar o campo e confirmar que o texto digitado e Enviar permanecem acessíveis;
-3. enviar pela seta;
-4. enviar por submit/Enter;
-5. tocar nas quatro perguntas rápidas;
-6. usar `Simular com Nex` em Planejamento;
-7. usar `Conversar com Nex` em Trilha;
-8. trocar perfil durante/antes de uma nova consulta;
-9. fechar teclado/voltar;
-10. testar rede instável.
-
-Qualquer falha nesses itens impede classificar a candidata como release pública.
+Somente depois do teste manual deve-se gerar Windows/APK usando os comandos de `COMANDOS_0_19_0_WINDOWS_ANDROID.txt`.

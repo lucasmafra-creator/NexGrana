@@ -36,3 +36,11 @@
 ## Banco
 - `MIGRATION_0_19.sql` amplia progresso da Trilha para 10 e acrescenta metadados opcionais às ofertas de forma aditiva.
 - A migration NÃO é aplicada automaticamente.
+
+## RC2 validada
+- Corrigida a compatibilidade de ícones com Flet 0.86.5.
+- Corrigido o parâmetro auxiliar do campo de metas.
+- Testes do Nex passaram a executar o dispatcher assíncrono real.
+- O fluxo do Nex continua respondendo com segurança mesmo quando a renderização e a consulta financeira falham juntas.
+- A sequência SQL foi corrigida para remover referência inexistente e incluir as migrations 0.18.1 e 0.19.
+- Validação reproduzível aprovada em Python 3.11 e 3.14 antes do empacotamento.

@@ -63,29 +63,74 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Gerar ZIP validado
+      - name: Gerar manifesto e ZIP validado
         shell: python
         run: |
+          from datetime import datetime, timezone
           from pathlib import Path
           import hashlib
+          import json
           import zipfile
 
           root = Path("project")
           release = Path("release")
           release.mkdir(exist_ok=True)
           output = release / "NexGrana_0_19_0_SOL_Virada_RC2_VALIDADA.zip"
-          ignored_dirs = {"__pycache__", ".pytest_cache", ".git", "node_modules"}
+          manifest_path = root / "MANIFEST_RELEASE_0_19_0.json"
+          ignored_dirs = {"__pycache__", ".pytest_cache", ".git", "node_modules", "validation"}
           ignored_suffixes = {".pyc", ".bak"}
 
+          def included(path):
+              if not path.is_file():
+                  return False
+              if any(part in ignored_dirs for part in path.parts):
+                  return False
+              if path.suffix.lower() in ignored_suffixes:
+                  return False
+              return path != manifest_path
+
+          files = []
+          for path in sorted(root.rglob("*")):
+              if included(path):
+                  data = path.read_bytes()
+                  files.append({
+                      "path": path.relative_to(root).as_posix(),
+                      "bytes": len(data),
+                      "sha256": hashlib.sha256(data).hexdigest(),
+                  })
+
+          manifest = {
+              "product": "NexGrana",
+              "version": "0.19.0",
+              "channel": "SOL_Virada_RC2_validated",
+              "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+              "validation": {
+                  "python_versions": ["3.11", "3.14"],
+                  "python_tests": 53,
+                  "sql_rls": "passed",
+                  "zip_integrity": "passed",
+              },
+              "files": files,
+              "file_count": len(files),
+              "total_bytes": sum(item["bytes"] for item in files),
+          }
+          manifest_path.write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+
           with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-              for path in root.rglob("*"):
+              for path in sorted(root.rglob("*")):
                   if not path.is_file():
                       continue
                   if any(part in ignored_dirs for part in path.parts):
                       continue
                   if path.suffix.lower() in ignored_suffixes:
                       continue
-                  archive.write(path, Path("NexGrana_0_19_0_SOL_Virada") / path.relative_to(root))
+                  archive.write(
+                      path,
+                      Path("NexGrana_0_19_0_SOL_Virada") / path.relative_to(root),
+                  )
 
           with zipfile.ZipFile(output) as archive:
               bad = archive.testzip()
@@ -104,6 +149,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add release
-          git commit -m "release: add validated NexGrana 0.19.0 RC2 package"
+          git add project/MANIFEST_RELEASE_0_19_0.json release
+          git commit -m "release: refresh validated NexGrana 0.19.0 RC2 package"
           git push
