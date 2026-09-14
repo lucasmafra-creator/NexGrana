@@ -1,0 +1,6 @@
+flet==0.86.5
+flet-charts==0.86.5
+flet-camera==0.86.5
+flet-secure-storage==0.86.5
+supabase==2.31.0
+cryptography==50.0.0

@@ -1,0 +1,55 @@
+versão/manifesto Nex: OK
+compileall: OK
++ /opt/pyvenv/bin/python -m unittest tests.test_finance tests.test_services tests.test_nex_engine tests.test_product_019 -v
+test_analysis_summary_uses_safe_margin (tests.test_finance.FinanceTests.test_analysis_summary_uses_safe_margin) ... ok
+test_auto_future (tests.test_finance.FinanceTests.test_auto_future) ... ok
+test_automatic (tests.test_finance.FinanceTests.test_automatic) ... ok
+test_cancelled (tests.test_finance.FinanceTests.test_cancelled) ... ok
+test_dates (tests.test_finance.FinanceTests.test_dates) ... ok
+test_duplicate_ids (tests.test_finance.FinanceTests.test_duplicate_ids) ... ok
+test_future_does_not_debit (tests.test_finance.FinanceTests.test_future_does_not_debit) ... ok
+test_goals (tests.test_finance.FinanceTests.test_goals) ... ok
+test_installments_are_distinct (tests.test_finance.FinanceTests.test_installments_are_distinct) ... ok
+test_invalid_money (tests.test_finance.FinanceTests.test_invalid_money) ... ok
+test_invalid_share_does_not_change_family (tests.test_finance.FinanceTests.test_invalid_share_does_not_change_family) ... ok
+test_manual_payment (tests.test_finance.FinanceTests.test_manual_payment) ... ok
+test_no_margin_no_purchase (tests.test_finance.FinanceTests.test_no_margin_no_purchase) ... ok
+test_other_goals (tests.test_finance.FinanceTests.test_other_goals) ... ok
+test_overdue_is_not_paid (tests.test_finance.FinanceTests.test_overdue_is_not_paid) ... ok
+test_paid_later_month (tests.test_finance.FinanceTests.test_paid_later_month) ... ok
+test_paused_goal_does_not_commit_margin (tests.test_finance.FinanceTests.test_paused_goal_does_not_commit_margin) ... ok
+test_price_limit_is_full_price (tests.test_finance.FinanceTests.test_price_limit_is_full_price) ... ok
+test_receipt_future (tests.test_finance.FinanceTests.test_receipt_future) ... ok
+test_receipt_unknown (tests.test_finance.FinanceTests.test_receipt_unknown) ... ok
+test_reserve (tests.test_finance.FinanceTests.test_reserve) ... ok
+test_rollover (tests.test_finance.FinanceTests.test_rollover) ... ok
+test_rounding_shares (tests.test_finance.FinanceTests.test_rounding_shares) ... ok
+test_saved_goal_not_reserved_twice (tests.test_finance.FinanceTests.test_saved_goal_not_reserved_twice) ... ok
+test_shared_once (tests.test_finance.FinanceTests.test_shared_once) ... ok
+test_backup_round_trip (tests.test_services.ServiceTests.test_backup_round_trip) ... ok
+test_breakpoints (tests.test_services.ServiceTests.test_breakpoints) ... ok
+test_clear (tests.test_services.ServiceTests.test_clear) ... ok
+test_encryption (tests.test_services.ServiceTests.test_encryption) ... ok
+test_offers (tests.test_services.ServiceTests.test_offers) ... ok
+test_queue_backoff_and_manual_retry (tests.test_services.ServiceTests.test_queue_backoff_and_manual_retry) ... ok
+test_queue_cancel_conflict (tests.test_services.ServiceTests.test_queue_cancel_conflict) ... ok
+test_queue_conflict (tests.test_services.ServiceTests.test_queue_conflict) ... ok
+test_queue_idempotent (tests.test_services.ServiceTests.test_queue_idempotent) ... ok
+test_queue_retry (tests.test_services.ServiceTests.test_queue_retry) ... ok
+test_tampering (tests.test_services.ServiceTests.test_tampering) ... ok
+test_acquisition_uses_specific_entity_and_budget (tests.test_nex_engine.NexEngineTests.test_acquisition_uses_specific_entity_and_budget) ... ok
+test_goal_simulation_has_numeric_scenarios (tests.test_nex_engine.NexEngineTests.test_goal_simulation_has_numeric_scenarios) ... ok
+test_household_context_guard_does_not_invent (tests.test_nex_engine.NexEngineTests.test_household_context_guard_does_not_invent) ... nex_failed kind=ValueError
+ok
+test_analytics_is_off_by_default_and_rejects_financial_payload (tests.test_product_019.Product019Tests.test_analytics_is_off_by_default_and_rejects_financial_payload) ... ok
+test_journey_has_ten_steps (tests.test_product_019.Product019Tests.test_journey_has_ten_steps) ... ok
+test_nex_quick_actions_are_deterministic (tests.test_product_019.Product019Tests.test_nex_quick_actions_are_deterministic) ... ok
+test_offer_ranking_is_independent_from_commission (tests.test_product_019.Product019Tests.test_offer_ranking_is_independent_from_commission) ... ok
+test_performance_monitor_summary (tests.test_product_019.Product019Tests.test_performance_monitor_summary) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.021s
+
+OK
+Nex HD SHA256: 4fc4e9996f571e75279936030acdb9d51ebc9d0626b1352b50fe461f09563796
+VALIDAÇÃO CONCLUÍDA

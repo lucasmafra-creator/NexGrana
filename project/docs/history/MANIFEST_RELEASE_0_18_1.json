@@ -1,0 +1,950 @@
+{
+  "release": "0.18.1-SOL-RC2-ANDROID-NEX",
+  "files": [
+    {
+      "path": "ATUALIZACAO_0_18_1_SOL.md",
+      "sha256": "59977d399284b7cfce145c8465c850ddb1e1cb75d4c62005c2733fb8c3b8df29",
+      "size": 3449
+    },
+    {
+      "path": "COMANDOS_0_18_1_WINDOWS_ANDROID.txt",
+      "sha256": "34f06be090455778dbba7e39d67df0f778b110dc837e6d5efe4b989584e8edd8",
+      "size": 691
+    },
+    {
+      "path": "HOTFIX_ANDROID_NEX_RC2.md",
+      "sha256": "caa58c7a729ad3eb863909fbb2429d905481b71147624a68360f2387b674cb07",
+      "size": 927
+    },
+    {
+      "path": "LEIA_PRIMEIRO_0_18_1_SOL.txt",
+      "sha256": "aea91580186f62d6071dbfe81d3f32ffba65e84cd2cfe06acebbc5a13c1a0d1e",
+      "size": 563
+    },
+    {
+      "path": "MATRIZ_REQUISITOS_0_18_1_SOL.md",
+      "sha256": "ba16f002514fd351d5c62e0cb4a96ed0d312ee013d13f4ceffa283a58b2c92b7",
+      "size": 2452
+    },
+    {
+      "path": "MIGRATION_0_18.sql",
+      "sha256": "595c0c8c7155a3733cde0b56fa6f1e72392b55f6a37fb7ce6c818393c349c5d6",
+      "size": 12541
+    },
+    {
+      "path": "MIGRATION_0_18_1.sql",
+      "sha256": "7a197373eb4c91bcc43ceea6492d7976728a683a4e44d32acabb7eae48e5f18d",
+      "size": 4596
+    },
+    {
+      "path": "MONETIZACAO_E_PRIVACIDADE.md",
+      "sha256": "55a8cfc9e3c469ae3b42a0b7986b1f3dd64a541d1b695bef3d9b7a10aadaf10f",
+      "size": 2114
+    },
+    {
+      "path": "NEX_CHARACTER_BIBLE.md",
+      "sha256": "b1c08d9fe98a9241519ea2d729d217e86c4ef55e5570d5a2e1f7bd80eb0601e5",
+      "size": 1320
+    },
+    {
+      "path": "NEX_PACK_INTEGRADO.md",
+      "sha256": "4ce3c8971443a8c6ab8049a1a0dea57a7bc2aeea0e4a45a7f670f570a4540e59",
+      "size": 2042
+    },
+    {
+      "path": "PROMPT_MESTRE_GPT6_ASTRA.md",
+      "sha256": "b6649d36ce29000f535af6553a5514948b1a012cb94ffa749b8413fefe23335c",
+      "size": 19630
+    },
+    {
+      "path": "README.md",
+      "sha256": "7f5b813898e733181964d126a208334c26a7285b2b0fb9f22020bf37ce249675",
+      "size": 2858
+    },
+    {
+      "path": "README_SETUP_CLOUD.md",
+      "sha256": "a003d2ecbed4a11f7b80b4b76d0af9752813bc935a2bf4dbc44cea1333f2eaca",
+      "size": 6452
+    },
+    {
+      "path": "REQUISITOS_AUTORIZADOS.md",
+      "sha256": "b6649d36ce29000f535af6553a5514948b1a012cb94ffa749b8413fefe23335c",
+      "size": 19630
+    },
+    {
+      "path": "SEGURANCA_LGPD_0_18_1_SOL.md",
+      "sha256": "ee1a676586bbe041104f458b501560c6940b1b5a10620ff8c2675be7235f198a",
+      "size": 2427
+    },
+    {
+      "path": "SQL_ATOMIC_0_18.sql",
+      "sha256": "23ec371d74671214622a3ed21d2d8603b7c66c154a04a726e05d81ff5c80a803",
+      "size": 7717
+    },
+    {
+      "path": "SUPABASE_PATCH_V2_RC.sql",
+      "sha256": "54eee4f7ce789c5a6c7f298ede3b7e7d9f83532bd98f902be3d961e456a4a3b2",
+      "size": 8665
+    },
+    {
+      "path": "SUPABASE_SECURITY_0_17.sql",
+      "sha256": "118bee641f4de4562db11300f4dbed50d25936c741a2a6d19a6d7b7967ae3de2",
+      "size": 5948
+    },
+    {
+      "path": "VALIDACAO_0_18_1_SOL.md",
+      "sha256": "4319116cd2b5ea06385e6ea9f54a045c6f72964662ea2989f3d061ddbf60a048",
+      "size": 1778
+    },
+    {
+      "path": "build_multiplataforma.py",
+      "sha256": "1bfa980efac17b74705c05b4ff21c7cd73bae39cd587e654e5e8829c6916e907",
+      "size": 3827
+    },
+    {
+      "path": "docs/history/AUDITORIA_TECNICA_0_17.md",
+      "sha256": "4c9549d5bf621de9db0f3ca67e8c788da4d3c0058bc7285ba3403fbcf2c19975",
+      "size": 4343
+    },
+    {
+      "path": "docs/history/CHECKPOINT_0_18_0_CONTINUIDADE_SOL.md",
+      "sha256": "77d28a1523b09427077b1f8fb826ca24e78f2196f1638b2c16c541c5675b446f",
+      "size": 11886
+    },
+    {
+      "path": "package.json",
+      "sha256": "31192649cb900965f76ac9977a530615e15a696239cfbcbfd83bc9b02faec2fa",
+      "size": 188
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "95e33bfe2b6ceeeaa2a510ffe5b4b28f16c9a268be24965241637b4bdd387d13",
+      "size": 983
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "b96ffc4cbebce121b9761e3f4961765593f17130164f5a32183685e5fd41669d",
+      "size": 125
+    },
+    {
+      "path": "src/__pycache__/affiliate_config.cpython-313.pyc",
+      "sha256": "682cc504858fe576d50cf03e679262a7d3ad91f8deb9417754d4371b318d3b4a",
+      "size": 272
+    },
+    {
+      "path": "src/__pycache__/app.cpython-313.pyc",
+      "sha256": "6bd492e238615dab3069edc2376c0a9b4e22c810e3e288c41af660d43d8e8fd0",
+      "size": 6251
+    },
+    {
+      "path": "src/__pycache__/cloud.cpython-313.pyc",
+      "sha256": "5dbbcbecaafa7de3ddbcbbf2ac795c1f1e2dbb2eadc440a937d113314bef3950",
+      "size": 52793
+    },
+    {
+      "path": "src/__pycache__/main.cpython-313.pyc",
+      "sha256": "9c3353ee8dc78b9d26cc14eb722ead6f5a54d9c84e676ea7e5d728905b2fbdb6",
+      "size": 42633
+    },
+    {
+      "path": "src/__pycache__/nex_controller.cpython-313.pyc",
+      "sha256": "b059aa08a9771ae3a961b4dacecd5c32cb367e6e0cb05631e26605cae53e98d2",
+      "size": 3950
+    },
+    {
+      "path": "src/affiliate_config.py",
+      "sha256": "1df147a0ebe54b9c114b270402001d2f02d86ca2a3eb54bb7a5a83243571d2a5",
+      "size": 103
+    },
+    {
+      "path": "src/app.py",
+      "sha256": "35c5bec2794a42c29194a97b69e56fd6e8a0399311b9caa51c01e053118ec532",
+      "size": 3369
+    },
+    {
+      "path": "src/assets/icon.png",
+      "sha256": "78f99e2ff7b7c0b294edda9c4f793482a87a6ead276f4014c424f02e5fc2491b",
+      "size": 4565
+    },
+    {
+      "path": "src/assets/nex/actions/acenando.png",
+      "sha256": "b8f3b6568f6793d06e315865fa65c8ddc80f46c88b4d29cb358ad97dab50aebd",
+      "size": 31157
+    },
+    {
+      "path": "src/assets/nex/actions/cafe.png",
+      "sha256": "878dadb485806af15e3fc11884282a5402cf7985902387bd6d56bb7561796e14",
+      "size": 31313
+    },
+    {
+      "path": "src/assets/nex/actions/coracao.png",
+      "sha256": "5303dc75f3840d3ad2eafde35169a395f370c3260d3050ecdccda79438154c11",
+      "size": 30602
+    },
+    {
+      "path": "src/assets/nex/actions/dormindo.png",
+      "sha256": "a162881c483a215f3568338fb6a4f748f89385a7cbc851876169c8118f881f12",
+      "size": 30840
+    },
+    {
+      "path": "src/assets/nex/actions/lendo.png",
+      "sha256": "c5db84cef7cb9c355ed002e984c66513bde75874035dd799025abe07c2a96eb7",
+      "size": 30588
+    },
+    {
+      "path": "src/assets/nex/actions/like.png",
+      "sha256": "89635ef0998cbf01920753707c90ca6bcd5df668ea381bc6cdaea87575d2ee23",
+      "size": 30302
+    },
+    {
+      "path": "src/assets/nex/actions/no_galho.png",
+      "sha256": "9bec19e0dada787950f86c406332ed611a39dcbfe9208f51c3167da2e7dc3db5",
+      "size": 33161
+    },
+    {
+      "path": "src/assets/nex/actions/notebook.png",
+      "sha256": "2dd7ee2a14fd63c2939e6782b355b59722c2eaec3f349fc6aa108bcfeb010d6b",
+      "size": 31624
+    },
+    {
+      "path": "src/assets/nex/actions/pensando.png",
+      "sha256": "f3dcf076734931abbe694de12313258cd2eb04b198ff43724d0ca4ca1b930420",
+      "size": 31235
+    },
+    {
+      "path": "src/assets/nex/actions/saudando.png",
+      "sha256": "4eacbbd70d2eee9cae00f36f0c2bc099a49fe97e368344d627f38d1fb759bbfb",
+      "size": 31495
+    },
+    {
+      "path": "src/assets/nex/actions/tablet.png",
+      "sha256": "3686a132c7fe1804f8887a8df28270fd0734f8e6ba9794209edeb96e05db7150",
+      "size": 31531
+    },
+    {
+      "path": "src/assets/nex/animations/blink.png",
+      "sha256": "6db0584f8bf9d8712a41149600d2c55a7856791611e7de60db55b3e117e5e146",
+      "size": 27632
+    },
+    {
+      "path": "src/assets/nex/animations/branch_jump_loop.gif",
+      "sha256": "1b6fa9da640bbfd4d0213d0fbd5b73b8bbbed189cc76606800552aa51feccbe5",
+      "size": 39220
+    },
+    {
+      "path": "src/assets/nex/animations/celebrate.png",
+      "sha256": "5678cada0e94be59648d8fdf3674aad026f2c3da11e082a48e7def7ca73c3a16",
+      "size": 28639
+    },
+    {
+      "path": "src/assets/nex/animations/celebrate_loop.gif",
+      "sha256": "7b8fc2384a43b880bdb4e08033a558e5cb795c81f2053fbd01124bc020bda9c5",
+      "size": 24259
+    },
+    {
+      "path": "src/assets/nex/animations/fly.png",
+      "sha256": "dbc5c949b8e50e2312667276b63f2a4a372fa046916bda258957874b6e1d6349",
+      "size": 27889
+    },
+    {
+      "path": "src/assets/nex/animations/idle.png",
+      "sha256": "7f752796b06f48253d2dda0951a1eea79ec755566b44e58e530eb8e0697df795",
+      "size": 29328
+    },
+    {
+      "path": "src/assets/nex/animations/idle_loop.gif",
+      "sha256": "4af724be043ab4127127952e9e0b91c5abf5783d557dfd78068358dd25cc823f",
+      "size": 23312
+    },
+    {
+      "path": "src/assets/nex/animations/jump.png",
+      "sha256": "dffb3426d8077893ec2135740512d98dcfe9b8c79bbfd6dc1267839bfaae9d98",
+      "size": 29890
+    },
+    {
+      "path": "src/assets/nex/animations/land.png",
+      "sha256": "2476b4e99114eaeb945a66113067c4996f5bd5b66f7dac2fb26171bba8ed5ba1",
+      "size": 26896
+    },
+    {
+      "path": "src/assets/nex/animations/piggy_bank.png",
+      "sha256": "e48f879710f3fb05a36f0f70d107d4fc74ef16ff4a1a7c90a5a2cc5bca6e302e",
+      "size": 28125
+    },
+    {
+      "path": "src/assets/nex/animations/sleep.png",
+      "sha256": "ed047b666027c7ebdbac1a3d4fb2d6f84d0af3fd975a005e63d177c4b4c64cb4",
+      "size": 30007
+    },
+    {
+      "path": "src/assets/nex/animations/sleep_loop.gif",
+      "sha256": "7b2eb68feee44d03e22e435034d2c1f7c8b3fd4919acf4f58a1abc4d1569a95f",
+      "size": 22038
+    },
+    {
+      "path": "src/assets/nex/animations/throw_coins.png",
+      "sha256": "f40e017bc7fd1de62b914af7e9b7d7ccb927ba9a552e9bd3f27730e67ca8abff",
+      "size": 28274
+    },
+    {
+      "path": "src/assets/nex/animations/worry.png",
+      "sha256": "e7ea539e48c66c149c1a1a2a685cfff6c8a0f3b5ced615756107fc4c4276cb60",
+      "size": 26993
+    },
+    {
+      "path": "src/assets/nex/clean/branch.png",
+      "sha256": "af4b6776db3623f6578d01f2835199e7eb4bb2e0835a0903c73a00a75764875c",
+      "size": 82421
+    },
+    {
+      "path": "src/assets/nex/clean/celebrate.gif",
+      "sha256": "0f185624de226c7f9ed763123c95cce44a8b0be1f439f7f7464817e67446bd6e",
+      "size": 57087
+    },
+    {
+      "path": "src/assets/nex/clean/coins.png",
+      "sha256": "51d6ec365079584ace35b627370b8934ed5a6f7253a6f370d155a9637357e320",
+      "size": 100082
+    },
+    {
+      "path": "src/assets/nex/clean/idle.gif",
+      "sha256": "969ea63506ab384ac88fe14c005ae4f07ee51ded77e759f3fd52dbe7cac6b271",
+      "size": 77997
+    },
+    {
+      "path": "src/assets/nex/clean/jump.gif",
+      "sha256": "7a1c8e3be39c1998430aec038deda3f21acca6a4de1b794b5e1df07c59fec211",
+      "size": 86404
+    },
+    {
+      "path": "src/assets/nex/clean/normal.png",
+      "sha256": "c068cbf626adfd7c49fc01f0f192ef16074a46fc220ab422b260a68873daec04",
+      "size": 104998
+    },
+    {
+      "path": "src/assets/nex/clean/sleep.gif",
+      "sha256": "3f2d5c8744755d04d6ebf1b2703c114d2eba9aea23d478892eada58daa6465b8",
+      "size": 41018
+    },
+    {
+      "path": "src/assets/nex/clean/thinking.png",
+      "sha256": "dac91a19c73b2e2faf621e989b6af06ee3ce4531a8325d0825f56716e1483fc0",
+      "size": 87719
+    },
+    {
+      "path": "src/assets/nex/clean/wave.png",
+      "sha256": "4062d97ccbc21117fd41dc19b51347afd8414dfd4914952232003d70f603b921",
+      "size": 100001
+    },
+    {
+      "path": "src/assets/nex/clean/wink.png",
+      "sha256": "35ba02ef1a08a35a5b672c43bd3b9beb36b20911c3013d0096d64281e5d5d6c8",
+      "size": 99390
+    },
+    {
+      "path": "src/assets/nex/clean/worry.png",
+      "sha256": "fe6ddd9f12e7e2e845d70a838a9d4d12a6cb46f76dc23fa27f2984da795b996c",
+      "size": 86986
+    },
+    {
+      "path": "src/assets/nex/clean2/branch.png",
+      "sha256": "4ce3ed9283ea49d29e524e3704653e671ad2a493feb58fbf185af53d9042d449",
+      "size": 85003
+    },
+    {
+      "path": "src/assets/nex/clean2/celebrate.gif",
+      "sha256": "a2996845884b784bac002d1bedbcf2920933ddd2141246b34f878c3a9b587073",
+      "size": 61157
+    },
+    {
+      "path": "src/assets/nex/clean2/coins.png",
+      "sha256": "713a07daedbf0b3602328fbad86814d246b20e340c0b8742bc3360bd984ad16b",
+      "size": 79530
+    },
+    {
+      "path": "src/assets/nex/clean2/idle.gif",
+      "sha256": "8d6b3a2173a653167c6eb5122b9a45cbee60af5cbcf98fb00949c6fabf495e30",
+      "size": 58158
+    },
+    {
+      "path": "src/assets/nex/clean2/jump.gif",
+      "sha256": "ffab036fcce205b83e40131c175e3545748dadd6b7b2ee8593c2947efc487693",
+      "size": 96497
+    },
+    {
+      "path": "src/assets/nex/clean2/normal.png",
+      "sha256": "91afead6e80ecea7855b31e30417600f751dcaf5454901bc6a6090ce1b10b335",
+      "size": 99705
+    },
+    {
+      "path": "src/assets/nex/clean2/sleep.gif",
+      "sha256": "7dc8ac6317931db66bbbda3045697fa58008859e73e92144a8654d0d0d034f26",
+      "size": 49058
+    },
+    {
+      "path": "src/assets/nex/clean2/thinking.png",
+      "sha256": "ad11b16d08fe4a8d914c890ea0cca3b479c9594e5d98c0d461a2aee4803b0917",
+      "size": 77803
+    },
+    {
+      "path": "src/assets/nex/clean2/wave.png",
+      "sha256": "233b0ae6e42ef24c641347a1c0890d7bd795f4cb3609c4083171fd625bec77a5",
+      "size": 77679
+    },
+    {
+      "path": "src/assets/nex/clean2/wink.png",
+      "sha256": "e82856da4e633c7c2f3c448ee795b5aa3266d993e492c8efb2a94c04d57e6631",
+      "size": 83142
+    },
+    {
+      "path": "src/assets/nex/clean2/worry.png",
+      "sha256": "c37d72edec696e6b5484a47cbc8a350a94782d9d91e69d0b43cc2fb016f05d25",
+      "size": 73042
+    },
+    {
+      "path": "src/assets/nex/display/branch.png",
+      "sha256": "90030b39d2d1dab53f480f37e7d833124a26c33948660d39c055f451f77e5977",
+      "size": 30189
+    },
+    {
+      "path": "src/assets/nex/display/celebrate.gif",
+      "sha256": "96e0b37c0f5950e866b9993a5806b5999dda66bf71359c006bb0c412b0a5b14c",
+      "size": 20110
+    },
+    {
+      "path": "src/assets/nex/display/coins.png",
+      "sha256": "970013c13175a4c77283dae9da33b3ae0cdeefff75f2fdb9f3fcc4692c4fbfb0",
+      "size": 25180
+    },
+    {
+      "path": "src/assets/nex/display/idle.gif",
+      "sha256": "5a0f054b505872f42e4b4417636ccc36561c0f1400ed5dd0431ecfd4ac4b4746",
+      "size": 19138
+    },
+    {
+      "path": "src/assets/nex/display/jump.gif",
+      "sha256": "98b42b61548fe7ecb953d883c3451f1cea673998059e4d7d575ec0c12a8ff0a2",
+      "size": 32289
+    },
+    {
+      "path": "src/assets/nex/display/normal.png",
+      "sha256": "d90f7d8add440be3f9e461bf07f9aab114e556f876c7218fa1e3844c915de0f8",
+      "size": 19462
+    },
+    {
+      "path": "src/assets/nex/display/sleep.gif",
+      "sha256": "f64e52dc36938bc3e207929c6ea27fd978307b1fad45f29724138b94490198df",
+      "size": 17879
+    },
+    {
+      "path": "src/assets/nex/display/thinking.png",
+      "sha256": "4be710c07e75c6ebbd5e6447ec4e7431d791ebc7eb5eaf37de07a5d6011203f4",
+      "size": 28197
+    },
+    {
+      "path": "src/assets/nex/display/wave.png",
+      "sha256": "740acd9260e348f71382f6ca7a1c98b7a92c6ab4c7e00f24a13bf35e58d8bdca",
+      "size": 28121
+    },
+    {
+      "path": "src/assets/nex/display/wink.png",
+      "sha256": "f855367576d67d04ed6f58dfa2888866a94639b813c047f3a269913f87cefb9c",
+      "size": 17303
+    },
+    {
+      "path": "src/assets/nex/display/worry.png",
+      "sha256": "bb0f3b5c914232e838078e6c3429ef5a68a2b91ec0119e937fd60a5f5ce41699",
+      "size": 23972
+    },
+    {
+      "path": "src/assets/nex/elements/cafe.png",
+      "sha256": "da7dff5a6876a83c209df251f0967045e849cff48fdbec9a8645801f4c36d016",
+      "size": 8866
+    },
+    {
+      "path": "src/assets/nex/elements/calendario.png",
+      "sha256": "9f4052986b29daeaaa3305ff6c9d8234da5a3e563d936e80dda3e28a9916e79c",
+      "size": 8746
+    },
+    {
+      "path": "src/assets/nex/elements/checkpoint.png",
+      "sha256": "e29ddda919783a579232667393b46f59d948bcbabc9a52d5811bf99120590e85",
+      "size": 8455
+    },
+    {
+      "path": "src/assets/nex/elements/grafico.png",
+      "sha256": "51868c617908e97f05d8ce0a3c19b2bd3780acc41879a833c0233c39e47a87a4",
+      "size": 8653
+    },
+    {
+      "path": "src/assets/nex/elements/lampada.png",
+      "sha256": "39258f09bc45eb4027e93823ccaef5ae292418b9ebaee870ae448ca4575df92a",
+      "size": 8897
+    },
+    {
+      "path": "src/assets/nex/elements/livro.png",
+      "sha256": "91f6cfb047f120179e8834bb4b8310795dace8470d6639e3c8e7ad3d7e8b5b93",
+      "size": 9138
+    },
+    {
+      "path": "src/assets/nex/elements/moeda.png",
+      "sha256": "bbeed2af2c76c33ef7fec35b9f2b005ed9f44303a09d1aff412c46833bd58ada",
+      "size": 8972
+    },
+    {
+      "path": "src/assets/nex/elements/planta.png",
+      "sha256": "b9f2c2b681a144b3eec258609f419a30f1419c2d658c46261725d1d0000a5d23",
+      "size": 9054
+    },
+    {
+      "path": "src/assets/nex/elements/porquinho.png",
+      "sha256": "7216b99973d237e392bdc61c5e31fc737e60b5ee4295495944dc68d5aa1d10a4",
+      "size": 9174
+    },
+    {
+      "path": "src/assets/nex/elements/trofeu.png",
+      "sha256": "0b1ff04a15245365f4976083d67f90c55b54ff1658d118b3d401fc263f3d9185",
+      "size": 9207
+    },
+    {
+      "path": "src/assets/nex/expressions/aplaudindo.png",
+      "sha256": "21c79900331f1f7f48a1f936802b91b39c1ff8eea165b487e358a046adf24754",
+      "size": 20207
+    },
+    {
+      "path": "src/assets/nex/expressions/bravo.png",
+      "sha256": "6e6369fa56bd86fb3314935602c266b064fa003aa501660269a76959c20c812e",
+      "size": 20312
+    },
+    {
+      "path": "src/assets/nex/expressions/confiante.png",
+      "sha256": "11df73ead15d9dae7197f97e591346a1dc3215a48ab737638e880dc22a9a2c59",
+      "size": 20322
+    },
+    {
+      "path": "src/assets/nex/expressions/feliz.png",
+      "sha256": "4687e59c23afd8a33e6ad44c7c63b3db563aa56f42585d686a1c71821c5aecc4",
+      "size": 20967
+    },
+    {
+      "path": "src/assets/nex/expressions/normal.png",
+      "sha256": "16c4b090cb3440e5b12819d586d1172d05d4a91139be06974f8711ec0574877c",
+      "size": 22277
+    },
+    {
+      "path": "src/assets/nex/expressions/pensativo.png",
+      "sha256": "ba18601bdeb3541b0e4713a871d3a3d84b7925b49245d202eb84f6399c64ace9",
+      "size": 20304
+    },
+    {
+      "path": "src/assets/nex/expressions/piscando.png",
+      "sha256": "1361aebf027dd7ff089c066a532f7117b028b50b4dc6bfa28eb333b50197859a",
+      "size": 20199
+    },
+    {
+      "path": "src/assets/nex/expressions/rindo.png",
+      "sha256": "6c679a842732e3435b53aa1ecc60c312039d97e98397a809afc0fb3519c19c18",
+      "size": 19817
+    },
+    {
+      "path": "src/assets/nex/expressions/surpreso.png",
+      "sha256": "18c0730310a70b2d2ed9eaa8c2686005d9fa08ff81706532bce6578a4c85a802",
+      "size": 20323
+    },
+    {
+      "path": "src/assets/nex/expressions/triste.png",
+      "sha256": "fbcc6fb0a3e26448ce4fc2c93638f19d4331662dec4adca95baca9d8f3903955",
+      "size": 20180
+    },
+    {
+      "path": "src/assets/nex/manifest.json",
+      "sha256": "dc9bb0c5db30a117ff2222c8be47029cb60d58c156f5ef08b233b49ef0e8ad31",
+      "size": 630
+    },
+    {
+      "path": "src/assets/nex/nex_hd.png",
+      "sha256": "4fc4e9996f571e75279936030acdb9d51ebc9d0626b1352b50fe461f09563796",
+      "size": 1738375
+    },
+    {
+      "path": "src/assets/nex/skins/aventureiro.png",
+      "sha256": "1b4c33b84c97a0de46812a8d0de5f7497e06ba4f0e86e8ce6f259145751eb602",
+      "size": 21937
+    },
+    {
+      "path": "src/assets/nex/skins/estudante.png",
+      "sha256": "8e799fb16393d485abf109cd1ae2a48abb86416eb549cf73854d7f3769367c7b",
+      "size": 23103
+    },
+    {
+      "path": "src/assets/nex/skins/executivo.png",
+      "sha256": "ace9ba127172e269cb26998a3fd2692017eb3817c506c8ce582ff5cc508d6218",
+      "size": 22283
+    },
+    {
+      "path": "src/assets/nex/skins/gamer.png",
+      "sha256": "af70d7c174c77629002fff6e757371f9a61550bc66e471f2cc1bfe8e09c412a4",
+      "size": 22377
+    },
+    {
+      "path": "src/assets/nex/skins/padrao.png",
+      "sha256": "3ad2385deda13215dc199f5ef53cb9708e25e976e7039b1b7b3239022046c6e0",
+      "size": 24025
+    },
+    {
+      "path": "src/assets/nex/skins/rei_da_grana.png",
+      "sha256": "919100b11785ce4e9031822ba89ba49e3772f4254dd2c517967b62a388eaf0a3",
+      "size": 48905
+    },
+    {
+      "path": "src/assets/nex/stickers/bora.png",
+      "sha256": "ccb51ad118b09f03d85557f025ede6db665110cfb283aee2b5b179cbc3fa509e",
+      "size": 8678
+    },
+    {
+      "path": "src/assets/nex/stickers/disciplina.png",
+      "sha256": "2bfac7c86ccc958bdfb7c19b661e4951b52ab6e1c7fb3f7fddb33827740a363b",
+      "size": 8389
+    },
+    {
+      "path": "src/assets/nex/stickers/economiza.png",
+      "sha256": "068eff5881d490c5473dc299291b78c79a92aa3d8db1c7bfeb1fe4216bfe9a85",
+      "size": 7698
+    },
+    {
+      "path": "src/assets/nex/stickers/excelente.png",
+      "sha256": "e599ed5c2275cfdabecc330c0036e3458d0208f15fc28319ed88547438ac4e34",
+      "size": 8950
+    },
+    {
+      "path": "src/assets/nex/stickers/foco.png",
+      "sha256": "dbdd6af19415f7202213567dcf95cffa81d48514b87333390d9b3a2c6aed3c8b",
+      "size": 8189
+    },
+    {
+      "path": "src/assets/nex/stickers/gratidao.png",
+      "sha256": "86ab98d0dea7238373919922e039a3309ae69bf8151cab6040c2436ecb252077",
+      "size": 8151
+    },
+    {
+      "path": "src/assets/nex/stickers/kkk.png",
+      "sha256": "99049d3c0d0c53927bc4788fb338799540d1dbd03efdecdf51be2868021c4eeb",
+      "size": 8632
+    },
+    {
+      "path": "src/assets/nex/stickers/meta.png",
+      "sha256": "a98b45188bb7b2bdd8503a60c7067cd5bff30653af54ca700bd1c41cc7c2894a",
+      "size": 7658
+    },
+    {
+      "path": "src/assets/nex/stickers/oi.png",
+      "sha256": "7b616a888047bf81b6704d4c23a87cf70da46467b3d17057bea456fbf284cae9",
+      "size": 8763
+    },
+    {
+      "path": "src/assets/nex/stickers/ops.png",
+      "sha256": "a7a6d0f77ae3bb720a9384876fb5ce54d656e6f3fce7bb5acd3cd38a93283b23",
+      "size": 8580
+    },
+    {
+      "path": "src/assets/nex/stickers/parabens.png",
+      "sha256": "825d38aed56c71170a88a80454a96ee237683f089e07c38fb2382370e1b18c65",
+      "size": 7578
+    },
+    {
+      "path": "src/assets/nex/stickers/top.png",
+      "sha256": "c4eae2ebfa2f78ca0ad05418b6b1670c9a4ddf2b128bfb5d75f2b41a6c5f27ce",
+      "size": 8395
+    },
+    {
+      "path": "src/assets/nex_canonical.png",
+      "sha256": "7a428beccc1b857323fbec25e448ea2647c7d8efa878439b0e46ea4053a8b2be",
+      "size": 41369
+    },
+    {
+      "path": "src/cloud.py",
+      "sha256": "2573b31ee0ded6af3e052c60d7d4c7d73f05af3a2d34589a81ebd68a8a525e12",
+      "size": 33323
+    },
+    {
+      "path": "src/main.py",
+      "sha256": "0257acda6ca641267f3af9e88287dd0de7b265a2698f8e71c0c48a0eaf766e4b",
+      "size": 24011
+    },
+    {
+      "path": "src/nex_controller.py",
+      "sha256": "09d5634bcb0fbe3eb97885e57878ec2f24a48990038f462fa549dfb77a47eed2",
+      "size": 2298
+    },
+    {
+      "path": "src/screens/__init__.py",
+      "sha256": "1017289549d60071cb122d8dc155d90bb2a50e977b7424c7201fc5b83ff50545",
+      "size": 23
+    },
+    {
+      "path": "src/screens/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "819b1946c527a82345910ddf110df5cf7056076b0b0061a62df144041f879bb8",
+      "size": 196
+    },
+    {
+      "path": "src/screens/__pycache__/acquisitions.cpython-313.pyc",
+      "sha256": "1d5b27f173560f11dc76aabf523a2f5b0183785f2609d0cc45b1126c7d5022be",
+      "size": 25064
+    },
+    {
+      "path": "src/screens/__pycache__/analysis.cpython-313.pyc",
+      "sha256": "3cf922030465dc759acf52f641b2b09bb09587d8f724cb590c0e7f2ade04b06d",
+      "size": 22142
+    },
+    {
+      "path": "src/screens/__pycache__/auth.cpython-313.pyc",
+      "sha256": "886d50fa4b93cf0503b657d1357cc4ac049690c083df588d3395fb250da061ab",
+      "size": 25473
+    },
+    {
+      "path": "src/screens/__pycache__/extra_income.cpython-313.pyc",
+      "sha256": "ce609645e2a625edb4b75ee1b6041421d74ecc1d46b912aa8a641d941c36c254",
+      "size": 24616
+    },
+    {
+      "path": "src/screens/__pycache__/home.cpython-313.pyc",
+      "sha256": "ca9f7eb3bf15be1a05a7c577c44a8eb290acb4db079e3870f43065aea92cab88",
+      "size": 29787
+    },
+    {
+      "path": "src/screens/__pycache__/market.cpython-313.pyc",
+      "sha256": "db77c42e50937fd2e74d0df23b471af28eec6371c921dbd3066c2c8d320455dd",
+      "size": 50052
+    },
+    {
+      "path": "src/screens/__pycache__/movements.cpython-313.pyc",
+      "sha256": "2b7716f3a8b2c6e3b29be01342199af4afcca41d23138eeb0c524b5c767231bf",
+      "size": 35326
+    },
+    {
+      "path": "src/screens/__pycache__/nex.cpython-313.pyc",
+      "sha256": "c8de621e83061e06159d6132c58dc9a918150962219bb6ec96bc8b896432cf41",
+      "size": 66207
+    },
+    {
+      "path": "src/screens/__pycache__/planning.cpython-313.pyc",
+      "sha256": "d541059f046eee634bb0ff989172d1857d73203b17cda73d4b7868f801afed39",
+      "size": 28601
+    },
+    {
+      "path": "src/screens/__pycache__/settings.cpython-313.pyc",
+      "sha256": "2cb6ef93216cb52e0afd3b1975df1ce1714153ad88bb6cf0fbce42fcfbe443fc",
+      "size": 26100
+    },
+    {
+      "path": "src/screens/acquisitions.py",
+      "sha256": "7e553524eb9a2d54124360e81b4ffa46b700316e1d4c6192746c1141fb75fdcb",
+      "size": 12641
+    },
+    {
+      "path": "src/screens/analysis.py",
+      "sha256": "84fc2241a93738730c0453352e702b2c6775dfda5732809622669b96349412ff",
+      "size": 18527
+    },
+    {
+      "path": "src/screens/auth.py",
+      "sha256": "b49aa6952c5d9d32037679eb1a18dec537f23bfd18e9fddc101a2863793277cf",
+      "size": 20871
+    },
+    {
+      "path": "src/screens/extra_income.py",
+      "sha256": "89578ca80181f96cd5a51f392daa56dd7ebc2ec9c4aff18eeac49effd90ebfab",
+      "size": 20000
+    },
+    {
+      "path": "src/screens/home.py",
+      "sha256": "e37ea095fbfb417c0c38041aa95e864eaa558da3eb5bc6cb26149908d338e580",
+      "size": 17243
+    },
+    {
+      "path": "src/screens/market.py",
+      "sha256": "0881442c7c900511544ae6da76d625744f04d5016ff050dd2f6a9a3f554c1b00",
+      "size": 25551
+    },
+    {
+      "path": "src/screens/movements.py",
+      "sha256": "f59c8465c53f3aa28ff8fee5485a193d179f6049d27481475658d99a326022e9",
+      "size": 21670
+    },
+    {
+      "path": "src/screens/nex.py",
+      "sha256": "fe4db75e2004e2a939bd7a869e8dddab89eca7d0af7465d25a610281802f7a22",
+      "size": 45533
+    },
+    {
+      "path": "src/screens/planning.py",
+      "sha256": "e4da108eec92b506617b87f05d1915d4b2a232509c2307da53576bd336f49e3f",
+      "size": 13111
+    },
+    {
+      "path": "src/screens/settings.py",
+      "sha256": "4939d8d8cdae89c18b8962762965ec7fd22f19996d06dd27caae2fbd49a0f0a8",
+      "size": 16530
+    },
+    {
+      "path": "src/services/__init__.py",
+      "sha256": "22f432c3531a7640618c43930432539a07acedc9480185dbe0b1f4a6ec1a7d8f",
+      "size": 44
+    },
+    {
+      "path": "src/services/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "3ba400cdddf382a4422aeaa149d0daddd90897b46df4e74ec1975451f80e4c46",
+      "size": 222
+    },
+    {
+      "path": "src/services/__pycache__/affiliate.cpython-313.pyc",
+      "sha256": "d5e6642454174a1a8fb8a6758d83822d0d13f0a2a7a0861f3a969be7449a7fb6",
+      "size": 2020
+    },
+    {
+      "path": "src/services/__pycache__/finance_engine.cpython-313.pyc",
+      "sha256": "4415983e5ef052de204a71ba55ba5234f3fc42b43dd010643261b01b58a6242b",
+      "size": 20310
+    },
+    {
+      "path": "src/services/__pycache__/market.cpython-313.pyc",
+      "sha256": "d5c66f25ebad02bbe302c2ff441cc84a6fa9b66dfd6af1375c6b1f3dbe495b8b",
+      "size": 2124
+    },
+    {
+      "path": "src/services/__pycache__/nex_engine.cpython-313.pyc",
+      "sha256": "80b04408f3f08fed14c804eabdbb1ffdfdf9a28359af010dca3383b5cac23fba",
+      "size": 10851
+    },
+    {
+      "path": "src/services/__pycache__/privacy.cpython-313.pyc",
+      "sha256": "b85552147753570643b8f301813fbe38a58ed1e7a02241d62cd28af08a3f42e2",
+      "size": 8895
+    },
+    {
+      "path": "src/services/__pycache__/sync.cpython-313.pyc",
+      "sha256": "a6b15a99589bdf55fefbd7cd9ebf391e0a10116a9bbe167c4ee71ac3e1a0a317",
+      "size": 9117
+    },
+    {
+      "path": "src/services/__pycache__/transactions.cpython-313.pyc",
+      "sha256": "5e870f01255fa5c9453b9b92460354a3c25f7321bcb757e3716bdbe3afed2e25",
+      "size": 2623
+    },
+    {
+      "path": "src/services/affiliate.py",
+      "sha256": "a3fd4e15f126d9201704d2c2c64722b4a313fa6a40e6f3056a89494825deee76",
+      "size": 1033
+    },
+    {
+      "path": "src/services/finance_engine.py",
+      "sha256": "dceb401c7988c7bc54af58a9d2157b2e37b44ae6e3747320334f310291080013",
+      "size": 13541
+    },
+    {
+      "path": "src/services/market.py",
+      "sha256": "afdcd59b9cbeb7cf0d70db937b357891716d3f7e9874ea2d0b27cb08e66616b4",
+      "size": 1300
+    },
+    {
+      "path": "src/services/nex_engine.py",
+      "sha256": "16d8c4c13b6351b9ad04e759989b7a5885348daa66b114345a9b005f8b4dc9b3",
+      "size": 7119
+    },
+    {
+      "path": "src/services/privacy.py",
+      "sha256": "dc0f42d193dd678f190aac78f897e36ce5ff9315abbe4d340785ec139d28f6c6",
+      "size": 5472
+    },
+    {
+      "path": "src/services/sync.py",
+      "sha256": "35270b54a360eaa98a4f82c547b1b5d86d242c376cc3e3ee5912504938a36fcd",
+      "size": 4354
+    },
+    {
+      "path": "src/services/transactions.py",
+      "sha256": "c2278a99ae7df5b439e6e019ea58636d73d6b4f26861fda5dac8e267d79ede30",
+      "size": 1293
+    },
+    {
+      "path": "src/ui/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "src/ui/__pycache__/__init__.cpython-313.pyc",
+      "sha256": "9fba207395da39cfcd51bdd8e5a6fb1a57a6d6a359bd40ac062d294df094ccae",
+      "size": 161
+    },
+    {
+      "path": "src/ui/__pycache__/common.cpython-313.pyc",
+      "sha256": "8173c2499e951a041d826d565e871f44ac3e04cfcf758174c360aa0c072b0819",
+      "size": 14707
+    },
+    {
+      "path": "src/ui/__pycache__/responsive.cpython-313.pyc",
+      "sha256": "da6d7c778d53ef9355b16881b376c1ac60b919f72499339217b95e25e3759002",
+      "size": 783
+    },
+    {
+      "path": "src/ui/__pycache__/theme.cpython-313.pyc",
+      "sha256": "bbfddd85895cb24eea20e540cf487b9454036cc513a88a5be7a4e362e2689d04",
+      "size": 4318
+    },
+    {
+      "path": "src/ui/common.py",
+      "sha256": "612f0323bbc9784999924829fc0104d0a92c3c5f976ae7fef5cbe823fcde87df",
+      "size": 13956
+    },
+    {
+      "path": "src/ui/responsive.py",
+      "sha256": "aaf87922c7e2ebf1eb2c3ee843e6e2c604ab84aae6a8116d4ed0dd7e2be5aebe",
+      "size": 280
+    },
+    {
+      "path": "src/ui/theme.py",
+      "sha256": "abb96257c4ef0bc507850ce625a84a34d010f7fe186dd5cda7c501b40ca0ea02",
+      "size": 1680
+    },
+    {
+      "path": "supabase_schema.sql",
+      "sha256": "f114e211e6466dc8127e56fd47061e211ccd98d67b4efb2f2e57242c9c2f063c",
+      "size": 10734
+    },
+    {
+      "path": "tests/test_finance.py",
+      "sha256": "eef769f3c2693cbe9e0ae3f9fd65782ad695cc87b9481968f20055d285eac47e",
+      "size": 6953
+    },
+    {
+      "path": "tests/test_market_cloud.py",
+      "sha256": "e4b316460ed8e7434521a82e08c8035232100898621d423ec23b7faacde2fd95",
+      "size": 2776
+    },
+    {
+      "path": "tests/test_nex_engine.py",
+      "sha256": "b5d025d9c29aa99cd54cd0ff25755cbddd297052ab75b62a9848bde9f835e915",
+      "size": 2500
+    },
+    {
+      "path": "tests/test_services.py",
+      "sha256": "d086718b579eae1c22c727299e213454f4c5e8e33d3ed0114fe70a82dca94c5f",
+      "size": 4584
+    },
+    {
+      "path": "tests/test_sql.mjs",
+      "sha256": "9f083d43657c39f7a7bb1295602434e2b60dc14a2af996285a27612379731e4b",
+      "size": 8313
+    },
+    {
+      "path": "tests/test_ui.py",
+      "sha256": "abc72174a028d5810ae3c5b102d450d6b3fbdc26c0c7a73eccd63d6faf61c0d9",
+      "size": 4229
+    },
+    {
+      "path": "validate_release.py",
+      "sha256": "9650ec59b8652e8c058f316efb5d2fb1a8a96c473fb01b8443ee36c201603a65",
+      "size": 2204
+    }
+  ]
+}

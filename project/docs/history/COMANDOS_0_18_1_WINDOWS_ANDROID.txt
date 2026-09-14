@@ -1,0 +1,24 @@
+NEXGRANA 0.18.1 SOL — WINDOWS
+
+1) Abra CMD na pasta do projeto.
+2) Instale dependências:
+   py -m pip install -r requirements.txt
+
+3) Valide:
+   py validate_release.py --full
+
+4) Rode sem build:
+   py -m flet.cli run src
+
+5) Gere Windows:
+   py build_multiplataforma.py windows --flutter C:\Users\lucas\flutter\3.44.8
+
+6) Gere Android APK:
+   py build_multiplataforma.py apk --flutter C:\Users\lucas\flutter\3.44.8
+
+7) Gere ambos:
+   py build_multiplataforma.py both --flutter C:\Users\lucas\flutter\3.44.8
+
+Se o Flutter estiver em outro local, troque o caminho de --flutter.
+Não reutilize uma pasta build antiga de outra versão.
+Leia o log criado em dist\<timestamp>\ se houver falha.

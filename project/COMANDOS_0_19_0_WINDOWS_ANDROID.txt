@@ -1,0 +1,31 @@
+NEXGRANA 0.19.0 SOL — CANDIDATA DE TESTE
+
+1) EXTRAIA EM UMA PASTA CURTA, EXEMPLO:
+C:\NexGrana019
+
+2) CMD:
+cd /d C:\NexGrana019
+
+3) DEPENDÊNCIAS:
+py -m pip install -r requirements.txt
+
+4) VALIDAÇÃO COMPLETA:
+py validate_release.py --full
+
+5) ABRIR PARA TESTE:
+py -m flet.cli run src
+
+Se o módulo CLI não abrir, use o executável conhecido do seu Python:
+"C:\Users\lucas\AppData\Local\Python\pythoncore-3.14-64\Scripts\flet.exe" run src
+
+6) BUILD WINDOWS + APK:
+py build_multiplataforma.py both --flutter C:\Users\lucas\flutter\3.44.8
+
+SOMENTE WINDOWS:
+py build_multiplataforma.py windows --flutter C:\Users\lucas\flutter\3.44.8
+
+SOMENTE APK:
+py build_multiplataforma.py apk --flutter C:\Users\lucas\flutter\3.44.8
+
+Não copie pastas build/dist de versões anteriores para esta pasta.
+Não aplique MIGRATION_0_19.sql no banco de produção sem backup e teste em homologação.

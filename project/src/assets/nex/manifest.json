@@ -1,0 +1,34 @@
+{
+  "version": "2.0-019",
+  "mascot": "Nex",
+  "canonical_master": "nex/nex_hd.png",
+  "variants": {
+    "hero": "nex/nex_hero.png",
+    "card": "nex/nex_card.png",
+    "avatar": "nex/nex_avatar.png",
+    "dock": "nex/nex_dock.png"
+  },
+  "states": {
+    "idle": {"asset": "nex/nex_hero.png", "motion": "idle"},
+    "happy": {"asset": "nex/nex_hero.png", "motion": "celebrate"},
+    "celebrate": {"asset": "nex/nex_hero.png", "motion": "celebrate"},
+    "thinking": {"asset": "nex/nex_hero.png", "motion": "thinking"},
+    "warning": {"asset": "nex/nex_hero.png", "motion": "alert"},
+    "supportive": {"asset": "nex/nex_hero.png", "motion": "worry"},
+    "saving": {"asset": "nex/nex_hero.png", "motion": "coins"},
+    "planning": {"asset": "nex/nex_hero.png", "motion": "thinking"},
+    "shopping": {"asset": "nex/nex_hero.png", "motion": "look"},
+    "goal": {"asset": "nex/nex_hero.png", "motion": "thinking"},
+    "learning": {"asset": "nex/nex_hero.png", "motion": "study"},
+    "money": {"asset": "nex/nex_hero.png", "motion": "coins"},
+    "success": {"asset": "nex/nex_hero.png", "motion": "celebrate"},
+    "sleep": {"asset": "nex/nex_hero.png", "motion": "sleep"}
+  },
+  "quality_rules": {
+    "alpha_required": true,
+    "gif_legacy_disabled": true,
+    "no_checkerboard": true,
+    "no_upscale_from_small_source": true
+  },
+  "note": "0.19 usa o master RGBA canônico e derivados otimizados por tamanho para reduzir custo de decode. Estados de expressão realmente diferentes continuam pendentes até existir pack Rive/WebP/sprites aprovado; o app não finge que o mesmo PNG é uma expressão nova."
+}

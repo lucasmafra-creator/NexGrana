@@ -1,0 +1,84 @@
+test_analysis_summary_uses_safe_margin (test_finance.FinanceTests.test_analysis_summary_uses_safe_margin) ... ok
+test_auto_future (test_finance.FinanceTests.test_auto_future) ... ok
+test_automatic (test_finance.FinanceTests.test_automatic) ... ok
+test_cancelled (test_finance.FinanceTests.test_cancelled) ... ok
+test_dates (test_finance.FinanceTests.test_dates) ... ok
+test_duplicate_ids (test_finance.FinanceTests.test_duplicate_ids) ... ok
+test_future_does_not_debit (test_finance.FinanceTests.test_future_does_not_debit) ... ok
+test_goals (test_finance.FinanceTests.test_goals) ... ok
+test_installments_are_distinct (test_finance.FinanceTests.test_installments_are_distinct) ... ok
+test_invalid_money (test_finance.FinanceTests.test_invalid_money) ... ok
+test_invalid_share_does_not_change_family (test_finance.FinanceTests.test_invalid_share_does_not_change_family) ... ok
+test_manual_payment (test_finance.FinanceTests.test_manual_payment) ... ok
+test_no_margin_no_purchase (test_finance.FinanceTests.test_no_margin_no_purchase) ... ok
+test_other_goals (test_finance.FinanceTests.test_other_goals) ... ok
+test_overdue_is_not_paid (test_finance.FinanceTests.test_overdue_is_not_paid) ... ok
+test_paid_later_month (test_finance.FinanceTests.test_paid_later_month) ... ok
+test_paused_goal_does_not_commit_margin (test_finance.FinanceTests.test_paused_goal_does_not_commit_margin) ... ok
+test_price_limit_is_full_price (test_finance.FinanceTests.test_price_limit_is_full_price) ... ok
+test_receipt_future (test_finance.FinanceTests.test_receipt_future) ... ok
+test_receipt_unknown (test_finance.FinanceTests.test_receipt_unknown) ... ok
+test_reserve (test_finance.FinanceTests.test_reserve) ... ok
+test_rollover (test_finance.FinanceTests.test_rollover) ... ok
+test_rounding_shares (test_finance.FinanceTests.test_rounding_shares) ... ok
+test_saved_goal_not_reserved_twice (test_finance.FinanceTests.test_saved_goal_not_reserved_twice) ... ok
+test_shared_once (test_finance.FinanceTests.test_shared_once) ... ok
+test_market_cloud (unittest.loader._FailedTest.test_market_cloud) ... ERROR
+test_acquisition_uses_specific_entity_and_budget (test_nex_engine.NexEngineTests.test_acquisition_uses_specific_entity_and_budget) ... ok
+test_goal_simulation_has_numeric_scenarios (test_nex_engine.NexEngineTests.test_goal_simulation_has_numeric_scenarios) ... ok
+test_household_context_guard_does_not_invent (test_nex_engine.NexEngineTests.test_household_context_guard_does_not_invent) ... nex_failed kind=ValueError
+ok
+test_analytics_is_off_by_default_and_rejects_financial_payload (test_product_019.Product019Tests.test_analytics_is_off_by_default_and_rejects_financial_payload) ... ok
+test_journey_has_ten_steps (test_product_019.Product019Tests.test_journey_has_ten_steps) ... ok
+test_nex_quick_actions_are_deterministic (test_product_019.Product019Tests.test_nex_quick_actions_are_deterministic) ... ok
+test_offer_ranking_is_independent_from_commission (test_product_019.Product019Tests.test_offer_ranking_is_independent_from_commission) ... ok
+test_performance_monitor_summary (test_product_019.Product019Tests.test_performance_monitor_summary) ... ok
+test_backup_round_trip (test_services.ServiceTests.test_backup_round_trip) ... ok
+test_breakpoints (test_services.ServiceTests.test_breakpoints) ... ok
+test_clear (test_services.ServiceTests.test_clear) ... ok
+test_encryption (test_services.ServiceTests.test_encryption) ... ok
+test_offers (test_services.ServiceTests.test_offers) ... ok
+test_queue_backoff_and_manual_retry (test_services.ServiceTests.test_queue_backoff_and_manual_retry) ... ok
+test_queue_cancel_conflict (test_services.ServiceTests.test_queue_cancel_conflict) ... ok
+test_queue_conflict (test_services.ServiceTests.test_queue_conflict) ... ok
+test_queue_idempotent (test_services.ServiceTests.test_queue_idempotent) ... ok
+test_queue_retry (test_services.ServiceTests.test_queue_retry) ... ok
+test_tampering (test_services.ServiceTests.test_tampering) ... ok
+test_ui (unittest.loader._FailedTest.test_ui) ... ERROR
+
+======================================================================
+ERROR: test_market_cloud (unittest.loader._FailedTest.test_market_cloud)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_market_cloud
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/mnt/data/NexGrana_0_19_0_SOL_Virada/tests/test_market_cloud.py", line 9, in <module>
+    from cloud import Cloud
+  File "/mnt/data/NexGrana_0_19_0_SOL_Virada/src/cloud.py", line 9, in <module>
+    from supabase import create_client
+ModuleNotFoundError: No module named 'supabase'
+
+
+======================================================================
+ERROR: test_ui (unittest.loader._FailedTest.test_ui)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_ui
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/mnt/data/NexGrana_0_19_0_SOL_Virada/tests/test_ui.py", line 7, in <module>
+    import flet as ft
+ModuleNotFoundError: No module named 'flet'
+
+
+----------------------------------------------------------------------
+Ran 46 tests in 0.022s
+
+FAILED (errors=2)

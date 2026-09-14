@@ -1,0 +1,595 @@
+{
+  "product": "NexGrana",
+  "version": "0.19.0",
+  "channel": "SOL_Virada_candidate",
+  "generated_at_utc": "2026-09-14T05:02:42.835974+00:00",
+  "files": [
+    {
+      "path": "ASSET_MANIFEST_0_19_0.md",
+      "bytes": 786,
+      "sha256": "6e8b15d6fdd16ac9284f05ee94ae4dc5bd2ca49eb6160b0a28e0ae43b119f3de"
+    },
+    {
+      "path": "ATUALIZACAO_0_19_0_SOL.md",
+      "bytes": 2383,
+      "sha256": "a3928715895649fc8cab6ab9a428acf013397c72c217b5d25049f76d71c9bc6a"
+    },
+    {
+      "path": "CHECKPOINT_CONTINUIDADE_0_19.md",
+      "bytes": 1793,
+      "sha256": "32045935c788d1488af99dd7c382b735b443d551cd2f2372a07177c2d41bb0c2"
+    },
+    {
+      "path": "COMANDOS_0_19_0_WINDOWS_ANDROID.txt",
+      "bytes": 882,
+      "sha256": "49d20abea59474470ebfb81a3e1f9af1f2ff08e546e5b80f85b1480ff02a5b9d"
+    },
+    {
+      "path": "LEIA_PRIMEIRO_0_19_0_SOL.txt",
+      "bytes": 443,
+      "sha256": "0207d5c5b3e13c434a69c626e5b62c73de8d95342daff8dc7b875fa63b0e545a"
+    },
+    {
+      "path": "MATRIZ_REQUISITOS_0_19_0_SOL.md",
+      "bytes": 2371,
+      "sha256": "fb7aa1bfa0470a4703010029f965b1bb9f24e4e56396517e2e0b397a82fe2608"
+    },
+    {
+      "path": "MIGRATION_0_18.sql",
+      "bytes": 12541,
+      "sha256": "595c0c8c7155a3733cde0b56fa6f1e72392b55f6a37fb7ce6c818393c349c5d6"
+    },
+    {
+      "path": "MIGRATION_0_18_1.sql",
+      "bytes": 4596,
+      "sha256": "7a197373eb4c91bcc43ceea6492d7976728a683a4e44d32acabb7eae48e5f18d"
+    },
+    {
+      "path": "MIGRATION_0_19.sql",
+      "bytes": 1263,
+      "sha256": "f6d38c2c4f00d54798a9a8a8f0504eac99df3c8a85376d06523c9a7aae37dab2"
+    },
+    {
+      "path": "MONETIZACAO_E_PRIVACIDADE.md",
+      "bytes": 1374,
+      "sha256": "04c8a2b59bdd9b4bf91b3266692b9efbea3028d67220fdb706dfff6af1f1bd21"
+    },
+    {
+      "path": "NEX_CHARACTER_BIBLE.md",
+      "bytes": 1320,
+      "sha256": "b1c08d9fe98a9241519ea2d729d217e86c4ef55e5570d5a2e1f7bd80eb0601e5"
+    },
+    {
+      "path": "NEX_PACK_INTEGRADO.md",
+      "bytes": 1300,
+      "sha256": "4648993f814fa26a03f0003f0f6ed59f1f3caa41488b411194be778b69ac4589"
+    },
+    {
+      "path": "PERFORMANCE_0_19_0_SOL.md",
+      "bytes": 1235,
+      "sha256": "290b4480b79173d3419ecaaba6caa54f26121e66e87b316d77728644296f276e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4009,
+      "sha256": "459d0f4669ca1686163c9f8c96e19f14df548c1f061cdb84136b0662f871a3b8"
+    },
+    {
+      "path": "README_SETUP_CLOUD.md",
+      "bytes": 6452,
+      "sha256": "a003d2ecbed4a11f7b80b4b76d0af9752813bc935a2bf4dbc44cea1333f2eaca"
+    },
+    {
+      "path": "REQUISITOS_0_19_AST_RA_FINAL.md",
+      "bytes": 49945,
+      "sha256": "d57d853eb06c7dc97b33cfdc3354a3145ce4600456c94b8fa9cd9cd7286e341e"
+    },
+    {
+      "path": "SEGURANCA_LGPD_0_18_1_SOL.md",
+      "bytes": 2427,
+      "sha256": "ee1a676586bbe041104f458b501560c6940b1b5a10620ff8c2675be7235f198a"
+    },
+    {
+      "path": "SQL_ATOMIC_0_18.sql",
+      "bytes": 7717,
+      "sha256": "23ec371d74671214622a3ed21d2d8603b7c66c154a04a726e05d81ff5c80a803"
+    },
+    {
+      "path": "SUPABASE_PATCH_V2_RC.sql",
+      "bytes": 8665,
+      "sha256": "54eee4f7ce789c5a6c7f298ede3b7e7d9f83532bd98f902be3d961e456a4a3b2"
+    },
+    {
+      "path": "SUPABASE_SECURITY_0_17.sql",
+      "bytes": 5948,
+      "sha256": "118bee641f4de4562db11300f4dbed50d25936c741a2a6d19a6d7b7967ae3de2"
+    },
+    {
+      "path": "VALIDACAO_0_19_0_SOL.md",
+      "bytes": 2035,
+      "sha256": "901899579c45616b0d5123261444e5221f3354cd684121d4b374feb927046c59"
+    },
+    {
+      "path": "build_multiplataforma.py",
+      "bytes": 3827,
+      "sha256": "adc9b55938047011fe8e269a7f73019bd14ee97557d9f7e9617be4fcbafd2dae"
+    },
+    {
+      "path": "docs/history/ATUALIZACAO_0_18_1_SOL.md",
+      "bytes": 3449,
+      "sha256": "59977d399284b7cfce145c8465c850ddb1e1cb75d4c62005c2733fb8c3b8df29"
+    },
+    {
+      "path": "docs/history/AUDITORIA_TECNICA_0_17.md",
+      "bytes": 4343,
+      "sha256": "4c9549d5bf621de9db0f3ca67e8c788da4d3c0058bc7285ba3403fbcf2c19975"
+    },
+    {
+      "path": "docs/history/CHECKPOINT_0_18_0_CONTINUIDADE_SOL.md",
+      "bytes": 11886,
+      "sha256": "77d28a1523b09427077b1f8fb826ca24e78f2196f1638b2c16c541c5675b446f"
+    },
+    {
+      "path": "docs/history/COMANDOS_0_18_1_WINDOWS_ANDROID.txt",
+      "bytes": 691,
+      "sha256": "34f06be090455778dbba7e39d67df0f778b110dc837e6d5efe4b989584e8edd8"
+    },
+    {
+      "path": "docs/history/HOTFIX_ANDROID_NEX_RC2.md",
+      "bytes": 927,
+      "sha256": "caa58c7a729ad3eb863909fbb2429d905481b71147624a68360f2387b674cb07"
+    },
+    {
+      "path": "docs/history/LEIA_PRIMEIRO_0_18_1_SOL.txt",
+      "bytes": 563,
+      "sha256": "aea91580186f62d6071dbfe81d3f32ffba65e84cd2cfe06acebbc5a13c1a0d1e"
+    },
+    {
+      "path": "docs/history/MANIFEST_RELEASE_0_18_1.json",
+      "bytes": 31511,
+      "sha256": "317036bdf410b031df6ada85b6b063ce1676c935e9cb91f07ad92f4f3e51432a"
+    },
+    {
+      "path": "docs/history/MATRIZ_REQUISITOS_0_18_1_SOL.md",
+      "bytes": 2452,
+      "sha256": "ba16f002514fd351d5c62e0cb4a96ed0d312ee013d13f4ceffa283a58b2c92b7"
+    },
+    {
+      "path": "docs/history/PROMPT_MESTRE_GPT6_ASTRA.md",
+      "bytes": 19630,
+      "sha256": "b6649d36ce29000f535af6553a5514948b1a012cb94ffa749b8413fefe23335c"
+    },
+    {
+      "path": "docs/history/REQUISITOS_AUTORIZADOS.md",
+      "bytes": 19630,
+      "sha256": "b6649d36ce29000f535af6553a5514948b1a012cb94ffa749b8413fefe23335c"
+    },
+    {
+      "path": "docs/history/VALIDACAO_0_18_1_SOL.md",
+      "bytes": 1778,
+      "sha256": "4319116cd2b5ea06385e6ea9f54a045c6f72964662ea2989f3d061ddbf60a048"
+    },
+    {
+      "path": "package.json",
+      "bytes": 188,
+      "sha256": "31192649cb900965f76ac9977a530615e15a696239cfbcbfd83bc9b02faec2fa"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 983,
+      "sha256": "bc4215343918cb169659d6bf26e14117143b35bb174302de26d72cbd3bd05965"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 125,
+      "sha256": "b96ffc4cbebce121b9761e3f4961765593f17130164f5a32183685e5fd41669d"
+    },
+    {
+      "path": "src/affiliate_config.py",
+      "bytes": 103,
+      "sha256": "1df147a0ebe54b9c114b270402001d2f02d86ca2a3eb54bb7a5a83243571d2a5"
+    },
+    {
+      "path": "src/app.py",
+      "bytes": 3369,
+      "sha256": "35c5bec2794a42c29194a97b69e56fd6e8a0399311b9caa51c01e053118ec532"
+    },
+    {
+      "path": "src/assets/icon.png",
+      "bytes": 4565,
+      "sha256": "78f99e2ff7b7c0b294edda9c4f793482a87a6ead276f4014c424f02e5fc2491b"
+    },
+    {
+      "path": "src/assets/nex/elements/cafe.png",
+      "bytes": 8866,
+      "sha256": "da7dff5a6876a83c209df251f0967045e849cff48fdbec9a8645801f4c36d016"
+    },
+    {
+      "path": "src/assets/nex/elements/calendario.png",
+      "bytes": 8746,
+      "sha256": "9f4052986b29daeaaa3305ff6c9d8234da5a3e563d936e80dda3e28a9916e79c"
+    },
+    {
+      "path": "src/assets/nex/elements/checkpoint.png",
+      "bytes": 8455,
+      "sha256": "e29ddda919783a579232667393b46f59d948bcbabc9a52d5811bf99120590e85"
+    },
+    {
+      "path": "src/assets/nex/elements/grafico.png",
+      "bytes": 8653,
+      "sha256": "51868c617908e97f05d8ce0a3c19b2bd3780acc41879a833c0233c39e47a87a4"
+    },
+    {
+      "path": "src/assets/nex/elements/lampada.png",
+      "bytes": 8897,
+      "sha256": "39258f09bc45eb4027e93823ccaef5ae292418b9ebaee870ae448ca4575df92a"
+    },
+    {
+      "path": "src/assets/nex/elements/livro.png",
+      "bytes": 9138,
+      "sha256": "91f6cfb047f120179e8834bb4b8310795dace8470d6639e3c8e7ad3d7e8b5b93"
+    },
+    {
+      "path": "src/assets/nex/elements/moeda.png",
+      "bytes": 8972,
+      "sha256": "bbeed2af2c76c33ef7fec35b9f2b005ed9f44303a09d1aff412c46833bd58ada"
+    },
+    {
+      "path": "src/assets/nex/elements/planta.png",
+      "bytes": 9054,
+      "sha256": "b9f2c2b681a144b3eec258609f419a30f1419c2d658c46261725d1d0000a5d23"
+    },
+    {
+      "path": "src/assets/nex/elements/porquinho.png",
+      "bytes": 9174,
+      "sha256": "7216b99973d237e392bdc61c5e31fc737e60b5ee4295495944dc68d5aa1d10a4"
+    },
+    {
+      "path": "src/assets/nex/elements/trofeu.png",
+      "bytes": 9207,
+      "sha256": "0b1ff04a15245365f4976083d67f90c55b54ff1658d118b3d401fc263f3d9185"
+    },
+    {
+      "path": "src/assets/nex/manifest.json",
+      "bytes": 1615,
+      "sha256": "f63797d8104a507f3bae7baabb250060cc17e0b39fb545eb959e8fbdb84b3e9d"
+    },
+    {
+      "path": "src/assets/nex/nex_avatar.png",
+      "bytes": 18885,
+      "sha256": "857d163ba90d3a984721df689914a3b56a1409114df7196f1f43abe634bb1187"
+    },
+    {
+      "path": "src/assets/nex/nex_card.png",
+      "bytes": 99361,
+      "sha256": "2b2058d21d61b959b86013c732dabfce35bfc0ffa8721e0bfb6871bd78d1d85d"
+    },
+    {
+      "path": "src/assets/nex/nex_dock.png",
+      "bytes": 45065,
+      "sha256": "42d984bf91b27fa862d6e5f413bda8114684e88f07704a04ebb00052309de64d"
+    },
+    {
+      "path": "src/assets/nex/nex_hd.png",
+      "bytes": 1738375,
+      "sha256": "4fc4e9996f571e75279936030acdb9d51ebc9d0626b1352b50fe461f09563796"
+    },
+    {
+      "path": "src/assets/nex/nex_hero.png",
+      "bytes": 327382,
+      "sha256": "bedc0c56624fa221b4742c1734590ac19434146b3ca24548511e79efc6a873a4"
+    },
+    {
+      "path": "src/assets/nex/skins/aventureiro.png",
+      "bytes": 21937,
+      "sha256": "1b4c33b84c97a0de46812a8d0de5f7497e06ba4f0e86e8ce6f259145751eb602"
+    },
+    {
+      "path": "src/assets/nex/skins/estudante.png",
+      "bytes": 23103,
+      "sha256": "8e799fb16393d485abf109cd1ae2a48abb86416eb549cf73854d7f3769367c7b"
+    },
+    {
+      "path": "src/assets/nex/skins/executivo.png",
+      "bytes": 22283,
+      "sha256": "ace9ba127172e269cb26998a3fd2692017eb3817c506c8ce582ff5cc508d6218"
+    },
+    {
+      "path": "src/assets/nex/skins/gamer.png",
+      "bytes": 22377,
+      "sha256": "af70d7c174c77629002fff6e757371f9a61550bc66e471f2cc1bfe8e09c412a4"
+    },
+    {
+      "path": "src/assets/nex/skins/padrao.png",
+      "bytes": 24025,
+      "sha256": "3ad2385deda13215dc199f5ef53cb9708e25e976e7039b1b7b3239022046c6e0"
+    },
+    {
+      "path": "src/assets/nex/skins/rei_da_grana.png",
+      "bytes": 48905,
+      "sha256": "919100b11785ce4e9031822ba89ba49e3772f4254dd2c517967b62a388eaf0a3"
+    },
+    {
+      "path": "src/assets/nex/stickers/bora.png",
+      "bytes": 8678,
+      "sha256": "ccb51ad118b09f03d85557f025ede6db665110cfb283aee2b5b179cbc3fa509e"
+    },
+    {
+      "path": "src/assets/nex/stickers/disciplina.png",
+      "bytes": 8389,
+      "sha256": "2bfac7c86ccc958bdfb7c19b661e4951b52ab6e1c7fb3f7fddb33827740a363b"
+    },
+    {
+      "path": "src/assets/nex/stickers/economiza.png",
+      "bytes": 7698,
+      "sha256": "068eff5881d490c5473dc299291b78c79a92aa3d8db1c7bfeb1fe4216bfe9a85"
+    },
+    {
+      "path": "src/assets/nex/stickers/excelente.png",
+      "bytes": 8950,
+      "sha256": "e599ed5c2275cfdabecc330c0036e3458d0208f15fc28319ed88547438ac4e34"
+    },
+    {
+      "path": "src/assets/nex/stickers/foco.png",
+      "bytes": 8189,
+      "sha256": "dbdd6af19415f7202213567dcf95cffa81d48514b87333390d9b3a2c6aed3c8b"
+    },
+    {
+      "path": "src/assets/nex/stickers/gratidao.png",
+      "bytes": 8151,
+      "sha256": "86ab98d0dea7238373919922e039a3309ae69bf8151cab6040c2436ecb252077"
+    },
+    {
+      "path": "src/assets/nex/stickers/kkk.png",
+      "bytes": 8632,
+      "sha256": "99049d3c0d0c53927bc4788fb338799540d1dbd03efdecdf51be2868021c4eeb"
+    },
+    {
+      "path": "src/assets/nex/stickers/meta.png",
+      "bytes": 7658,
+      "sha256": "a98b45188bb7b2bdd8503a60c7067cd5bff30653af54ca700bd1c41cc7c2894a"
+    },
+    {
+      "path": "src/assets/nex/stickers/oi.png",
+      "bytes": 8763,
+      "sha256": "7b616a888047bf81b6704d4c23a87cf70da46467b3d17057bea456fbf284cae9"
+    },
+    {
+      "path": "src/assets/nex/stickers/ops.png",
+      "bytes": 8580,
+      "sha256": "a7a6d0f77ae3bb720a9384876fb5ce54d656e6f3fce7bb5acd3cd38a93283b23"
+    },
+    {
+      "path": "src/assets/nex/stickers/parabens.png",
+      "bytes": 7578,
+      "sha256": "825d38aed56c71170a88a80454a96ee237683f089e07c38fb2382370e1b18c65"
+    },
+    {
+      "path": "src/assets/nex/stickers/top.png",
+      "bytes": 8395,
+      "sha256": "c4eae2ebfa2f78ca0ad05418b6b1670c9a4ddf2b128bfb5d75f2b41a6c5f27ce"
+    },
+    {
+      "path": "src/assets/nex_canonical.png",
+      "bytes": 41369,
+      "sha256": "7a428beccc1b857323fbec25e448ea2647c7d8efa878439b0e46ea4053a8b2be"
+    },
+    {
+      "path": "src/cloud.py",
+      "bytes": 33324,
+      "sha256": "8ec7a9eb10b7099a45ebad562091fa5581dd888407610bf23c2a42fc7a8c5082"
+    },
+    {
+      "path": "src/main.py",
+      "bytes": 25852,
+      "sha256": "ace310045d5cbdc1e2b52570b8bdfe11f285c5ecbd1a3874ede7d49800887869"
+    },
+    {
+      "path": "src/nex_controller.py",
+      "bytes": 3339,
+      "sha256": "30ffe1bbef4d3b94273941abcd710cda84aaefb96e960bb3c874c9dd8f34c4d7"
+    },
+    {
+      "path": "src/screens/__init__.py",
+      "bytes": 23,
+      "sha256": "1017289549d60071cb122d8dc155d90bb2a50e977b7424c7201fc5b83ff50545"
+    },
+    {
+      "path": "src/screens/acquisitions.py",
+      "bytes": 12648,
+      "sha256": "b89acc4df2896bccc5d33ade112eeae34e9901f48bbf4b4c01c8ccfc7291ce38"
+    },
+    {
+      "path": "src/screens/analysis.py",
+      "bytes": 19054,
+      "sha256": "ffa6a186ce31cc5c1ae00a2c8205b9e2c2a686a1e9748c26dd0371bb0a1cad5d"
+    },
+    {
+      "path": "src/screens/auth.py",
+      "bytes": 20871,
+      "sha256": "fe19e2f36ba2e1327347f4085f7f516605a3012ab30eca11312633eaa0179c1b"
+    },
+    {
+      "path": "src/screens/extra_income.py",
+      "bytes": 23840,
+      "sha256": "64645a21af9548bf3c75edb42fe2933699f87055f2a4ede4a3dbd66f1fca5f21"
+    },
+    {
+      "path": "src/screens/home.py",
+      "bytes": 17289,
+      "sha256": "8158e6c7ef00e5fa2f3b7e6199f6a729309bc311b03de5430dec7aebb6492e21"
+    },
+    {
+      "path": "src/screens/market.py",
+      "bytes": 26295,
+      "sha256": "7d9982a50c8384185d6ab5610a4a34d11a480a25c69a23328b1246c05b5f4182"
+    },
+    {
+      "path": "src/screens/movements.py",
+      "bytes": 21670,
+      "sha256": "f59c8465c53f3aa28ff8fee5485a193d179f6049d27481475658d99a326022e9"
+    },
+    {
+      "path": "src/screens/nex.py",
+      "bytes": 48506,
+      "sha256": "4e2febf661f0b2c6a9daea01b610982150fbf8a02bcdda9a7ce701c0a70ec3ee"
+    },
+    {
+      "path": "src/screens/planning.py",
+      "bytes": 13120,
+      "sha256": "dd598bc829d666c3479a0a0bff7ce34148b2463db609486e80acd9307eb499e2"
+    },
+    {
+      "path": "src/screens/settings.py",
+      "bytes": 16601,
+      "sha256": "aa11e85f221d5ccf827c2be350820d7eee74746fd892f142a5476613ab6b00f9"
+    },
+    {
+      "path": "src/services/__init__.py",
+      "bytes": 44,
+      "sha256": "22f432c3531a7640618c43930432539a07acedc9480185dbe0b1f4a6ec1a7d8f"
+    },
+    {
+      "path": "src/services/affiliate.py",
+      "bytes": 1812,
+      "sha256": "82335c652ac20ba956b6bbf9103bce995e3f0966af150b0cdd507a86d2a2eff7"
+    },
+    {
+      "path": "src/services/analytics.py",
+      "bytes": 2171,
+      "sha256": "0d69ca0aff8cb1d851722b42bf1577bbb90b215e69a5e86361fb9bebbb9bbc67"
+    },
+    {
+      "path": "src/services/finance_engine.py",
+      "bytes": 13541,
+      "sha256": "dceb401c7988c7bc54af58a9d2157b2e37b44ae6e3747320334f310291080013"
+    },
+    {
+      "path": "src/services/market.py",
+      "bytes": 1300,
+      "sha256": "afdcd59b9cbeb7cf0d70db937b357891716d3f7e9874ea2d0b27cb08e66616b4"
+    },
+    {
+      "path": "src/services/nex_engine.py",
+      "bytes": 10053,
+      "sha256": "e77b2a978a129bbd9967ff5ba0016e295ccd10dbc340dce42633b530e57190e0"
+    },
+    {
+      "path": "src/services/offers.py",
+      "bytes": 2167,
+      "sha256": "683681ea3f8973814dc643f7ec5d2b574298ba3a2643ca49a49f0fa78bae4dae"
+    },
+    {
+      "path": "src/services/performance.py",
+      "bytes": 1570,
+      "sha256": "2ce40dec85248f53c763ef7ea03ac44c5352f6acbd55684022dc86adc63ec2dd"
+    },
+    {
+      "path": "src/services/privacy.py",
+      "bytes": 5472,
+      "sha256": "dc0f42d193dd678f190aac78f897e36ce5ff9315abbe4d340785ec139d28f6c6"
+    },
+    {
+      "path": "src/services/sync.py",
+      "bytes": 4354,
+      "sha256": "35270b54a360eaa98a4f82c547b1b5d86d242c376cc3e3ee5912504938a36fcd"
+    },
+    {
+      "path": "src/services/transactions.py",
+      "bytes": 1293,
+      "sha256": "c2278a99ae7df5b439e6e019ea58636d73d6b4f26861fda5dac8e267d79ede30"
+    },
+    {
+      "path": "src/ui/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/ui/common.py",
+      "bytes": 13956,
+      "sha256": "612f0323bbc9784999924829fc0104d0a92c3c5f976ae7fef5cbe823fcde87df"
+    },
+    {
+      "path": "src/ui/design.py",
+      "bytes": 650,
+      "sha256": "34d8e4337b430adc68d15e724a203acc7b547a1b762e6f8d702b18cb05a508f4"
+    },
+    {
+      "path": "src/ui/responsive.py",
+      "bytes": 280,
+      "sha256": "aaf87922c7e2ebf1eb2c3ee843e6e2c604ab84aae6a8116d4ed0dd7e2be5aebe"
+    },
+    {
+      "path": "src/ui/theme.py",
+      "bytes": 1664,
+      "sha256": "5adaeb75af7a0b102c1e7a356c94ec5b41ac38558fc92b2619a85a35878e9f9d"
+    },
+    {
+      "path": "supabase_schema.sql",
+      "bytes": 10734,
+      "sha256": "f114e211e6466dc8127e56fd47061e211ccd98d67b4efb2f2e57242c9c2f063c"
+    },
+    {
+      "path": "tests/test_finance.py",
+      "bytes": 6953,
+      "sha256": "eef769f3c2693cbe9e0ae3f9fd65782ad695cc87b9481968f20055d285eac47e"
+    },
+    {
+      "path": "tests/test_market_cloud.py",
+      "bytes": 2776,
+      "sha256": "e4b316460ed8e7434521a82e08c8035232100898621d423ec23b7faacde2fd95"
+    },
+    {
+      "path": "tests/test_nex_engine.py",
+      "bytes": 2500,
+      "sha256": "b5d025d9c29aa99cd54cd0ff25755cbddd297052ab75b62a9848bde9f835e915"
+    },
+    {
+      "path": "tests/test_product_019.py",
+      "bytes": 3520,
+      "sha256": "49ccfd7b682da451f2d90849c52000baf862fc00555c2d0e1c64c547d478aca8"
+    },
+    {
+      "path": "tests/test_services.py",
+      "bytes": 4584,
+      "sha256": "d086718b579eae1c22c727299e213454f4c5e8e33d3ed0114fe70a82dca94c5f"
+    },
+    {
+      "path": "tests/test_sql.mjs",
+      "bytes": 8313,
+      "sha256": "9f083d43657c39f7a7bb1295602434e2b60dc14a2af996285a27612379731e4b"
+    },
+    {
+      "path": "tests/test_ui.py",
+      "bytes": 4229,
+      "sha256": "abc72174a028d5810ae3c5b102d450d6b3fbdc26c0c7a73eccd63d6faf61c0d9"
+    },
+    {
+      "path": "validate_release.py",
+      "bytes": 3396,
+      "sha256": "5a30ed90f8d7d4ea4e5cebefc987ca755684c4c4a858a4edc7480e4e32e05ef3"
+    },
+    {
+      "path": "validation/compileall.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "validation/core_validation.log",
+      "bytes": 4531,
+      "sha256": "14085994dbd377e2fbe0547356e84cf01e1f24df1d259cd16b4dbeb813181e9a"
+    },
+    {
+      "path": "validation/full_discovery.log",
+      "bytes": 5681,
+      "sha256": "8c160a2e4cddb7ddedc85d9b613d250dd00db51acb828db499f933500009d290"
+    },
+    {
+      "path": "validation/full_discovery_status.txt",
+      "bytes": 12,
+      "sha256": "85acfd2e79dd47df07d214334642196301332f72d792b52068cdfd8898755409"
+    }
+  ],
+  "file_count": 117,
+  "total_bytes": 3252998
+}

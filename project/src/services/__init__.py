@@ -1,0 +1,1 @@
+"""Serviços independentes da interface."""

@@ -1,0 +1,11 @@
+NexGrana 0.19.0 SOL — VIRADA — CANDIDATA DE TESTE
+
+COMECE POR:
+1. README.md
+2. VALIDACAO_0_19_0_SOL.md
+3. MATRIZ_REQUISITOS_0_19_0_SOL.md
+4. PERFORMANCE_0_19_0_SOL.md
+5. SEGURANCA_LGPD_0_18_1_SOL.md (base de segurança herdada; revisar antes de publicação)
+6. COMANDOS_0_19_0_WINDOWS_ANDROID.txt
+
+Atenção: este pacote não é declarado release pública. O Android/Windows real e o Supabase precisam de validação fora deste ambiente.

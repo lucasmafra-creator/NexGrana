@@ -1,0 +1,35 @@
+[project]
+name = "nexgrana"
+version = "0.19.0"
+description = "NexGrana - sua grana, seu próximo nível"
+requires-python = ">=3.11"
+dependencies = [
+  "flet==0.86.5",
+  "flet-charts==0.86.5",
+  "flet-camera==0.86.5",
+  "flet-secure-storage==0.86.5",
+  "supabase==2.31.0",
+  "cryptography==50.0.0",
+]
+
+[tool.flet]
+permissions = ["camera"]
+exclude = [".data", "__pycache__", "*.pyc"]
+product = "NexGrana"
+org = "com.nexgrana"
+bundle_id = "com.nexgrana.app"
+company = "NexGrana"
+copyright = "NexGrana"
+
+[tool.flet.app]
+path = "src"
+
+# Hotfix Windows 0.16.1:
+# screen_brightness_windows 2.1.1/2.1.2 podem chegar sem o header nativo
+# screen_brightness_changed_stream_handler.h em alguns builds.
+# Fixamos o pacote pai e a implementação Windows em versões anteriores
+# e compatíveis para evitar que o resolvedor selecione os pacotes quebrados.
+[tool.flet.flutter.pubspec.dependency_overrides]
+screen_brightness = "2.1.7"
+screen_brightness_windows = "2.1.0"
+screen_retriever = "0.2.1"
