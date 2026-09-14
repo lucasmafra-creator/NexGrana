@@ -1,0 +1,66 @@
+name: Codex - Extrair NexGrana RC1
+
+on:
+  push:
+    branches:
+      - codex/revisao-nexgrana-019
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extrair base com validacao de caminhos
+        shell: python
+        run: |
+          from pathlib import Path
+          import shutil
+          import zipfile
+
+          source = Path("NexGrana_0_19_0_SOL_Virada_RC1.zip")
+          raw = Path("_codex_extract")
+          target = Path("project")
+
+          if not source.exists():
+              raise SystemExit(f"ZIP nao encontrado: {source}")
+
+          shutil.rmtree(raw, ignore_errors=True)
+          shutil.rmtree(target, ignore_errors=True)
+          raw.mkdir()
+
+          raw_resolved = raw.resolve()
+          with zipfile.ZipFile(source) as archive:
+              bad = archive.testzip()
+              if bad:
+                  raise SystemExit(f"ZIP corrompido: {bad}")
+              for member in archive.infolist():
+                  destination = (raw / member.filename).resolve()
+                  if not destination.is_relative_to(raw_resolved):
+                      raise SystemExit(f"Caminho inseguro no ZIP: {member.filename}")
+              archive.extractall(raw)
+
+          validators = list(raw.rglob("validate_release.py"))
+          if len(validators) != 1:
+              raise SystemExit(
+                  f"Esperado 1 validate_release.py; encontrados {len(validators)}"
+              )
+
+          root = validators[0].parent
+          shutil.copytree(root, target)
+          shutil.rmtree(raw)
+          print(f"Projeto extraido de {root} para {target}")
+
+      - name: Publicar fontes extraidos na branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project
+          git commit -m "chore: extract NexGrana 0.19.0 RC1 for review"
+          git push
