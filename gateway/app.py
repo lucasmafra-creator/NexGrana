@@ -152,6 +152,25 @@ async def chat(body: ChatRequest, authorization: str = Header(default=""), subje
         reply = extract_provider_text(response.json())
         if not reply:
             raise RuntimeError("empty_provider_response")
+    except httpx.HTTPStatusError as exc:
+        status = exc.response.status_code if exc.response is not None else 0
+        detail = ""
+        if exc.response is not None:
+            try:
+                data = exc.response.json()
+                if isinstance(data, dict):
+                    err = data.get("error")
+                    if isinstance(err, dict):
+                        detail = str(err.get("code") or err.get("type") or err.get("message") or "")
+            except Exception:
+                detail = ""
+        LOGGER.warning(
+            "provider_failed subject=%s kind=HTTPStatusError status=%s detail=%s",
+            identity,
+            status,
+            detail[:160],
+        )
+        raise HTTPException(503, "Nex online temporariamente indisponível") from exc
     except Exception as exc:
         LOGGER.warning("provider_failed subject=%s kind=%s", identity, type(exc).__name__)
         raise HTTPException(503, "Nex online temporariamente indisponível") from exc
