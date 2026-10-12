@@ -96,9 +96,11 @@ def main() -> int:
     if "VERSION = '0.24.0'" not in build_text:
         print("VERSÃO INCONSISTENTE NO SCRIPT DE BUILD")
         return 6
-    dependencies = set(project.get("project", {}).get("dependencies") or [])
-    if "cryptography==48.0.0" not in dependencies:
-        print("DEPENDÊNCIA ANDROID INCONSISTENTE: cryptography deve usar wheel disponível")
+    flet_config = project.get("tool", {}).get("flet", {})
+    android_dependencies = set(flet_config.get("android", {}).get("dependencies") or [])
+    windows_dependencies = set(flet_config.get("windows", {}).get("dependencies") or [])
+    if "cryptography==43.0.1" not in android_dependencies or "cryptography==48.0.0" not in windows_dependencies:
+        print("DEPENDÊNCIAS DE BUILD INCONSISTENTES: confira as wheels Android e Windows")
         return 6
 
     manifest = json.loads((ROOT / "src" / "assets" / "nex" / "manifest.json").read_text(encoding="utf-8"))

@@ -9,7 +9,7 @@ Branch: codex/nexgrana-rc8-source-ci-2026-10-12
 | Manifesto dos diretórios ativos (604 arquivos) | PASS — hashes gerados; CI fará a verificação
 | Assets e identidade canônica | PASS — 149 PNGs ativos foram decodificados; o asset de foco foi restaurado e uma referência PNG truncada em documentação foi retirada |
 | Fonte SIM Labs QA/Collector e dados locais fora do Git | PASS |
-| Python embarcado do Flet | PENDING — ajustado para 3.12 após o primeiro runner Android detectar incompatibilidade de wheel no 3.14 |
+| Python e dependências Flet por alvo | PENDING — Python 3.12; Android cryptography 43.0.1; Windows 48.0.0, aguardando build e revisão do artefato Android |
 | Testes NexGrana, SIM Labs, Collector e UI | PENDING |
 | Build Windows | PENDING — só confirmar após EXE e artefato do Actions |
 | Build Android APK | PENDING — só confirmar após APK e artefato do Actions |

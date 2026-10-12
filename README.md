@@ -19,7 +19,7 @@ npm run test:sql
 
 ### Builds locais
 
-Windows e Android usam Flutter 3.44.8. O projeto fixa o Python embarcado pelo Flet em 3.12, evitando que o alvo mude silenciosamente e quebre dependências binárias. Android também precisa de Java 17 e Android SDK. Depois de preparar esses pré-requisitos:
+Windows e Android usam Flutter 3.44.8. O projeto fixa o Python embarcado do Flet em 3.12. O Android usa cryptography 43.0.1, a wheel encontrada no catálogo Android do Flet; Windows/QA usa 48.0.0. Estes artefatos são de homologação, não publicação de loja. Android também precisa de Java 17 e Android SDK. Depois de preparar esses pré-requisitos:
 
 ```powershell
 .venv/Scripts/python.exe build_multiplataforma.py windows --timeout 3600

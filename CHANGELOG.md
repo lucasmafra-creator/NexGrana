@@ -5,5 +5,6 @@
 - Asset de foco da skin restaurado conforme o manifesto canônico; cache Flet e sidecars SQLite excluídos da proveniência do build.
 - Adicionado pipeline de testes Python/SQL e builds de homologação Windows/Android no GitHub Actions.
 - Flet fixado para empacotar Python 3.12 depois que o primeiro runner Android identificou falta de wheel Pillow para Python 3.14.
+- Dependências criptográficas separadas por alvo: Android 43.0.1 (wheel do catálogo Android) e Windows 48.0.0.
 - Builds ainda são pendentes até a execução terminar com artefatos verificáveis.
 - iOS permanece para a próxima fase.
