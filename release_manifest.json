@@ -7,7 +7,7 @@
     "NexGrana",
     "SIM_Labs_QA"
   ],
-  "source_file_count": 605,
+  "source_file_count": 604,
   "source_files": [
     {
       "path": "NexGrana/.gitignore",
@@ -1810,14 +1810,9 @@
       "sha256": "fc4675fbefac0015a30bb5f05fd37b8b8bda852891279bedfa56003d3881add3"
     },
     {
-      "path": "NexGrana/tests/test_build_configuration.py",
-      "size_bytes": 598,
-      "sha256": "7482e54cd48638344ce9693ea0f2c3f5edad97434acb03d8e35c412210c2572b"
-    },
-    {
       "path": "NexGrana/tests/test_build_provenance.py",
-      "size_bytes": 1751,
-      "sha256": "563cf688b383faac1d7f78bbda4a6778385dac855d42ccb3adf87479f0c63185"
+      "size_bytes": 2234,
+      "sha256": "b2968c492fa047a23cd52c688f753b320c0b9ba054deecca47a9283708101e01"
     },
     {
       "path": "NexGrana/tests/test_finance.py",

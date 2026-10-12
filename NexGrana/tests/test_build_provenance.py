@@ -1,5 +1,6 @@
 import tempfile
 import sys
+import tomllib
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -9,6 +10,14 @@ import build_multiplataforma
 
 
 class BuildProvenanceTests(unittest.TestCase):
+    def test_flet_build_uses_platform_crypto_wheels_and_supported_python(self):
+        project = tomllib.loads((build_multiplataforma.ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+        flet = project["tool"]["flet"]
+
+        self.assertEqual(project["project"]["requires-python"], ">=3.11,<3.13")
+        self.assertIn("cryptography==43.0.1", flet["android"]["dependencies"])
+        self.assertIn("cryptography==48.0.0", flet["windows"]["dependencies"])
+
     def test_generated_flet_storage_and_local_secrets_do_not_change_source_hash(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder) / "NexGrana"
