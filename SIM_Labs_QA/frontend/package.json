@@ -1,0 +1,23 @@
+{
+  "name": "sim-labs-control-center",
+  "private": true,
+  "version": "0.4.1-qa.2",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test:ui-state": "node tests/gestao-hoje.test.cjs",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "6.1.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  }
+}

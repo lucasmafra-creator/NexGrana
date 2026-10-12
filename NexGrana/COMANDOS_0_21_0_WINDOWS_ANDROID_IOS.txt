@@ -1,0 +1,44 @@
+NEXGRANA 0.21.0 QA — TESTE E BUILD
+
+Use caminho curto. No CMD:
+
+mkdir C:\NG21
+xcopy /E /I /H /Y "C:\caminho\NexGrana_0_21_0\project" "C:\NG21"
+cd /d C:\NG21
+
+py -3.14 -m venv .venv
+.venv\Scripts\python -m pip install --upgrade pip
+.venv\Scripts\python -m pip install -r requirements.txt
+.venv\Scripts\python validate_release.py --full
+npm install
+npm run test:sql
+
+TESTAR O APP:
+.venv\Scripts\python -m flet.cli run src
+
+WINDOWS (mostra progresso e grava log):
+set "FLUTTER_ROOT=C:\Users\lucas\flutter\3.44.8"
+.venv\Scripts\python build_multiplataforma.py windows --timeout 7200
+
+APK:
+.venv\Scripts\python build_multiplataforma.py apk --timeout 7200
+
+ALTERNATIVA DIRETA:
+.venv\Scripts\python -m flet.cli build windows --build-version 0.21.0 --output "dist\Windows" --yes
+.venv\Scripts\python -m flet.cli build apk --build-version 0.21.0 --output "dist\Android" --yes
+dir /s /b "dist\Android\*.apk"
+
+PAINEL ACHADOS LOCAL (depois da migration e app_admins):
+.venv\Scripts\python -m flet.cli run --web admin\achados_admin.py
+
+CONFIRMAÇÃO DE E-MAIL:
+set "NEXGRANA_AUTH_REDIRECT_URL=https://SEU-DOMINIO-REAL/confirmar"
+Para o APK, grave a mesma URL em AUTH_REDIRECT_URL dentro de src\build_config.py antes do build.
+Cadastre a mesma URL em Supabase > Authentication > URL Configuration > Redirect URLs.
+Não use localhost no APK.
+
+IOS:
+O código está preparado, mas IPA exige macOS, Xcode, assinatura e conta Apple.
+No macOS: python3 build_multiplataforma.py ipa --timeout 7200
+
+Não execute MIGRATION_0_21.sql em produção antes de validar a homologação.

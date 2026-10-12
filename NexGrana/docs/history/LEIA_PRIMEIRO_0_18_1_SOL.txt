@@ -1,0 +1,17 @@
+NexGrana 0.18.1 SOL — CANDIDATA DE TESTE
+
+Esta versão continua diretamente da 0.18.0 do checkpoint Astra/Sol.
+Ela NÃO executa migration automaticamente no seu Supabase.
+Ela NÃO deve ser publicada comercialmente sem os testes de aparelho, RLS e revisão LGPD descritos nos documentos.
+
+COMECE POR:
+1. README.md
+2. VALIDACAO_0_18_1_SOL.md
+3. SEGURANCA_LGPD_0_18_1_SOL.md
+4. COMANDOS_0_18_1_WINDOWS_ANDROID.txt
+
+Para validar rapidamente:
+py validate_release.py
+
+Para validação completa no seu PC depois de instalar requirements:
+py validate_release.py --full

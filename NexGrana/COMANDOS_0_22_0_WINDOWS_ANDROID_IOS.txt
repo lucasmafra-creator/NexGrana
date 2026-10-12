@@ -1,0 +1,74 @@
+NEXGRANA 0.22.0 QA RC1 — CMD PASSO A PASSO
+
+IMPORTANTE
+- Extraia/copiei o projeto para C:\NG22 para evitar caminho longo.
+- Execute os comandos dentro de C:\NG22, onde estão pyproject.toml e requirements.txt.
+- Não cole o texto do SHA como comando.
+- Não use service_role no aplicativo ou painel.
+
+1) PREPARAR
+
+cd /d C:\NG22
+py -3.14 -m venv .venv
+.venv\Scripts\python -m pip install --upgrade pip
+.venv\Scripts\python -m pip install -r requirements.txt
+
+2) VALIDAR O CÓDIGO
+
+.venv\Scripts\python validate_release.py --full
+
+Opcional, se Node.js estiver instalado:
+
+npm ci
+npm run test:sql
+
+3) TESTAR O APLICATIVO NO WINDOWS SEM GERAR BUILD
+
+.venv\Scripts\python -m flet.cli run src
+
+4) TESTAR O PAINEL PRIVADO DE ACHADOS
+
+Antes, faça backup e execute MIGRATION_0_22.sql no SQL Editor do Supabase de HOMOLOGAÇÃO.
+Autorize o UUID de Lucas em app_admins conforme README_SETUP_CLOUD.md.
+
+.venv\Scripts\python -m flet.cli run --web admin\achados_admin.py
+
+Abra o endereço local mostrado no CMD. Teste: entrar, pesquisar, criar rascunho, prévia, publicar, desativar e excluir.
+
+5) BUILD WINDOWS — SOMENTE DEPOIS DE APROVAR O TESTE DO CÓDIGO
+
+.venv\Scripts\python -m flet.cli build windows --build-version 0.22.0 --output "dist\Windows" --yes
+dir /s /b "dist\Windows\*.exe"
+
+6) BUILD APK
+
+.venv\Scripts\python -m flet.cli build apk --build-version 0.22.0 --output "dist\Android" --yes
+dir /s /b "dist\Android\*.apk"
+
+7) BUILD AAB PARA PLAY STORE
+
+.venv\Scripts\python -m flet.cli build aab --build-version 0.22.0 --output "dist\AndroidAAB" --yes
+dir /s /b "dist\AndroidAAB\*.aab"
+
+8) BUILD COM LOG E TIMEOUT VISÍVEL
+
+.venv\Scripts\python build_multiplataforma.py both --flutter "C:\Users\lucas\flutter\3.44.8" --timeout 7200
+
+Não pressione Ctrl+C enquanto houver atividade no log. Para ver o log mais recente:
+
+powershell -NoProfile -Command "$log=Get-ChildItem '.\dist\*\build-*.log' | Sort-Object LastWriteTime -Descending | Select-Object -First 1; Write-Host $log.FullName; Get-Content $log.FullName -Tail 80"
+
+9) IOS
+
+O código está preparado, mas IPA exige macOS, Xcode, CocoaPods, assinatura e conta Apple.
+No Mac, após instalar dependências:
+
+python3 -m flet.cli build ipa --build-version 0.22.0 --output "dist/iOS" --yes
+
+Não considere iOS validado até instalar em aparelho/TestFlight e concluir o checklist.
+
+10) CONFERIR SHA-256 DO ZIP DE CÓDIGO
+
+certutil -hashfile "%USERPROFILE%\Downloads\NexGrana_0_22_0_QA_RC1_CODIGO_FONTE.zip" SHA256
+
+Compare visualmente a linha retornada com SHA256SUMS_0_22_0_RC1.txt.

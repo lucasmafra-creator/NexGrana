@@ -1,0 +1,8 @@
+NEXGRANA 0.22.0 QA RC1 — CÓDIGO-FONTE
+
+1. Esta candidata não contém instaladores nem credenciais privadas.
+2. Leia VALIDACAO_0_22_0.md e COMANDOS_0_22_0_WINDOWS_ANDROID_IOS.txt.
+3. Faça backup e aplique MIGRATION_0_22.sql somente em homologação.
+4. O painel de Achados requer UUID em app_admins; a conta QA não vira administradora automaticamente.
+5. O Nex online está implementado, mas desligado até existir gateway HTTPS/provedor autorizados.
+6. O SHA-256 serve para comparar o ZIP; não é um comando.

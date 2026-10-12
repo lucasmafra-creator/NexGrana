@@ -1,9 +1,37 @@
-# SIM Labs 0.4.0 — candidata de operação 24/7
+# NexGrana
 
-Comece por **LEIA_PRIMEIRO.md**. Resultados e limitações estão em **SIM_LABS_0_4_0_REPORT.md**.
+Repositório do NexGrana com os pacotes históricos preservados e o código atual da candidata 0.24.0 em NexGrana/.
 
-No CMD, na pasta extraída: `INICIAR_24_7.bat`.
+## Rodada atual
 
-Para preservar uma instalação 0.3, siga a migração antes do primeiro início. Não há EXE compilado nesta entrega; há script de geração Windows.
+A branch codex/nexgrana-rc8-source-ci-2026-10-12 traz o código do pacote corrigido, preserva as regras financeiras e a identidade canônica do Nex, e configura uma validação automática antes dos builds de Windows e Android. O SIM Labs QA e o Collector também ficam versionados em SIM_Labs_QA/. O pipeline valida backend/UI do SIM Labs, testa o NexGrana e só então libera os builds de Windows e Android. Não publica em produção.
 
-Os workers auditam registros e arquivos. Correção autônoma de código/estética e homologação Windows/Android continuam bloqueadas.
+### Testes locais
+
+```powershell
+cd NexGrana
+py -3.12 -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements-qa.txt pytest==9.1.1
+npm ci
+.venv/Scripts/python.exe -m pytest -q
+npm run test:sql
+```
+
+### Builds locais
+
+Windows e Android precisam de Flutter 3.44.8; Android também precisa de Java 17 e Android SDK. Depois de preparar esses pré-requisitos:
+
+```powershell
+.venv/Scripts/python.exe build_multiplataforma.py windows --timeout 3600
+.venv/Scripts/python.exe build_multiplataforma.py apk --timeout 3600
+```
+
+O release_manifest.json valida os hashes dos arquivos ativos de NexGrana/ e SIM_Labs_QA/. A automação no GitHub Actions executa os testes e confere esse manifesto antes dos dois builds, depois disponibiliza os arquivos em Actions → execução do workflow → Artifacts por 30 dias. Os builds são artefatos de homologação; não são publicação assinada para lojas.
+
+## Regras e limites
+
+- NEXGRANA_RULES.md é a referência financeira e de privacidade.
+- Nenhuma credencial, banco local, virtualenv, node_modules ou build gerado é versionado.
+- Nenhuma migração de produção ou chamada a Supabase de produção é executada pelo pipeline.
+- iOS fica para a próxima fase.
+- A integração online depende de backend e segredos de homologação próprios; não os coloque no APK/EXE.

@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: simlabs
+      POSTGRES_PASSWORD: local_only_change_me
+      POSTGRES_DB: simlabs
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U simlabs -d simlabs"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - simlabs_pg:/var/lib/postgresql/data
+
+  migrate:
+    build: .
+    environment: &appenv
+      APP_ENV: dev
+      AUTO_INIT_DB: "0"
+      DATABASE_URL: postgresql+psycopg://simlabs:local_only_change_me@db:5432/simlabs
+      CORS_ORIGINS: http://localhost:8000
+      FEEDBACK_INGEST_TOKEN: local-compose-change-me
+    command: ["sh", "-lc", "alembic upgrade head && python -m app.seed"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  api:
+    build: .
+    environment: *appenv
+    ports:
+      - "8000:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  worker:
+    build: .
+    environment: *appenv
+    command: ["python", "-m", "app.worker"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+volumes:
+  simlabs_pg:

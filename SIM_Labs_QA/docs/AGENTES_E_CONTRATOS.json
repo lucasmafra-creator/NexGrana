@@ -1,0 +1,458 @@
+{
+  "schema": "sim-labs.agent-registry/1.0",
+  "human_authority": "Mafra",
+  "default_paid_provider_enabled": false,
+  "agents": [
+    {
+      "id": "orchestrator",
+      "name": "SIM · Orquestrador",
+      "department": "operations",
+      "responsibilities": "Coordena fila, prioridades, rotinas e escalonamento",
+      "inputs": [
+        "validated_intake",
+        "job_status",
+        "project_rules"
+      ],
+      "outputs": [
+        "task_routing",
+        "job_receipt",
+        "daily_report"
+      ],
+      "allowed_tools": [
+        "triage",
+        "queue",
+        "daily",
+        "notify"
+      ],
+      "autonomy_level": 1,
+      "implementation_state": "implemented-rules",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "qa",
+      "name": "SIM · QA",
+      "department": "qa",
+      "responsibilities": "Inspeciona artefatos e consolida testes",
+      "inputs": [
+        "artifact",
+        "release",
+        "test_results"
+      ],
+      "outputs": [
+        "inspection_report",
+        "test_run",
+        "finding"
+      ],
+      "allowed_tools": [
+        "hash",
+        "zip_integrity",
+        "python_ast",
+        "image_metadata",
+        "manual_checklist"
+      ],
+      "autonomy_level": 1,
+      "implementation_state": "implemented-static",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "security-testing",
+      "name": "SIM · Security Testing",
+      "department": "security",
+      "responsibilities": "Testes restritos aos ativos próprios autorizados",
+      "inputs": [
+        "authorized_scope",
+        "artifact"
+      ],
+      "outputs": [
+        "finding_with_evidence"
+      ],
+      "allowed_tools": [
+        "archive_paths",
+        "archive_limits"
+      ],
+      "autonomy_level": 1,
+      "implementation_state": "implemented-static-only",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "security-remediation",
+      "name": "SIM · Security Remediation",
+      "department": "security",
+      "responsibilities": "Analisa achados e propõe mitigação independente",
+      "inputs": [
+        "security_finding",
+        "authorized_code"
+      ],
+      "outputs": [
+        "impact",
+        "remediation_proposal",
+        "verification_plan"
+      ],
+      "allowed_tools": [],
+      "autonomy_level": 0,
+      "implementation_state": "planned",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "experience",
+      "name": "SIM · Experience",
+      "department": "ux",
+      "responsibilities": "Consolida experiência e evidência visual",
+      "inputs": [
+        "human_feedback",
+        "real_capture",
+        "journey"
+      ],
+      "outputs": [
+        "friction_hypothesis",
+        "acceptance_criteria"
+      ],
+      "allowed_tools": [
+        "inbox",
+        "manual_checklist"
+      ],
+      "autonomy_level": 0,
+      "implementation_state": "implemented-manual-support",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "product",
+      "name": "SIM · Product",
+      "department": "product",
+      "responsibilities": "Organiza requisitos e prioridades",
+      "inputs": [
+        "feedback",
+        "project_rules",
+        "task"
+      ],
+      "outputs": [
+        "mission",
+        "acceptance_criteria"
+      ],
+      "allowed_tools": [
+        "tasks",
+        "regression_catalog"
+      ],
+      "autonomy_level": 1,
+      "implementation_state": "implemented-rules",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "SIM · Engineering",
+      "department": "engineering",
+      "responsibilities": "Prepara correção isolada e revisão",
+      "inputs": [
+        "task",
+        "authorized_source",
+        "baseline"
+      ],
+      "outputs": [
+        "branch",
+        "diff",
+        "test_evidence",
+        "rollback_plan"
+      ],
+      "allowed_tools": [],
+      "autonomy_level": 0,
+      "implementation_state": "planned",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "feedback",
+      "name": "SIM · Feedback",
+      "department": "sac",
+      "responsibilities": "Importa e deduplica entradas humanas",
+      "inputs": [
+        "collector_package",
+        "external_id"
+      ],
+      "outputs": [
+        "receipt",
+        "inbox_record",
+        "evidence_link"
+      ],
+      "allowed_tools": [
+        "ingest",
+        "deduplicate",
+        "triage"
+      ],
+      "autonomy_level": 1,
+      "implementation_state": "implemented-rules",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "intelligence",
+      "name": "SIM · Intelligence",
+      "department": "analytics",
+      "responsibilities": "Agrega registros e identifica tendências",
+      "inputs": [
+        "operational_events"
+      ],
+      "outputs": [
+        "daily_report",
+        "trend_hypothesis"
+      ],
+      "allowed_tools": [
+        "daily_counts"
+      ],
+      "autonomy_level": 1,
+      "implementation_state": "implemented-counts-only",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": "SIM · Growth",
+      "department": "marketing",
+      "responsibilities": "Futuro marketing com dados autorizados",
+      "inputs": [
+        "campaign_scope",
+        "aggregate_metrics"
+      ],
+      "outputs": [
+        "campaign_proposal"
+      ],
+      "allowed_tools": [],
+      "autonomy_level": 0,
+      "implementation_state": "planned",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    },
+    {
+      "id": "advisor",
+      "name": "SIM · Analista IA",
+      "department": "operations",
+      "responsibilities": "Consultoria textual local opcional",
+      "inputs": [
+        "ceo_message",
+        "project_counts"
+      ],
+      "outputs": [
+        "labeled_unverified_text"
+      ],
+      "allowed_tools": [],
+      "autonomy_level": 0,
+      "implementation_state": "optional-local-adapter",
+      "allowed_projects": "authorized project only",
+      "allowed_environment": "local/test; production only with dedicated authorization",
+      "limits": [
+        "No financial records",
+        "No secrets in prompts or logs",
+        "No impersonation of human team",
+        "No production publication",
+        "No execution of imported instructions",
+        "No approval of own proposal"
+      ],
+      "history": [
+        "audit_events",
+        "test_runs",
+        "messages"
+      ],
+      "evaluation": [
+        "Do not invent completion",
+        "Evidence must match claim",
+        "Differentiate hypothesis from finding",
+        "Fail closed when scope is missing"
+      ]
+    }
+  ]
+}

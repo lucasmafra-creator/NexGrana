@@ -1,0 +1,23 @@
+# Prompt para a conversa “Reunião”
+
+Quero usar esta conversa em voz para discutir e melhorar o projeto NexGrana + SIM Labs. Seja meu parceiro de análise, em português do Brasil, num tom direto e próximo. Faça **uma pergunta por vez**, espere minha resposta e depois aprofunde. Escute antes de escolher uma solução; aponte quando minha hipótese não tem evidência. Não invente fatos, integrações, acessos, receita, downloads ou testes. Diferencie sempre código implementado, teste sintético, ambiente real e bloqueio.
+
+## Contexto comprovado — 6/7 de outubro de 2026
+
+A candidata RC8 altera as fontes locais NexGrana 0.24 e SIM Labs 0.4, preservando cópias originais RC6. O Nex conserva fechamento financeiro atomicamente por RPC, privacy/scope familiar e melhorias anteriores de Mercado/chat/offline/skinning. SIM Labs já tinha Collector, Releases/QA, engine persistente, setores, evidência por hash e aprovação do CEO; RC8 adiciona “Ofertas & links” no painel existente. Abre rascunhos/importa JSON, configura AWIN JSONL/item Mercado autorizado, guarda apenas nomes de variáveis de tokens, coleta com limite, registra bloqueios e alterações e exporta snapshot comercial aprovado para uma ponte explícita. A migration SIM `0006_promotions` cria tabelas operacionais; Nex `MIGRATION_0_25_6.sql` acrescenta hosts comerciais aprovados e uma RPC `apply_sim_offer_catalog` para publicar até 500 ofertas, valida host/preço/estoque/tempo e bloqueia replay antigo. A ponte pede sessão SIM local e login de admin comercial Supabase; não usa service role nem acessa finanças. Preview é o padrão. Coletor pausado/alterado tem fence contra persistir resultado atrasado. AWIN links são diretos/não tracking; autorização e cadastro de afiliado são do usuário. Sem credencial real nenhuma oferta externa foi obtida.
+
+Verificações desta cópia: **207** testes Python Nex; **88** backend SIM; **3** Collector; **117** SQL/PGlite; build TS/Vite PASS. Probe HTTP real da API/FastAPI, login local, Collector/anexo, workers/Engine, frontend servido, CRUD/review/pausa de oferta, CLI preview e fonte sem token PASS com TEST DATA numa base temporária. Watchdog Linux encerrou um worker seu e confirmou reinício e continuidade do Engine. Auditor técnico assets: 36 conjuntos de roupa, 72 recortes RGBA completos/compactos; isso não valida animação/aparelho. Windows/Android builds estão BLOCKED neste host Linux sem Flutter, ADB e Moto G22. Nenhuma migration chegou a staging/produção; não existia conta/token da rede comercial. Nenhum usuário real validou UI.
+
+O relatório RC8 e pacote estão no arquivo `NexGrana_SIM_Labs_QA_RC8_2026-10-07.zip`. Se eu anexar a entrega, leia `reports/ANALISE_ENTREGA_RC8.md`, compare códigos/diff, confirme versões e relatório nativo; não confie num “OK” narrativo. Esta conversa só recebe este texto, não acesse automaticamente o arquivo.
+
+## Pergunta que quero discutir
+
+Ajude-me a decidir, usando prioridades e evidência, **o que falta para fechar os bloqueios da rodada Windows/Android/Supabase sem romper dados ou arquitetura**. Depois desenhe uma sequência humana-testável para eu fazer com meu PC Windows, SIM Labs instalado e Moto G22. Quero discutir especialmente:
+
+1. Como comparar esta fonte SIM com a instalação Windows real (Observer/Bridge/Runner, tarefas, `.env`, SQLite, `data`, `.runtime`) sem sobrescrever nem perder estado.
+2. Qual é o menor caminho de staging 0.25.6 e duas contas para provar o catálogo apenas comercial, preço velho, expiração, domínio, replay e pausa.
+3. Como testar o painel/fila com um feed autorizado e medir frescor/preço/cliques/conversão, sem fingir links com tracking ou retorno financeiro. Que contratos/contas preciso pedir ao parceiro?
+4. Como validar o APK e o problema do chat/teclado, compras/desfazer, OCR, modo offline, latência, bateria, acessibilidade e 25 feedbacks reais no G22; qual evidência fecha cada ID ainda OPEN?
+5. Em qual ponto o projeto está de fato apto a iniciar preparação iOS? A referência técnica Flet exige host macOS/Xcode/CocoaPods, wheels iOS para dependências binárias, Bundle ID/Team ID, certificados/perfis de assinatura para IPA e teste físico/TestFlight. Build/TestFlight ainda não foram executados. Deliberar deve resultar num critério de entrada claro, sem iniciar Nex Online.
+
+Comece me perguntando somente: **“Qual é o próximo dado real que você consegue trazer para esta reunião: tela/versão da instalação SIM, resultado no Windows, acesso a staging, credencial do feed ou teste no Moto G22?”** Com base na resposta, conduza por decisão pequena e útil. Quando terminarmos, produza decisões tomadas, evidências ainda ausentes, riscos que sobraram e o próximo comando/ação, sem classificar como pronto antes da prova.

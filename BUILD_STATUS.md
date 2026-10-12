@@ -1,22 +1,20 @@
-# Build status
+# BUILD_STATUS — rodada NexGrana 0.24.0
 
-NEXGRANA STATUS: bloqueio único do run 96c0a5da identificado e corrigido; ainda não GREEN até a suíte e o build passarem novamente no Windows.
-VERSÃO: NexGrana 0.24.0 / SIM Labs QA 0.4.1-qa.2 + hotfix de recuperação 2026-10-11.
-BRANCH/COMMIT: indisponível no pacote; nenhuma equivalência Git afirmada.
-RUN: Windows run 4a786e1a1abf49858b6a4533555d2c58 = BLOCKED; seis grupos passaram, dois falharam; nenhum build ou release foi criado.
-TESTES: run Windows 96c0a5da teve 7/8 grupos PASS; o grupo Nex falhou por PNG truncado. Asset restaurado; suíte de skins 8/8 PASS e varredura dos 147 PNGs PASS. Repetição Windows pendente.
-REGRAS FINANCEIRAS: testes Python/SQL PASS; staging e validação com sessão real pendentes.
-REGRESSÃO: fixtures de processo ajustadas para caminhos Windows; dependências do gateway Nex incluídas e verificadas; asset de foco restaurado do bundle íntegro. Suíte completa do Nex e smoke nativo aguardam a execução corrigida no Windows.
-WINDOWS BUILD: BLOCKED — a execução 4a786e1a não chegou ao build; nenhum EXE gerado.
-ANDROID BUILD: BLOCKED — etapa separada após Windows; nenhum APK gerado.
-BUGS P0: não foi realizada classificação completa de todos os feedbacks; não afirmar zero.
-BUGS P1: bloqueadores históricos de inicialização corrigidos; validação Windows ainda necessária.
-BUGS RESTANTES: toolchain e smoke Windows/Android; login e navegação autenticada NexGrana em staging; refinamento visual das skins depende de revisão humana.
-EVIDÊNCIAS: reports/pipeline, reports/browser-smoke.json e screenshots.
-PRÓXIMA AÇÃO: extrair a revisão atualizada sobre a mesma pasta, substituindo os arquivos sem apagar `.runtime`, e executar uma vez `INICIAR.cmd build-windows`.
+Data de preparação: 2026-10-12  
+Branch: codex/nexgrana-rc8-source-ci-2026-10-12
 
-O registro automático usa o resultado da execução atual e verifica hashes. Envia ZIP da pasta completa do executável, incluindo DLLs, para a central local. Nunca publica, instala nem declara o binário testado. Essa integração foi testada com arquivos sintéticos explicitamente identificados; não houve teste de registro de EXE real nesta sessão.
+| Gate | Status inicial desta branch |
+|---|---|
+| Fonte 0.24.0 importada do pacote corrigido | PASS |
+| Manifesto dos diretórios ativos (604 arquivos) | PASS — hashes gerados; CI fará a verificação
+| Assets e identidade canônica | PASS — 149 PNGs ativos foram decodificados; o asset de foco foi restaurado e uma referência PNG truncada em documentação foi retirada |
+| Fonte SIM Labs QA/Collector e dados locais fora do Git | PASS |
+| Dependências / instalação limpa no CI | PENDING |
+| Testes NexGrana, SIM Labs, Collector e UI | PENDING |
+| Build Windows | PENDING — só confirmar após EXE e artefato do Actions |
+| Build Android APK | PENDING — só confirmar após APK e artefato do Actions |
+| iOS | DEFERRED |
 
+O histórico do repositório contém um build Windows aprovado e um Android falho da versão 0.19. Eles não contam como evidência da 0.24.0.
 
-## Correção de acesso e bloqueios do pipeline — 2026-10-11
-A autenticação validada pelo iniciador é reutilizada na interface. O hotfix também corrige os testes de parada que falhavam com caminhos Windows, inclui FastAPI/Uvicorn nas dependências QA do gateway, verifica esses imports antes da suíte e invalida o carimbo do venv quando um arquivo de requirements incluído muda. A suíte de regressão passa a executar com o Python do venv QA do backend.
+A branch configura GitHub Actions para rodar os testes, compilar Windows e Android e guardar os artefatos por 30 dias. Nenhum binário é declarado como pronto antes do término bem-sucedido do respectivo job.

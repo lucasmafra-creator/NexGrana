@@ -1,0 +1,1051 @@
+{
+  "version": "2026.10.06.1",
+  "static_assets": true,
+  "canonical_masters_modified": false,
+  "skins": [
+    {
+      "key": "administrativo",
+      "source_sha256": "f2107295fe71c07f484490ec8b34accf7ccf959633e070ab664c6f9b3f9866e5",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        56,
+        1218,
+        1222
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/administrativo_v3.png",
+          "size": 768,
+          "bytes": 515826,
+          "sha256": "b798261ab339c1e09123972f377dfc077f67aeccb4b0a88d8d0646340e38032a"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/administrativo_avatar_v3.png",
+          "size": 128,
+          "bytes": 22074,
+          "sha256": "b659cc5df1452202828f4dcc4a0931905b4c6df1f0b6fc34c91cfccc890b2f40"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "ano_novo",
+      "source_sha256": "e43f0ef89b1a806cb47d28b8c679247f9d91e3da91df9ccab3eafdbdd8dbf6e3",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        12,
+        1218,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/ano_novo_v3.png",
+          "size": 768,
+          "bytes": 461433,
+          "sha256": "518ffbba4f53046ca5db794061fee9fef496ab76b913a6490bc0e41620ee7b95"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/ano_novo_avatar_v3.png",
+          "size": 128,
+          "bytes": 19949,
+          "sha256": "1104b34e062d2a181599ba9995107e38450a0204724b2881a56c56a541e24254"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "carnaval",
+      "source_sha256": "c639a3503a0f82b9551835766ac56667e11ed1bf49de3faf5ff6e66fabcf5a48",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        64,
+        21,
+        1198,
+        1222
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/carnaval_v3.png",
+          "size": 768,
+          "bytes": 580214,
+          "sha256": "955fe3278b297fe76a2f9cc22526a96b38dfb0dcadbdc4b8027e1d393473b326"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/carnaval_avatar_v3.png",
+          "size": 128,
+          "bytes": 25205,
+          "sha256": "20ddfcc5856ba6c75998199cbd105e030e2ca638c626385fc340815ed68a8665"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "casal",
+      "source_sha256": "fb2d2892e4865dcb28c87edc62cb408ccc4b6990f2662b6ba2d0f816ed64428f",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        49,
+        1218,
+        1209
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/casal_v3.png",
+          "size": 768,
+          "bytes": 561266,
+          "sha256": "95328634b6462b3b65d91c57c9058d1a027f156f4c32eb28337f77e3dbf27276"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/casal_avatar_v3.png",
+          "size": 128,
+          "bytes": 23881,
+          "sha256": "1fd507229b630475637bf68b1a0d13c735d9a8d0dbb0a375e6251e64edcd2dc5"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "cinema",
+      "source_sha256": "0d5fbb919c6336fcf7d9cff6c81caac6ebeddce19b5d8f33481dbb4769d96aa9",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        59,
+        1144,
+        1190
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/cinema_v3.png",
+          "size": 768,
+          "bytes": 570350,
+          "sha256": "cb05e9cd7f2d331406557e0b17fdd79128784855d123b59286d244469b453a39"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/cinema_avatar_v3.png",
+          "size": 128,
+          "bytes": 24878,
+          "sha256": "aa792039896ec981f4dd461794067902a9f7639457b76d0a876f96628f3a19f9"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "compras",
+      "source_sha256": "25f320a4cf4d7de44c16b3ee18cb541a4173499868411760ef966d6320de44e1",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        53,
+        1240,
+        1188
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/compras_v3.png",
+          "size": 768,
+          "bytes": 476307,
+          "sha256": "27354795b40d58562c6f77d22931c76c5141d173b58b3dcc290c309cb48b8d1d"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/compras_avatar_v3.png",
+          "size": 128,
+          "bytes": 20806,
+          "sha256": "28583cb8341b5da0d48700f687ded7459dddc4da58d0bd8a33fb615e92cf164d"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "conquistas",
+      "source_sha256": "d4004c0ff1fe70927cdfff2f792bcc7e061524617b656ff52f58453d6de5db7b",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        23,
+        1174,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/conquistas_v3.png",
+          "size": 768,
+          "bytes": 464166,
+          "sha256": "184c3a3af6852f409e389edc913c6a70f9c7753ccd09f07afe7830c426024289"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/conquistas_avatar_v3.png",
+          "size": 128,
+          "bytes": 20126,
+          "sha256": "938825b8b643c282f55151ab4c13aa3674f0a884ed5775039d4c2d89780cec45"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "consciencia_negra",
+      "source_sha256": "0000843b7b0a79f98c0ebe7d0b313d288282fad6a38c2fc3fe3e9a3049a57059",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        53,
+        1119,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/consciencia_negra_v3.png",
+          "size": 768,
+          "bytes": 520488,
+          "sha256": "cdf6c3f345829619d86fa20e099fa0d1fd3e95577766c9a979ba701c62e08f1d"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/consciencia_negra_avatar_v3.png",
+          "size": 128,
+          "bytes": 21497,
+          "sha256": "8683c6e52195ffa822747956e63fa38e1cb842371883174a82ce8582a3883856"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "criativo",
+      "source_sha256": "f11f7ba34df98e52340a91abbd7eff8b01d63821025b90f60d5513efa688c17e",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        64,
+        1150,
+        1206
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/criativo_v3.png",
+          "size": 768,
+          "bytes": 580162,
+          "sha256": "df4b099437831bed0cf229051822a85502b36323f1f651673c937b2d8c1ba7a6"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/criativo_avatar_v3.png",
+          "size": 128,
+          "bytes": 24662,
+          "sha256": "7aab8374a44c5c9ad1be8ec75c796e90701895a394513a28699e6c38e8689552"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "dev",
+      "source_sha256": "93c74df56fef1458552a14e186386d23e898b33f24e9c0489b8cdd181421b4de",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        45,
+        1244,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/dev_v3.png",
+          "size": 768,
+          "bytes": 453147,
+          "sha256": "ace27a514f596f7811276818b5e3ad7014436ca2c7d24d364899bbda94b4af25"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/dev_avatar_v3.png",
+          "size": 128,
+          "bytes": 19247,
+          "sha256": "2c7e9e83739988f127ce4432edb5a942318ddb472a8a889f7512f2bb7d12cfb0"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "dia_da_mulher",
+      "source_sha256": "060820f9939890250d3ffcd41aac59c5feb4c89075eb558a32df211dfc957fe7",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        2,
+        57,
+        1174,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/dia_da_mulher_v3.png",
+          "size": 768,
+          "bytes": 537380,
+          "sha256": "a1896bffca42b2bd3cf90ddd59205cdc00263a7e89acddbb62247e4378ac584a"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/dia_da_mulher_avatar_v3.png",
+          "size": 128,
+          "bytes": 22560,
+          "sha256": "40c296079696fc9db82d51076811a882e4a828aff40a6fab3b47c327fde5122d"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "economico",
+      "source_sha256": "db33c9ab43a76b903077b971d06c167d0fb53cb274b4580523a13a4bf42023d4",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        23,
+        1238,
+        1182
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/economico_v3.png",
+          "size": 768,
+          "bytes": 428520,
+          "sha256": "8a9fba2e9ff975f89707f1c2f8d78be6e7efd3318722f0d158ee048c128e318a"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/economico_avatar_v3.png",
+          "size": 128,
+          "bytes": 19053,
+          "sha256": "a6a15ee5811da9424e79583a50a8efea5231071f00715f4fb15e05b1d651b377"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "empreendedor",
+      "source_sha256": "1738cb44eaa9d3e9ffa82ad8dc74f64956adcaf0eddbc39dcad717ff59e1b155",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        53,
+        1218,
+        1214
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/empreendedor_v3.png",
+          "size": 768,
+          "bytes": 505794,
+          "sha256": "9f67b898e56baaac0bf430c57c9387801dabffa66689f66b7300373a8c920b2a"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/empreendedor_avatar_v3.png",
+          "size": 128,
+          "bytes": 21892,
+          "sha256": "e23d8da8e3282154f3649615e2dd9c02d99c9a39b53ace69b5f97d652b8702f6"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "estudante",
+      "source_sha256": "7c233904c966248e8d773539f3fa734a75284be8100e8861090890cf4acb52e5",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        68,
+        1192,
+        1190
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/estudante_v3.png",
+          "size": 768,
+          "bytes": 513775,
+          "sha256": "c45a19a9b8bac911bf028b2a71265b445af28b0212bf1bd227c73ae9d2d2a7d8"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/estudante_avatar_v3.png",
+          "size": 128,
+          "bytes": 22328,
+          "sha256": "cc01ddcfa7225eeaccbee23d13911093bedd6450abf8b463928fb513590fd44e"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "fitness",
+      "source_sha256": "875acde3da2b42be300b701ecd4435048a98f462a39383d5f0a819661dac5ef7",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        57,
+        1214,
+        1188
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/fitness_v3.png",
+          "size": 768,
+          "bytes": 518891,
+          "sha256": "bf5e0eabc0234493107225ff14af3eaa030c900f7fb31be1bb37b64fcf5aa1ab"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/fitness_avatar_v3.png",
+          "size": 128,
+          "bytes": 21971,
+          "sha256": "583d573632c5f8c16fbf93b48e47745f3675572a0a02a46024b0a3c55b1095c1"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "foco",
+      "source_sha256": "949f77e54b564c9e1c84a625c44be6e20694d839d6a2d1fcb787af0e12d9dce9",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        45,
+        1232,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/foco_v3.png",
+          "size": 768,
+          "bytes": 499761,
+          "sha256": "9b946fbe4bde1163a0d07687d048678db54e90b6181c1e635c59c45ee35a57cc"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/foco_avatar_v3.png",
+          "size": 128,
+          "bytes": 21191,
+          "sha256": "691bf68f91da293c2fc0a483f0023953b3379a9eadea5354dd6cba880c22933d"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "freelancer",
+      "source_sha256": "4b413b7a8e08653273a985f34ed9d2961eb269e89977f2d401028006525da824",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        55,
+        1198,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/freelancer_v3.png",
+          "size": 768,
+          "bytes": 539059,
+          "sha256": "5598098e6116316a69de7cd829f9ae1ec47a2d4b67cba68413a4906585a1b964"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/freelancer_avatar_v3.png",
+          "size": 128,
+          "bytes": 22517,
+          "sha256": "f223d16705819d69e85ec69cb97329c357c736096ab6176259becf01ec39db0b"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "gamer",
+      "source_sha256": "f099e8d6f84da15ea90428e38dddbe674413326ae5e7603e0180129d52f9bb41",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        59,
+        1240,
+        1205
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/gamer_v3.png",
+          "size": 768,
+          "bytes": 487290,
+          "sha256": "0f3cc97a3b88a9994d928e34a5c15a6eeffaec593c5d349172a29aa0e7f6ee44"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/gamer_avatar_v3.png",
+          "size": 128,
+          "bytes": 21728,
+          "sha256": "2f13df7469af968b7917da1dd296b3865f9ca5f340db1e8748695f71a02ad633"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "gastronomia",
+      "source_sha256": "055f4f22bce2695e4d05fee5c4e9a4496b3554a84949b8ddf4215d8ba6aa3916",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        0,
+        1238,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/gastronomia_v3.png",
+          "size": 768,
+          "bytes": 391669,
+          "sha256": "16e990c4d5b42325ee72695aadad14d31085857eae7ce5905f83546fe7f59e51"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/gastronomia_avatar_v3.png",
+          "size": 128,
+          "bytes": 17315,
+          "sha256": "3005e5c68f32afed3f53d20676c25bc0246baf7749e648334d9b7306f31b8c26"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "halloween",
+      "source_sha256": "7e90adb2fd9420216238d4be02c74b7d01bbb9ae28f1733fd6ff4a3181980dfe",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        40,
+        1253,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/halloween_v3.png",
+          "size": 768,
+          "bytes": 444636,
+          "sha256": "b6685fb5a9adc82486e92e0efc452574e48dc2cad61bdc394829bfbb80e73581"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/halloween_avatar_v3.png",
+          "size": 128,
+          "bytes": 19638,
+          "sha256": "249431497037de387bf7f618fdc3d19e0d193442a0e23fdb3f31d7d965e50263"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "ia",
+      "source_sha256": "5bf065af4afbf83de0fcb00bc913e8594a0ef080b30bdd33f90fb18317a39a97",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        65,
+        1212,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/ia_v3.png",
+          "size": 768,
+          "bytes": 499102,
+          "sha256": "0071d4b6f4f1b7af9043dc9bbbfdf8699dd3ae01777c9bae96b5d2f8f65f4fe2"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/ia_avatar_v3.png",
+          "size": 128,
+          "bytes": 21823,
+          "sha256": "f9cacd790312682325c7c3568fbfeb379dd39df4a8b11634fcc42c8a79387789"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "investidor",
+      "source_sha256": "a34a40307fb3ca21b78328eb8a7a3785c7f1f18fa045033ac849b5a48842bfd4",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        40,
+        1218,
+        1192
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/investidor_v3.png",
+          "size": 768,
+          "bytes": 508217,
+          "sha256": "062c4975d442a7764a818bd36898ee2ef0ff4cd317eba255941e95e467512934"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/investidor_avatar_v3.png",
+          "size": 128,
+          "bytes": 21262,
+          "sha256": "6b6a87428205654c1b0ec4d66864302c64da4913579747af7cc1e36c3acdc7fb"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "meio_ambiente",
+      "source_sha256": "890b08f0e1bb3bfa8911ef604167bf766f03b3f5ed031227a29dd837d8b6e3b1",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        52,
+        1218,
+        1194
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/meio_ambiente_v3.png",
+          "size": 768,
+          "bytes": 505599,
+          "sha256": "f909507a9097329528523ac630f7338cb2ce5d77e386e378c5d785a4b95441c8"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/meio_ambiente_avatar_v3.png",
+          "size": 128,
+          "bytes": 20945,
+          "sha256": "a4ee7d2fb22acccb1125f6d64effcef2d070e8d55823ae4f56eed892705500db"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "musica",
+      "source_sha256": "234800e629e6606f51518a79a0db267eeb13fa17d72ff95f43211e318d220f71",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        19,
+        1214,
+        1184
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/musica_v3.png",
+          "size": 768,
+          "bytes": 493824,
+          "sha256": "dd2622d15ba32ed381a11f37219c66842bb449222be48f76ca0ddbf9e8b4dfde"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/musica_avatar_v3.png",
+          "size": 128,
+          "bytes": 21881,
+          "sha256": "f6acd95c77d52261b4e39b6cb12e13aa74d3956d1a2117cb766af1a3d92b6d00"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "natal",
+      "source_sha256": "6bac221277f08d56547be82614694d87948bb8ba7e52fbc8ca59912985929df9",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        57,
+        61,
+        1246,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/natal_v3.png",
+          "size": 768,
+          "bytes": 482745,
+          "sha256": "0deec107710400fb2dcaf81b80eab36dd05a509bdd09dba709856eb9ee576a62"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/natal_avatar_v3.png",
+          "size": 128,
+          "bytes": 20013,
+          "sha256": "6b569dc7dc1245a638c344ed4d83c7cdb7e44f9ba429d1a42eebe7e6212ac842"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "natureza",
+      "source_sha256": "ab01c0894dd871c70e3e09f19e1ec6d532fefea52d38a2d7ecd741f1f39edd51",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        23,
+        1200,
+        1230
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/natureza_v3.png",
+          "size": 768,
+          "bytes": 504104,
+          "sha256": "fb33d09506ecd9c72b603b0350c46b3b286791c3e722a68379da172ab0123f89"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/natureza_avatar_v3.png",
+          "size": 128,
+          "bytes": 21189,
+          "sha256": "26357b4bb70271b7e0def8e53441df2cbf74ee9a5bc8592ea81e80a7056bdf8e"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "operador",
+      "source_sha256": "9c9cea7c735316da8abe5ee0621efbdc30a52d94b2a03aebdb074e5369041840",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        12,
+        1253,
+        1198
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/operador_v3.png",
+          "size": 768,
+          "bytes": 411246,
+          "sha256": "410fd5092185ca0d6cbde25882e16541a7a4c4581bf62e77534e6fb28187c17e"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/operador_avatar_v3.png",
+          "size": 128,
+          "bytes": 17845,
+          "sha256": "676fa02692e290cdca5f5dfad38e0a163af5b3ca1272f3e156d259c045832b66"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "organizado",
+      "source_sha256": "2be12424646b02394a68f1a31ecd1f7fcd1c526e2ae33b89083b5284799b495e",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        31,
+        1174,
+        1182
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/organizado_v3.png",
+          "size": 768,
+          "bytes": 535457,
+          "sha256": "0d51162ba08f547da6b503bbc9f7f35d366e6faa36dd1942135a4e5354b85e0c"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/organizado_avatar_v3.png",
+          "size": 128,
+          "bytes": 22850,
+          "sha256": "002646df6cf60133fe34d9023858a496b15dd128b8b9ccb3f766a5417ab83184"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "pascoa",
+      "source_sha256": "e9e5c86aba9d318b5413b864e66de522cb96e38fe299e78e0ea7ba3e0a0996b0",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        41,
+        1212,
+        1214
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/pascoa_v3.png",
+          "size": 768,
+          "bytes": 497402,
+          "sha256": "10125e870bce6b9b7e586695501085c1cc8119720b1d06110b0629c595045b23"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/pascoa_avatar_v3.png",
+          "size": 128,
+          "bytes": 21389,
+          "sha256": "78d1b9766bf75b728d2f0f6ebd02f019cea1302773d3499c82c85b39d16bbe61"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "pet",
+      "source_sha256": "f3a3b1c83ae5f7f5241486d657c3309c30a8c6173791482853459740605bfdfe",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        21,
+        1210,
+        1198
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/pet_v3.png",
+          "size": 768,
+          "bytes": 496567,
+          "sha256": "284a859c7cb058b1a5537180677f532e4e5da9f25e9f9efd07d8431a2caef8a1"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/pet_avatar_v3.png",
+          "size": 128,
+          "bytes": 21916,
+          "sha256": "03cec5e791bf5262592c5c1e31420fa6109170190d099de96249ef64819b82cf"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "planejamento",
+      "source_sha256": "d02b7303fe6d060918e3e02e27c57f4f77c40eb23385ebe5ebdb259b29340e9e",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        39,
+        1214,
+        1189
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/planejamento_v3.png",
+          "size": 768,
+          "bytes": 493298,
+          "sha256": "390deec552c5c7cf95dce83a66b3721cd52c27e17d65968b7c8e82565b6df1b3"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/planejamento_avatar_v3.png",
+          "size": 128,
+          "bytes": 21142,
+          "sha256": "1f59a039f025f126494a0d2b2e6599f5cb8eaa4e01c2856fcef203086abe6838"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "povos_indigenas",
+      "source_sha256": "960a1d295f361dd01617505931d8c7bcf6e677cd0caab8cd060b2b654aabdc89",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        23,
+        1240,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/povos_indigenas_v3.png",
+          "size": 768,
+          "bytes": 471480,
+          "sha256": "e8ee4cb538135a5b98bca05f1c3d68e7e014ca4e74a49753bc7761672b8b544e"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/povos_indigenas_avatar_v3.png",
+          "size": 128,
+          "bytes": 20342,
+          "sha256": "9e0dc8016febe6b324f10aabb477aa99fd3cc4f2db56fc446e9a07cc78ff2ded"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "profissional",
+      "source_sha256": "aebcf089a3ee6181e4d396d77e2b97a95ad205fd0832e5023b01f3149eb19325",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        61,
+        1176,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/profissional_v3.png",
+          "size": 768,
+          "bytes": 526427,
+          "sha256": "e389517a354b72fac6436fa2237f6f6fa8d8379521c68c440bdae5ffff96f785"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/profissional_avatar_v3.png",
+          "size": 128,
+          "bytes": 23136,
+          "sha256": "2f094e22f8f817468662a4fd561f0a88d92760034b655c1ea1d8e73d38659c39"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "tech",
+      "source_sha256": "b79e4c0f92b1b4afc107ace58afdee0a60361c47576e087d886b9ab40508429c",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        40,
+        1234,
+        1254
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/tech_v3.png",
+          "size": 768,
+          "bytes": 499572,
+          "sha256": "2e41a44b64f1f2dfbdde56753446dcc02284f6ce55bad39caf44fee3171dd428"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/tech_avatar_v3.png",
+          "size": 128,
+          "bytes": 21946,
+          "sha256": "b0af5d8ca24cb670ddeb70e8da7677321901fb0f52c490075b4f8b8d14a4d2eb"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "trabalho",
+      "source_sha256": "35d2a019c0cbbfe441fb98517885e2a80930e2796bec5e2fd37a5d1e5c25787f",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        61,
+        62,
+        1236,
+        1216
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/trabalho_v3.png",
+          "size": 768,
+          "bytes": 543800,
+          "sha256": "ed7748a263fd821070719ee1230987f3265039a0f62b64d67b24393805512689"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/trabalho_avatar_v3.png",
+          "size": 128,
+          "bytes": 23417,
+          "sha256": "898f87058fb3d35911669cbca261f8fc22f578d8b70fda7f60752af0db0e728c"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    },
+    {
+      "key": "viagem",
+      "source_sha256": "fce531f3dc9dc851f9a9abe34d0f18f58987b0d582a4682eb76c32b5060ca23c",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "original_alpha_bbox": [
+        0,
+        23,
+        1190,
+        1206
+      ],
+      "variants": {
+        "v3": {
+          "asset": "nex/skins/cutouts/viagem_v3.png",
+          "size": 768,
+          "bytes": 545792,
+          "sha256": "8f04156588d512ddfb728ad31326f5dabb196b4ad3572359281bad7dbae7e484"
+        },
+        "avatar_v3": {
+          "asset": "nex/skins/cutouts/viagem_avatar_v3.png",
+          "size": 128,
+          "bytes": 23267,
+          "sha256": "e445ca47a2dcbeb1c115eef8923566eac7b6d4d5f6c6157b7ced6a56e2d9f0c2"
+        }
+      },
+      "review": "candidate; contact-sheet reviewed separately; device QA pending"
+    }
+  ]
+}

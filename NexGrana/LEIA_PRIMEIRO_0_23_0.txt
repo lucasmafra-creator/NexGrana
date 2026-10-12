@@ -1,0 +1,10 @@
+NEXGRANA 0.23.0 QA RC1 — CÓDIGO-FONTE
+
+1. Extraia o ZIP em uma pasta curta, preferencialmente C:\NG23.
+2. Entre na subpasta project, onde estão pyproject.toml e requirements.txt.
+3. Siga COMANDOS_0_23_0_WINDOWS_ANDROID_IOS.txt.
+4. Execute validate_release.py --full antes de gerar builds.
+5. Não aplique migration automaticamente: faça backup e valide o SQL no Supabase de homologação.
+6. Não coloque service_role, chave de provedor ou senha dentro do app.
+7. Windows/Android só ficam “validados” após build, instalação, abertura e checklist físico.
+

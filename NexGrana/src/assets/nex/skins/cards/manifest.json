@@ -1,0 +1,225 @@
+{
+  "schema": "nexgrana.skin-cards/1.0",
+  "source_package": "Nex_Skins_36_Assets_Separados_Sem_Repeticao",
+  "count": 36,
+  "rendering": "full RGB card previews; not transparent cutouts",
+  "canonical_master_preserved": "../nex_hd.png",
+  "files": [
+    {
+      "name": "Nex_Administrativo.png",
+      "width": 163,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Ano_Novo.png",
+      "width": 163,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Carnaval.png",
+      "width": 162,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Casal.png",
+      "width": 163,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Cinema.png",
+      "width": 169,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Compras.png",
+      "width": 163,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Conquistas.png",
+      "width": 162,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Consciencia_Negra.png",
+      "width": 168,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Criativo.png",
+      "width": 169,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Dev.png",
+      "width": 168,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Dia_da_Mulher.png",
+      "width": 169,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Economico.png",
+      "width": 163,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Empreendedor.png",
+      "width": 163,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Estudante.png",
+      "width": 163,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Fitness.png",
+      "width": 168,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Foco.png",
+      "width": 163,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Freelancer.png",
+      "width": 162,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Gamer.png",
+      "width": 169,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Gastronomia.png",
+      "width": 168,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Halloween.png",
+      "width": 163,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_IA.png",
+      "width": 168,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Investidor.png",
+      "width": 163,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Meio_Ambiente.png",
+      "width": 168,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Musica.png",
+      "width": 168,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Natal.png",
+      "width": 163,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Natureza.png",
+      "width": 168,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Operador.png",
+      "width": 163,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Organizado.png",
+      "width": 163,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Pascoa.png",
+      "width": 163,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Pet.png",
+      "width": 168,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Planejamento.png",
+      "width": 163,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Povos_Indigenas.png",
+      "width": 168,
+      "height": 177,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Profissional.png",
+      "width": 163,
+      "height": 193,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Tech.png",
+      "width": 168,
+      "height": 198,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Trabalho.png",
+      "width": 162,
+      "height": 203,
+      "mode": "RGB"
+    },
+    {
+      "name": "Nex_Viagem.png",
+      "width": 168,
+      "height": 203,
+      "mode": "RGB"
+    }
+  ]
+}

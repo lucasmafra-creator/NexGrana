@@ -1,0 +1,81 @@
+{
+  "version": "3.0-023-golden-preserved",
+  "mascot": "Nex",
+  "canonical_master": "nex/nex_hd.png",
+  "variants": {
+    "welcome_home_v2": "nex/nex_welcome_v2.png",
+    "thinking_home_v2": "nex/nex_thinking_v2.png",
+    "celebrate_home_v2": "nex/nex_celebrate_v2.png",
+    "winter_skin_v2": "nex/nex_winter_v2.png",
+    "hero": "nex/nex_hero.png",
+    "card": "nex/nex_card.png",
+    "avatar": "nex/nex_avatar.png",
+    "dock": "nex/nex_dock.png",
+    "themed_card_catalog": "nex/skins/cards/manifest.json"
+  },
+  "states": {
+    "idle": {
+      "asset": "nex/nex_hero.png",
+      "motion": "idle"
+    },
+    "happy": {
+      "asset": "nex/nex_hero.png",
+      "motion": "celebrate"
+    },
+    "celebrate": {
+      "asset": "nex/nex_hero.png",
+      "motion": "celebrate"
+    },
+    "thinking": {
+      "asset": "nex/nex_hero.png",
+      "motion": "thinking"
+    },
+    "warning": {
+      "asset": "nex/nex_hero.png",
+      "motion": "alert"
+    },
+    "supportive": {
+      "asset": "nex/nex_hero.png",
+      "motion": "worry"
+    },
+    "saving": {
+      "asset": "nex/nex_hero.png",
+      "motion": "coins"
+    },
+    "planning": {
+      "asset": "nex/nex_hero.png",
+      "motion": "thinking"
+    },
+    "shopping": {
+      "asset": "nex/nex_hero.png",
+      "motion": "look"
+    },
+    "goal": {
+      "asset": "nex/nex_hero.png",
+      "motion": "thinking"
+    },
+    "learning": {
+      "asset": "nex/nex_hero.png",
+      "motion": "study"
+    },
+    "money": {
+      "asset": "nex/nex_hero.png",
+      "motion": "coins"
+    },
+    "success": {
+      "asset": "nex/nex_hero.png",
+      "motion": "celebrate"
+    },
+    "sleep": {
+      "asset": "nex/nex_hero.png",
+      "motion": "sleep"
+    }
+  },
+  "quality_rules": {
+    "alpha_required": true,
+    "gif_legacy_disabled": true,
+    "no_checkerboard": true,
+    "no_upscale_from_small_source": true
+  },
+  "note": "0.24 RC6 preserva o master Golden Nex. O catálogo de 36 artes permanece como cards RGB para prévia; a skin temática só ocupa o hero desktop amplo. Em avatar, dock, tutorial, chat e slots compactos continua o master aprovado. O modo Automático aplica as datas festivas e de conscientização cadastradas; uma escolha manual prevalece até o retorno ao Automático. Estados continuam com micro movimentos; animações futuras requerem validação visual."
+}

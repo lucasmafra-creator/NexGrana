@@ -1,0 +1,215 @@
+name: NexGrana 0.24 — validação e builds Windows + Android
+
+on:
+  push:
+    branches:
+      - codex/nexgrana-rc8-source-ci-2026-10-12
+    paths:
+      - "NexGrana/**"
+      - "SIM_Labs_QA/**"
+      - ".github/workflows/nexgrana-build.yml"
+      - "README.md"
+      - ".gitignore"
+      - "release_manifest.json"
+      - "BUILD_STATUS.md"
+      - "PROJECT_STATE.md"
+      - "QA_REPORT.md"
+      - "CHANGELOG.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexgrana-rc8-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Testes e regras
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: src
+    defaults:
+      run:
+        working-directory: NexGrana
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: NexGrana/requirements-qa.txt
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: NexGrana/package-lock.json
+      - name: Instalar dependências Python de QA
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-qa.txt pytest==9.1.1
+          python -m pip check
+      - name: Instalar dependências SQL
+        run: npm ci
+      - name: Verificar sintaxe Python
+        run: python -m compileall -q src gateway
+      - name: Testes Python — unidade, integração, regras financeiras, isolamento e regressão
+        run: python -m pytest -q
+      - name: Testes SQL e isolamento de perfis
+        run: npm run test:sql
+
+  simlabs:
+    name: SIM Labs, Collector e UI QA
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: SIM_Labs_QA
+    env:
+      PYTHONPATH: backend:Collector
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: SIM_Labs_QA/backend/requirements.txt
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: SIM_Labs_QA/frontend/package-lock.json
+      - name: Instalar dependências de QA do SIM Labs
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r backend/requirements.txt
+          python -m pip check
+      - name: Verificar manifesto do código e dos assets
+        run: python scripts/verify_release_manifest.py
+      - name: Testes do backend, Collector e regressões de inicialização
+        run: python -m pytest -q backend/tests scripts/tests Collector/tests
+      - name: Instalar dependências da central
+        run: npm ci --prefix frontend
+      - name: Teste de estado da interface
+        run: npm --prefix frontend run test:ui-state
+      - name: Build da interface
+        run: npm --prefix frontend run build
+
+  windows:
+    name: Build Windows
+    needs: [validate, simlabs]
+    runs-on: windows-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: NexGrana
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: NexGrana/requirements-qa.txt
+      - name: Flutter 3.44.8
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.44.8"
+          channel: stable
+          cache: true
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-qa.txt
+          python -m pip check
+      - name: Diagnóstico de Flutter
+        run: flutter doctor -v
+      - name: Compilar NexGrana para Windows
+        run: python build_multiplataforma.py windows --timeout 3600
+      - name: Empacotar e calcular SHA-256
+        shell: pwsh
+        run: |
+          $latest = Get-ChildItem -Path dist -Directory | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if (-not $latest) { throw "A pasta de build Windows não foi criada." }
+          $bundle = Join-Path $latest.FullName "windows"
+          $exe = Get-ChildItem -Path $bundle -Recurse -Filter "*.exe" | Select-Object -First 1
+          if (-not $exe) { throw "A compilação terminou sem um EXE." }
+          $zip = Join-Path $env:RUNNER_TEMP "NexGrana_0.24.0_Windows.zip"
+          Compress-Archive -Path (Join-Path $bundle "*") -DestinationPath $zip -CompressionLevel Optimal
+          Get-FileHash -Algorithm SHA256 $zip
+          "WINDOWS_ZIP=$zip" >> $env:GITHUB_ENV
+      - name: Publicar artefato de teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: NexGrana-Windows-0.24.0
+          path: |
+            ${{ env.WINDOWS_ZIP }}
+            NexGrana/dist/**/build-report.json
+            NexGrana/dist/**/source-manifest.json
+          if-no-files-found: error
+          retention-days: 30
+
+  android:
+    name: Build Android APK
+    needs: [validate, simlabs]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: NexGrana
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: NexGrana/requirements-qa.txt
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Flutter 3.44.8
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.44.8"
+          channel: stable
+          cache: true
+      - name: Aceitar licenças Android
+        run: yes | flutter doctor --android-licenses
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-qa.txt
+          python -m pip check
+      - name: Diagnóstico Android
+        run: flutter doctor -v
+      - name: Compilar NexGrana APK
+        run: python build_multiplataforma.py apk --timeout 3600
+      - name: Preparar APK e calcular SHA-256
+        run: |
+          apk="$(find dist -type f -name '*.apk' -print -quit)"
+          test -n "$apk" || { echo "A compilação terminou sem um APK."; exit 1; }
+          cp "$apk" "$RUNNER_TEMP/NexGrana_0.24.0_Android.apk"
+          sha256sum "$RUNNER_TEMP/NexGrana_0.24.0_Android.apk"
+      - name: Publicar artefato de teste
+        uses: actions/upload-artifact@v4
+        with:
+          name: NexGrana-Android-0.24.0
+          path: |
+            ${{ runner.temp }}/NexGrana_0.24.0_Android.apk
+            NexGrana/dist/**/build-report.json
+            NexGrana/dist/**/source-manifest.json
+          if-no-files-found: error
+          retention-days: 30
