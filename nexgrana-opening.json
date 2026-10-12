@@ -1,0 +1,9 @@
+{
+  "status": "PASS_OPENING_ONLY",
+  "mode": "web offline isolated",
+  "title": "NexGrana 0.24.0 QA",
+  "locale": "pt-BR",
+  "renderer": "local Flet resources",
+  "financial_login": "NOT_RUN",
+  "native_windows": "NOT_RUN"
+}

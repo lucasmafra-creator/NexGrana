@@ -1,38 +1,90 @@
-# NexGrana + SIM Labs — entrega de recuperação
+# SIM Labs 0.4 — teste da operação persistente
 
-## Hotfix do bloqueio Windows — 11/10/2026
+Esta é uma candidata operacional. O prompt completo de uma empresa que corrige código e estética autonomamente **ainda não está integralmente atendido**. Nesta entrega há processos reais, fila persistente, recuperação, auditorias de arquivos/registros e evidências. Os workers de setor não são agentes que implementam patches: geram relatórios e recomendações explicitamente identificados.
 
-Este pacote corrige o run `4a786e1a` que terminou bloqueado: fixtures dos testes de parada agora funcionam com caminhos Windows; FastAPI/Uvicorn do gateway são preparados e verificados no venv Nex QA; mudanças em requirements incluídos invalidam corretamente o carimbo do ambiente. O pacote não contém executável ainda.
+## Começar no Windows
 
-Se você já extraiu a recuperação anterior, extraia este ZIP **sobre a pasta pai existente** `C:\Users\lucas\Downloads\NEXGRANA_SIMLABS_RECUPERACAO (1)` e confirme substituir os arquivos da pasta `NexGrana_SIMLabs`. Não apague a pasta. O ZIP não carrega `.runtime`, senha local, `.env` ou banco de QA, então eles permanecem no computador.
+Requer Python 3.11+ no PATH e internet na primeira instalação das dependências. O site já está compilado: não precisa instalar Node.
 
-Depois de substituir, use uma única vez `INICIAR.cmd build-windows` dentro de `NexGrana_SIMLabs`. O fluxo executa os gates corrigidos e tenta o EXE; não abra outra execução em paralelo.
+1. Extraia a pasta inteira para um local permanente, por exemplo `C:\SIMLabs\SIM_Labs_0_4_0_24_7`.
+2. Se quiser preservar sua 0.3, siga **Migração** abaixo ANTES de iniciar a nova pasta.
+3. Abra o CMD nesta pasta e execute:
 
-1. Clique em **Extrair tudo**. Use uma pasta curta, por exemplo `C:\NexGrana_QA`. Não execute dentro do ZIP nem misture com V5/V6/V7.
-2. Abra **INICIAR.cmd** e escolha **1 — Abrir central**. A primeira preparação usa internet e pode demorar; aguarde na mesma janela.
-3. O iniciador valida a senha salva e abre a central já autenticada na porta e pasta corretas. Não precisa digitar a senha na tela. Se precisar consultá-la, escolha **7**.
-4. Escolha **4 — Testar, gerar e registrar Windows**. O fluxo valida o login, acompanha uma execução, testa, tenta compilar Windows e registra o pacote completo em **Releases & QA** somente se o build passar.
+```cmd
+INICIAR_24_7.bat
+```
 
-**Esta entrega contém fonte e automação; não contém EXE ou APK já compilado.** Os testes e o navegador foram validados em Linux. Build Windows, ferramentas C++ e smoke do executável ainda exigem seu Windows. Python estável 3.11+ e Node/npm são necessários; Flutter pode ser preparado pela CLI Flet. A compilação Windows requer Visual Studio Build Tools com C++ e Windows SDK. Falhas são registradas, não ignoradas.
+A janela informa a senha e abre `http://127.0.0.1:8000`. Ela também fica em `.runtime\PRIMEIRO_ACESSO.txt`, privado. Não compartilhe esse arquivo. Fechar o navegador não para a operação.
 
-## Menu
-- 1: abrir a central da pasta correta com validação de login.
-- 2: diagnóstico, sem reinstalar nem alterar o banco.
-- 3: testes, sem build.
-- 4: testes + build Windows + registro local do pacote, sem instalação/publicação.
-- 5: mesmo pipeline Windows completo; Android permanece separado.
-- 6: preview offline do NexGrana com armazenamento isolado. Mostra a abertura; login financeiro precisa de staging configurado. Não é uma demonstração de finanças com dados fictícios.
-- 7: consultar a credencial local desta instalação (uso de recuperação).
-- 8: reparar acesso, encerrando apenas processos desta pasta e preservando a senha.
+4. Faça login, abra **Operação 24/7**, confira o heartbeat e clique em **Rodar agora** no worker QA. Aguarde o resultado e baixe sua evidência.
+5. Para iniciar automaticamente no login do Windows, execute:
 
-A aba **Gestão de hoje / Executar QA** está no menu lateral. Seu botão executa o pipeline local; a opção 4 do iniciador também realiza o registro final em Releases & QA. “Atualizar” apenas consulta o estado; não dispara um novo build.
+```cmd
+INSTALAR_24_7.bat
+```
 
-## Dados e versões
-Não apague as pastas antigas: elas podem conter seus dados. Este pacote inicia uma instalação QA independente e não migra automaticamente senhas/bancos de outra cópia. A senha antiga de V6 não é a senha desta nova instalação. Após o primeiro acesso, mantenha esta pasta como instalação única de trabalho.
+É uma tarefa do Agendador, vinculada a esta pasta e usuário. O wrapper permanece monitorando o supervisor; a tarefa tenta reiniciar após falha. Não é um serviço antes do login. Computador desligado ou suspenso não executa trabalhos. Essa instalação precisa ser validada no seu Windows.
 
-Collector Inbox recebe pacotes de feedback. Releases & QA recebe artefatos para inspeção. Um ZIP enviado não é executado automaticamente: o pipeline usa exclusivamente a fonte revisada incluída neste pacote. O baseline SIM_Labs foi preservado para comparação; o iniciador usa SIM_Labs_QA.
+## Migração da 0.3, mantendo a senha e o histórico
 
-## Se uma etapa bloquear
-O relatório mostra a causa em `SIM_Labs_QA/data/qa_pipeline/runs/`. O diagnóstico fica em `SIM_Labs_QA/.runtime/doctor.json`. Não é necessário copiar comandos ou reinstalar tudo. Não envie `.env` ou PRIMEIRO_ACESSO.txt. Consulte o relatório antes de repetir.
+1. Na pasta antiga, execute `BACKUP_SIM_LABS.bat` e depois `PARAR_SIM_LABS.bat`. Mantenha a pasta e o backup antigos.
+2. Na pasta **nova, ainda não inicializada**, execute:
 
-Leia `QA_REPORT.md` e `BUILD_STATUS.md` para os limites reais. Relatórios antigos estão em `reports/historico` e não são aprovações desta entrega.
+```cmd
+MIGRAR_0_3.bat "C:\caminho\SIM_Labs_Integrado_0_3_0"
+INICIAR_24_7.bat
+```
+
+O copiador usa snapshot SQLite, copia dados/evidências/configuração e ajusta caminhos internos dos arquivos. A origem fica preservada. O primeiro início cria outro backup e aplica somente seis tabelas operacionais novas. Não acessa o banco financeiro do NexGrana. Banco personalizado ou evidência fora da pasta de origem bloqueiam a cópia para revisão. Se falhar durante a cópia, preserve a pasta parcial e extraia uma nova para tentar novamente; não execute sobre ela sem revisar.
+
+Para voltar à 0.3: pare a nova versão e inicie a pasta antiga preservada. Não aponte a 0.3 para o banco já migrado da 0.4. Desinstale a tarefa nova se for voltar de forma permanente.
+
+## Enviar sua última atualização
+
+Em **Releases & QA**, registre a versão e envie ZIP da fonte/build, EXE instalável ou APK. ZIPs recebem inspeção estrutural e revisão adicional dos assets Nex. No **Collector Inbox**, importe feedbacks com capturas; ou use `ABRIR_COLLECTOR.bat` e **Enviar para a Central**. No **Canal com Mafra**, `/resumo` traz registros reais e **Criar missão** encaminha seu pedido.
+
+Não há pasta monitorada de atualizações nem leitura automática de repositórios externos. A atualização entra pelos fluxos acima. Fonte recebida não é executada automaticamente.
+
+## O que funciona automaticamente
+
+- Supervisor mantém API, operações legadas e engine em processos distintos; reinícios com backoff e limite de cinco falhas consecutivas. Só controla seus próprios filhos.
+- Scheduler persistente: hora, 6h, dia, semana e ciclo de 30 dias. O mensal é intervalo fixo, não mês de calendário. Horários configuráveis no painel; pausa impede novas escalas e claims, deixando trabalhos em execução terminar.
+- Fila com deduplicação, claims transacionais, duas execuções isoladas simultâneas, timeout de 90s, até três tentativas e recuperação de leases.
+- Workers pausáveis de QA, segurança, UX, produto, engenharia, marketing, performance, red team e release. Permissão operacional: auditorias locais e geração de relatório, sem shell arbitrário, deploy ou alterações financeiras.
+- Upload de ZIP com assets gera inventário, hashes, decodificação, resolução, alpha e orientação de retrabalho. A estética/identidade ficam **BLOCKED** sem avaliação visual.
+- Segurança confere integridade das últimas 200 evidências do projeto; desvios criam P0, missão, incidente e decisão. Downloads, registros de homologação/encerramento e aprovação verificam hashes.
+- Evidências privadas e auditadas; Daily com contadores da janela do dia em São Paulo. Cenários de regressão manuais permanecem separados de testes automatizados.
+- Aprendizado DIO/TryHackMe pode ser registrado no painel, com conceito e aplicação. Isso não comprova conclusão de curso ou execução de laboratório.
+
+## Melhoria de asset para avaliar
+
+Abra `asset_candidates\Nex_Natal_original.png`, `Nex_referencia.png` e `Nex_Natal_candidata_v2.png`. A candidata foi gerada nesta conversa; não pelo engine local. Tem alpha real e identidade visual mais próxima da referência inspecionada, mas aguarda sua avaliação no app. Nenhum arquivo do NexGrana foi substituído. Há prompt e critérios em `asset_candidates\LEIA_ME.md`.
+
+## Executável opcional
+
+```cmd
+GERAR_EXECUTAVEL_WINDOWS.bat
+```
+
+Execute depois do primeiro início. Instala PyInstaller e gera `SIM_Labs.exe` no Windows. É um **iniciador** da pasta completa, não um aplicativo portátil independente e não `simlabs_worker.exe`. Não há EXE compilado/assinado/validado nesta entrega, pois os testes foram feitos em Linux. O BAT é o caminho disponível para testar agora.
+
+## Controle e diagnóstico
+
+| Comando | Uso |
+|---|---|
+| `STATUS_24_7.bat` | API, status de processos, idade do status e tarefa instalada |
+| `PARAR_24_7.bat` | Parar processos desta pasta; não apagar dados |
+| `INICIAR_24_7.bat` | Retomar; filas e configurações persistem |
+| `TESTAR_SIM_LABS.bat` | Suíte em banco TEST separado |
+| `BACKUP_SIM_LABS.bat` | Backup local, incluindo segredos; guardar privado |
+| `DESINSTALAR_24_7.bat` | Remover somente a tarefa registrada desta pasta |
+
+Se parar manualmente, não iniciar a tarefa do Agendador até querer retomar. Os logs ficam em `.runtime`. Se o limite de reinícios for atingido, corrigir a causa e reiniciar a central; não resetar o banco. A tarefa do Windows tem três tentativas adicionais de recuperação do wrapper, também limitadas.
+
+O heartbeat é diferente da configuração habilitada. Sem heartbeat recente, a operação não está comprovadamente ativa. Processos interrompidos podem precisar de até cerca de 4 minutos para expirar a lease da auditoria legada; jobs do engine recuperam após cerca de 2 minutos.
+
+## Limites que continuam BLOCKED
+
+Correção automática de código; avaliação visual automática; geração local automática de todas as skins; testes reais no NexGrana Windows/Android; medição de performance; execução de RLS/duas contas; serviço antes do login; acesso remoto; aprovação/publicação de produção; validação Windows desta versão; teste prolongado de 24h; navegação visual desta interface. Nenhuma publicação, chave de API ou cobrança é ativada.
+
+Veja `SIM_LABS_0_4_0_REPORT.md` para evidências e o checklist manual. Documentos de versões antigas foram mantidos para referência e não prevalecem sobre este guia.

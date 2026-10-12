@@ -1,0 +1,9 @@
+{
+  "login": "PASS",
+  "qa_tab": "PASS",
+  "qa_button_visible": "PASS",
+  "authenticated_iframe_data": "PASS",
+  "collector_upload_visible": "PASS",
+  "javascript_errors": [],
+  "host": "Linux Chromium; not Windows native"
+}

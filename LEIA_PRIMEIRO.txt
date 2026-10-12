@@ -1,0 +1,3 @@
+SIM Labs 0.4 - leia LEIA_PRIMEIRO.md para iniciar e migrar.
+No CMD nesta pasta: INICIAR_24_7.bat
+Candidata de teste: Windows e autonomia integral ainda nao homologados.

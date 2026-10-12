@@ -1,0 +1,65 @@
+DOCTOR: /workspace/scratch/83891f5f2b24/work/NexGrana_SIMLabs/SIM_Labs_QA/.runtime/doctor.json
+{
+  "host": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "package": "/workspace/scratch/83891f5f2b24/work/NexGrana_SIMLabs",
+  "manifest": {
+    "status": "PASS",
+    "verified_files": 799,
+    "mismatches": []
+  },
+  "environment": {
+    "status": "PASS",
+    "mode": "local-only",
+    "checks": {
+      "production_app_env": "PASS",
+      "privileged_supabase_credentials": "PASS",
+      "supabase_endpoint_allowlist": "PASS",
+      "database_endpoint_allowlist": "PASS"
+    },
+    "reasons": [],
+    "secret_values_returned": false
+  },
+  "tools": {
+    "git": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "git version 2.51.1\n"
+    },
+    "node": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "v24.19.0\n"
+    },
+    "npm": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "11.9.0\nnpm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    "java": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "openjdk version \"17.0.20\" 2026-07-21\nOpenJDK Runtime Environment (build 17.0.20+8-1-24.04-Ubuntu)\nOpenJDK 64-Bit Server VM (build 17.0.20+8-1-24.04-Ubuntu, mixed mode, sharing)\n"
+    },
+    "adb": {
+      "status": "NOT_FOUND"
+    },
+    "flutter": {
+      "status": "NOT_FOUND"
+    }
+  },
+  "android_sdk": {
+    "configured": false,
+    "build": "NOT_RUN"
+  },
+  "syntax": {
+    "status": "PASS",
+    "errors": []
+  },
+  "qa_database": {
+    "status": "PASS",
+    "check": "ok"
+  },
+  "runtime_write": "PASS",
+  "native_windows_build": "BLOCKED_HOST_LINUX"
+}

@@ -1,0 +1,968 @@
+{
+  "host": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "package": "/workspace/scratch/83891f5f2b24/work/NexGrana_SIMLabs",
+  "manifest": {
+    "status": "PASS",
+    "verified_files": 799,
+    "mismatches": []
+  },
+  "environment": {
+    "status": "PASS",
+    "mode": "local-only",
+    "checks": {
+      "production_app_env": "PASS",
+      "privileged_supabase_credentials": "PASS",
+      "supabase_endpoint_allowlist": "PASS",
+      "database_endpoint_allowlist": "PASS"
+    },
+    "reasons": [],
+    "secret_values_returned": false
+  },
+  "tools": {
+    "git": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "git version 2.51.1\n"
+    },
+    "node": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "v24.19.0\n"
+    },
+    "npm": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "11.9.0\nnpm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n"
+    },
+    "java": {
+      "status": "PASS",
+      "exit_code": 0,
+      "output": "openjdk version \"17.0.20\" 2026-07-21\nOpenJDK Runtime Environment (build 17.0.20+8-1-24.04-Ubuntu)\nOpenJDK 64-Bit Server VM (build 17.0.20+8-1-24.04-Ubuntu, mixed mode, sharing)\n"
+    },
+    "adb": {
+      "status": "NOT_FOUND"
+    },
+    "flutter": {
+      "status": "NOT_FOUND"
+    }
+  },
+  "android_sdk": {
+    "configured": false,
+    "build": "NOT_RUN"
+  },
+  "python_environments": {
+    "nex": {
+      "status": "NOT_PREPARED",
+      "action": "INICIAR.cmd prepara este ambiente ao executar a etapa correspondente."
+    },
+    "backend": {
+      "status": "NOT_PREPARED",
+      "action": "INICIAR.cmd prepara este ambiente ao executar a etapa correspondente."
+    },
+    "collector": {
+      "status": "NOT_PREPARED",
+      "action": "INICIAR.cmd prepara este ambiente ao executar a etapa correspondente."
+    }
+  },
+  "syntax": {
+    "status": "PASS",
+    "errors": []
+  },
+  "qa_database": {
+    "status": "PASS",
+    "check": "ok"
+  },
+  "runtime_write": "PASS",
+  "assets": {
+    "status": "PASS",
+    "images": [
+      {
+        "path": "NexGrana/src/assets/icon.png",
+        "width": 1254,
+        "height": 1254,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex_canonical.png",
+        "width": 140,
+        "height": 135,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_avatar.png",
+        "width": 96,
+        "height": 96,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_celebrate_v2.png",
+        "width": 1254,
+        "height": 1254,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_hero.png",
+        "width": 512,
+        "height": 512,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_welcome_v2.png",
+        "width": 1254,
+        "height": 1254,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_card.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_hd.png",
+        "width": 1254,
+        "height": 1254,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_winter_v2.png",
+        "width": 1254,
+        "height": 1254,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_dock.png",
+        "width": 160,
+        "height": 160,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/nex_thinking_v2.png",
+        "width": 1254,
+        "height": 1254,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/disciplina.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/meta.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/kkk.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/foco.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/top.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/excelente.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/economiza.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/gratidao.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/bora.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/ops.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/oi.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/stickers/parabens.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/planta.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/checkpoint.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/lampada.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/moeda.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/livro.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/grafico.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/trofeu.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/porquinho.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/calendario.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/elements/cafe.png",
+        "width": 256,
+        "height": 256,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/estudante.png",
+        "width": 512,
+        "height": 512,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/padrao.png",
+        "width": 512,
+        "height": 512,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/gamer.png",
+        "width": 512,
+        "height": 512,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/rei_da_grana.png",
+        "width": 512,
+        "height": 512,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/aventureiro.png",
+        "width": 512,
+        "height": 512,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/executivo.png",
+        "width": 512,
+        "height": 512,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/natal_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/compras_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/operador_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/musica_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/cinema_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/povos_indigenas_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/empreendedor_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/povos_indigenas_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/consciencia_negra_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/tech_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/investidor_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/trabalho_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/pet_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/foco_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/consciencia_negra_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/fitness_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/ia_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/freelancer_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/criativo_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/viagem_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/casal_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/meio_ambiente_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/gamer_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/administrativo_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/gamer_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/gastronomia_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/economico_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/dev_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/fitness_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/empreendedor_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/ano_novo_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/administrativo_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/halloween_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/investidor_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/conquistas_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/meio_ambiente_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/estudante_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/dia_da_mulher_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/organizado_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/pascoa_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/natureza_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/economico_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/organizado_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/pet_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/carnaval_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/estudante_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/foco_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/gastronomia_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/musica_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/planejamento_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/criativo_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/freelancer_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/profissional_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/natal_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/conquistas_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/operador_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/viagem_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/halloween_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/ano_novo_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/casal_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/dev_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/pascoa_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/dia_da_mulher_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/planejamento_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/tech_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/trabalho_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/ia_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/natureza_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/cinema_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/compras_v3.png",
+        "width": 768,
+        "height": 768,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/profissional_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cutouts/carnaval_avatar_v3.png",
+        "width": 128,
+        "height": 128,
+        "alpha": true
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Conquistas.png",
+        "width": 162,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Natureza.png",
+        "width": 168,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Empreendedor.png",
+        "width": 163,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Criativo.png",
+        "width": 169,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Operador.png",
+        "width": 163,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Viagem.png",
+        "width": 168,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Profissional.png",
+        "width": 163,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Consciencia_Negra.png",
+        "width": 168,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Natal.png",
+        "width": 163,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Povos_Indigenas.png",
+        "width": 168,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Freelancer.png",
+        "width": 162,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Pet.png",
+        "width": 168,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Musica.png",
+        "width": 168,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Dia_da_Mulher.png",
+        "width": 169,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_IA.png",
+        "width": 168,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Organizado.png",
+        "width": 163,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Administrativo.png",
+        "width": 163,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Tech.png",
+        "width": 168,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Gamer.png",
+        "width": 169,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Meio_Ambiente.png",
+        "width": 168,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Economico.png",
+        "width": 163,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Fitness.png",
+        "width": 168,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Ano_Novo.png",
+        "width": 163,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Cinema.png",
+        "width": 169,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Gastronomia.png",
+        "width": 168,
+        "height": 193,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Foco.png",
+        "width": 163,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Carnaval.png",
+        "width": 162,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Investidor.png",
+        "width": 163,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Casal.png",
+        "width": 163,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Trabalho.png",
+        "width": 162,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Halloween.png",
+        "width": 163,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Estudante.png",
+        "width": 163,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Dev.png",
+        "width": 168,
+        "height": 198,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Pascoa.png",
+        "width": 163,
+        "height": 177,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Planejamento.png",
+        "width": 163,
+        "height": 203,
+        "alpha": false
+      },
+      {
+        "path": "NexGrana/src/assets/nex/skins/cards/Nex_Compras.png",
+        "width": 163,
+        "height": 198,
+        "alpha": false
+      }
+    ],
+    "invalid": [],
+    "duplicates": [],
+    "visual_edges_and_identity": "MANUAL_REVIEW_REQUIRED"
+  },
+  "native_windows_build": "BLOCKED_HOST_LINUX"
+}

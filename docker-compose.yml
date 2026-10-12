@@ -1,0 +1,42 @@
+# Optional LOCAL container installation; not a public deployment.
+# First generate local secrets with INICIAR_SIM_LABS.bat, then stop that instance.
+services:
+  migrate:
+    build: .
+    env_file: .env
+    environment: &localenv
+      APP_ENV: local
+      AUTO_INIT_DB: "0"
+      ALLOW_DEV_ACTORS: "0"
+      DATABASE_URL: sqlite:////data/sim_labs.db
+      STORAGE_DIR: /data/private
+    volumes: ["./docker-data:/data"]
+    command: ["sh", "-c", "alembic upgrade head && python -m app.seed"]
+  api:
+    build: .
+    env_file: .env
+    environment: *localenv
+    volumes: ["./docker-data:/data"]
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+  worker:
+    build: .
+    env_file: .env
+    environment: *localenv
+    volumes: ["./docker-data:/data"]
+    command: ["python", "-m", "app.worker"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+
+  engine:
+    build: .
+    env_file: .env
+    environment: *localenv
+    volumes: ["./docker-data:/data"]
+    command: ["python", "-m", "app.engine"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
