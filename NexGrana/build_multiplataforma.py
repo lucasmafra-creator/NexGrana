@@ -50,7 +50,8 @@ def build(target, output, env, timeout):
         print(f'{target}: blocked — {result["error"]}',flush=True)
         return result
     command = [sys.executable, '-m', 'flet.cli', 'build', target,
-               '--build-version', VERSION, '--output', str(output / target), '--yes']
+               '--python-version', '3.12', '--build-version', VERSION,
+               '--output', str(output / target), '--yes']
     print(f'Compilando {target}; log: {log}', flush=True)
     result = {'target': target, 'version': VERSION, 'status': 'failed', 'artifacts': []}
     process=None

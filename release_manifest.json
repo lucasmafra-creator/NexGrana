@@ -586,8 +586,8 @@
     },
     {
       "path": "NexGrana/build_multiplataforma.py",
-      "size_bytes": 8239,
-      "sha256": "84ad89cb40bd0ded1012ec77026148d79f923a255478f72dde65ef150175318c"
+      "size_bytes": 8282,
+      "sha256": "da8445e17137ece17f22dafa129fbe9500b69e3e6ae4e91aff24dc8a89d96344"
     },
     {
       "path": "NexGrana/diagnosticar_nex_online.py",
@@ -816,8 +816,8 @@
     },
     {
       "path": "NexGrana/pyproject.toml",
-      "size_bytes": 1003,
-      "sha256": "1965b849675331e83e99ce36871223b7f76f2a77c0a8dfa1613300035f0473a8"
+      "size_bytes": 1009,
+      "sha256": "14bad5d58c517ffaa0f03b0401f3effd74d305b531cfe065ebfe500b5275799f"
     },
     {
       "path": "NexGrana/requirements-qa.txt",

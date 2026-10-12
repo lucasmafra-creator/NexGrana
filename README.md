@@ -19,7 +19,7 @@ npm run test:sql
 
 ### Builds locais
 
-Windows e Android precisam de Flutter 3.44.8; Android também precisa de Java 17 e Android SDK. Depois de preparar esses pré-requisitos:
+Windows e Android usam Flutter 3.44.8. O projeto fixa o Python embarcado pelo Flet em 3.12, evitando que o alvo mude silenciosamente e quebre dependências binárias. Android também precisa de Java 17 e Android SDK. Depois de preparar esses pré-requisitos:
 
 ```powershell
 .venv/Scripts/python.exe build_multiplataforma.py windows --timeout 3600

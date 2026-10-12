@@ -3,7 +3,7 @@
 ## Escopo
 Fonte do NexGrana 0.24.0 e do SIM Labs QA/Collector adicionada em branch isolada. Inclui testes Python, migrations SQL, assets, gateway e configurações de build. Dependências instaladas e resultados de CI são executados em máquina limpa pelo GitHub Actions.
 
-## Evidências antes do CI
+## Evidências de execução
 - A branch principal anterior continha documentação, scripts e pacotes antigos; o app atual não estava versionado como fonte.
 - O teste de skins confirmou a restauração do asset de foco. A varredura de PNGs encontrou 149 imagens decodificadas e um PNG truncado sem referência no app em docs/references/identidade_visual.png; esse arquivo de documentação foi excluído da fonte publicada. Nenhum asset canônico foi substituído. A verificação do manifesto inclui os dois diretórios ativos e exclui caches e dados locais.
 - Os testes locais de regressão do SIM Labs passam 8 de 9 casos; o único erro no container é a ausência local de python-dotenv, declarado em backend/requirements.txt. A automação instala as dependências antes dos testes.
