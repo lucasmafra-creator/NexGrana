@@ -99,10 +99,12 @@ def main() -> int:
     flet_config = project.get("tool", {}).get("flet", {})
     android_dependencies = set(flet_config.get("android", {}).get("dependencies") or [])
     windows_dependencies = set(flet_config.get("windows", {}).get("dependencies") or [])
+    dependency_overrides = flet_config.get("flutter", {}).get("pubspec", {}).get("dependency_overrides", {})
     if ("cryptography==43.0.1" not in android_dependencies
             or "pillow==12.2.0" not in android_dependencies
             or "cryptography==48.0.0" not in windows_dependencies
-            or "pillow==12.3.0" not in windows_dependencies):
+            or "pillow==12.3.0" not in windows_dependencies
+            or dependency_overrides.get("jni") != "1.1.0"):
         print("DEPENDÊNCIAS DE BUILD INCONSISTENTES: confira as wheels Android e Windows")
         return 6
 

@@ -40,3 +40,4 @@ dependencies = ["cryptography==48.0.0", "pillow==12.3.0"]
 screen_brightness = "2.1.7"
 screen_brightness_windows = "2.1.0"
 screen_retriever = "0.2.1"
+jni = "1.1.0"

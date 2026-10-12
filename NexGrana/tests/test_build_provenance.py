@@ -19,6 +19,7 @@ class BuildProvenanceTests(unittest.TestCase):
         self.assertIn("pillow==12.2.0", flet["android"]["dependencies"])
         self.assertIn("cryptography==48.0.0", flet["windows"]["dependencies"])
         self.assertIn("pillow==12.3.0", flet["windows"]["dependencies"])
+        self.assertEqual(flet["flutter"]["pubspec"]["dependency_overrides"]["jni"], "1.1.0")
 
     def test_generated_flet_storage_and_local_secrets_do_not_change_source_hash(self):
         with tempfile.TemporaryDirectory() as folder:
