@@ -28,6 +28,17 @@ Windows e Android usam Flutter 3.44.8. O projeto fixa o Python embarcado do Flet
 
 O release_manifest.json valida os hashes dos arquivos ativos de NexGrana/ e SIM_Labs_QA/. A automação no GitHub Actions executa os testes e confere esse manifesto antes dos dois builds, depois disponibiliza os arquivos em Actions → execução do workflow → Artifacts por 30 dias. Os builds são artefatos de homologação; não são publicação assinada para lojas.
 
+## Builds de homologação gerados
+
+O workflow do GitHub Actions concluiu os testes e gerou Windows + APK Android para o commit de código `d8eef5ecf25eefadac91c9b2e51956aecc8cabd7`.
+
+Abra [a execução do Actions](https://github.com/lucasmafra-creator/NexGrana/actions/runs/38204162992) e baixe:
+
+- `NexGrana-Windows-0.24.0`: extraia o artefato, extraia `NexGrana_0.24.0_Windows.zip` e execute o EXE mantendo os arquivos da pasta juntos.
+- `NexGrana-Android-0.24.0`: extraia o artefato e instale o APK em um dispositivo Android de teste.
+
+Artefatos expiram em 11/11/2026. São builds de homologação; o CI confirmou compilação e arquivos gerados, mas não instalou em dispositivo físico nem publicou em loja. O APK Android usa cryptography 43.0.1 e Pillow 12.2.0 por disponibilidade das wheels do Flet; revisar/atualizar essas versões antes de distribuição pública.
+
 ## Regras e limites
 
 - NEXGRANA_RULES.md é a referência financeira e de privacidade.

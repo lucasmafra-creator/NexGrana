@@ -1,20 +1,35 @@
-# QA_REPORT — sincronização 0.24.0
+# QA_REPORT — NexGrana 0.24.0
 
-## Escopo
-Fonte do NexGrana 0.24.0 e do SIM Labs QA/Collector adicionada em branch isolada. Inclui testes Python, migrations SQL, assets, gateway e configurações de build. Dependências instaladas e resultados de CI são executados em máquina limpa pelo GitHub Actions.
+## Execução final
 
-## Evidências de execução
-- A branch principal anterior continha documentação, scripts e pacotes antigos; o app atual não estava versionado como fonte.
-- O teste de skins confirmou a restauração do asset de foco. A varredura de PNGs encontrou 149 imagens decodificadas e um PNG truncado sem referência no app em docs/references/identidade_visual.png; esse arquivo de documentação foi excluído da fonte publicada. Nenhum asset canônico foi substituído. A verificação do manifesto inclui os dois diretórios ativos e exclui caches e dados locais.
-- Os testes locais de regressão do SIM Labs passam 8 de 9 casos; o único erro no container é a ausência local de python-dotenv, declarado em backend/requirements.txt. A automação instala as dependências antes dos testes.
-- Os arquivos locais SQLite WAL/SHM que causaram deriva de manifesto foram excluídos do Git, e os .gitignore agora bloqueiam esses sidecars, bancos locais, credenciais, virtualenvs e builds.
-- O teste novo de proveniência e a compilação sintática passaram localmente. A suíte completa e os builds nativos continuam aguardando o workflow desta branch.
+Workflow: [NexGrana 0.24 — validação e builds Windows + Android, run #7](https://github.com/lucasmafra-creator/NexGrana/actions/runs/38204162992)  
+Commit de código: `d8eef5ecf25eefadac91c9b2e51956aecc8cabd7`  
+Resultado geral: **SUCCESS**
 
-## Critério para fechar
-1. Testes Python e SQL passam.
-2. Windows publica ZIP contendo EXE e arquivos de runtime necessários.
-3. Android publica APK.
-4. O hash SHA-256 de cada artefato fica no log do workflow.
-5. Nenhum segredo de produção, banco ou dado local é adicionado.
+- NexGrana Python: 211 testes aprovados, 1 skipped, 227 subtests aprovados.
+- SQL e isolamento de perfis: PASS.
+- SIM Labs/Collector: 129 testes aprovados, 2 warnings.
+- Manifesto: 604/604 fontes conferidas.
+- UI do SIM Labs: teste de estado e build Vite PASS.
+- Windows: build passou, EXE encontrado, ZIP de homologação publicado.
+- Android: build passou, APK publicado.
 
-Não considerar Windows/Android prontos antes de baixar e instalar os artefatos gerados. Testes de dispositivo, Supabase de QA e iOS continuam independentes.
+## Binários e integridade
+
+Baixe em [Actions → run #7 → Artifacts](https://github.com/lucasmafra-creator/NexGrana/actions/runs/38204162992). Disponíveis até 2026-11-11.
+
+- Windows ZIP de execução: SHA-256 `F23B1760EA06CE7E6A13F143F7F68B52D4D6CD696A92C54660E04D735853E020`.
+- APK Android: SHA-256 `739052A1E73BCC9030DA6F871AA8B7C8A5F1446F37FDD400CCAE75650A4E91E2`.
+- Artefatos do Actions: Windows `sha256:768b8038d0a626d70b960d6e7e0cd45bc1bc919691edc6ec6747fb3eab570f38`; Android `sha256:d53bf50092779046548e3376489d330b274bb67adc6a4bfb7f2131018cfea638`.
+
+## Correções verificadas
+
+- Asset truncado do skin Foco restaurado; PNG 768×768 RGBA.
+- Cache Flet, sidecars SQLite, banco de QA, credenciais e ambientes virtuais excluídos do bundle fonte.
+- Python embarcado do Flet fixado em 3.12.
+- Dependências separadas por plataforma: Android cryptography 43.0.1/Pillow 12.2.0; Windows/QA cryptography 48.0.0/Pillow 12.3.0.
+- JNI Android fixado em 1.1.0 para corresponder aos bindings gerados pelo plugin.
+
+## Limites do resultado
+
+Os builds foram compilados e publicados para homologação; não foram instalados em dispositivo físico. Login real, sincronização Supabase de staging, câmera, notificações e uso prolongado precisam de smoke test manual. O APK usa versões Android específicas por disponibilidade das wheels; revisar/atualizar cryptography antes de distribuição pública. Nenhuma migração de produção ou publicação em loja foi feita. iOS continua para a próxima fase.

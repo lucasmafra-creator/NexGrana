@@ -1,15 +1,15 @@
 # PROJECT_STATE — NexGrana
 
-- Versão-fonte atual desta rodada: 0.24.0, candidata para homologação.
-- Fonte: pacote corrigido preparado a partir do ZIP de estabilidade V6; código em NexGrana/.
-- SIM Labs QA, frontend e Collector: código-fonte também sincronizado em SIM_Labs_QA/; banco local, credenciais e virtualenvs excluídos.
-- Base principal do repositório: mantém os pacotes históricos de 0.19 e scripts SIM Labs existentes.
-- Branch de integração: codex/nexgrana-rc8-source-ci-2026-10-12.
-- Manifesto de release cobre os 604 arquivos de NexGrana/ e SIM_Labs_QA/; caches e dados locais ficam fora.
-- Próximo gate: GitHub Actions, testes de regressão e builds Windows + Android.
-- Financeiro e privacidade: preservar NEXGRANA_RULES.md; não aplicar migrações em produção nem fabricar saldos.
-- Nex: preservar a coruja, rosto e assinatura visual canônica; assets atuais mantidos.
-- Online: homologação requer backend de QA e credenciais próprias. O pipeline não contém segredos.
-- iOS: fora deste escopo, próxima fase.
+- Versão-fonte desta rodada: NexGrana 0.24.0 candidata para homologação.
+- Fonte atual em `NexGrana/`; SIM Labs QA, frontend e Collector em `SIM_Labs_QA/`.
+- Branch de integração: `codex/nexgrana-rc8-source-ci-2026-10-12`; PR #1 aberto contra `main`.
+- Código compilado no commit `d8eef5ecf25eefadac91c9b2e51956aecc8cabd7`.
+- GitHub Actions: testes Nex, regras financeiras, SQL/perfis, SIM Labs, Collector e UI PASS; Windows EXE e Android APK PASS.
+- Manifesto de release: 604 arquivos verificados; caches, dados locais e credenciais fora do Git.
+- Financeiro e privacidade: preservar `NEXGRANA_RULES.md); sem migração de produção nem saldos fictícios.
+- Nex: preservar a coruja, rosto e assinatura visual canônica.
+- Online: usar backend e credenciais de QA separados; nenhum segredo foi incluído nos builds.
+- Próxima ação: baixar e instalar os artefatos, fazer smoke test físico e homologar o backend de QA.
+- iOS: próxima fase, após a validação manual de Windows/Android.
 
-Status real dos testes e dos builds deve ser atualizado após a execução do workflow, nunca antes.
+Os binários atuais são para homologação. A compilação no CI não comprova login real, staging Supabase, execução em dispositivos físicos ou publicação de loja.
