@@ -16,7 +16,9 @@ class BuildProvenanceTests(unittest.TestCase):
 
         self.assertEqual(project["project"]["requires-python"], ">=3.11,<3.13")
         self.assertIn("cryptography==43.0.1", flet["android"]["dependencies"])
+        self.assertIn("pillow==12.2.0", flet["android"]["dependencies"])
         self.assertIn("cryptography==48.0.0", flet["windows"]["dependencies"])
+        self.assertIn("pillow==12.3.0", flet["windows"]["dependencies"])
 
     def test_generated_flet_storage_and_local_secrets_do_not_change_source_hash(self):
         with tempfile.TemporaryDirectory() as folder:

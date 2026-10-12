@@ -9,7 +9,6 @@ dependencies = [
   "flet-camera==0.86.5",
   "flet-secure-storage==0.86.5",
   "supabase==2.31.0",
-  "pillow==12.3.0",
 ]
 
 [tool.flet]
@@ -27,10 +26,10 @@ path = "src"
 # Android has a separate wheel catalog in the Flet build runtime. Keep the
 # Android-compatible wheel explicit while Windows uses the current QA pin.
 [tool.flet.android]
-dependencies = ["cryptography==43.0.1"]
+dependencies = ["cryptography==43.0.1", "pillow==12.2.0"]
 
 [tool.flet.windows]
-dependencies = ["cryptography==48.0.0"]
+dependencies = ["cryptography==48.0.0", "pillow==12.3.0"]
 
 # Hotfix Windows 0.16.1:
 # screen_brightness_windows 2.1.1/2.1.2 podem chegar sem o header nativo

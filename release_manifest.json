@@ -681,8 +681,8 @@
     },
     {
       "path": "NexGrana/pyproject.toml",
-      "size_bytes": 1255,
-      "sha256": "70a356202bd80b30799a39f6e4a1ca89122ae2b3f662a3c2f33e2e6292af1603"
+      "size_bytes": 1271,
+      "sha256": "39ac9aa6cf6d015e5734c93c4fdc5f072fe15a6bb5619061f65c356832881c6c"
     },
     {
       "path": "NexGrana/QA_REPORT.md",
@@ -1811,8 +1811,8 @@
     },
     {
       "path": "NexGrana/tests/test_build_provenance.py",
-      "size_bytes": 2234,
-      "sha256": "b2968c492fa047a23cd52c688f753b320c0b9ba054deecca47a9283708101e01"
+      "size_bytes": 2380,
+      "sha256": "e2f693cfced8143a8e9b2d121189fe9080e8bca36f39386e50da42dba7a73884"
     },
     {
       "path": "NexGrana/tests/test_finance.py",
@@ -1951,8 +1951,8 @@
     },
     {
       "path": "NexGrana/validate_release.py",
-      "size_bytes": 6817,
-      "sha256": "f69355925eeab3d5ca6b292f263e620263f2f5143210fa649d122b9c14429e01"
+      "size_bytes": 6951,
+      "sha256": "f35aeaf5ae7394a461ff133872d3b54251b3abac32f917c557c89adee4364cb7"
     },
     {
       "path": "NexGrana/VERIFICAR_AMBIENTE_QA.py",
