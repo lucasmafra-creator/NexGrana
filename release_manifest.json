@@ -1,0 +1,4075 @@
+{
+  "schema": "nexgrana-sim-labs.release-manifest/1.0",
+  "bundle_id": "RC8-QA-RESCUE-20261011-HOTFIX-03",
+  "generated_at": "2026-10-11T18:25:42.873805+00:00",
+  "status": "SOURCE_BUNDLE_UNBUILT",
+  "environment_expected": "Windows QA para builds nativos; staging Supabase separado, chamado qa-* ou staging-*; dados sintéticos",
+  "components": {
+    "NexGrana": {
+      "source_version": "0.24.0",
+      "delivery_patch": "RC8-QA-STABILITY-20261009",
+      "build": "NOT_GENERATED",
+      "scope": "Windows e Android; iOS posterior; Nex Online adiado"
+    },
+    "SIM_Labs_official_baseline": {
+      "source_version": "RC8 baseline / pacote 0.4.x",
+      "status": "SNAPSHOT_UNCHANGED; not compared with installed Windows copy"
+    },
+    "SIM_Labs_QA": {
+      "source_version": "0.4.1-qa.2",
+      "status": "CLONE_QA_SOURCE; Windows test-fixture, nested-dependency, safe overlay-reconciliation and truncated Nex skin asset repair included; no EXE generated"
+    },
+    "Collector": {
+      "source_version": "0.5.0-integrado",
+      "status": "INHERITED_IN_QA_CLONE; no EXE generated"
+    },
+    "Engine": {
+      "source_version": "0.4.1-qa.2-engine",
+      "status": "QA_CLONE_PATCHSET; see QA_REPORT.md for executed evidence"
+    },
+    "Observer": {
+      "source_version": null,
+      "status": "NO_SEPARATE_VERSIONED_COMPONENT_FOUND; supervisor checks remain part of SIM Labs"
+    },
+    "Bridge": {
+      "source_version": "0.5.0-integrado (Collector bridge file; no independent tag found)",
+      "status": "INHERITED_COMPONENT"
+    },
+    "Runner": {
+      "source_version": "pipeline/1.0",
+      "status": "LOCAL_QA_ONLY; no arbitrary path or uploaded source execution"
+    }
+  },
+  "migrations": {
+    "NexGrana_latest": "0.25.6; verified in RC8 report with PGlite only; Supabase staging not applied",
+    "SIM_Labs_latest": "0007_qa_operations; new QA migration; not applied to any persistent database"
+  },
+  "dependency_lock_sources": [
+    "NexGrana/requirements.txt",
+    "NexGrana/requirements-qa.txt",
+    "NexGrana/gateway/requirements.txt",
+    "NexGrana/pyproject.toml",
+    "SIM_Labs_QA/backend/requirements.txt",
+    "SIM_Labs_QA/Collector/requirements.txt",
+    "SIM_Labs_QA/frontend/package.json",
+    "SIM_Labs_QA/frontend/package-lock.json"
+  ],
+  "build_artifacts": {
+    "windows_exe": null,
+    "android_apk": null,
+    "collector_exe": null
+  },
+  "assets": {
+    "nex_skin_sets": 36,
+    "nex_skin_pngs": 72,
+    "native_visual_approval": "PENDING"
+  },
+  "source_file_count": 801,
+  "source_files": [
+    {
+      "path": "BUILD_STATUS.md",
+      "size_bytes": 2580,
+      "sha256": "e6e338773da7c8e0c363a30531688a337e43ad83c7e2da338b5ac3068673021f"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 3720,
+      "sha256": "42101ad637683eed3f313277b6354604d9526aaa9c6e5409b228745908c2c073"
+    },
+    {
+      "path": "INICIAR.cmd",
+      "size_bytes": 631,
+      "sha256": "a7725fb3e612cd52672d394ccfcadba660871ffe1fc16e845094aadeb6689016"
+    },
+    {
+      "path": "LEIA_PRIMEIRO.md",
+      "size_bytes": 4037,
+      "sha256": "58b7aec1f29955ab37c502c06a02a1b45c05c0fa540ef13872aa2d3c7b58669d"
+    },
+    {
+      "path": "NEXGRANA_RULES.md",
+      "size_bytes": 2448,
+      "sha256": "6955063ed7471ca53cc9807b0c960eef96613302adeaeafb33c958e5f74b5ff3"
+    },
+    {
+      "path": "NexGrana/.gitignore",
+      "size_bytes": 140,
+      "sha256": "d81d58a4a7646bec76cc1d7e5aa80bb21e4d99dd2dd605739bbd4c58f2ffdeef"
+    },
+    {
+      "path": "NexGrana/ASSET_MANIFEST_0_19_0.md",
+      "size_bytes": 786,
+      "sha256": "6e8b15d6fdd16ac9284f05ee94ae4dc5bd2ca49eb6160b0a28e0ae43b119f3de"
+    },
+    {
+      "path": "NexGrana/ATUALIZACAO_0_19_0_SOL.md",
+      "size_bytes": 2892,
+      "sha256": "7ae9fbca04de605ca2d521ca38387d8ef4b428f5060cabafaf205c13eeaf2a3f"
+    },
+    {
+      "path": "NexGrana/ATUALIZACAO_0_20_0.md",
+      "size_bytes": 4154,
+      "sha256": "e5e21f83f9233e8c4da2f2ca4574ea75d3083ed932b99aa54329f570b15b9599"
+    },
+    {
+      "path": "NexGrana/ATUALIZACAO_0_21_0.md",
+      "size_bytes": 3514,
+      "sha256": "cb4b3337f4fd0152c86dcd0cc329893dd542a1aceb147ce3d800d27ae9e4f7ee"
+    },
+    {
+      "path": "NexGrana/ATUALIZACAO_0_22_0.md",
+      "size_bytes": 1641,
+      "sha256": "6c11c0d7f976b074cb5fd6f02b33a1f2a5ae033540475f4fc2f7334f2a63920b"
+    },
+    {
+      "path": "NexGrana/ATUALIZACAO_0_23_0.md",
+      "size_bytes": 1193,
+      "sha256": "e647d83f574071f0357dd225f092feb9911bdccaac8b791c95b827984c1918d1"
+    },
+    {
+      "path": "NexGrana/ATUALIZACAO_0_23_0_RC2_LOCAL_FIXES.md",
+      "size_bytes": 2070,
+      "sha256": "ddf455ad576c7dedab29d7c0d72fe32cc13c42a66be2528cb82de0541d987c82"
+    },
+    {
+      "path": "NexGrana/AUDITORIA_0_21_0.md",
+      "size_bytes": 4967,
+      "sha256": "ae000b49f687783714a98d703b508c257b3daf1424743b268a193f2821f0d0a6"
+    },
+    {
+      "path": "NexGrana/AUDITORIA_0_22_0.md",
+      "size_bytes": 1296,
+      "sha256": "5d394dafb858e756f8c6f67ed2ed94afe73276c9851e2d7dcc8ed4a0dbb13e05"
+    },
+    {
+      "path": "NexGrana/AUDITORIA_0_23_0.md",
+      "size_bytes": 1610,
+      "sha256": "d17da97699cd1e28345a7cdab20c58262934f0db7901c8c7f3ee04e3832d1d51"
+    },
+    {
+      "path": "NexGrana/AUDITORIA_LACUNAS_0_24_RC1.md",
+      "size_bytes": 4362,
+      "sha256": "0abd165eb99abe401944c1eab83b1e07f77701557aa4a03b6948d42455c4e9da"
+    },
+    {
+      "path": "NexGrana/AUDITORIA_VISUAL_RC.md",
+      "size_bytes": 2560,
+      "sha256": "05ad042573a7717b3d91603aa3fcf987301a74cfbc0cd33e8cc4317d0990f7cf"
+    },
+    {
+      "path": "NexGrana/BUILD_REPORT_0_24.md",
+      "size_bytes": 723,
+      "sha256": "96d3e069f010fd0c9befdb883273a042ad1e10e897156b658f59c1fa5c751bb9"
+    },
+    {
+      "path": "NexGrana/BUILD_REPORT_0_24_RC2.md",
+      "size_bytes": 437,
+      "sha256": "3892ddca1b20b89ed74df3028497af78ac2c8cf9bfba0b4e93c42c72b44c633c"
+    },
+    {
+      "path": "NexGrana/BUILD_STATUS.md",
+      "size_bytes": 3555,
+      "sha256": "4ee4f05122d222538c4f4615bf369047b1391c3f4b78b31d61b1bf668fa7a229"
+    },
+    {
+      "path": "NexGrana/CHANGELOG.md",
+      "size_bytes": 3515,
+      "sha256": "ab245165af9ed1d1f9837f069a9dfa21178687ee3959e0c51dae94e83053d58b"
+    },
+    {
+      "path": "NexGrana/CHANGELOG_0_24.md",
+      "size_bytes": 2027,
+      "sha256": "af7728d6c11aedfd94138da59b1e6456d2a116f2b7719c5ad28b69510fc7fd62"
+    },
+    {
+      "path": "NexGrana/CHANGELOG_0_24_RC3_UX_FIX.md",
+      "size_bytes": 1109,
+      "sha256": "9745f6be3cbd2abf21080295845fc19d3feba419fcf4f58e1ec0ff1beab42594"
+    },
+    {
+      "path": "NexGrana/CHECKPOINT_CONTINUIDADE_0_19.md",
+      "size_bytes": 1793,
+      "sha256": "32045935c788d1488af99dd7c382b735b443d551cd2f2372a07177c2d41bb0c2"
+    },
+    {
+      "path": "NexGrana/COMANDOS_0_19_0_WINDOWS_ANDROID.txt",
+      "size_bytes": 882,
+      "sha256": "49d20abea59474470ebfb81a3e1f9af1f2ff08e546e5b80f85b1480ff02a5b9d"
+    },
+    {
+      "path": "NexGrana/COMANDOS_0_20_0_WINDOWS_ANDROID_IOS.txt",
+      "size_bytes": 2035,
+      "sha256": "de5d4058806d6401ab154ef27a21819029e69b68a078b4263176718c9dd89a8d"
+    },
+    {
+      "path": "NexGrana/COMANDOS_0_21_0_WINDOWS_ANDROID_IOS.txt",
+      "size_bytes": 1559,
+      "sha256": "8b948ad28465b23b2f21241770c30b683ab6c1f62165d5c5736f09df81fe5187"
+    },
+    {
+      "path": "NexGrana/COMANDOS_0_22_0_WINDOWS_ANDROID_IOS.txt",
+      "size_bytes": 2535,
+      "sha256": "e33a859243d3a595cd3296c130cb14c9d5d38cc2429e96abf137c0c8326d994f"
+    },
+    {
+      "path": "NexGrana/COMANDOS_0_23_0_WINDOWS_ANDROID_IOS.txt",
+      "size_bytes": 1099,
+      "sha256": "82b7076ba8140b15fd8de600f8dcdec467dc9429ba2a69391186ebd7180d63ad"
+    },
+    {
+      "path": "NexGrana/COMPILAR_0_24_ANDROID.cmd",
+      "size_bytes": 496,
+      "sha256": "d6e2da1b400c60d58fcd3b2bef9f8c94dfd4bf3fd2cf8cece8204a3f9ddbfef2"
+    },
+    {
+      "path": "NexGrana/COMPILAR_0_24_WINDOWS.cmd",
+      "size_bytes": 509,
+      "sha256": "87b3259b18189b83b009e6f7c1fd8d552d418a7af1b86d705449cd64253a2375"
+    },
+    {
+      "path": "NexGrana/COMPILAR_QA.cmd",
+      "size_bytes": 408,
+      "sha256": "da271c8d31cdf8e92625d2a5ad99af2d77afdd2b28ea076994d906d3560967a6"
+    },
+    {
+      "path": "NexGrana/CORRECAO_TUTORIAL_NEX_RC4.md",
+      "size_bytes": 1189,
+      "sha256": "1c236729c7a45b12bfdf385943d22ba9f8b15beb697bf6715cb14e28aefcad97"
+    },
+    {
+      "path": "NexGrana/CORRECOES_0_19_0_RC2.md",
+      "size_bytes": 1419,
+      "sha256": "0d8c832d6b10517c2ca958795c049aaf7f266f2e1995a612cc40ff6fb3dfbfbf"
+    },
+    {
+      "path": "NexGrana/CORRECOES_0_19_0_RC3.md",
+      "size_bytes": 1012,
+      "sha256": "168b86318949055e3cce92b1304e5dfcc285f63c1d95e5acd621eea2ad33eb04"
+    },
+    {
+      "path": "NexGrana/CORRECOES_0_19_0_RC4.md",
+      "size_bytes": 877,
+      "sha256": "17042f62a773b82e3ff44ada58349565298f9fac8785999fa49d388f3d97b17a"
+    },
+    {
+      "path": "NexGrana/GOLDEN_NEX_0_23_0.md",
+      "size_bytes": 626,
+      "sha256": "3ff910af5d1617f4a9b44063c589439ce395fd8b2c92139ab95ddc214be0fdaa"
+    },
+    {
+      "path": "NexGrana/LEIA_PRIMEIRO_0_19_0_SOL.txt",
+      "size_bytes": 507,
+      "sha256": "df8a4e945e798d6734178f11397ad17a43bcaf4130da1e03d483047bd3313d39"
+    },
+    {
+      "path": "NexGrana/LEIA_PRIMEIRO_0_20_0.txt",
+      "size_bytes": 840,
+      "sha256": "2e0152870a85b60202bcdf4397f22803890a5523981a21f9d0c0d5d1d7ebedb0"
+    },
+    {
+      "path": "NexGrana/LEIA_PRIMEIRO_0_21_0.txt",
+      "size_bytes": 600,
+      "sha256": "ab1b45c5e67fe9595338848ea495c987a9ab0347056bebc6fe5429dedc33a825"
+    },
+    {
+      "path": "NexGrana/LEIA_PRIMEIRO_0_22_0.txt",
+      "size_bytes": 516,
+      "sha256": "e5f8aa2b2cd3c569c293eaca56e1d757f8fd73caa35b95f526bcddcf101d0a4e"
+    },
+    {
+      "path": "NexGrana/LEIA_PRIMEIRO_0_23_0.txt",
+      "size_bytes": 569,
+      "sha256": "f9946f3a8bb77cc37439833864dbe4a64d4cd804ea8911c535e425df7b58e783"
+    },
+    {
+      "path": "NexGrana/LEIA_PRIMEIRO_RC6_WINDOWS_ANDROID.md",
+      "size_bytes": 4211,
+      "sha256": "2931322ff96f2ac3bdfa0e9a27e24de018f37a50c23a8f2bd8c506c55a860a84"
+    },
+    {
+      "path": "NexGrana/MAPA_TELAS_0_22_0.md",
+      "size_bytes": 1037,
+      "sha256": "690c75fc1070d9a92de4c6fdedb4c3052b7485e91f160145d3e5bf45b9dcf6b7"
+    },
+    {
+      "path": "NexGrana/MAPA_TELAS_0_23_0.md",
+      "size_bytes": 823,
+      "sha256": "1d9a69c62671ba401408ef79e1bc529842c70f47fb32b8f4f7b4de0e14788847"
+    },
+    {
+      "path": "NexGrana/MATRIZ_REQUISITOS_0_19_0_SOL.md",
+      "size_bytes": 2371,
+      "sha256": "fb7aa1bfa0470a4703010029f965b1bb9f24e4e56396517e2e0b397a82fe2608"
+    },
+    {
+      "path": "NexGrana/MATRIZ_REQUISITOS_0_20_0.md",
+      "size_bytes": 5990,
+      "sha256": "cd77dc420b1d76527165ac3bb7014a8f6e592058afe31031de4a588032207b21"
+    },
+    {
+      "path": "NexGrana/MATRIZ_REQUISITOS_0_21_0.md",
+      "size_bytes": 2040,
+      "sha256": "c45adb975445e47f952dab1edad259aa7e88a2114a02307f6975a97512b14054"
+    },
+    {
+      "path": "NexGrana/MATRIZ_REQUISITOS_0_22_0.md",
+      "size_bytes": 1364,
+      "sha256": "13da71ccdc7221480b41374be8119b88f2d57f81bc5c4a9564778acc535dd1c4"
+    },
+    {
+      "path": "NexGrana/MATRIZ_REQUISITOS_0_23_0.md",
+      "size_bytes": 1330,
+      "sha256": "02738f4adee042b9bcd1048ed7e45d72b855d3390a213cd239ec00e3017527c8"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_18.sql",
+      "size_bytes": 12541,
+      "sha256": "595c0c8c7155a3733cde0b56fa6f1e72392b55f6a37fb7ce6c818393c349c5d6"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_18_1.sql",
+      "size_bytes": 4596,
+      "sha256": "7a197373eb4c91bcc43ceea6492d7976728a683a4e44d32acabb7eae48e5f18d"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_19.sql",
+      "size_bytes": 1263,
+      "sha256": "f6d38c2c4f00d54798a9a8a8f0504eac99df3c8a85376d06523c9a7aae37dab2"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_20.sql",
+      "size_bytes": 11512,
+      "sha256": "751cdf3a47f9397f688f5c2aba943eea3ba354f0f515d364af4fdc52c4cd3a63"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_21.sql",
+      "size_bytes": 6834,
+      "sha256": "4585891c1a88cf88836fb6960b82ca144682b58de58b50cc8207f14e0f62d775"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_22.sql",
+      "size_bytes": 2371,
+      "sha256": "99e6d113e8f2d4694ae5011173f32df7939e93defb6fb132c9812457792f55a3"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_23.sql",
+      "size_bytes": 3005,
+      "sha256": "7774da98958e45512f5f3424f1cb5ddcd7384f73c769db3e0a295a1d8e22101c"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_24.sql",
+      "size_bytes": 5847,
+      "sha256": "b524e7f37f1d0439da791d5db1a99f062f4769bc890cd7d7778ad6e50ae0f5e2"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_24_1.sql",
+      "size_bytes": 4893,
+      "sha256": "29404133f545aa7c0d6d02d8997ea6127262ba36df33d19d562b0c6a745e328e"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_24_2.sql",
+      "size_bytes": 1715,
+      "sha256": "d5808a8658654465a3a4cfb50bf61392ee651b5f402e641d7525e9ebb9d82912"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_24_3.sql",
+      "size_bytes": 3501,
+      "sha256": "14ce3b0d85795ce62803f99f53ceafa4a6cb415288ddd0bbcac83c2047f0b85d"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_24_4.sql",
+      "size_bytes": 1612,
+      "sha256": "ccef67862c6ea7fa045eccd5be13e05af61fbf828fd20553ac29f40fc27c24ad"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_24_5.sql",
+      "size_bytes": 1777,
+      "sha256": "139d10133b05eda9269ef843e4b2bda07a4b2db062861a1b4798226ca0dc060d"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_25.sql",
+      "size_bytes": 2608,
+      "sha256": "e44b400b48d1d3ef7e43bbb6f607cef73c60e1b38427c69e4ca7b2ab668f431f"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_25_1.sql",
+      "size_bytes": 4909,
+      "sha256": "4597a9e956356b225d8e1e6fd17b59d8e24a63c8e4e5bc9a03fe7dd83814150e"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_25_2.sql",
+      "size_bytes": 3038,
+      "sha256": "85ea8e4380d274814f6d4c273dc7d44962172ec361108407a7bb718f3276a14d"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_25_3.sql",
+      "size_bytes": 2551,
+      "sha256": "5517a86ea1437014fb70c1fea04f42ae9ba90280eb6dea1297834373e12493ec"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_25_4.sql",
+      "size_bytes": 4637,
+      "sha256": "6a68d1e4f9d55e7b68cc44b66e32208e76ea468da2a94094f0cbd4891e4b6390"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_25_5.sql",
+      "size_bytes": 7521,
+      "sha256": "61f6051c58acde0495ed568dedbefd337517efe8003ecd39752d9f5722997cb3"
+    },
+    {
+      "path": "NexGrana/MIGRATION_0_25_6.sql",
+      "size_bytes": 9393,
+      "sha256": "19df5b0dba13c8a1ce0213155029a6b8a4bfa1f6b77cfe8f7a15379718d45465"
+    },
+    {
+      "path": "NexGrana/MONETIZACAO_E_PRIVACIDADE.md",
+      "size_bytes": 1374,
+      "sha256": "04c8a2b59bdd9b4bf91b3266692b9efbea3028d67220fdb706dfff6af1f1bd21"
+    },
+    {
+      "path": "NexGrana/NEXGRANA_ESTADO_ATUAL.md",
+      "size_bytes": 4376,
+      "sha256": "a21dca3da959bb31b6427f2f5451342af8a2f669cd71b9bc6287baf0a83dc3fa"
+    },
+    {
+      "path": "NexGrana/NEXGRANA_ESTADO_CANDIDATO_0_24_0.md",
+      "size_bytes": 4581,
+      "sha256": "87d53b5a70c25801038ab82e7234946c2153d420ec4bd61d1a42ab4dbd177fac"
+    },
+    {
+      "path": "NexGrana/NEXGRANA_ESTADO_OFICIAL_0_23_0.md",
+      "size_bytes": 19951,
+      "sha256": "e0bbbb9a6afe8c3410b61c94177d524d36eb8c045c4e530299d34cd25d06d096"
+    },
+    {
+      "path": "NexGrana/NEXGRANA_RULES.md",
+      "size_bytes": 2448,
+      "sha256": "6955063ed7471ca53cc9807b0c960eef96613302adeaeafb33c958e5f74b5ff3"
+    },
+    {
+      "path": "NexGrana/NEX_CHARACTER_BIBLE.md",
+      "size_bytes": 1320,
+      "sha256": "b1c08d9fe98a9241519ea2d729d217e86c4ef55e5570d5a2e1f7bd80eb0601e5"
+    },
+    {
+      "path": "NexGrana/NEX_GATEWAY_0_21_0.md",
+      "size_bytes": 1155,
+      "sha256": "2e164a86c37df5753a515f4d0b61bbe60fe85779da6e5008e39967ffe26e4613"
+    },
+    {
+      "path": "NexGrana/NEX_GATEWAY_0_22_0.md",
+      "size_bytes": 1776,
+      "sha256": "11b20aa1360086001201132628ba9727df782d77cb3397d0bf27e76989dddef1"
+    },
+    {
+      "path": "NexGrana/NEX_GATEWAY_0_23_0.md",
+      "size_bytes": 697,
+      "sha256": "d37568faf0e32eac148ddb335dc475008e5389fa6caa300c2e8dff16a76ffeeb"
+    },
+    {
+      "path": "NexGrana/NEX_PACK_INTEGRADO.md",
+      "size_bytes": 1300,
+      "sha256": "4648993f814fa26a03f0003f0f6ed59f1f3caa41488b411194be778b69ac4589"
+    },
+    {
+      "path": "NexGrana/PERFORMANCE_0_19_0_SOL.md",
+      "size_bytes": 1235,
+      "sha256": "290b4480b79173d3419ecaaba6caa54f26121e66e87b316d77728644296f276e"
+    },
+    {
+      "path": "NexGrana/PERFORMANCE_0_20_0.md",
+      "size_bytes": 1129,
+      "sha256": "1516fe361b940d7332069df2978275a30d3b7c706fc795d02c31b854a1ec4d4e"
+    },
+    {
+      "path": "NexGrana/PERFORMANCE_0_21_0.md",
+      "size_bytes": 907,
+      "sha256": "4f263c6bbcea7eea58d5e3d9b2edbfa8a3e4df268f0fb08fda0c27ae0ee362eb"
+    },
+    {
+      "path": "NexGrana/PERFORMANCE_0_22_0.md",
+      "size_bytes": 838,
+      "sha256": "debc29747c670bf337c6fd0ca6103f5bc5e0cf7b83987accf06bcf85bce1f2b6"
+    },
+    {
+      "path": "NexGrana/PERFORMANCE_0_23_0.md",
+      "size_bytes": 772,
+      "sha256": "bdeb8b198321978adcd0bdaff8a8ace9253bb2326135062e66b6e69dc3ec9bfd"
+    },
+    {
+      "path": "NexGrana/PROJECT_STATE.md",
+      "size_bytes": 4793,
+      "sha256": "47bbb9a4ce20c672fbb79c8f19426e8ff773af0a7933f441593e0a8cf0d649d4"
+    },
+    {
+      "path": "NexGrana/PROMPT_IMPLEMENTACOES_PENDENTES_0_24_RC2.md",
+      "size_bytes": 9516,
+      "sha256": "217ab55d5026f5697c50067b5db70de598e28bd7f1baf4e134e1ab4ec65e44a8"
+    },
+    {
+      "path": "NexGrana/PROMPT_MESTRE_ASTRA_NEXGRANA_0_23_TUTORIAL_INTERATIVO.md",
+      "size_bytes": 39528,
+      "sha256": "2f5e7063e0a9f0504dd3b5509be627b31f770a648b87527684ab5f7b17d2eaaf"
+    },
+    {
+      "path": "NexGrana/PROMPT_WORK_URGENTE_NEX_ONLINE_TUTORIAL.md",
+      "size_bytes": 7995,
+      "sha256": "5abf80f64ec1d9e6bf01d165bf0465463053f9c9e0cc64660beb571e89a5cf9b"
+    },
+    {
+      "path": "NexGrana/PROTOCOLO_CONTINUIDADE_NEXGRANA.md",
+      "size_bytes": 2470,
+      "sha256": "6b1a6016ce96fdad211fbc3eaaa1d0f776b504e904b895b4479fee82c41156ca"
+    },
+    {
+      "path": "NexGrana/QA_REPORT.md",
+      "size_bytes": 9223,
+      "sha256": "3b13cd86a56b6315de448ff10085f81344783360534fef99277e2792a03689eb"
+    },
+    {
+      "path": "NexGrana/README.md",
+      "size_bytes": 335,
+      "sha256": "f18d23b8e25d29400bb5120925aa57d7af3892395b1b8eb7bcc7bed477f45b7e"
+    },
+    {
+      "path": "NexGrana/README_0_24_QA.md",
+      "size_bytes": 4672,
+      "sha256": "d735740845741bdf3074fe9d21f9f3a115eabdcd4dc9520db318b91f54cc9662"
+    },
+    {
+      "path": "NexGrana/README_0_24_QA_RC2.md",
+      "size_bytes": 2665,
+      "sha256": "bb7dda74d47a07ea3974e9ebab2d2d37695384a5863a9bd499feedc8e49ba47d"
+    },
+    {
+      "path": "NexGrana/README_0_24_QA_RC3_UX_FIX.md",
+      "size_bytes": 1065,
+      "sha256": "3a411d13a04c63d6de90ff11a0e8b167ffadb57486c98e5ba720fe87cdaaf31a"
+    },
+    {
+      "path": "NexGrana/README_NEX_ONLINE_0_24_RC2.md",
+      "size_bytes": 2385,
+      "sha256": "0ff2547187e1fa5c7a777a23d88f2477edd822dec60501ec1ade1a4618cf40de"
+    },
+    {
+      "path": "NexGrana/README_SETUP_CLOUD.md",
+      "size_bytes": 7521,
+      "sha256": "c1b77f4e111f5c6189e2f115166888a76ae44492c4ab88052362ca7f5a2d0959"
+    },
+    {
+      "path": "NexGrana/RELATORIO_FINAL_0_23_0.md",
+      "size_bytes": 3046,
+      "sha256": "9438e9278f44fde71acfddb74ccedef7b2bb9b81e0e2327ce0557781088ad351"
+    },
+    {
+      "path": "NexGrana/REQUISITOS_0_19_AST_RA_FINAL.md",
+      "size_bytes": 49945,
+      "sha256": "d57d853eb06c7dc97b33cfdc3354a3145ce4600456c94b8fa9cd9cd7286e341e"
+    },
+    {
+      "path": "NexGrana/SEGURANCA_0_21_0.md",
+      "size_bytes": 2350,
+      "sha256": "b1858f90790f1d83134f46be066d722129c03d8217911ce3e2f0cd0d69027017"
+    },
+    {
+      "path": "NexGrana/SEGURANCA_0_22_0.md",
+      "size_bytes": 1157,
+      "sha256": "9bf38d7f7ee0216afed23d7ccd3901d0a60ba786e34c27221e5e164d95fd2ccb"
+    },
+    {
+      "path": "NexGrana/SEGURANCA_0_23_0.md",
+      "size_bytes": 977,
+      "sha256": "71f3d0dbbc59bcbe4d33cba5bee926b3d61cf4324d54e8fd96f22d92beec589b"
+    },
+    {
+      "path": "NexGrana/SEGURANCA_LGPD_0_18_1_SOL.md",
+      "size_bytes": 2427,
+      "sha256": "ee1a676586bbe041104f458b501560c6940b1b5a10620ff8c2675be7235f198a"
+    },
+    {
+      "path": "NexGrana/SQL_ATOMIC_0_18.sql",
+      "size_bytes": 7717,
+      "sha256": "23ec371d74671214622a3ed21d2d8603b7c66c154a04a726e05d81ff5c80a803"
+    },
+    {
+      "path": "NexGrana/SUPABASE_PATCH_V2_RC.sql",
+      "size_bytes": 8665,
+      "sha256": "54eee4f7ce789c5a6c7f298ede3b7e7d9f83532bd98f902be3d961e456a4a3b2"
+    },
+    {
+      "path": "NexGrana/SUPABASE_SECURITY_0_17.sql",
+      "size_bytes": 5948,
+      "sha256": "118bee641f4de4562db11300f4dbed50d25936c741a2a6d19a6d7b7967ae3de2"
+    },
+    {
+      "path": "NexGrana/TEST_REPORT_0_24.md",
+      "size_bytes": 1938,
+      "sha256": "4edaaa669fcfdcb999ca11a09bb2657e58178aa8f4bda4f474b3559df473ffdd"
+    },
+    {
+      "path": "NexGrana/TEST_REPORT_0_24_RC2.md",
+      "size_bytes": 1016,
+      "sha256": "fca6c370880f9e0c5a8734bb8529c7aa88247640b953d221ef41d30a68550168"
+    },
+    {
+      "path": "NexGrana/TEST_REPORT_0_24_RC3_UX_FIX.md",
+      "size_bytes": 924,
+      "sha256": "e5c9f243c7ee0c2cb509a794b3b49b6564e66039c3af872795e09ce3ed24b23f"
+    },
+    {
+      "path": "NexGrana/VALIDACAO_0_19_0_SOL.md",
+      "size_bytes": 1922,
+      "sha256": "69b9b11a2893ea01d827da848f16b575490ebc76fbbedcbafd36d99ebc0be74c"
+    },
+    {
+      "path": "NexGrana/VALIDACAO_0_20_0.md",
+      "size_bytes": 3312,
+      "sha256": "869b57d19dc3c064d4580fbbfb2c4e68e1c9bdbad3c8adb12d36f9c0ad34a8d2"
+    },
+    {
+      "path": "NexGrana/VALIDACAO_0_21_0.md",
+      "size_bytes": 1848,
+      "sha256": "fdcd9c70c4a265eb21eb5fe2360e82462671dd7f710244ea9481f4e81159bc7a"
+    },
+    {
+      "path": "NexGrana/VALIDACAO_0_22_0.md",
+      "size_bytes": 1287,
+      "sha256": "f38bb26d8c32684c6fbe350291f0ea5dd7fcadd4468128274a7e582d121a4603"
+    },
+    {
+      "path": "NexGrana/VALIDACAO_0_23_0.md",
+      "size_bytes": 924,
+      "sha256": "fd8f72bb52983a3caac030bc74f3c9f4fec3b4f784131e53817bda16416712a1"
+    },
+    {
+      "path": "NexGrana/VALIDAR_0_24.cmd",
+      "size_bytes": 612,
+      "sha256": "5ca53c784b02dca3fd280b53894727f37e115ce16ad3c6bf2220e42d793fa4c0"
+    },
+    {
+      "path": "NexGrana/VALIDAR_SQL_0_24.cmd",
+      "size_bytes": 468,
+      "sha256": "67e754b5a7c8a68bc1668333d3496e1c9d067204f1bd3aa5761f89f4d779f75f"
+    },
+    {
+      "path": "NexGrana/VERIFICAR_AMBIENTE_QA.py",
+      "size_bytes": 2080,
+      "sha256": "4237459d833e049d276f3390f73333384513ff1c311007e3567f4d73d6b24758"
+    },
+    {
+      "path": "NexGrana/admin/achados_admin.py",
+      "size_bytes": 21521,
+      "sha256": "843db650cb15fe8939a37fea3b4ce3f0f63e9ac2e0ff7949905c6a1daee55ad7"
+    },
+    {
+      "path": "NexGrana/admin/import_offers_csv.py",
+      "size_bytes": 3325,
+      "sha256": "4d4f07effe5fca8020015e76b3a9306c67901317e870004116fdea9206522abd"
+    },
+    {
+      "path": "NexGrana/build_multiplataforma.py",
+      "size_bytes": 7898,
+      "sha256": "e43a9376007cab391771a08ccb884b198ffff284d922e817ad096c0cf12ee26c"
+    },
+    {
+      "path": "NexGrana/diagnosticar_nex_online.py",
+      "size_bytes": 1777,
+      "sha256": "5c3a44803e6ee9232ec9a7be27a94bb0ae2f94f48efa02fa07e184e7431659ca"
+    },
+    {
+      "path": "NexGrana/docs/ANALISE_E_ENTREGA_2026-10-01.md",
+      "size_bytes": 6577,
+      "sha256": "93b70627d7b93a2e5d6b79ebc59cec17e6f93d218ca6b875190da2a6789535fe"
+    },
+    {
+      "path": "NexGrana/docs/RC6_ENTREGA_E_PENDENCIAS.md",
+      "size_bytes": 2183,
+      "sha256": "6d756bb84a342546f71607f3a973640a7700e4bf2f329fa420780033383e6e20"
+    },
+    {
+      "path": "NexGrana/docs/VISUAL_RC5_SCOPE_AND_QA.md",
+      "size_bytes": 3530,
+      "sha256": "9f5d5833601f1dd08b94a877e5313b311e1236188aeb11e390efa718867f8156"
+    },
+    {
+      "path": "NexGrana/docs/history/ATUALIZACAO_0_18_1_SOL.md",
+      "size_bytes": 3449,
+      "sha256": "59977d399284b7cfce145c8465c850ddb1e1cb75d4c62005c2733fb8c3b8df29"
+    },
+    {
+      "path": "NexGrana/docs/history/AUDITORIA_TECNICA_0_17.md",
+      "size_bytes": 4343,
+      "sha256": "4c9549d5bf621de9db0f3ca67e8c788da4d3c0058bc7285ba3403fbcf2c19975"
+    },
+    {
+      "path": "NexGrana/docs/history/CHECKPOINT_0_18_0_CONTINUIDADE_SOL.md",
+      "size_bytes": 11886,
+      "sha256": "77d28a1523b09427077b1f8fb826ca24e78f2196f1638b2c16c541c5675b446f"
+    },
+    {
+      "path": "NexGrana/docs/history/COMANDOS_0_18_1_WINDOWS_ANDROID.txt",
+      "size_bytes": 691,
+      "sha256": "34f06be090455778dbba7e39d67df0f778b110dc837e6d5efe4b989584e8edd8"
+    },
+    {
+      "path": "NexGrana/docs/history/HOTFIX_ANDROID_NEX_RC2.md",
+      "size_bytes": 927,
+      "sha256": "caa58c7a729ad3eb863909fbb2429d905481b71147624a68360f2387b674cb07"
+    },
+    {
+      "path": "NexGrana/docs/history/LEIA_PRIMEIRO_0_18_1_SOL.txt",
+      "size_bytes": 563,
+      "sha256": "aea91580186f62d6071dbfe81d3f32ffba65e84cd2cfe06acebbc5a13c1a0d1e"
+    },
+    {
+      "path": "NexGrana/docs/history/MATRIZ_REQUISITOS_0_18_1_SOL.md",
+      "size_bytes": 2452,
+      "sha256": "ba16f002514fd351d5c62e0cb4a96ed0d312ee013d13f4ceffa283a58b2c92b7"
+    },
+    {
+      "path": "NexGrana/docs/history/PROMPT_MESTRE_GPT6_ASTRA.md",
+      "size_bytes": 19630,
+      "sha256": "b6649d36ce29000f535af6553a5514948b1a012cb94ffa749b8413fefe23335c"
+    },
+    {
+      "path": "NexGrana/docs/history/REQUISITOS_AUTORIZADOS.md",
+      "size_bytes": 19630,
+      "sha256": "b6649d36ce29000f535af6553a5514948b1a012cb94ffa749b8413fefe23335c"
+    },
+    {
+      "path": "NexGrana/docs/history/VALIDACAO_0_18_1_SOL.md",
+      "size_bytes": 1778,
+      "sha256": "4319116cd2b5ea06385e6ea9f54a045c6f72964662ea2989f3d061ddbf60a048"
+    },
+    {
+      "path": "NexGrana/docs/references/identidade_visual.png",
+      "size_bytes": 101888,
+      "sha256": "99044f83c251b156748879325b23607336bc6ababa22058a3cd7fa8c229f167d"
+    },
+    {
+      "path": "NexGrana/docs/references/mobile.png",
+      "size_bytes": 2772770,
+      "sha256": "0f0a348b9e710ebed0a1d94298e5326835de6195916ececd8060c1f9526f0fc8"
+    },
+    {
+      "path": "NexGrana/docs/references/windows.png",
+      "size_bytes": 2550147,
+      "sha256": "6e674aea74aa96dfd8b428f87a1e4ea7b297392f71c5823b0f83738b920bd5bd"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/ANALISE_ENTREGA_RC8.md",
+      "size_bytes": 7955,
+      "sha256": "cad95c1852dbd828a0e326ce140f60a63efeb8cf72d62c99491f0c473f36fcb5"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/BACKLOG_POS_LANCAMENTO.md",
+      "size_bytes": 1774,
+      "sha256": "b83aa1d31713130f175af9454ef25ca52b3ac7fc15742f850bc3407d4c34247c"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/BUILD_REPORT.md",
+      "size_bytes": 789,
+      "sha256": "2b581f72b8957f25fbe7d624a0a767fbf08783d8fb70acb45f4050acaf1c7ddd"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/CHANGELOG_20261006.md",
+      "size_bytes": 3327,
+      "sha256": "87dbaaf1835c7230f22e128b7c2a4f84610da99ed2373e7ad9fc1927d6c2b6f5"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/COMPLEMENTO_RC7.md",
+      "size_bytes": 1417,
+      "sha256": "e4445b3006625fc45070735b89cb5baebb91a6451e4dc2639ae429fba8b355e1"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/MAFRA_VS_SIM_LABS.md",
+      "size_bytes": 798,
+      "sha256": "936ba3a335d326f11df3cab87eede9de2fefd7a059ed2b0d7d7ded8136482b50"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/NEXGRANA_ESTADO_ATUAL.md",
+      "size_bytes": 1970,
+      "sha256": "641eeb30c8cf7331c915f20ebe67390e7222edfd1b943fe702c928127fefb7e4"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/NIGHT_OPS_REPORT.md",
+      "size_bytes": 799,
+      "sha256": "2f0314d8eb515872131d8b3ca4b4918237825224588167653c76d1eb97b8d849"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/OPERACAO_FINANCEIRA.md",
+      "size_bytes": 988,
+      "sha256": "04501f9e6d37b8b8bba3eedf4249b69081247d4db4e8077e29dac9c9eb6be1ca"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/PACKAGING_REPORT.md",
+      "size_bytes": 963,
+      "sha256": "6683225b2b7b87975e9c1ec8f8d82ba22120dc710bd3160281031092425ad94d"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/PASSO_A_PASSO_CMD.md",
+      "size_bytes": 6373,
+      "sha256": "ff6fc0c669507e699be4442eac5bbcf823e1aca0be748e81d0b128ad44df41d4"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/PERFORMANCE_REPORT.md",
+      "size_bytes": 904,
+      "sha256": "e4c9a2aa28cfeb5423898d5b6e47888e0def5a5960bb3875cf77d812e4926789"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/PESQUISA_MERCADO.md",
+      "size_bytes": 3496,
+      "sha256": "8da0804716162db27ad9a79a582714b222f0373d362c26f257f7f2133f2ca628"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/PROMPT_REUNIAO_VOZ.md",
+      "size_bytes": 4827,
+      "sha256": "8a4b1354074694822f62892fd4c197f4153ba6627746e652b3b976456c379149"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/README_INICIAR.md",
+      "size_bytes": 1255,
+      "sha256": "034e7b9616f72d0f8192d995d9bf69514831fd770f8125930250dd774823f981"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/SECURITY_REPORT.md",
+      "size_bytes": 1821,
+      "sha256": "fe1f75cb6d3d3a7e35085007994e3f26da6019c32363f55677d558460a118c77"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/SIM_LABS_SETORES.md",
+      "size_bytes": 1461,
+      "sha256": "0a7c51ac571a711703d0e8ebb3d5cfe50b24200db722666006d190ba39592d66"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/SIM_LABS_STATUS.md",
+      "size_bytes": 2341,
+      "sha256": "e01f4619a5a6a48f94169580fa3270bd8b19e5a8a38d3c43ca4f9d5fb3edac35"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/TEST_REPORT.md",
+      "size_bytes": 2427,
+      "sha256": "454e91fa0c417f8df2ef50eea9a1b3f14ce61cf1819c98d3da3273f996d9c635"
+    },
+    {
+      "path": "NexGrana/docs/rodada_20261006/VISUAL_QA_REPORT.md",
+      "size_bytes": 1168,
+      "sha256": "92bf27e544057a7700f7975307bafa0d10fb178a16c95923485901dbdf5d0bbd"
+    },
+    {
+      "path": "NexGrana/gateway/Dockerfile",
+      "size_bytes": 345,
+      "sha256": "772a3fb1ca01486d68955a04f671040df6a1792abbf11ac0bfb464db1a95449b"
+    },
+    {
+      "path": "NexGrana/gateway/__init__.py",
+      "size_bytes": 38,
+      "sha256": "655dbce232e6b85ebab92c0cfe1d9f998330b4a87c87de33d49c4550796ec96d"
+    },
+    {
+      "path": "NexGrana/gateway/app.py",
+      "size_bytes": 6690,
+      "sha256": "280b7b44763c8b30969555992c9e814a1392cea9f5aaf26ac6845220d626b52c"
+    },
+    {
+      "path": "NexGrana/gateway/config.example.txt",
+      "size_bytes": 385,
+      "sha256": "bc437c5ea7d2e0104a66848c7217f5a8ccc832363f9e4fa33c86f82f9a38df2d"
+    },
+    {
+      "path": "NexGrana/gateway/core.py",
+      "size_bytes": 3284,
+      "sha256": "8d0cc95819f6b6280ee03a5380e90d7e4bc4babd0bd204f8cdbaed240c14548d"
+    },
+    {
+      "path": "NexGrana/gateway/requirements.txt",
+      "size_bytes": 82,
+      "sha256": "6f071e8143e6ca809a1260f04cf2d343ed3e5eb4613c6a816fef3932550f10b9"
+    },
+    {
+      "path": "NexGrana/package-lock.json",
+      "size_bytes": 578,
+      "sha256": "812a597377f9f1dfd0446f4e5ec850b2a1fea64e70db2bcabb2cafe24f8891b1"
+    },
+    {
+      "path": "NexGrana/package.json",
+      "size_bytes": 188,
+      "sha256": "31192649cb900965f76ac9977a530615e15a696239cfbcbfd83bc9b02faec2fa"
+    },
+    {
+      "path": "NexGrana/package_release.py",
+      "size_bytes": 3701,
+      "sha256": "705cfa8f9503a0be5125c13b750eb45392f2ae692947a159dc9e36a11a208f7b"
+    },
+    {
+      "path": "NexGrana/pyproject.toml",
+      "size_bytes": 1003,
+      "sha256": "1965b849675331e83e99ce36871223b7f76f2a77c0a8dfa1613300035f0473a8"
+    },
+    {
+      "path": "NexGrana/requirements-qa.txt",
+      "size_bytes": 111,
+      "sha256": "74f91df5cd148a8f28190368ba7787b4deac05e8b0f6377c84cba477e1083d96"
+    },
+    {
+      "path": "NexGrana/requirements.txt",
+      "size_bytes": 139,
+      "sha256": "1100a0890dd434288a02047a8409ceda26821fc2fdc6644df41de753acadec37"
+    },
+    {
+      "path": "NexGrana/security_scan.py",
+      "size_bytes": 1726,
+      "sha256": "c959fa034af379d50d2545b6d5124195cc2edd304b3e267b57e66ae366c5f556"
+    },
+    {
+      "path": "NexGrana/src/.flet/.gitignore",
+      "size_bytes": 2,
+      "sha256": "cdbcae15105d6b781e620813c79c7e868740d4e9cc53ce6f5fcbbc12387adf4b"
+    },
+    {
+      "path": "NexGrana/src/.flet/README.md",
+      "size_bytes": 1125,
+      "sha256": "8cf2dfd494d0c64ce551cfe8052aef2de59dab4e1f6d612d3e3ec31dcc5f029e"
+    },
+    {
+      "path": "NexGrana/src/.flet/storage/temp/tmpfoxiapiv/assets/FontManifest.json",
+      "size_bytes": 3915,
+      "sha256": "e4ef87b6f828d818f4993b97778585fc66810ce6398704e1e95aa68da4f849d4"
+    },
+    {
+      "path": "NexGrana/src/.flet/storage/temp/tmpfoxiapiv/index.html",
+      "size_bytes": 3927,
+      "sha256": "9c182f1dc4156c9e4d4a4602a2731848eed921c18512cd6c4de160b3b0181334"
+    },
+    {
+      "path": "NexGrana/src/.flet/storage/temp/tmpfoxiapiv/manifest.json",
+      "size_bytes": 788,
+      "sha256": "e75667d55d4986f348017777fc6005a01931b8ae51b418369d806db5a032b16e"
+    },
+    {
+      "path": "NexGrana/src/affiliate_config.py",
+      "size_bytes": 103,
+      "sha256": "1df147a0ebe54b9c114b270402001d2f02d86ca2a3eb54bb7a5a83243571d2a5"
+    },
+    {
+      "path": "NexGrana/src/app.py",
+      "size_bytes": 3369,
+      "sha256": "35c5bec2794a42c29194a97b69e56fd6e8a0399311b9caa51c01e053118ec532"
+    },
+    {
+      "path": "NexGrana/src/assets/icon.png",
+      "size_bytes": 2014851,
+      "sha256": "36296882b0715a91fa0c751cdbc741d1efd1d7c054ec4da002959758d0c3284f"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/cafe.png",
+      "size_bytes": 8866,
+      "sha256": "da7dff5a6876a83c209df251f0967045e849cff48fdbec9a8645801f4c36d016"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/calendario.png",
+      "size_bytes": 8746,
+      "sha256": "9f4052986b29daeaaa3305ff6c9d8234da5a3e563d936e80dda3e28a9916e79c"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/checkpoint.png",
+      "size_bytes": 8455,
+      "sha256": "e29ddda919783a579232667393b46f59d948bcbabc9a52d5811bf99120590e85"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/grafico.png",
+      "size_bytes": 8653,
+      "sha256": "51868c617908e97f05d8ce0a3c19b2bd3780acc41879a833c0233c39e47a87a4"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/lampada.png",
+      "size_bytes": 8897,
+      "sha256": "39258f09bc45eb4027e93823ccaef5ae292418b9ebaee870ae448ca4575df92a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/livro.png",
+      "size_bytes": 9138,
+      "sha256": "91f6cfb047f120179e8834bb4b8310795dace8470d6639e3c8e7ad3d7e8b5b93"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/moeda.png",
+      "size_bytes": 8972,
+      "sha256": "bbeed2af2c76c33ef7fec35b9f2b005ed9f44303a09d1aff412c46833bd58ada"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/planta.png",
+      "size_bytes": 9054,
+      "sha256": "b9f2c2b681a144b3eec258609f419a30f1419c2d658c46261725d1d0000a5d23"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/porquinho.png",
+      "size_bytes": 9174,
+      "sha256": "7216b99973d237e392bdc61c5e31fc737e60b5ee4295495944dc68d5aa1d10a4"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/elements/trofeu.png",
+      "size_bytes": 9207,
+      "sha256": "0b1ff04a15245365f4976083d67f90c55b54ff1658d118b3d401fc263f3d9185"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/manifest.json",
+      "size_bytes": 2338,
+      "sha256": "184984581046be57229d1fde258e5bf45dedf560ec5a454b83b5b1e7d314de2f"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_avatar.png",
+      "size_bytes": 18885,
+      "sha256": "857d163ba90d3a984721df689914a3b56a1409114df7196f1f43abe634bb1187"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_card.png",
+      "size_bytes": 99361,
+      "sha256": "2b2058d21d61b959b86013c732dabfce35bfc0ffa8721e0bfb6871bd78d1d85d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_celebrate_v2.png",
+      "size_bytes": 1715022,
+      "sha256": "9e0cdef3d1a51274fd5e1de691b5625491b680aebda735e26f4528581442a81a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_dock.png",
+      "size_bytes": 45065,
+      "sha256": "42d984bf91b27fa862d6e5f413bda8114684e88f07704a04ebb00052309de64d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_hd.png",
+      "size_bytes": 1738375,
+      "sha256": "4fc4e9996f571e75279936030acdb9d51ebc9d0626b1352b50fe461f09563796"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_hero.png",
+      "size_bytes": 327382,
+      "sha256": "bedc0c56624fa221b4742c1734590ac19434146b3ca24548511e79efc6a873a4"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_thinking_v2.png",
+      "size_bytes": 1527519,
+      "sha256": "5dd1054264de9903fff6f5bf8c918bb98a0120f64592120d5e6a8f94fb41e32b"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_welcome_v2.png",
+      "size_bytes": 1756134,
+      "sha256": "f0a77f2790ab22f96b0152abb7f233b403345165bf8aa61cce9941bca7c1b306"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/nex_winter_v2.png",
+      "size_bytes": 1911818,
+      "sha256": "edf023dab4f17d0c1a59232bc41f42ec9decc47172bcc8874c9399ca946a6cb1"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/aventureiro.png",
+      "size_bytes": 21937,
+      "sha256": "1b4c33b84c97a0de46812a8d0de5f7497e06ba4f0e86e8ce6f259145751eb602"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/LEIA-ME.txt",
+      "size_bytes": 1404,
+      "sha256": "124ab814bc015b69ba7d856180a90776bda7ed195c056cbc71111706442e4b1a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Administrativo.png",
+      "size_bytes": 60328,
+      "sha256": "248d96dad497e8bea10c7b34f1ad8c8ef3d5478dcbba41655741d7b0b46c8d2c"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Ano_Novo.png",
+      "size_bytes": 51044,
+      "sha256": "c9bcdfaa01397e83bfc7cad0643652096963b595d9ee35bc4a951afb2769d65b"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Carnaval.png",
+      "size_bytes": 56741,
+      "sha256": "befd60840b90ba24978bc1ba6f20abe7d68f81a62457cf774e1efab3f2947f0d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Casal.png",
+      "size_bytes": 58824,
+      "sha256": "02ddef6df3117e5496952fbff9e2ebc3cbfdd42bbde601702aa0c269a6f4bc79"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Cinema.png",
+      "size_bytes": 59408,
+      "sha256": "a6d4bd035f138b65b82764e960ca00e1372179c75fb5e8f39271ae51c6ae93b7"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Compras.png",
+      "size_bytes": 59270,
+      "sha256": "23eb4f8530b8fcc7ffb78af33def21e048d6c0a7925a1baff4b8dc5fd017edb6"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Conquistas.png",
+      "size_bytes": 59604,
+      "sha256": "cbddc546d9ead16caf41d352d0ef14c9032977e90ce1b3a6b5d741e65c577126"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Consciencia_Negra.png",
+      "size_bytes": 56026,
+      "sha256": "fef87ca6ac3309e7749449bc8c775d80012f572c9c906351c234e8adc30f3caa"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Criativo.png",
+      "size_bytes": 61227,
+      "sha256": "9ce069375ae1225daa2662821705354df63c1cbdeb9a2ca79a2b0a77056ce47c"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Dev.png",
+      "size_bytes": 59418,
+      "sha256": "3489d5d7fc2f7d18a65bef759afc56bc48dbfb68b1c4df8be9224b2669a55df1"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Dia_da_Mulher.png",
+      "size_bytes": 55786,
+      "sha256": "7e0c5ce8dc8184fa159556892ecfb6186347bc78efa9bf2f7800bd864bf8634e"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Economico.png",
+      "size_bytes": 60499,
+      "sha256": "450418250f3e189e5366652360fc0c5fb0193de11d859bf207c0ce91c77d833c"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Empreendedor.png",
+      "size_bytes": 58358,
+      "sha256": "65c02628d5dfed1765caf3da98c2bc3821ffdd2309f64c9c4d0a6e2fed56a123"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Estudante.png",
+      "size_bytes": 60989,
+      "sha256": "95ad7c2f392edbd097338a5e2de0db14bb41a17d002557d63431d1533476faee"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Fitness.png",
+      "size_bytes": 61356,
+      "sha256": "05c264afeda7f07fe7fd10ab742cc198d6807e418846d094f5943e1c8febb101"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Foco.png",
+      "size_bytes": 60655,
+      "sha256": "e2883ba6d9eab44dadde40d55845ed91b75521c9792e07dae5b7a978e87222bc"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Freelancer.png",
+      "size_bytes": 57520,
+      "sha256": "0a98359af0a13ad889de7c1716c169631ce8b7c4b7c81eb2c4aad4caff06cd88"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Gamer.png",
+      "size_bytes": 63733,
+      "sha256": "e439b1d1b8011ceae13cfe75b9eb436f521c89b77025becdf94139ffe53d3235"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Gastronomia.png",
+      "size_bytes": 60001,
+      "sha256": "8ddd0f22099efd12ec0d1eadcdcd9553b8edc4a7960fe63624dfbc83f2a6c5d2"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Halloween.png",
+      "size_bytes": 51014,
+      "sha256": "0e55a900c855d271726d5e3ceb9b803d5e75f58e63529837f34b48db824d2e00"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_IA.png",
+      "size_bytes": 63443,
+      "sha256": "a95709f568d3527a1ad15d82df21fc066b4f33c84a2e45d844bb6e2b14b9737a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Investidor.png",
+      "size_bytes": 58971,
+      "sha256": "6a3b77d18986bee95a6f820e44b490a2c85d97b7d70d6d33958cab56b9e0e24e"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Meio_Ambiente.png",
+      "size_bytes": 54837,
+      "sha256": "3be4464d6cc8e9e2053ae0d30c83045861619101509a008be169e54aa6853767"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Musica.png",
+      "size_bytes": 58622,
+      "sha256": "04914517df9a41ec33531afd1c0e3bad7c040e880653959c5d28d11607082d95"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Natal.png",
+      "size_bytes": 52183,
+      "sha256": "46c501d07689c099ae52017e27268149cabc5163c748d2444d74c27f80ff79a6"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Natureza.png",
+      "size_bytes": 60236,
+      "sha256": "988006f6d40bd7ae51f37adfa394a7856bf6f8003a941b0c6e49c50df2d6c489"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Operador.png",
+      "size_bytes": 52349,
+      "sha256": "c17399eac1b1dbf2fd354b53e95a7f67c16749f5de5f9531b26eaafe7b3de9a3"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Organizado.png",
+      "size_bytes": 61337,
+      "sha256": "1f37c1ad6507a52fc96fef84058861ae9d7672a19acabea936c88b3e64c81d4a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Pascoa.png",
+      "size_bytes": 54018,
+      "sha256": "20e744e3c85e14ee82fc2dfeb993e7266813027ca735c728b12089fbaf6d3734"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Pet.png",
+      "size_bytes": 62465,
+      "sha256": "72a5e8b415586b36230f45627e8f010a223c54113bf72241753dfba1e25311a3"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Planejamento.png",
+      "size_bytes": 61956,
+      "sha256": "b5991111ea3493ad4a1a2895dfd9984900628827c39dc41fbb8c8b8e275251d0"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Povos_Indigenas.png",
+      "size_bytes": 56398,
+      "sha256": "b338dba4fd57cd12b941cb42b1e5b627269e9b142caa4ed3f86a6ee190bbb58f"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Profissional.png",
+      "size_bytes": 59484,
+      "sha256": "37eeeb50b6cb507f34b6ad67d58cd4e2f1cb00d9be5c619ee64a4bf1a93f0a81"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Tech.png",
+      "size_bytes": 60361,
+      "sha256": "9f278b343bd13958b54b89feac3f724ad700a2fe28c9be5187d572217e80f4e1"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Trabalho.png",
+      "size_bytes": 60413,
+      "sha256": "30d02e20534af1ab4ffae98146e0d60065b1632bea1a7e76e9bc3ed21860353a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/Nex_Viagem.png",
+      "size_bytes": 65389,
+      "sha256": "c7fb127e91d84be76ace0b6244d9abfa9c93e1ae3a37ee219d6ae18eebc4fad3"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cards/manifest.json",
+      "size_bytes": 4159,
+      "sha256": "81376dec8deece629c898e7f3c1309d1225617823b452827e70fdd81e8d8b27b"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/administrativo_avatar_v3.png",
+      "size_bytes": 22074,
+      "sha256": "b659cc5df1452202828f4dcc4a0931905b4c6df1f0b6fc34c91cfccc890b2f40"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/administrativo_v3.png",
+      "size_bytes": 515826,
+      "sha256": "b798261ab339c1e09123972f377dfc077f67aeccb4b0a88d8d0646340e38032a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/ano_novo_avatar_v3.png",
+      "size_bytes": 19949,
+      "sha256": "1104b34e062d2a181599ba9995107e38450a0204724b2881a56c56a541e24254"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/ano_novo_v3.png",
+      "size_bytes": 461433,
+      "sha256": "518ffbba4f53046ca5db794061fee9fef496ab76b913a6490bc0e41620ee7b95"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/carnaval_avatar_v3.png",
+      "size_bytes": 25205,
+      "sha256": "20ddfcc5856ba6c75998199cbd105e030e2ca638c626385fc340815ed68a8665"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/carnaval_v3.png",
+      "size_bytes": 580214,
+      "sha256": "955fe3278b297fe76a2f9cc22526a96b38dfb0dcadbdc4b8027e1d393473b326"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/casal_avatar_v3.png",
+      "size_bytes": 23881,
+      "sha256": "1fd507229b630475637bf68b1a0d13c735d9a8d0dbb0a375e6251e64edcd2dc5"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/casal_v3.png",
+      "size_bytes": 561266,
+      "sha256": "95328634b6462b3b65d91c57c9058d1a027f156f4c32eb28337f77e3dbf27276"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/cinema_avatar_v3.png",
+      "size_bytes": 24878,
+      "sha256": "aa792039896ec981f4dd461794067902a9f7639457b76d0a876f96628f3a19f9"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/cinema_v3.png",
+      "size_bytes": 570350,
+      "sha256": "cb05e9cd7f2d331406557e0b17fdd79128784855d123b59286d244469b453a39"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/compras_avatar_v3.png",
+      "size_bytes": 20806,
+      "sha256": "28583cb8341b5da0d48700f687ded7459dddc4da58d0bd8a33fb615e92cf164d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/compras_v3.png",
+      "size_bytes": 476307,
+      "sha256": "27354795b40d58562c6f77d22931c76c5141d173b58b3dcc290c309cb48b8d1d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/conquistas_avatar_v3.png",
+      "size_bytes": 20126,
+      "sha256": "938825b8b643c282f55151ab4c13aa3674f0a884ed5775039d4c2d89780cec45"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/conquistas_v3.png",
+      "size_bytes": 464166,
+      "sha256": "184c3a3af6852f409e389edc913c6a70f9c7753ccd09f07afe7830c426024289"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/consciencia_negra_avatar_v3.png",
+      "size_bytes": 21497,
+      "sha256": "8683c6e52195ffa822747956e63fa38e1cb842371883174a82ce8582a3883856"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/consciencia_negra_v3.png",
+      "size_bytes": 520488,
+      "sha256": "cdf6c3f345829619d86fa20e099fa0d1fd3e95577766c9a979ba701c62e08f1d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/criativo_avatar_v3.png",
+      "size_bytes": 24662,
+      "sha256": "7aab8374a44c5c9ad1be8ec75c796e90701895a394513a28699e6c38e8689552"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/criativo_v3.png",
+      "size_bytes": 580162,
+      "sha256": "df4b099437831bed0cf229051822a85502b36323f1f651673c937b2d8c1ba7a6"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/dev_avatar_v3.png",
+      "size_bytes": 19247,
+      "sha256": "2c7e9e83739988f127ce4432edb5a942318ddb472a8a889f7512f2bb7d12cfb0"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/dev_v3.png",
+      "size_bytes": 453147,
+      "sha256": "ace27a514f596f7811276818b5e3ad7014436ca2c7d24d364899bbda94b4af25"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/dia_da_mulher_avatar_v3.png",
+      "size_bytes": 22560,
+      "sha256": "40c296079696fc9db82d51076811a882e4a828aff40a6fab3b47c327fde5122d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/dia_da_mulher_v3.png",
+      "size_bytes": 537380,
+      "sha256": "a1896bffca42b2bd3cf90ddd59205cdc00263a7e89acddbb62247e4378ac584a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/economico_avatar_v3.png",
+      "size_bytes": 19053,
+      "sha256": "a6a15ee5811da9424e79583a50a8efea5231071f00715f4fb15e05b1d651b377"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/economico_v3.png",
+      "size_bytes": 428520,
+      "sha256": "8a9fba2e9ff975f89707f1c2f8d78be6e7efd3318722f0d158ee048c128e318a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/empreendedor_avatar_v3.png",
+      "size_bytes": 21892,
+      "sha256": "e23d8da8e3282154f3649615e2dd9c02d99c9a39b53ace69b5f97d652b8702f6"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/empreendedor_v3.png",
+      "size_bytes": 505794,
+      "sha256": "9f67b898e56baaac0bf430c57c9387801dabffa66689f66b7300373a8c920b2a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/estudante_avatar_v3.png",
+      "size_bytes": 22328,
+      "sha256": "cc01ddcfa7225eeaccbee23d13911093bedd6450abf8b463928fb513590fd44e"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/estudante_v3.png",
+      "size_bytes": 513775,
+      "sha256": "c45a19a9b8bac911bf028b2a71265b445af28b0212bf1bd227c73ae9d2d2a7d8"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/fitness_avatar_v3.png",
+      "size_bytes": 21971,
+      "sha256": "583d573632c5f8c16fbf93b48e47745f3675572a0a02a46024b0a3c55b1095c1"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/fitness_v3.png",
+      "size_bytes": 518891,
+      "sha256": "bf5e0eabc0234493107225ff14af3eaa030c900f7fb31be1bb37b64fcf5aa1ab"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/foco_avatar_v3.png",
+      "size_bytes": 21191,
+      "sha256": "691bf68f91da293c2fc0a483f0023953b3379a9eadea5354dd6cba880c22933d"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/foco_v3.png",
+      "size_bytes": 499761,
+      "sha256": "9b946fbe4bde1163a0d07687d048678db54e90b6181c1e635c59c45ee35a57cc"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/freelancer_avatar_v3.png",
+      "size_bytes": 22517,
+      "sha256": "f223d16705819d69e85ec69cb97329c357c736096ab6176259becf01ec39db0b"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/freelancer_v3.png",
+      "size_bytes": 539059,
+      "sha256": "5598098e6116316a69de7cd829f9ae1ec47a2d4b67cba68413a4906585a1b964"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/gamer_avatar_v3.png",
+      "size_bytes": 21728,
+      "sha256": "2f13df7469af968b7917da1dd296b3865f9ca5f340db1e8748695f71a02ad633"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/gamer_v3.png",
+      "size_bytes": 487290,
+      "sha256": "0f3cc97a3b88a9994d928e34a5c15a6eeffaec593c5d349172a29aa0e7f6ee44"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/gastronomia_avatar_v3.png",
+      "size_bytes": 17315,
+      "sha256": "3005e5c68f32afed3f53d20676c25bc0246baf7749e648334d9b7306f31b8c26"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/gastronomia_v3.png",
+      "size_bytes": 391669,
+      "sha256": "16e990c4d5b42325ee72695aadad14d31085857eae7ce5905f83546fe7f59e51"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/halloween_avatar_v3.png",
+      "size_bytes": 19638,
+      "sha256": "249431497037de387bf7f618fdc3d19e0d193442a0e23fdb3f31d7d965e50263"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/halloween_v3.png",
+      "size_bytes": 444636,
+      "sha256": "b6685fb5a9adc82486e92e0efc452574e48dc2cad61bdc394829bfbb80e73581"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/ia_avatar_v3.png",
+      "size_bytes": 21823,
+      "sha256": "f9cacd790312682325c7c3568fbfeb379dd39df4a8b11634fcc42c8a79387789"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/ia_v3.png",
+      "size_bytes": 499102,
+      "sha256": "0071d4b6f4f1b7af9043dc9bbbfdf8699dd3ae01777c9bae96b5d2f8f65f4fe2"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/investidor_avatar_v3.png",
+      "size_bytes": 21262,
+      "sha256": "6b6a87428205654c1b0ec4d66864302c64da4913579747af7cc1e36c3acdc7fb"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/investidor_v3.png",
+      "size_bytes": 508217,
+      "sha256": "062c4975d442a7764a818bd36898ee2ef0ff4cd317eba255941e95e467512934"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/manifest.json",
+      "size_bytes": 30435,
+      "sha256": "0c04896eef64286a9f1e623f10602455d767df53591c7a342397003841cebb20"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/meio_ambiente_avatar_v3.png",
+      "size_bytes": 20945,
+      "sha256": "a4ee7d2fb22acccb1125f6d64effcef2d070e8d55823ae4f56eed892705500db"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/meio_ambiente_v3.png",
+      "size_bytes": 505599,
+      "sha256": "f909507a9097329528523ac630f7338cb2ce5d77e386e378c5d785a4b95441c8"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/musica_avatar_v3.png",
+      "size_bytes": 21881,
+      "sha256": "f6acd95c77d52261b4e39b6cb12e13aa74d3956d1a2117cb766af1a3d92b6d00"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/musica_v3.png",
+      "size_bytes": 493824,
+      "sha256": "dd2622d15ba32ed381a11f37219c66842bb449222be48f76ca0ddbf9e8b4dfde"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/natal_avatar_v3.png",
+      "size_bytes": 20013,
+      "sha256": "6b569dc7dc1245a638c344ed4d83c7cdb7e44f9ba429d1a42eebe7e6212ac842"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/natal_v3.png",
+      "size_bytes": 482745,
+      "sha256": "0deec107710400fb2dcaf81b80eab36dd05a509bdd09dba709856eb9ee576a62"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/natureza_avatar_v3.png",
+      "size_bytes": 21189,
+      "sha256": "26357b4bb70271b7e0def8e53441df2cbf74ee9a5bc8592ea81e80a7056bdf8e"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/natureza_v3.png",
+      "size_bytes": 504104,
+      "sha256": "fb33d09506ecd9c72b603b0350c46b3b286791c3e722a68379da172ab0123f89"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/operador_avatar_v3.png",
+      "size_bytes": 17845,
+      "sha256": "676fa02692e290cdca5f5dfad38e0a163af5b3ca1272f3e156d259c045832b66"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/operador_v3.png",
+      "size_bytes": 411246,
+      "sha256": "410fd5092185ca0d6cbde25882e16541a7a4c4581bf62e77534e6fb28187c17e"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/organizado_avatar_v3.png",
+      "size_bytes": 22850,
+      "sha256": "002646df6cf60133fe34d9023858a496b15dd128b8b9ccb3f766a5417ab83184"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/organizado_v3.png",
+      "size_bytes": 535457,
+      "sha256": "0d51162ba08f547da6b503bbc9f7f35d366e6faa36dd1942135a4e5354b85e0c"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/pascoa_avatar_v3.png",
+      "size_bytes": 21389,
+      "sha256": "78d1b9766bf75b728d2f0f6ebd02f019cea1302773d3499c82c85b39d16bbe61"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/pascoa_v3.png",
+      "size_bytes": 497402,
+      "sha256": "10125e870bce6b9b7e586695501085c1cc8119720b1d06110b0629c595045b23"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/pet_avatar_v3.png",
+      "size_bytes": 21916,
+      "sha256": "03cec5e791bf5262592c5c1e31420fa6109170190d099de96249ef64819b82cf"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/pet_v3.png",
+      "size_bytes": 496567,
+      "sha256": "284a859c7cb058b1a5537180677f532e4e5da9f25e9f9efd07d8431a2caef8a1"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/planejamento_avatar_v3.png",
+      "size_bytes": 21142,
+      "sha256": "1f59a039f025f126494a0d2b2e6599f5cb8eaa4e01c2856fcef203086abe6838"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/planejamento_v3.png",
+      "size_bytes": 493298,
+      "sha256": "390deec552c5c7cf95dce83a66b3721cd52c27e17d65968b7c8e82565b6df1b3"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/povos_indigenas_avatar_v3.png",
+      "size_bytes": 20342,
+      "sha256": "9e0dc8016febe6b324f10aabb477aa99fd3cc4f2db56fc446e9a07cc78ff2ded"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/povos_indigenas_v3.png",
+      "size_bytes": 471480,
+      "sha256": "e8ee4cb538135a5b98bca05f1c3d68e7e014ca4e74a49753bc7761672b8b544e"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/profissional_avatar_v3.png",
+      "size_bytes": 23136,
+      "sha256": "2f094e22f8f817468662a4fd561f0a88d92760034b655c1ea1d8e73d38659c39"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/profissional_v3.png",
+      "size_bytes": 526427,
+      "sha256": "e389517a354b72fac6436fa2237f6f6fa8d8379521c68c440bdae5ffff96f785"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/tech_avatar_v3.png",
+      "size_bytes": 21946,
+      "sha256": "b0af5d8ca24cb670ddeb70e8da7677321901fb0f52c490075b4f8b8d14a4d2eb"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/tech_v3.png",
+      "size_bytes": 499572,
+      "sha256": "2e41a44b64f1f2dfbdde56753446dcc02284f6ce55bad39caf44fee3171dd428"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/trabalho_avatar_v3.png",
+      "size_bytes": 23417,
+      "sha256": "898f87058fb3d35911669cbca261f8fc22f578d8b70fda7f60752af0db0e728c"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/trabalho_v3.png",
+      "size_bytes": 543800,
+      "sha256": "ed7748a263fd821070719ee1230987f3265039a0f62b64d67b24393805512689"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/viagem_avatar_v3.png",
+      "size_bytes": 23267,
+      "sha256": "e445ca47a2dcbeb1c115eef8923566eac7b6d4d5f6c6157b7ced6a56e2d9f0c2"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/cutouts/viagem_v3.png",
+      "size_bytes": 545792,
+      "sha256": "8f04156588d512ddfb728ad31326f5dabb196b4ad3572359281bad7dbae7e484"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/estudante.png",
+      "size_bytes": 23103,
+      "sha256": "8e799fb16393d485abf109cd1ae2a48abb86416eb549cf73854d7f3769367c7b"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/executivo.png",
+      "size_bytes": 22283,
+      "sha256": "ace9ba127172e269cb26998a3fd2692017eb3817c506c8ce582ff5cc508d6218"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/gamer.png",
+      "size_bytes": 22377,
+      "sha256": "af70d7c174c77629002fff6e757371f9a61550bc66e471f2cc1bfe8e09c412a4"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/padrao.png",
+      "size_bytes": 24025,
+      "sha256": "3ad2385deda13215dc199f5ef53cb9708e25e976e7039b1b7b3239022046c6e0"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/skins/rei_da_grana.png",
+      "size_bytes": 48905,
+      "sha256": "919100b11785ce4e9031822ba89ba49e3772f4254dd2c517967b62a388eaf0a3"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/bora.png",
+      "size_bytes": 8678,
+      "sha256": "ccb51ad118b09f03d85557f025ede6db665110cfb283aee2b5b179cbc3fa509e"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/disciplina.png",
+      "size_bytes": 8389,
+      "sha256": "2bfac7c86ccc958bdfb7c19b661e4951b52ab6e1c7fb3f7fddb33827740a363b"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/economiza.png",
+      "size_bytes": 7698,
+      "sha256": "068eff5881d490c5473dc299291b78c79a92aa3d8db1c7bfeb1fe4216bfe9a85"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/excelente.png",
+      "size_bytes": 8950,
+      "sha256": "e599ed5c2275cfdabecc330c0036e3458d0208f15fc28319ed88547438ac4e34"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/foco.png",
+      "size_bytes": 8189,
+      "sha256": "dbdd6af19415f7202213567dcf95cffa81d48514b87333390d9b3a2c6aed3c8b"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/gratidao.png",
+      "size_bytes": 8151,
+      "sha256": "86ab98d0dea7238373919922e039a3309ae69bf8151cab6040c2436ecb252077"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/kkk.png",
+      "size_bytes": 8632,
+      "sha256": "99049d3c0d0c53927bc4788fb338799540d1dbd03efdecdf51be2868021c4eeb"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/meta.png",
+      "size_bytes": 7658,
+      "sha256": "a98b45188bb7b2bdd8503a60c7067cd5bff30653af54ca700bd1c41cc7c2894a"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/oi.png",
+      "size_bytes": 8763,
+      "sha256": "7b616a888047bf81b6704d4c23a87cf70da46467b3d17057bea456fbf284cae9"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/ops.png",
+      "size_bytes": 8580,
+      "sha256": "a7a6d0f77ae3bb720a9384876fb5ce54d656e6f3fce7bb5acd3cd38a93283b23"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/parabens.png",
+      "size_bytes": 7578,
+      "sha256": "825d38aed56c71170a88a80454a96ee237683f089e07c38fb2382370e1b18c65"
+    },
+    {
+      "path": "NexGrana/src/assets/nex/stickers/top.png",
+      "size_bytes": 8395,
+      "sha256": "c4eae2ebfa2f78ca0ad05418b6b1670c9a4ddf2b128bfb5d75f2b41a6c5f27ce"
+    },
+    {
+      "path": "NexGrana/src/assets/nex_canonical.png",
+      "size_bytes": 41369,
+      "sha256": "7a428beccc1b857323fbec25e448ea2647c7d8efa878439b0e46ea4053a8b2be"
+    },
+    {
+      "path": "NexGrana/src/build_config.py",
+      "size_bytes": 690,
+      "sha256": "c3df1c2d311e4d993f119ec88ba6d51e9a8d222f3bf44bf93f402bdbfab668bf"
+    },
+    {
+      "path": "NexGrana/src/cloud.py",
+      "size_bytes": 85219,
+      "sha256": "61a8c4d6df8e55c4dff785ff4370ad464906c31461999399c7abfcccc7c9a49f"
+    },
+    {
+      "path": "NexGrana/src/main.py",
+      "size_bytes": 38874,
+      "sha256": "a9978eb4c251b30db8f4a100997feb0e66ac86a678a0f2b96cbbe34eecff3734"
+    },
+    {
+      "path": "NexGrana/src/nex_controller.py",
+      "size_bytes": 11846,
+      "sha256": "79a5986c05d267f465705bb481947076aa3c857037b70a0950114e05902e4d4d"
+    },
+    {
+      "path": "NexGrana/src/screens/__init__.py",
+      "size_bytes": 23,
+      "sha256": "1017289549d60071cb122d8dc155d90bb2a50e977b7424c7201fc5b83ff50545"
+    },
+    {
+      "path": "NexGrana/src/screens/acquisitions.py",
+      "size_bytes": 13422,
+      "sha256": "edebf42e87321801c6df532cdda29e052be4a324228fd9ed97353a5267056aab"
+    },
+    {
+      "path": "NexGrana/src/screens/analysis.py",
+      "size_bytes": 21877,
+      "sha256": "017e94022fb1846635581189bb99870d681248ebd9898e9a61fba156b06f900d"
+    },
+    {
+      "path": "NexGrana/src/screens/auth.py",
+      "size_bytes": 31410,
+      "sha256": "f9d7ef1db7bfe9511a0955f3c8cabe0759912bfadfc9ba76464038b8cbc6e0c2"
+    },
+    {
+      "path": "NexGrana/src/screens/extra_income.py",
+      "size_bytes": 24396,
+      "sha256": "0534e1c7323c7ebdaaf5b56d14637436e4bf7fcf42d75430a94abb45e92ecf0d"
+    },
+    {
+      "path": "NexGrana/src/screens/home.py",
+      "size_bytes": 32417,
+      "sha256": "78cc8a3ea9219cefcfa61de78394f123799ef48902c2de56be558db3cb35251c"
+    },
+    {
+      "path": "NexGrana/src/screens/investments.py",
+      "size_bytes": 8211,
+      "sha256": "be4d2b6dd069737ae1dd78635864ae90d81c8aeb9e69b89f371fc1147a66870f"
+    },
+    {
+      "path": "NexGrana/src/screens/market.py",
+      "size_bytes": 50970,
+      "sha256": "510a2c1aa2f4b6aca7a06678fcbf20e648ad27a5d768acb1c3dd6154c66eddf2"
+    },
+    {
+      "path": "NexGrana/src/screens/movements.py",
+      "size_bytes": 24417,
+      "sha256": "cc3bc7ebcb73d68cd0b7ba8e9e3e6a172510b566bea598a0c0b9afed3c8efd9a"
+    },
+    {
+      "path": "NexGrana/src/screens/nex.py",
+      "size_bytes": 89852,
+      "sha256": "03d24336a7b0f3752cad562425e23f873bab975cbf0e212243fe25af56b5cb97"
+    },
+    {
+      "path": "NexGrana/src/screens/planning.py",
+      "size_bytes": 14137,
+      "sha256": "ca4fced54bd12e25dbd95c3c3e118b3943ecdd962129d8119a92246e67931404"
+    },
+    {
+      "path": "NexGrana/src/screens/settings.py",
+      "size_bytes": 41123,
+      "sha256": "6715b418075baa4ab3560d8283097edecdd87467b76ee126c382ddff596f2580"
+    },
+    {
+      "path": "NexGrana/src/screens/tutorial.py",
+      "size_bytes": 33581,
+      "sha256": "668d13f5722b3afdf31101f1d02b8b892d2f996cc0557bbd29c45ddee8d3c551"
+    },
+    {
+      "path": "NexGrana/src/services/__init__.py",
+      "size_bytes": 44,
+      "sha256": "22f432c3531a7640618c43930432539a07acedc9480185dbe0b1f4a6ec1a7d8f"
+    },
+    {
+      "path": "NexGrana/src/services/admin_offers.py",
+      "size_bytes": 6458,
+      "sha256": "7162c2290c8db8b40f612c7abcde57f8cb64249d6fef4f65ce2cf8f199f3514b"
+    },
+    {
+      "path": "NexGrana/src/services/affiliate.py",
+      "size_bytes": 3169,
+      "sha256": "1b4196800389411b3ba0ac7101946e78a78871a0bc0c7e1950077626eea2f0c1"
+    },
+    {
+      "path": "NexGrana/src/services/analytics.py",
+      "size_bytes": 2171,
+      "sha256": "0d69ca0aff8cb1d851722b42bf1577bbb90b215e69a5e86361fb9bebbb9bbc67"
+    },
+    {
+      "path": "NexGrana/src/services/chat_retention.py",
+      "size_bytes": 1821,
+      "sha256": "c7ad84b5695db91d467d913acbfdfe2b6b04b2df59aa1e9d436ced8e4c898115"
+    },
+    {
+      "path": "NexGrana/src/services/finance_engine.py",
+      "size_bytes": 17556,
+      "sha256": "96ed77377e667313874828fa6cf8df30b82ac5d6132c277204410c92666f85dc"
+    },
+    {
+      "path": "NexGrana/src/services/investment_engine.py",
+      "size_bytes": 3713,
+      "sha256": "804ab785096b6a3591bedbc8845393f4a785ba49df6abaaee0edd5a035a70650"
+    },
+    {
+      "path": "NexGrana/src/services/journeys.py",
+      "size_bytes": 4800,
+      "sha256": "b1078025a807b847c07f9c527680e71b7f0169fd2ee355e8bc16019fb40d1538"
+    },
+    {
+      "path": "NexGrana/src/services/market.py",
+      "size_bytes": 2054,
+      "sha256": "77e29f4bdcdcb352fe78d16ec6fcbc8d47f1bc58bf9c2656589cde9b6e6c712a"
+    },
+    {
+      "path": "NexGrana/src/services/monthly_ledger.py",
+      "size_bytes": 4659,
+      "sha256": "2f0d024981bf716b1182fa1699428e8a44854791fb7ba2787fef9a8e567c43bc"
+    },
+    {
+      "path": "NexGrana/src/services/nex_conversation.py",
+      "size_bytes": 6138,
+      "sha256": "da42ee437a7a9af7922d7760e313066f5a8273e5429c6b7a0c4b09d209c78e7f"
+    },
+    {
+      "path": "NexGrana/src/services/nex_engine.py",
+      "size_bytes": 20857,
+      "sha256": "611271c06f3f70cc4ea596b03befd6694ccbdda0148417eed0cb206c0db6963a"
+    },
+    {
+      "path": "NexGrana/src/services/nex_gateway.py",
+      "size_bytes": 6237,
+      "sha256": "e32803ac494a008a066933188e0204fbe530a4c26d36f79ca04309fe24f7b10d"
+    },
+    {
+      "path": "NexGrana/src/services/nex_local_knowledge.py",
+      "size_bytes": 5724,
+      "sha256": "319f108161b9b813bc0f13b72945ced0b605ca9e5fc343d6235883a23f71cfdb"
+    },
+    {
+      "path": "NexGrana/src/services/nex_skins.py",
+      "size_bytes": 8214,
+      "sha256": "c9f10c26af6d0cf3b243b28512f9d8b94615ece94ca968375eaeb8d3ed73870a"
+    },
+    {
+      "path": "NexGrana/src/services/offers.py",
+      "size_bytes": 5110,
+      "sha256": "44370c39163ab454f3e05ba93000b36c5435789f4a4574a36f86f6d8e56a1a11"
+    },
+    {
+      "path": "NexGrana/src/services/performance.py",
+      "size_bytes": 1570,
+      "sha256": "2ce40dec85248f53c763ef7ea03ac44c5352f6acbd55684022dc86adc63ec2dd"
+    },
+    {
+      "path": "NexGrana/src/services/privacy.py",
+      "size_bytes": 6229,
+      "sha256": "43e62fb33b0ac475b108e9ec8086f0388ddec32492fa950f48a87ca4aafd7234"
+    },
+    {
+      "path": "NexGrana/src/services/product_copy.py",
+      "size_bytes": 1260,
+      "sha256": "788cae15216faa4b1a6d206148ffda1569ee2ad7cdbabf9cb9243adfb495774a"
+    },
+    {
+      "path": "NexGrana/src/services/product_scan.py",
+      "size_bytes": 2292,
+      "sha256": "a44c805cad73da04cf76ad0d7cb4e4b66133cb28ae80f10db292c4676ff23fc7"
+    },
+    {
+      "path": "NexGrana/src/services/qa_diagnostics.py",
+      "size_bytes": 1973,
+      "sha256": "e5a0b255ba9665c8b18189abc67e0f644c3a50b3b520de6aec5f9e8fc0881fc2"
+    },
+    {
+      "path": "NexGrana/src/services/sync.py",
+      "size_bytes": 4794,
+      "sha256": "1ad89f1d25baf65cbcde31865e908454ee81a6801ce4fcfef1ee5754ff0189ac"
+    },
+    {
+      "path": "NexGrana/src/services/transactions.py",
+      "size_bytes": 1293,
+      "sha256": "c2278a99ae7df5b439e6e019ea58636d73d6b4f26861fda5dac8e267d79ede30"
+    },
+    {
+      "path": "NexGrana/src/services/tutorial.py",
+      "size_bytes": 10807,
+      "sha256": "c79607b711146b10cb24cc65671c58009d51e94a5cafd9ccceccc13d176c0c1f"
+    },
+    {
+      "path": "NexGrana/src/services/tutorial_activities.py",
+      "size_bytes": 1881,
+      "sha256": "2a00a089b82d35fca6820761aa230415ff9019c1508f5f4f83166b7acc253200"
+    },
+    {
+      "path": "NexGrana/src/ui/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "NexGrana/src/ui/common.py",
+      "size_bytes": 14484,
+      "sha256": "84cc828b18e2b6b16dc9e3c140b56fe21dba4f0d0f569e812b527781e1e6896c"
+    },
+    {
+      "path": "NexGrana/src/ui/design.py",
+      "size_bytes": 786,
+      "sha256": "841f325906d90678665dbffedfdcbe4e60cbd67a98bfdf6f8c28d28081328146"
+    },
+    {
+      "path": "NexGrana/src/ui/responsive.py",
+      "size_bytes": 280,
+      "sha256": "aaf87922c7e2ebf1eb2c3ee843e6e2c604ab84aae6a8116d4ed0dd7e2be5aebe"
+    },
+    {
+      "path": "NexGrana/src/ui/theme.py",
+      "size_bytes": 3440,
+      "sha256": "b2c1e94db8c6dbfeafb45cbf393a76378839f4b9d712fe48eb064064eb52fbe3"
+    },
+    {
+      "path": "NexGrana/supabase_schema.sql",
+      "size_bytes": 10734,
+      "sha256": "f114e211e6466dc8127e56fd47061e211ccd98d67b4efb2f2e57242c9c2f063c"
+    },
+    {
+      "path": "NexGrana/tests/test_admin_offers.py",
+      "size_bytes": 4028,
+      "sha256": "807126dc2988a67039bb678ce720b03fce5783668a38bf58c3fe9c7f36501965"
+    },
+    {
+      "path": "NexGrana/tests/test_admin_panel.py",
+      "size_bytes": 2053,
+      "sha256": "fc4675fbefac0015a30bb5f05fd37b8b8bda852891279bedfa56003d3881add3"
+    },
+    {
+      "path": "NexGrana/tests/test_finance.py",
+      "size_bytes": 13170,
+      "sha256": "f3eff798b686fd2bf44fb700666526304e0c145f4a7dfd51f0c6576f9ae78d45"
+    },
+    {
+      "path": "NexGrana/tests/test_gateway_server.py",
+      "size_bytes": 3547,
+      "sha256": "dcbe171348a96dcd69e90d116e9a6cc40973cec333821ff05b74c88761923435"
+    },
+    {
+      "path": "NexGrana/tests/test_investments.py",
+      "size_bytes": 1869,
+      "sha256": "18663e9590cfefa8cd6497d1739eafd3e319fb8e3b1030f63c83e2eb79ae347c"
+    },
+    {
+      "path": "NexGrana/tests/test_market_cloud.py",
+      "size_bytes": 16950,
+      "sha256": "7da8342027376b82c905bf8898cbef2ba9f21ec0732c91c73d32c0453019cbe2"
+    },
+    {
+      "path": "NexGrana/tests/test_market_finalization.py",
+      "size_bytes": 4288,
+      "sha256": "e3d5b0f82bd09b90d79217776d8461e754fcc34c48e9951a52e6c8562b300004"
+    },
+    {
+      "path": "NexGrana/tests/test_monthly_ledger.py",
+      "size_bytes": 3060,
+      "sha256": "e3e663d4efee4789ccf1b68f35b63a32c45b6f17e352acf53889cfa80b05bb9a"
+    },
+    {
+      "path": "NexGrana/tests/test_nex_conversation.py",
+      "size_bytes": 2362,
+      "sha256": "8fec44642a1f98fb882fe348206e57acec410686a59cdd840a52ccdf8d5cb043"
+    },
+    {
+      "path": "NexGrana/tests/test_nex_engine.py",
+      "size_bytes": 12813,
+      "sha256": "dab89041f5e99993434f7cee9fc4bafa7e0d5c552be7f050831eaf03667eea1e"
+    },
+    {
+      "path": "NexGrana/tests/test_nex_vivo.py",
+      "size_bytes": 2099,
+      "sha256": "a00fee79b721933ff9090f0391e95d760b974d3e76a672e9e26b1cd7d6b4ab6e"
+    },
+    {
+      "path": "NexGrana/tests/test_ocr_integration.py",
+      "size_bytes": 715,
+      "sha256": "621306aaea1416b286bcb98740921696c106515d299f9dc3b288b4c11a500eea"
+    },
+    {
+      "path": "NexGrana/tests/test_privacy_and_skins.py",
+      "size_bytes": 5132,
+      "sha256": "2db1277ef21b380a4f0f61728af4bb299706d8daffe2dbcec372ae5b514c0c2d"
+    },
+    {
+      "path": "NexGrana/tests/test_product_019.py",
+      "size_bytes": 4037,
+      "sha256": "47f65d9ea91c050c821a1bf696ac1771b3eb4b3f2c32eb6545692229283bafb9"
+    },
+    {
+      "path": "NexGrana/tests/test_product_experience.py",
+      "size_bytes": 1974,
+      "sha256": "6125db0d44182674b95a53399afede9f78b8681935fba27ae97db281b557a356"
+    },
+    {
+      "path": "NexGrana/tests/test_round_20261006.py",
+      "size_bytes": 4373,
+      "sha256": "97a7cee06d5b0af6aa059f351765c7897ba66755250f15d99aae3f0d45d70a33"
+    },
+    {
+      "path": "NexGrana/tests/test_services.py",
+      "size_bytes": 5539,
+      "sha256": "d55f72f3bb8c681d05f2ea117cbe6d3b686bc279591876e3e0d972e95842c8d0"
+    },
+    {
+      "path": "NexGrana/tests/test_sim_catalog.py",
+      "size_bytes": 1818,
+      "sha256": "d3aa2f7b851357d76f533d97743fdb6cdc7a2c15610c950100f7accab1fbf517"
+    },
+    {
+      "path": "NexGrana/tests/test_sql.mjs",
+      "size_bytes": 35620,
+      "sha256": "98e78b9f1dacad3071cd154c75752c09f1003c5beff2dff125fe9d5c50fcc658"
+    },
+    {
+      "path": "NexGrana/tests/test_tutorial.py",
+      "size_bytes": 4046,
+      "sha256": "374e725c131fe0b15c6d677a0ce405c7ef70e7e45f63518c1c8d199716843da8"
+    },
+    {
+      "path": "NexGrana/tests/test_tutorial_activities.py",
+      "size_bytes": 1613,
+      "sha256": "91c3ad8f63a7b9bcba5d505d327cb47c9ce4a8563bc7b4ef6a179784fa67de63"
+    },
+    {
+      "path": "NexGrana/tests/test_ui.py",
+      "size_bytes": 27788,
+      "sha256": "113da0d7c29cd6371b5d40f08787bcdcb7186ad08d675f896a69106b41b2934b"
+    },
+    {
+      "path": "NexGrana/validate_release.py",
+      "size_bytes": 6598,
+      "sha256": "68d561639cd7bcca48cc6d96cb043e18e445e6b80f62c81a88ff5a9ed011a6b2"
+    },
+    {
+      "path": "NexGrana/verificar_pacote.py",
+      "size_bytes": 1795,
+      "sha256": "84a9a71ad5cd26f3ea6c8ad541ef1515a1d2e8bdcdeea77f81ccce40f5af37c8"
+    },
+    {
+      "path": "PROJECT_STATE.md",
+      "size_bytes": 2800,
+      "sha256": "bab659e7eb9dc215c804b193fa99d11daeff2e371d20ea5eb850728c931eb28a"
+    },
+    {
+      "path": "QA_REPORT.md",
+      "size_bytes": 5744,
+      "sha256": "1f0b13717ead6be67adb4154951d5acce58064ffdb3c9549504bc410a2921ad6"
+    },
+    {
+      "path": "REPARAR_E_INICIAR_SIM_LABS_QA.cmd",
+      "size_bytes": 65,
+      "sha256": "95b5ff734271b8f43c637a3cf6086e5551ebf92070f853c0564ffabf3490efc7"
+    },
+    {
+      "path": "REPARAR_E_INICIAR_SIM_LABS_QA.ps1",
+      "size_bytes": 151,
+      "sha256": "cb9e8ce68c4940fc70d3ec078d405703073aef0af721bb1f0e9781e1ba93cac8"
+    },
+    {
+      "path": "SIM_Labs/.github/workflows/liveops-ci.yml",
+      "size_bytes": 806,
+      "sha256": "d4722c5a0731fe53ef1cf8825a3ecfbcd3e56e2197dd5fac17b3ceffd4d92235"
+    },
+    {
+      "path": "SIM_Labs/.gitignore",
+      "size_bytes": 165,
+      "sha256": "dedccb4887e04bf252ec94dc0b3aa3d5aecee5ba5dd9068a53d5e7629e963285"
+    },
+    {
+      "path": "SIM_Labs/ABRIR_COLLECTOR.bat",
+      "size_bytes": 218,
+      "sha256": "56cd87273c4b8bf9535c81b5096e477a0468ba98a30cda4e58740ef4d0b27c7b"
+    },
+    {
+      "path": "SIM_Labs/BACKUP_SIM_LABS.bat",
+      "size_bytes": 191,
+      "sha256": "5919df0aee2d373338b675bcd7d98d5e846d28a52e949f8e0a404c6d78b27c38"
+    },
+    {
+      "path": "SIM_Labs/CONCLUIR_RODADA_QA.cmd",
+      "size_bytes": 2061,
+      "sha256": "047e52431888715bb8f7ea8fa6b56effbd5e71049f7872645cfac7e08afa4cdd"
+    },
+    {
+      "path": "SIM_Labs/Collector/BUILD_EXE_WINDOWS.bat",
+      "size_bytes": 385,
+      "sha256": "da40cbb7aea876a23472d85109069f9787e6a606003dbaf001213228eade23d6"
+    },
+    {
+      "path": "SIM_Labs/Collector/CHANGELOG.md",
+      "size_bytes": 1308,
+      "sha256": "eae58b6d2b3929e6353dbead631bd26381769160643f8449bd553e5ec8160b90"
+    },
+    {
+      "path": "SIM_Labs/Collector/README.md",
+      "size_bytes": 2087,
+      "sha256": "5a8b8a11563400739a9950f0f6ba7bc554ebf05754e7f6bffdaf8b69226d9da1"
+    },
+    {
+      "path": "SIM_Labs/Collector/RUN_WINDOWS.bat",
+      "size_bytes": 45,
+      "sha256": "f118c2659e5ba275cbb41327e1fb0caa05996893332629c05b03612df1c57ac6"
+    },
+    {
+      "path": "SIM_Labs/Collector/docs/SIM_LABS_BLUEPRINT.md",
+      "size_bytes": 6559,
+      "sha256": "7f5c0bd2520655d69b88d535694a768fbdf948997e952938dc44d5f4b1cb2512"
+    },
+    {
+      "path": "SIM_Labs/Collector/docs/SIM_LABS_FEEDBACK_CONTRACT.json",
+      "size_bytes": 1217,
+      "sha256": "279b08865c419f4593c5a85a93bb6eaae35617a226228d517eeb23eaddfcd791"
+    },
+    {
+      "path": "SIM_Labs/Collector/docs/SIM_LABS_QA_LOCAL.md",
+      "size_bytes": 896,
+      "sha256": "a0fa56b4b1dc648e419c745c8fa6f09ea68c10cd2c4f17618a1c0249ec60a59c"
+    },
+    {
+      "path": "SIM_Labs/Collector/requirements.txt",
+      "size_bytes": 36,
+      "sha256": "002009c7c124fe1952e2a6b4eb3d9000964cb3e0ad9832d25cb40b2b6a1389a0"
+    },
+    {
+      "path": "SIM_Labs/Collector/src/main.py",
+      "size_bytes": 30723,
+      "sha256": "c5788227b6e6c33258a9e88f07edc95f200d53837113d5de9d64c857d3c1475c"
+    },
+    {
+      "path": "SIM_Labs/Collector/src/sim_labs_bridge.py",
+      "size_bytes": 3204,
+      "sha256": "408c30a6f6721d71cb23a1f0b6f4c07857f8e0efb897de25a0efa57a85936506"
+    },
+    {
+      "path": "SIM_Labs/Collector/src/sim_labs_core.py",
+      "size_bytes": 28007,
+      "sha256": "f5ae4652bb47abbfe77d8d918be03ae58f5b312e5a9c7fcf6f1398e3cb4f53fc"
+    },
+    {
+      "path": "SIM_Labs/Collector/src/sim_labs_ui.py",
+      "size_bytes": 26796,
+      "sha256": "1b3c42079d195b1e4fbff2b74321a240bc3da818246f022eaeb286ce9a340f49"
+    },
+    {
+      "path": "SIM_Labs/Collector/tests/test_sim_labs_core.py",
+      "size_bytes": 3401,
+      "sha256": "35d0ec63b45312fc6ebfdc576892afd3f07d7095d1b449133e906d0c16f50a0b"
+    },
+    {
+      "path": "SIM_Labs/DESINSTALAR_24_7.bat",
+      "size_bytes": 110,
+      "sha256": "9bd6186c96132018d62f098f5a3da783ec1b43226c2dc818eac312db3d936288"
+    },
+    {
+      "path": "SIM_Labs/DESINSTALAR_24_7.ps1",
+      "size_bytes": 669,
+      "sha256": "ea9a709a623c005328e2eb6960c46beb80b07fc919fdefab2a747c8842b78448"
+    },
+    {
+      "path": "SIM_Labs/Dockerfile",
+      "size_bytes": 302,
+      "sha256": "5ba8ff4a41e15f7157cbbcc3cb6a8b931cba2456738a6f9cb95c3d2a036b2410"
+    },
+    {
+      "path": "SIM_Labs/GERAR_EXECUTAVEL_WINDOWS.bat",
+      "size_bytes": 523,
+      "sha256": "8d8a101002c0eaf4d0b088ccf868cb7679c80a67bac1296e86e2410a0093e6c1"
+    },
+    {
+      "path": "SIM_Labs/INICIAR_24_7.bat",
+      "size_bytes": 43,
+      "sha256": "d49ea2c03f6c2b3644b3149f616262a4e75a6fe99d3092215ed17a4c2bfe8475"
+    },
+    {
+      "path": "SIM_Labs/INICIAR_SIM_LABS.bat",
+      "size_bytes": 196,
+      "sha256": "163abae5cff72c697f2bddcce3bbb37e05bfca4c94f156aebf37f5beb86838bb"
+    },
+    {
+      "path": "SIM_Labs/INSTALAR_24_7.bat",
+      "size_bytes": 107,
+      "sha256": "7fc101caef42ac57a33949630a6d6982f51b50530a9b32aad82df720ca5a0974"
+    },
+    {
+      "path": "SIM_Labs/INSTALAR_24_7.ps1",
+      "size_bytes": 2280,
+      "sha256": "f393f55eb4af5f4b615fcb8cc2fc3b0b57ab0b381ab66de8763ba87c6fa79cfa"
+    },
+    {
+      "path": "SIM_Labs/INSTALAR_NO_BOOT.bat",
+      "size_bytes": 134,
+      "sha256": "27a0843043aaff594ca1a2cee8f94cc7592fdb02391f1b1f3db41299209a3b31"
+    },
+    {
+      "path": "SIM_Labs/INSTALL_AUTOSTART_WINDOWS.ps1",
+      "size_bytes": 837,
+      "sha256": "4ae2eee44538ac91520b503d9c1ada9dbf94b37f4a852b621641ffe4716d48f3"
+    },
+    {
+      "path": "SIM_Labs/LEIA_PRIMEIRO.md",
+      "size_bytes": 7326,
+      "sha256": "e956422609821a51b1aed8fc15394f5a69a7df5df7a6099c53bdbb7595c6ea16"
+    },
+    {
+      "path": "SIM_Labs/LEIA_PRIMEIRO.txt",
+      "size_bytes": 169,
+      "sha256": "5828129b65b993fdc653ca858752162650373a6b5acda6ea61ae00d06dd56ebb"
+    },
+    {
+      "path": "SIM_Labs/MANIFEST_ENTREGA.json",
+      "size_bytes": 26876,
+      "sha256": "762d78882a98d0b6f35524349d3ce1f219f3cab8e943539c7d8981dad3d921d9"
+    },
+    {
+      "path": "SIM_Labs/MIGRAR_0_3.bat",
+      "size_bytes": 283,
+      "sha256": "c842f4de668e13728f614791f10666c83ff7a9b863bbcc1339d8cb7e2853d6ba"
+    },
+    {
+      "path": "SIM_Labs/PARAR_24_7.bat",
+      "size_bytes": 104,
+      "sha256": "9e7f032b56b5a17f8f80d959d1188e5adbe14993e2951c2a18d1657fc7228c47"
+    },
+    {
+      "path": "SIM_Labs/PARAR_24_7.ps1",
+      "size_bytes": 821,
+      "sha256": "8f77bf69c534273dcc8d4cae8e222d3541b6aebbe7fce5c048b210bcd7cabc44"
+    },
+    {
+      "path": "SIM_Labs/PARAR_SIM_LABS.bat",
+      "size_bytes": 104,
+      "sha256": "9e7f032b56b5a17f8f80d959d1188e5adbe14993e2951c2a18d1657fc7228c47"
+    },
+    {
+      "path": "SIM_Labs/PREPARAR_CATALOGO_OFERTAS.cmd",
+      "size_bytes": 240,
+      "sha256": "04178c9bd5fe5cb0fd809e1528def5a04a40b7efebec3aff65a90f829b41a163"
+    },
+    {
+      "path": "SIM_Labs/PROMPT_PROXIMA_EXECUCAO.md",
+      "size_bytes": 2129,
+      "sha256": "4236c05b5c79ac0a011dadc83e84240b7e55c018d4c06f499e25e84e61b5eee5"
+    },
+    {
+      "path": "SIM_Labs/README.md",
+      "size_bytes": 491,
+      "sha256": "f77bd616e038b41a572d5745cd93b969410f88da0194af2fdf2f2c4829b301ab"
+    },
+    {
+      "path": "SIM_Labs/REGISTRAR_BUILD.bat",
+      "size_bytes": 362,
+      "sha256": "3715f0a9ec73852bc32e7f37996a46186dc6afcf3c3abd87f0fcd5b11755b422"
+    },
+    {
+      "path": "SIM_Labs/SIM_LABS_0_4_0_REPORT.md",
+      "size_bytes": 11618,
+      "sha256": "07ef293fa9e986d58511ae7923203ea5c1b2afd436f82dd734b01dac3c50aab0"
+    },
+    {
+      "path": "SIM_Labs/START_SIM_LABS.bat",
+      "size_bytes": 43,
+      "sha256": "d49ea2c03f6c2b3644b3149f616262a4e75a6fe99d3092215ed17a4c2bfe8475"
+    },
+    {
+      "path": "SIM_Labs/START_SIM_LABS_WINDOWS.ps1",
+      "size_bytes": 3908,
+      "sha256": "c87cd1d6c7702d87b6e888f7d35fdfa85de6c22dcdaa9d37b9f4c8e5e1dd1f6e"
+    },
+    {
+      "path": "SIM_Labs/STATUS_24_7.bat",
+      "size_bytes": 105,
+      "sha256": "ff061b758e4fbacc965916ecaf8111fd560bb5fc6ea7e553814a27af21dacc62"
+    },
+    {
+      "path": "SIM_Labs/STATUS_24_7.ps1",
+      "size_bytes": 582,
+      "sha256": "1fa4cc09da5170bda001919caa106b37af893d0ea5e5cfe89e4a4d6ea2a733db"
+    },
+    {
+      "path": "SIM_Labs/STOP_SIM_LABS.bat",
+      "size_bytes": 41,
+      "sha256": "97b5271bac4a439a4cd033f80a8f610cbf44326dd9d307b43efcb65a03b22c32"
+    },
+    {
+      "path": "SIM_Labs/STOP_SIM_LABS_WINDOWS.ps1",
+      "size_bytes": 487,
+      "sha256": "3758926724344d6c104f0070abc7d21041e6c0fe3626d88d64cf3fc784f143a4"
+    },
+    {
+      "path": "SIM_Labs/TESTAR_SIM_LABS.bat",
+      "size_bytes": 190,
+      "sha256": "f07c67e70cd961f8902bb1368865cb05970fa3721f7539160e2f5b07ed7eab0e"
+    },
+    {
+      "path": "SIM_Labs/UNINSTALL_AUTOSTART_WINDOWS.ps1",
+      "size_bytes": 175,
+      "sha256": "a29fbe0058e75543e7b857e4dadb80562059e647c70d7bfdb765d98751eef1ec"
+    },
+    {
+      "path": "SIM_Labs/VALIDAR_NEXGRANA.cmd",
+      "size_bytes": 587,
+      "sha256": "0ee8d5e37de4f08662ff4cd482636ebc87c556879f256b3eac28b55b1cf8db54"
+    },
+    {
+      "path": "SIM_Labs/backend/Dockerfile",
+      "size_bytes": 185,
+      "sha256": "20b2b9cc17fea007b678aed60127ea9d7fca7da62b4aaf8d663193b103c79042"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic.ini",
+      "size_bytes": 550,
+      "sha256": "fa683265e196a0ab5c715917453de1167006b15abc3a407f2720b625ebc7edbf"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/env.py",
+      "size_bytes": 1152,
+      "sha256": "fadab7de73253c2eb237a687f732e168756fb533d3a86a19dc110018c63b3e3b"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/script.py.mako",
+      "size_bytes": 589,
+      "sha256": "738f520224ab075d073f7db6ba62d661267f2b032d1274efb64769c66b8d15fc"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/versions/0001_phase_a_foundation.py",
+      "size_bytes": 3876,
+      "sha256": "3ebef5734dd0dcdb1a489f097a9381f559c8d801106cdc67c05343a96f20ddb6"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/versions/0002_liveops.py",
+      "size_bytes": 5601,
+      "sha256": "eb334aa481935af268bb67a6ad639bc7215cf154ba4a7257d43ca0edc40b660f"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/versions/0003_integrated.py",
+      "size_bytes": 829,
+      "sha256": "7e836ea284f5a66a5c419a06b5f5f58cda330c31ef205ca6f7c3299c91c72896"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/versions/0004_engine.py",
+      "size_bytes": 622,
+      "sha256": "2451734d2e15546739ba0f887c53a25973d4f778a32b01bda788f267fcc1e00c"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/versions/0005_runner_reports.py",
+      "size_bytes": 401,
+      "sha256": "ce6243e73cb6699b29f8bc9db3726e5e1a68826c963c7fdbe9e8289957f8ccf7"
+    },
+    {
+      "path": "SIM_Labs/backend/alembic/versions/0006_promotions.py",
+      "size_bytes": 548,
+      "sha256": "c7f3382c46b81a97e9a76dfb1dbdb26a9ca7f4c807a7469988f7941bf5f32951"
+    },
+    {
+      "path": "SIM_Labs/backend/app/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "SIM_Labs/backend/app/ai_advisor.py",
+      "size_bytes": 2990,
+      "sha256": "4daefee0bc5b0e93d5412105f6d10267b84fe7d9a49146cad09b89636606913e"
+    },
+    {
+      "path": "SIM_Labs/backend/app/audit.py",
+      "size_bytes": 655,
+      "sha256": "68485a65a9ee1dff319172df31540d8f183170ea663e596aa8298d005e48edcf"
+    },
+    {
+      "path": "SIM_Labs/backend/app/auth.py",
+      "size_bytes": 3409,
+      "sha256": "668dc1d4ff227279f6b388b68cf46200c574b8113ae4659586f596654af4ebdb"
+    },
+    {
+      "path": "SIM_Labs/backend/app/backup_local.py",
+      "size_bytes": 2611,
+      "sha256": "296a6f18d3839247dd835d1eef6fb6fbe1728d6b48b4a379bec306a5e8454980"
+    },
+    {
+      "path": "SIM_Labs/backend/app/bootstrap.py",
+      "size_bytes": 3006,
+      "sha256": "6952ba91a8f8dcfaadcf6f0d3df61e0090be63c5f73023e64e44acb4b7c26d3e"
+    },
+    {
+      "path": "SIM_Labs/backend/app/config.py",
+      "size_bytes": 1298,
+      "sha256": "0bdee5ff9b6e95287e3357e2a25f3709958db2488bb1333b6ab8cdc81d4f9d21"
+    },
+    {
+      "path": "SIM_Labs/backend/app/db.py",
+      "size_bytes": 944,
+      "sha256": "b994b48a7e409ba94e8f85c3ca094ffd47571aac823875e812f506e391570e4c"
+    },
+    {
+      "path": "SIM_Labs/backend/app/engine.py",
+      "size_bytes": 18485,
+      "sha256": "64e42dfff444a4683099f097ca50a06e81dae852e91004e715fdd6cbcf607d29"
+    },
+    {
+      "path": "SIM_Labs/backend/app/engine_models.py",
+      "size_bytes": 3717,
+      "sha256": "28ec80d8c8688c4232fd6744c9ecad75d85713896b9e630b344bc1bac4bd91c0"
+    },
+    {
+      "path": "SIM_Labs/backend/app/integration_models.py",
+      "size_bytes": 8595,
+      "sha256": "f35681cd631f2fac383cc592906675d4c33b749d857e5295c9f84c9bfedd2b68"
+    },
+    {
+      "path": "SIM_Labs/backend/app/liveops.py",
+      "size_bytes": 5209,
+      "sha256": "4bcd4608b1bf181601f555eeb6bef20d3fc572dfbc46c9885610933563957237"
+    },
+    {
+      "path": "SIM_Labs/backend/app/local_auth.py",
+      "size_bytes": 1794,
+      "sha256": "d5ba65f907ad968993e981ebcbb05178fbe580962e064df6fcf32a948b975411"
+    },
+    {
+      "path": "SIM_Labs/backend/app/main.py",
+      "size_bytes": 1769,
+      "sha256": "c6d6267c01d53b2b82bb0c84264971d0acd004b22b8b3c627dc07c7ad5e3ee04"
+    },
+    {
+      "path": "SIM_Labs/backend/app/models.py",
+      "size_bytes": 8674,
+      "sha256": "af42a66ee1e813d1f2ab8c7408b1dbf42c09574d45e0ca8d92e1492e90ddf649"
+    },
+    {
+      "path": "SIM_Labs/backend/app/operations.py",
+      "size_bytes": 21072,
+      "sha256": "7a912f014f0287dbd1ff141d77559c2cd972a4f70532afdfa8f6927966c3f337"
+    },
+    {
+      "path": "SIM_Labs/backend/app/permissions.py",
+      "size_bytes": 705,
+      "sha256": "ac2d289bdddefdab80381fa70e939a9c404aa14cce9eb9a6eb900e5b33888a38"
+    },
+    {
+      "path": "SIM_Labs/backend/app/promotion_models.py",
+      "size_bytes": 3302,
+      "sha256": "85a9b902ad8df1d139b95054cc346e5b14f3f632b3b3c4cbcb6831a3f07b7ce5"
+    },
+    {
+      "path": "SIM_Labs/backend/app/promotions.py",
+      "size_bytes": 12445,
+      "sha256": "9922ebcb2347356a19533575245c853458cae0917ae97ca020c08ff825fe8d46"
+    },
+    {
+      "path": "SIM_Labs/backend/app/qa/artifact_core.py",
+      "size_bytes": 28007,
+      "sha256": "f5ae4652bb47abbfe77d8d918be03ae58f5b312e5a9c7fcf6f1398e3cb4f53fc"
+    },
+    {
+      "path": "SIM_Labs/backend/app/routers/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "SIM_Labs/backend/app/routers/core.py",
+      "size_bytes": 3919,
+      "sha256": "b118348773d1a38119d48728cdc9e48fb9233ec551762bab5eccc3ef176e1c08"
+    },
+    {
+      "path": "SIM_Labs/backend/app/routers/engine.py",
+      "size_bytes": 3686,
+      "sha256": "9e27a49a87ec0f0258e16a13eec293f664fada4dff8135f2d065edb3bca5ad5b"
+    },
+    {
+      "path": "SIM_Labs/backend/app/routers/integrated.py",
+      "size_bytes": 28669,
+      "sha256": "bc8c1424334be1800419292b017365c328f2a1319307163fead81fe808f635f8"
+    },
+    {
+      "path": "SIM_Labs/backend/app/routers/live.py",
+      "size_bytes": 7742,
+      "sha256": "f1ae38ea2806bc2cf96bb97ed1b626d0ab61b0bf13fa4a35806f5395282c6d7b"
+    },
+    {
+      "path": "SIM_Labs/backend/app/routers/promotions.py",
+      "size_bytes": 9028,
+      "sha256": "76f4fc3c8bd5930228f10ca265814a4a373776c167855c0053a2452cae373950"
+    },
+    {
+      "path": "SIM_Labs/backend/app/schemas.py",
+      "size_bytes": 2887,
+      "sha256": "572f04f97796488ee6d650b86276a75f6e8c9726ac78586ee956dd797cc51378"
+    },
+    {
+      "path": "SIM_Labs/backend/app/seed.py",
+      "size_bytes": 5873,
+      "sha256": "b63c6d7cfea93156ca1d2ec75472337ef91180d4e9ba81f384fb80b92a12d4fe"
+    },
+    {
+      "path": "SIM_Labs/backend/app/supervisor.py",
+      "size_bytes": 4451,
+      "sha256": "8082ce1d99b9757bc6c47d77341eb66dc16181cd40d9335c6319a598de1982ff"
+    },
+    {
+      "path": "SIM_Labs/backend/app/worker.py",
+      "size_bytes": 2100,
+      "sha256": "8e5330e8f35c52184bd0ccad644ec75881e08adbbc2f98399b95bffbfb41cfe9"
+    },
+    {
+      "path": "SIM_Labs/backend/requirements.txt",
+      "size_bytes": 557,
+      "sha256": "3b084e8bc94036baf9fe82bf51591c83632858059a7ed87fa35a42d8a607c536"
+    },
+    {
+      "path": "SIM_Labs/backend/static/assets/index-BDcZzLGV.css",
+      "size_bytes": 13252,
+      "sha256": "0d092f39f4541543c1045467d26870ae056a5504b03fc0e674d9abdaac1b363e"
+    },
+    {
+      "path": "SIM_Labs/backend/static/assets/index-DDFCk2-T.js",
+      "size_bytes": 276484,
+      "sha256": "2fad15f3ad7616b81c10a3c89644586a0bc9b67ee5bc87a58b1649def2f23f99"
+    },
+    {
+      "path": "SIM_Labs/backend/static/index.html",
+      "size_bytes": 503,
+      "sha256": "3a14cabccb5888a4f29d7b164a5fe595dc6046ab2067cdd706c8444127c400b1"
+    },
+    {
+      "path": "SIM_Labs/backend/static/sim-labs-maquete.png",
+      "size_bytes": 2666035,
+      "sha256": "d3d1748c1fef4eb3c85a4b9ec0bbd6c4a2a14d050d27f32ab980a277b232a882"
+    },
+    {
+      "path": "SIM_Labs/backend/stop_local.py",
+      "size_bytes": 1411,
+      "sha256": "94f8961c82416f094d6652a1e1d6706aad69e28f0fb7be80da8f96441a8f52ad"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/conftest.py",
+      "size_bytes": 1165,
+      "sha256": "242384087b5ccac6d3c6d7363c5478961527b65f483dba8ab61af04607ab040b"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_ai_advisor.py",
+      "size_bytes": 1963,
+      "sha256": "b2205954de6a1735ea78b115ca56db6545942c58d66e3e2f5ba912a2182c7dd7"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_engine.py",
+      "size_bytes": 4423,
+      "sha256": "4fb95bfa5f5a3bce15fe200963b55004e91bcc6f548ccbd9725aa89160ee2639"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_integrated.py",
+      "size_bytes": 13430,
+      "sha256": "4ae9b930ee72a65e3802e4ce7c0e4110301cd6c4bfbd2b4b12151b5fb95b40a6"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_liveops.py",
+      "size_bytes": 2653,
+      "sha256": "e9eee85551c18e19f24b8d94efe875e406c89fe712c4cbfb8b1ceb53e61e6d2d"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_manual_runner.py",
+      "size_bytes": 2127,
+      "sha256": "3814f547abc39abff14c7056266fc7fa5aeb81ab826a6071526bc97c6937fa6f"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_migration.py",
+      "size_bytes": 2944,
+      "sha256": "9f91f40a309e17556d82002b026016a42ba67e0ae52a0f6636c91cea10ec9f57"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_phase_a.py",
+      "size_bytes": 1976,
+      "sha256": "32fb7b44ffd5067c2d409d3757536711b2019e99db9e027d914f795c88ca2853"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_promotions.py",
+      "size_bytes": 11376,
+      "sha256": "7ad05b90d3cfabd1838e2212f9a26349800e972f9814b7076ccb3f3a18e0c9d1"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_release_intake.py",
+      "size_bytes": 1226,
+      "sha256": "2c3608229b773abbee69c33320beae23c22b8de641082a950f2b34e151c9a76b"
+    },
+    {
+      "path": "SIM_Labs/backend/tests/test_round_20261006.py",
+      "size_bytes": 3979,
+      "sha256": "aaec6be6ebc4e190f3f24863d5e6201372a2d0e5308160c3b8568676acce68f5"
+    },
+    {
+      "path": "SIM_Labs/docker-compose.prod.yml",
+      "size_bytes": 677,
+      "sha256": "6d6729b19ef5feef4c16c000d9aba1bfa1da0a3baeb3570e75ee658aad4ed285"
+    },
+    {
+      "path": "SIM_Labs/docker-compose.yml",
+      "size_bytes": 1240,
+      "sha256": "ce00db9b9f547f6a2eae5e1efb79f00cf17b03869cfd3951a5803c1ef72e03e6"
+    },
+    {
+      "path": "SIM_Labs/docs/AGENTES_E_CONTRATOS.json",
+      "size_bytes": 13177,
+      "sha256": "cc2f724a11e99bf923f447a5140167a956047e0b55ea6f6a0bd722a14d42fa92"
+    },
+    {
+      "path": "SIM_Labs/docs/INDICE_0_4.md",
+      "size_bytes": 335,
+      "sha256": "3af92e38ba8560026bd1d7c44561c048919c9ec57df7338b696f217885745cda"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/ARQUITETURA.md",
+      "size_bytes": 601,
+      "sha256": "108e2995661921fc5f768dd12f630e7b0ffcbeac235cdf1f80c6d64803965cd2"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/CHANGELOG.md",
+      "size_bytes": 838,
+      "sha256": "4e84a9b0e92622059aab48010c7ef4356cc6014a20b70e8ade9525dad0281bea"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/DEPLOY_24X7.md",
+      "size_bytes": 896,
+      "sha256": "dac3d10d4a72b6a9b9253b908e749db250a9eeec5f34188f5d9f50e5721fc718"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/Dockerfile",
+      "size_bytes": 497,
+      "sha256": "c5c596e2a2737584190e46cbd3488eee34365b0a446f1bfacba3e86e520cba21"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/FEEDBACK_INTEGRATION.md",
+      "size_bytes": 711,
+      "sha256": "1b5c4e86ea70802a6c0d95f65ea4085e60cbef36d1b0e5eccfe090a1fbae0027"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/LEIA_LEGADO.md",
+      "size_bytes": 188,
+      "sha256": "9483d83ccee55bec52047ab69b76c8e45b79b0106a5dfca634576bfd43b827ab"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/LIVEOPS_ARCHITECTURE.md",
+      "size_bytes": 1726,
+      "sha256": "fbdc1b19dd9f6494f143d6a2c8970a1984748bf67e07dba50cc97e2e17d631b5"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/MATRIZ_PAPEIS.md",
+      "size_bytes": 468,
+      "sha256": "a1a22c22d18f5bdfa6cf388457acaacab68d91e6121c2b3a7ffb8d6b8bb45f91"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/PROMPT_MESTRE_SIM_LABS.md",
+      "size_bytes": 19993,
+      "sha256": "e10f48b51df63e0281c98f26b12feddea576fce22e8ad346674040a89395cf24"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/ROADMAP.md",
+      "size_bytes": 805,
+      "sha256": "41ce82375eda254007207a4eca406c13b70fdba5e5449a0d347b66d1a1b24e55"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/RUNBOOK_BACKUP.md",
+      "size_bytes": 495,
+      "sha256": "df69b915f2f7e212777c53f6679dc10b238cf9d4d69e9660d13d973ad2228b53"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/SIM_LABS_ESTADO_ATUAL.md",
+      "size_bytes": 2575,
+      "sha256": "2d272abf9701a1aebe28f0ff940d531fa29c35db64d2ea3ee9d0badb63245c51"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/SUPABASE_SETUP.md",
+      "size_bytes": 917,
+      "sha256": "c8aa5e7162335d85dcf1fc8e55c8cc1b347c79f71918a8cc9fa7446f72daf01b"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/adr/ADR-001-control-plane-separado.md",
+      "size_bytes": 411,
+      "sha256": "f7ddad09e70e6d7fdde4867aea59e1051f791afadc9853151e0265a1a687d07a"
+    },
+    {
+      "path": "SIM_Labs/docs/LEGADO_LIVEOPS_0_2/docker-compose.yml",
+      "size_bytes": 1176,
+      "sha256": "efac909285331899b122662423e5d02db10c554aea8734974d0b6b56b15fcbf0"
+    },
+    {
+      "path": "SIM_Labs/docs/PROMPT_ORIGINAL_DE_MAFRA.md",
+      "size_bytes": 17961,
+      "sha256": "6579861a96245c4af9a7c3527f5867e15b663d4af1053de1245272cefe40990d"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/00_AUDITORIA_FASE_0.md",
+      "size_bytes": 38388,
+      "sha256": "2c0b324ab119c3dc036bafe3cff3acc434ac48c7f5b85a803f838c404a9223ac"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/01_TESTE_DE_HOJE.md",
+      "size_bytes": 7953,
+      "sha256": "b2d9d854492a4a99ca5f7f9606caf6710199fe6bcd70f50671ea5734a4a1298e"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/02_ARQUITETURA_E_ORGANIZACAO.md",
+      "size_bytes": 7707,
+      "sha256": "18b2b222b3012a097f3f5f46cc2d43020dbd219db179fb06497aacc6dd50f1e1"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/03_BANCO_E_INTEGRACAO_NEXGRANA.md",
+      "size_bytes": 7119,
+      "sha256": "b213a83d97ca2f297bfddaacd2f05269ac8232276ecd3a4325b1907a6fbf4a95"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/04_PROMPT_MESTRE_CONTINUIDADE.md",
+      "size_bytes": 9119,
+      "sha256": "e89e767541dc80dc874dcefa102cded9cd56a497e26c6250095dc7629a6a17c2"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/05_PROMPT_CMD_WINDOWS.md",
+      "size_bytes": 4586,
+      "sha256": "48e686ed4bc80b099d3ba1b7b15a1657121d913d3c30c0abb2f7160feb867250"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/06_IA_LOCAL_E_OPERACAO_24H.md",
+      "size_bytes": 4293,
+      "sha256": "edd2a4d026a050f20ecea002c5725358adf9103934600424efad9e703cc1a336"
+    },
+    {
+      "path": "SIM_Labs/docs/REFERENCIA_0_3/07_VALIDACAO_E_LIMITES.md",
+      "size_bytes": 4693,
+      "sha256": "b3f311fd51eb30b38efce9ca23be5a7b07b968741c144e0e119e1717d629fc41"
+    },
+    {
+      "path": "SIM_Labs/docs/SQL_REFERENCIA_POSTGRES_0003.sql",
+      "size_bytes": 6432,
+      "sha256": "69371e6371d33a3a389476768028ba13e8544c4f825bdd8eb73b6b67f96236b9"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/ANALISE_ENTREGA_RC8.md",
+      "size_bytes": 7955,
+      "sha256": "cad95c1852dbd828a0e326ce140f60a63efeb8cf72d62c99491f0c473f36fcb5"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/BACKLOG_POS_LANCAMENTO.md",
+      "size_bytes": 1774,
+      "sha256": "b83aa1d31713130f175af9454ef25ca52b3ac7fc15742f850bc3407d4c34247c"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/BUILD_REPORT.md",
+      "size_bytes": 789,
+      "sha256": "2b581f72b8957f25fbe7d624a0a767fbf08783d8fb70acb45f4050acaf1c7ddd"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/CHANGELOG_20261006.md",
+      "size_bytes": 3327,
+      "sha256": "87dbaaf1835c7230f22e128b7c2a4f84610da99ed2373e7ad9fc1927d6c2b6f5"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/COMPLEMENTO_RC7.md",
+      "size_bytes": 1417,
+      "sha256": "e4445b3006625fc45070735b89cb5baebb91a6451e4dc2639ae429fba8b355e1"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/MAFRA_VS_SIM_LABS.md",
+      "size_bytes": 798,
+      "sha256": "936ba3a335d326f11df3cab87eede9de2fefd7a059ed2b0d7d7ded8136482b50"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/NEXGRANA_ESTADO_ATUAL.md",
+      "size_bytes": 1970,
+      "sha256": "641eeb30c8cf7331c915f20ebe67390e7222edfd1b943fe702c928127fefb7e4"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/NIGHT_OPS_REPORT.md",
+      "size_bytes": 799,
+      "sha256": "2f0314d8eb515872131d8b3ca4b4918237825224588167653c76d1eb97b8d849"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/OPERACAO_FINANCEIRA.md",
+      "size_bytes": 988,
+      "sha256": "04501f9e6d37b8b8bba3eedf4249b69081247d4db4e8077e29dac9c9eb6be1ca"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/PACKAGING_REPORT.md",
+      "size_bytes": 963,
+      "sha256": "6683225b2b7b87975e9c1ec8f8d82ba22120dc710bd3160281031092425ad94d"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/PASSO_A_PASSO_CMD.md",
+      "size_bytes": 6373,
+      "sha256": "ff6fc0c669507e699be4442eac5bbcf823e1aca0be748e81d0b128ad44df41d4"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/PERFORMANCE_REPORT.md",
+      "size_bytes": 904,
+      "sha256": "e4c9a2aa28cfeb5423898d5b6e47888e0def5a5960bb3875cf77d812e4926789"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/PESQUISA_MERCADO.md",
+      "size_bytes": 3496,
+      "sha256": "8da0804716162db27ad9a79a582714b222f0373d362c26f257f7f2133f2ca628"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/PROMPT_REUNIAO_VOZ.md",
+      "size_bytes": 4827,
+      "sha256": "8a4b1354074694822f62892fd4c197f4153ba6627746e652b3b976456c379149"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/README_INICIAR.md",
+      "size_bytes": 1255,
+      "sha256": "034e7b9616f72d0f8192d995d9bf69514831fd770f8125930250dd774823f981"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/SECURITY_REPORT.md",
+      "size_bytes": 1821,
+      "sha256": "fe1f75cb6d3d3a7e35085007994e3f26da6019c32363f55677d558460a118c77"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/SIM_LABS_SETORES.md",
+      "size_bytes": 1461,
+      "sha256": "0a7c51ac571a711703d0e8ebb3d5cfe50b24200db722666006d190ba39592d66"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/SIM_LABS_STATUS.md",
+      "size_bytes": 2341,
+      "sha256": "e01f4619a5a6a48f94169580fa3270bd8b19e5a8a38d3c43ca4f9d5fb3edac35"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/TEST_REPORT.md",
+      "size_bytes": 2427,
+      "sha256": "454e91fa0c417f8df2ef50eea9a1b3f14ce61cf1819c98d3da3273f996d9c635"
+    },
+    {
+      "path": "SIM_Labs/docs/rodada_20261006/VISUAL_QA_REPORT.md",
+      "size_bytes": 1168,
+      "sha256": "92bf27e544057a7700f7975307bafa0d10fb178a16c95923485901dbdf5d0bbd"
+    },
+    {
+      "path": "SIM_Labs/frontend/Dockerfile",
+      "size_bytes": 185,
+      "sha256": "97a5754feb55a109cd36fdcb627322fa590cefc603480d535c0c7a94e7f7e011"
+    },
+    {
+      "path": "SIM_Labs/frontend/index.html",
+      "size_bytes": 404,
+      "sha256": "b77919987220047b2de09816bf6ce5036635185195f1879c26622e9afb0511b3"
+    },
+    {
+      "path": "SIM_Labs/frontend/package-lock.json",
+      "size_bytes": 39333,
+      "sha256": "329ee702541a3ef9092f7e1bc7fc5e36affd6bf441e7d7d9f159408220996303"
+    },
+    {
+      "path": "SIM_Labs/frontend/package.json",
+      "size_bytes": 358,
+      "sha256": "eed9a85a0a49d2ed0d6a3653631e16543ba476b3e09c2d6d744bf9ebc34c3296"
+    },
+    {
+      "path": "SIM_Labs/frontend/public/sim-labs-maquete.png",
+      "size_bytes": 2666035,
+      "sha256": "d3d1748c1fef4eb3c85a4b9ec0bbd6c4a2a14d050d27f32ab980a277b232a882"
+    },
+    {
+      "path": "SIM_Labs/frontend/src/App.tsx",
+      "size_bytes": 36126,
+      "sha256": "43d4a3e805292ae2c27f6cd35c9b5c14978c82c71e8fa16c1a530bccdf4160c6"
+    },
+    {
+      "path": "SIM_Labs/frontend/src/PromotionPanel.tsx",
+      "size_bytes": 12690,
+      "sha256": "ad3583ddb4c546255601b208f8e9bee32a558ff7fbc8ad624f0f79a7aaef957f"
+    },
+    {
+      "path": "SIM_Labs/frontend/src/RunnerReportUpload.tsx",
+      "size_bytes": 2042,
+      "sha256": "6a3967ab5287014b8a6e6e942f02d8ebb61844e985b3fcb550a379eb0e7a78f7"
+    },
+    {
+      "path": "SIM_Labs/frontend/src/api.ts",
+      "size_bytes": 1025,
+      "sha256": "a8308ada537c9f6fbba2df1b98e4dfbef586622768e6a7bfe750ace621d7f284"
+    },
+    {
+      "path": "SIM_Labs/frontend/src/main.tsx",
+      "size_bytes": 225,
+      "sha256": "e81aec37c1befe991a35934ed8b90b73e7262a01e4dffae60e1ce87967ff09b4"
+    },
+    {
+      "path": "SIM_Labs/frontend/src/styles.css",
+      "size_bytes": 13370,
+      "sha256": "1c60e211589f2106c92d419071ec32ebd5eea63073cbd7257661b98ada742488"
+    },
+    {
+      "path": "SIM_Labs/frontend/src/vite-env.d.ts",
+      "size_bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "SIM_Labs/frontend/tsconfig.json",
+      "size_bytes": 419,
+      "sha256": "47a023d5d49bd82152be15615b8b3534a9407b4a95a885ecc61d22e1ee82a748"
+    },
+    {
+      "path": "SIM_Labs/scripts/check_liveops.py",
+      "size_bytes": 693,
+      "sha256": "4ccdb168f522c41eaebfb13bbc7a037fe9b2b03ec167045864af8e305166df3b"
+    },
+    {
+      "path": "SIM_Labs/scripts/check_phase_a.py",
+      "size_bytes": 507,
+      "sha256": "70f63a74980bb6caa3d52834cd58f72aabfb6d1679e52fcc902bbececd533f9b"
+    },
+    {
+      "path": "SIM_Labs/scripts/link_identity.py",
+      "size_bytes": 1106,
+      "sha256": "eec2c180e1a8c72de35a08513cf94db4511388c43b8e485d98dc7d0f755917ba"
+    },
+    {
+      "path": "SIM_Labs/scripts/migrate_03.py",
+      "size_bytes": 3853,
+      "sha256": "74346276e6c94cb50df0ffd30ec740605548aae886a895911daad8d52230bd9a"
+    },
+    {
+      "path": "SIM_Labs/scripts/nexgrana_runner.py",
+      "size_bytes": 8116,
+      "sha256": "bc24b23989fee02da659a00f0e93fb88766139039c71b8168cd43baade9fec70"
+    },
+    {
+      "path": "SIM_Labs/scripts/publish_offer_catalog.py",
+      "size_bytes": 6877,
+      "sha256": "43210d05e0e86c0223c8b63628baf7704eaefead84e63c70a1bf3081831a3c4d"
+    },
+    {
+      "path": "SIM_Labs/scripts/register_latest_build.py",
+      "size_bytes": 2376,
+      "sha256": "cacf83201a9c048a993734a9ed29f2ca02a4f9ca2c25be652a93fda7c9959587"
+    },
+    {
+      "path": "SIM_Labs/scripts/register_release.py",
+      "size_bytes": 5731,
+      "sha256": "7fc400482eb0bfd07896dd113a1ce89ce29e0743beb760d719613949ac36f8f5"
+    },
+    {
+      "path": "SIM_Labs/scripts/run_backend_tests.sh",
+      "size_bytes": 80,
+      "sha256": "595038e764a6b030d1b52734bf1345c5de93432fd0f23758574e4d3b3b4f1399"
+    },
+    {
+      "path": "SIM_Labs/scripts/verify_http_integration.py",
+      "size_bytes": 9142,
+      "sha256": "e7427c3a2948cd8f8a5b800036c42da5f7c44423e35388cb1d71c296781b09b8"
+    },
+    {
+      "path": "SIM_Labs/scripts/verify_nex_assets.py",
+      "size_bytes": 1985,
+      "sha256": "bf28b299fd2a10658eca04b132e551f2da8fe1b6d58734f045a5e3ff9eb76105"
+    },
+    {
+      "path": "SIM_Labs/scripts/verify_watchdog.py",
+      "size_bytes": 2875,
+      "sha256": "08e4cc8b0a21474fef74310b704012d80af58ba8be49e8424c9486c08b184e3f"
+    },
+    {
+      "path": "SIM_Labs/scripts/windows_launcher.py",
+      "size_bytes": 608,
+      "sha256": "f663dbee5f848628b786fbd47dd2a716d56e1f35bf04c06616b6806d3c59e5c8"
+    },
+    {
+      "path": "SIM_Labs_QA/.github/workflows/liveops-ci.yml",
+      "size_bytes": 806,
+      "sha256": "d4722c5a0731fe53ef1cf8825a3ecfbcd3e56e2197dd5fac17b3ceffd4d92235"
+    },
+    {
+      "path": "SIM_Labs_QA/.gitignore",
+      "size_bytes": 165,
+      "sha256": "dedccb4887e04bf252ec94dc0b3aa3d5aecee5ba5dd9068a53d5e7629e963285"
+    },
+    {
+      "path": "SIM_Labs_QA/.simlabs-qa.json",
+      "size_bytes": 315,
+      "sha256": "e2ff3bd472f3ecf046a020b4dc1164854982a656cbd8c5856b58d367879e1869"
+    },
+    {
+      "path": "SIM_Labs_QA/ABRIR_COLLECTOR.bat",
+      "size_bytes": 218,
+      "sha256": "56cd87273c4b8bf9535c81b5096e477a0468ba98a30cda4e58740ef4d0b27c7b"
+    },
+    {
+      "path": "SIM_Labs_QA/BACKUP_SIM_LABS.bat",
+      "size_bytes": 191,
+      "sha256": "5919df0aee2d373338b675bcd7d98d5e846d28a52e949f8e0a404c6d78b27c38"
+    },
+    {
+      "path": "SIM_Labs_QA/CONCLUIR_RODADA_QA.cmd",
+      "size_bytes": 2061,
+      "sha256": "047e52431888715bb8f7ea8fa6b56effbd5e71049f7872645cfac7e08afa4cdd"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/BUILD_EXE_WINDOWS.bat",
+      "size_bytes": 385,
+      "sha256": "da40cbb7aea876a23472d85109069f9787e6a606003dbaf001213228eade23d6"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/CHANGELOG.md",
+      "size_bytes": 1308,
+      "sha256": "eae58b6d2b3929e6353dbead631bd26381769160643f8449bd553e5ec8160b90"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/README.md",
+      "size_bytes": 2087,
+      "sha256": "5a8b8a11563400739a9950f0f6ba7bc554ebf05754e7f6bffdaf8b69226d9da1"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/RUN_WINDOWS.bat",
+      "size_bytes": 45,
+      "sha256": "f118c2659e5ba275cbb41327e1fb0caa05996893332629c05b03612df1c57ac6"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/docs/SIM_LABS_BLUEPRINT.md",
+      "size_bytes": 6559,
+      "sha256": "7f5c0bd2520655d69b88d535694a768fbdf948997e952938dc44d5f4b1cb2512"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/docs/SIM_LABS_FEEDBACK_CONTRACT.json",
+      "size_bytes": 1217,
+      "sha256": "279b08865c419f4593c5a85a93bb6eaae35617a226228d517eeb23eaddfcd791"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/docs/SIM_LABS_QA_LOCAL.md",
+      "size_bytes": 896,
+      "sha256": "a0fa56b4b1dc648e419c745c8fa6f09ea68c10cd2c4f17618a1c0249ec60a59c"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/requirements.txt",
+      "size_bytes": 51,
+      "sha256": "43b9917f0061a7eda70fa415f8ea9bc090753c34a6f681a18ab16aa21ba461ba"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/src/main.py",
+      "size_bytes": 30723,
+      "sha256": "c5788227b6e6c33258a9e88f07edc95f200d53837113d5de9d64c857d3c1475c"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/src/sim_labs_bridge.py",
+      "size_bytes": 3204,
+      "sha256": "408c30a6f6721d71cb23a1f0b6f4c07857f8e0efb897de25a0efa57a85936506"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/src/sim_labs_core.py",
+      "size_bytes": 28007,
+      "sha256": "f5ae4652bb47abbfe77d8d918be03ae58f5b312e5a9c7fcf6f1398e3cb4f53fc"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/src/sim_labs_ui.py",
+      "size_bytes": 26796,
+      "sha256": "1b3c42079d195b1e4fbff2b74321a240bc3da818246f022eaeb286ce9a340f49"
+    },
+    {
+      "path": "SIM_Labs_QA/Collector/tests/test_sim_labs_core.py",
+      "size_bytes": 3401,
+      "sha256": "35d0ec63b45312fc6ebfdc576892afd3f07d7095d1b449133e906d0c16f50a0b"
+    },
+    {
+      "path": "SIM_Labs_QA/DESINSTALAR_24_7.bat",
+      "size_bytes": 110,
+      "sha256": "9bd6186c96132018d62f098f5a3da783ec1b43226c2dc818eac312db3d936288"
+    },
+    {
+      "path": "SIM_Labs_QA/DESINSTALAR_24_7.ps1",
+      "size_bytes": 669,
+      "sha256": "ea9a709a623c005328e2eb6960c46beb80b07fc919fdefab2a747c8842b78448"
+    },
+    {
+      "path": "SIM_Labs_QA/Dockerfile",
+      "size_bytes": 302,
+      "sha256": "5ba8ff4a41e15f7157cbbcc3cb6a8b931cba2456738a6f9cb95c3d2a036b2410"
+    },
+    {
+      "path": "SIM_Labs_QA/GERAR_EXECUTAVEL_WINDOWS.bat",
+      "size_bytes": 523,
+      "sha256": "8d8a101002c0eaf4d0b088ccf868cb7679c80a67bac1296e86e2410a0093e6c1"
+    },
+    {
+      "path": "SIM_Labs_QA/INICIAR_24_7.bat",
+      "size_bytes": 43,
+      "sha256": "d49ea2c03f6c2b3644b3149f616262a4e75a6fe99d3092215ed17a4c2bfe8475"
+    },
+    {
+      "path": "SIM_Labs_QA/INICIAR_SIM_LABS.bat",
+      "size_bytes": 196,
+      "sha256": "163abae5cff72c697f2bddcce3bbb37e05bfca4c94f156aebf37f5beb86838bb"
+    },
+    {
+      "path": "SIM_Labs_QA/INSTALAR_24_7.bat",
+      "size_bytes": 107,
+      "sha256": "7fc101caef42ac57a33949630a6d6982f51b50530a9b32aad82df720ca5a0974"
+    },
+    {
+      "path": "SIM_Labs_QA/INSTALAR_24_7.ps1",
+      "size_bytes": 2280,
+      "sha256": "f393f55eb4af5f4b615fcb8cc2fc3b0b57ab0b381ab66de8763ba87c6fa79cfa"
+    },
+    {
+      "path": "SIM_Labs_QA/INSTALAR_NO_BOOT.bat",
+      "size_bytes": 134,
+      "sha256": "27a0843043aaff594ca1a2cee8f94cc7592fdb02391f1b1f3db41299209a3b31"
+    },
+    {
+      "path": "SIM_Labs_QA/INSTALL_AUTOSTART_WINDOWS.ps1",
+      "size_bytes": 837,
+      "sha256": "4ae2eee44538ac91520b503d9c1ada9dbf94b37f4a852b621641ffe4716d48f3"
+    },
+    {
+      "path": "SIM_Labs_QA/LEIA_PRIMEIRO.md",
+      "size_bytes": 7518,
+      "sha256": "71fcb9976343dd2d077071b955a5a787b36b6c72fe089b39ad724b8b536815ee"
+    },
+    {
+      "path": "SIM_Labs_QA/LEIA_PRIMEIRO.txt",
+      "size_bytes": 169,
+      "sha256": "5828129b65b993fdc653ca858752162650373a6b5acda6ea61ae00d06dd56ebb"
+    },
+    {
+      "path": "SIM_Labs_QA/LEIA_PRIMEIRO_QA.md",
+      "size_bytes": 5903,
+      "sha256": "22a57f7f5633601a85ae3e6d2812333c3f5b9255509bfcbe383bc96d94b6988e"
+    },
+    {
+      "path": "SIM_Labs_QA/MANIFEST_ENTREGA.json",
+      "size_bytes": 26876,
+      "sha256": "762d78882a98d0b6f35524349d3ce1f219f3cab8e943539c7d8981dad3d921d9"
+    },
+    {
+      "path": "SIM_Labs_QA/MIGRAR_0_3.bat",
+      "size_bytes": 283,
+      "sha256": "c842f4de668e13728f614791f10666c83ff7a9b863bbcc1339d8cb7e2853d6ba"
+    },
+    {
+      "path": "SIM_Labs_QA/PARAR_24_7.bat",
+      "size_bytes": 104,
+      "sha256": "9e7f032b56b5a17f8f80d959d1188e5adbe14993e2951c2a18d1657fc7228c47"
+    },
+    {
+      "path": "SIM_Labs_QA/PARAR_24_7.ps1",
+      "size_bytes": 821,
+      "sha256": "8f77bf69c534273dcc8d4cae8e222d3541b6aebbe7fce5c048b210bcd7cabc44"
+    },
+    {
+      "path": "SIM_Labs_QA/PARAR_SIM_LABS.bat",
+      "size_bytes": 104,
+      "sha256": "9e7f032b56b5a17f8f80d959d1188e5adbe14993e2951c2a18d1657fc7228c47"
+    },
+    {
+      "path": "SIM_Labs_QA/PREPARAR_CATALOGO_OFERTAS.cmd",
+      "size_bytes": 240,
+      "sha256": "04178c9bd5fe5cb0fd809e1528def5a04a40b7efebec3aff65a90f829b41a163"
+    },
+    {
+      "path": "SIM_Labs_QA/PROMPT_PROXIMA_EXECUCAO.md",
+      "size_bytes": 2129,
+      "sha256": "4236c05b5c79ac0a011dadc83e84240b7e55c018d4c06f499e25e84e61b5eee5"
+    },
+    {
+      "path": "SIM_Labs_QA/README.md",
+      "size_bytes": 491,
+      "sha256": "f77bd616e038b41a572d5745cd93b969410f88da0194af2fdf2f2c4829b301ab"
+    },
+    {
+      "path": "SIM_Labs_QA/REGISTRAR_BUILD.bat",
+      "size_bytes": 362,
+      "sha256": "3715f0a9ec73852bc32e7f37996a46186dc6afcf3c3abd87f0fcd5b11755b422"
+    },
+    {
+      "path": "SIM_Labs_QA/SIM_LABS_0_4_0_REPORT.md",
+      "size_bytes": 11618,
+      "sha256": "07ef293fa9e986d58511ae7923203ea5c1b2afd436f82dd734b01dac3c50aab0"
+    },
+    {
+      "path": "SIM_Labs_QA/START_SIM_LABS.bat",
+      "size_bytes": 43,
+      "sha256": "d49ea2c03f6c2b3644b3149f616262a4e75a6fe99d3092215ed17a4c2bfe8475"
+    },
+    {
+      "path": "SIM_Labs_QA/START_SIM_LABS_WINDOWS.ps1",
+      "size_bytes": 8094,
+      "sha256": "fca007fd34b9bd70357d2350a44fd0299f21f26e9db5933a1a28e02387edf008"
+    },
+    {
+      "path": "SIM_Labs_QA/STATUS_24_7.bat",
+      "size_bytes": 105,
+      "sha256": "ff061b758e4fbacc965916ecaf8111fd560bb5fc6ea7e553814a27af21dacc62"
+    },
+    {
+      "path": "SIM_Labs_QA/STATUS_24_7.ps1",
+      "size_bytes": 713,
+      "sha256": "85bc26efb20dc54eee7b4c36cd0fd8fefd5ed2c06585bd0108abfcf80f3e589e"
+    },
+    {
+      "path": "SIM_Labs_QA/STOP_SIM_LABS.bat",
+      "size_bytes": 173,
+      "sha256": "b63ebf1350fb78363455c12617217b587bce54dd7690fb615577aa360e702b6a"
+    },
+    {
+      "path": "SIM_Labs_QA/STOP_SIM_LABS_WINDOWS.ps1",
+      "size_bytes": 675,
+      "sha256": "0c0684c74285bc315b6f172d6187d0f42bf28cd397388de3c3abfd96cc3db343"
+    },
+    {
+      "path": "SIM_Labs_QA/TESTAR_SIM_LABS.bat",
+      "size_bytes": 190,
+      "sha256": "f07c67e70cd961f8902bb1368865cb05970fa3721f7539160e2f5b07ed7eab0e"
+    },
+    {
+      "path": "SIM_Labs_QA/UNINSTALL_AUTOSTART_WINDOWS.ps1",
+      "size_bytes": 175,
+      "sha256": "a29fbe0058e75543e7b857e4dadb80562059e647c70d7bfdb765d98751eef1ec"
+    },
+    {
+      "path": "SIM_Labs_QA/VALIDAR_AUTONOMIA_24_7.bat",
+      "size_bytes": 704,
+      "sha256": "7ec696f1b33431240b1919c54e671db9a485d1486aba8312ed5323d92bb4b6f2"
+    },
+    {
+      "path": "SIM_Labs_QA/VALIDAR_AUTONOMIA_24_7.ps1",
+      "size_bytes": 4762,
+      "sha256": "909a7b569137f053d4d25b3acc40b69f36be432f5fea4c36ea688578341a1b5b"
+    },
+    {
+      "path": "SIM_Labs_QA/VALIDAR_NEXGRANA.cmd",
+      "size_bytes": 587,
+      "sha256": "0ee8d5e37de4f08662ff4cd482636ebc87c556879f256b3eac28b55b1cf8db54"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/Dockerfile",
+      "size_bytes": 185,
+      "sha256": "20b2b9cc17fea007b678aed60127ea9d7fca7da62b4aaf8d663193b103c79042"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic.ini",
+      "size_bytes": 550,
+      "sha256": "fa683265e196a0ab5c715917453de1167006b15abc3a407f2720b625ebc7edbf"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/env.py",
+      "size_bytes": 1152,
+      "sha256": "fadab7de73253c2eb237a687f732e168756fb533d3a86a19dc110018c63b3e3b"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/script.py.mako",
+      "size_bytes": 589,
+      "sha256": "738f520224ab075d073f7db6ba62d661267f2b032d1274efb64769c66b8d15fc"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/versions/0001_phase_a_foundation.py",
+      "size_bytes": 3876,
+      "sha256": "3ebef5734dd0dcdb1a489f097a9381f559c8d801106cdc67c05343a96f20ddb6"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/versions/0002_liveops.py",
+      "size_bytes": 5601,
+      "sha256": "eb334aa481935af268bb67a6ad639bc7215cf154ba4a7257d43ca0edc40b660f"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/versions/0003_integrated.py",
+      "size_bytes": 829,
+      "sha256": "7e836ea284f5a66a5c419a06b5f5f58cda330c31ef205ca6f7c3299c91c72896"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/versions/0004_engine.py",
+      "size_bytes": 622,
+      "sha256": "2451734d2e15546739ba0f887c53a25973d4f778a32b01bda788f267fcc1e00c"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/versions/0005_runner_reports.py",
+      "size_bytes": 401,
+      "sha256": "ce6243e73cb6699b29f8bc9db3726e5e1a68826c963c7fdbe9e8289957f8ccf7"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/versions/0006_promotions.py",
+      "size_bytes": 548,
+      "sha256": "c7f3382c46b81a97e9a76dfb1dbdb26a9ca7f4c807a7469988f7941bf5f32951"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/alembic/versions/0007_qa_operations.py",
+      "size_bytes": 1415,
+      "sha256": "e43b59b25110e74fd29218eb9edf502e6c695ccad44f6645545fcfb68271fbcd"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/ai_advisor.py",
+      "size_bytes": 2990,
+      "sha256": "4daefee0bc5b0e93d5412105f6d10267b84fe7d9a49146cad09b89636606913e"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/audit.py",
+      "size_bytes": 655,
+      "sha256": "68485a65a9ee1dff319172df31540d8f183170ea663e596aa8298d005e48edcf"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/auth.py",
+      "size_bytes": 3409,
+      "sha256": "668dc1d4ff227279f6b388b68cf46200c574b8113ae4659586f596654af4ebdb"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/backup_local.py",
+      "size_bytes": 2611,
+      "sha256": "296a6f18d3839247dd835d1eef6fb6fbe1728d6b48b4a379bec306a5e8454980"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/bootstrap.py",
+      "size_bytes": 5472,
+      "sha256": "262a4cc4fb1b6148252fd635787257c79c6332ce6082f78f648ce1a4cfe3c867"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/config.py",
+      "size_bytes": 1399,
+      "sha256": "d988ee262a780aaa416c205fd09fd63d1563aa617c50e231c68664c38f135426"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/db.py",
+      "size_bytes": 944,
+      "sha256": "b994b48a7e409ba94e8f85c3ca094ffd47571aac823875e812f506e391570e4c"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/engine.py",
+      "size_bytes": 18485,
+      "sha256": "64e42dfff444a4683099f097ca50a06e81dae852e91004e715fdd6cbcf607d29"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/engine_models.py",
+      "size_bytes": 3717,
+      "sha256": "28ec80d8c8688c4232fd6744c9ecad75d85713896b9e630b344bc1bac4bd91c0"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/integration_models.py",
+      "size_bytes": 8595,
+      "sha256": "f35681cd631f2fac383cc592906675d4c33b749d857e5295c9f84c9bfedd2b68"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/liveops.py",
+      "size_bytes": 5214,
+      "sha256": "f6616ebc292eab43bcf1f66d974abcd74f149671afdc5e6d0726816f6d53ba5f"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/local_auth.py",
+      "size_bytes": 1794,
+      "sha256": "d5ba65f907ad968993e981ebcbb05178fbe580962e064df6fcf32a948b975411"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/main.py",
+      "size_bytes": 1976,
+      "sha256": "2e68b59f6ebdebd9ac2641bb8ee415f2d3846900fd4b54ee83f3d3f68852b3bc"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/models.py",
+      "size_bytes": 8678,
+      "sha256": "99c46d0ce5bdaa86c0963133db9f1c8a5bbe303a238c472c290b2eeef2597902"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/operations.py",
+      "size_bytes": 21072,
+      "sha256": "7a912f014f0287dbd1ff141d77559c2cd972a4f70532afdfa8f6927966c3f337"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/permissions.py",
+      "size_bytes": 705,
+      "sha256": "ac2d289bdddefdab80381fa70e939a9c404aa14cce9eb9a6eb900e5b33888a38"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/promotion_models.py",
+      "size_bytes": 3302,
+      "sha256": "85a9b902ad8df1d139b95054cc346e5b14f3f632b3b3c4cbcb6831a3f07b7ce5"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/promotions.py",
+      "size_bytes": 12445,
+      "sha256": "9922ebcb2347356a19533575245c853458cae0917ae97ca020c08ff825fe8d46"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/qa/artifact_core.py",
+      "size_bytes": 28007,
+      "sha256": "f5ae4652bb47abbfe77d8d918be03ae58f5b312e5a9c7fcf6f1398e3cb4f53fc"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/qa_environment.py",
+      "size_bytes": 5073,
+      "sha256": "a6e684a383e2540f2d0e992daf6a2617c47e57f2f73fe66fdb12207bc2fa0157"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/routers/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/routers/core.py",
+      "size_bytes": 3938,
+      "sha256": "5079033ef80d887d7edb1c99674f2b38e531988df91f1f706ed99bc4ab7464bd"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/routers/engine.py",
+      "size_bytes": 3686,
+      "sha256": "9e27a49a87ec0f0258e16a13eec293f664fada4dff8135f2d065edb3bca5ad5b"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/routers/integrated.py",
+      "size_bytes": 29608,
+      "sha256": "5515463daaf8068e8a694878f41224e8d54a04c10789bbe394d2d412123c032d"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/routers/live.py",
+      "size_bytes": 7742,
+      "sha256": "f1ae38ea2806bc2cf96bb97ed1b626d0ab61b0bf13fa4a35806f5395282c6d7b"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/routers/promotions.py",
+      "size_bytes": 9028,
+      "sha256": "76f4fc3c8bd5930228f10ca265814a4a373776c167855c0053a2452cae373950"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/routers/qa_pipeline.py",
+      "size_bytes": 8816,
+      "sha256": "a2adfb05221fd34cb86cba9b6e45fa3249e0cff7ff677da610f96cc053a7edc9"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/schemas.py",
+      "size_bytes": 2887,
+      "sha256": "572f04f97796488ee6d650b86276a75f6e8c9726ac78586ee956dd797cc51378"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/seed.py",
+      "size_bytes": 6317,
+      "sha256": "18982413db1cf993bbdeb0f09c4add2c05471b2a2ea1fa7e89994f69d957df74"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/supervisor.py",
+      "size_bytes": 5149,
+      "sha256": "05941967091d364e12afa6a9747e67e4bfa1b52dfd917f565a4d3c16cc097e8d"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/app/worker.py",
+      "size_bytes": 2100,
+      "sha256": "8e5330e8f35c52184bd0ccad644ec75881e08adbbc2f98399b95bffbfb41cfe9"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/requirements.txt",
+      "size_bytes": 557,
+      "sha256": "3b084e8bc94036baf9fe82bf51591c83632858059a7ed87fa35a42d8a607c536"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/static/assets/index-DLdlbjRk.css",
+      "size_bytes": 13323,
+      "sha256": "d8faf6569512bd9372aa16534dba456b631426ee864fb44021c4aa638ad35bac"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/static/assets/index-ZW6gCd_m.js",
+      "size_bytes": 277259,
+      "sha256": "41e87508b5a52236be97ab82c773ede05e62d126c068b6ce637bdda976dcbef9"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/static/gestao-hoje.css",
+      "size_bytes": 5841,
+      "sha256": "ff988de79cde69f8cea7f461fa11b670af51979a471fa04366060606d4d9b1c5"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/static/gestao-hoje.html",
+      "size_bytes": 4309,
+      "sha256": "a495432d75bb4dc3ae624295d56225235a0657c6c52eb3646deab66e617c6e65"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/static/gestao-hoje.js",
+      "size_bytes": 11015,
+      "sha256": "37fadc06165a110a58d96e9ab7a67e9a5f03a6644b0f4b47b960ec0ffd0926e1"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/static/index.html",
+      "size_bytes": 503,
+      "sha256": "e9ef4f9731938e736ab099ab8aa22fdd9173f77bdbf727bc10822062a8315f51"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/static/sim-labs-maquete.png",
+      "size_bytes": 2666035,
+      "sha256": "d3d1748c1fef4eb3c85a4b9ec0bbd6c4a2a14d050d27f32ab980a277b232a882"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/stop_local.py",
+      "size_bytes": 2782,
+      "sha256": "9feff94ee7aee9db62618030b38ff47392a8fbbb08c3cd0d7a48f8cb9ae657ad"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/conftest.py",
+      "size_bytes": 1165,
+      "sha256": "242384087b5ccac6d3c6d7363c5478961527b65f483dba8ab61af04607ab040b"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_ai_advisor.py",
+      "size_bytes": 1963,
+      "sha256": "b2205954de6a1735ea78b115ca56db6545942c58d66e3e2f5ba912a2182c7dd7"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_engine.py",
+      "size_bytes": 4423,
+      "sha256": "4fb95bfa5f5a3bce15fe200963b55004e91bcc6f548ccbd9725aa89160ee2639"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_integrated.py",
+      "size_bytes": 13430,
+      "sha256": "4ae9b930ee72a65e3802e4ce7c0e4110301cd6c4bfbd2b4b12151b5fb95b40a6"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_liveops.py",
+      "size_bytes": 2653,
+      "sha256": "e9eee85551c18e19f24b8d94efe875e406c89fe712c4cbfb8b1ceb53e61e6d2d"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_manual_runner.py",
+      "size_bytes": 2127,
+      "sha256": "3814f547abc39abff14c7056266fc7fa5aeb81ab826a6071526bc97c6937fa6f"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_migration.py",
+      "size_bytes": 3008,
+      "sha256": "e446aa026cc421eac5b225639f123b4cce1d9744af19793a42d8cd79a6085905"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_phase_a.py",
+      "size_bytes": 1981,
+      "sha256": "a3bc03a96b73b7f44a7b91dd45dc087fe5041b8eb1dc42db621633127c886e31"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_promotions.py",
+      "size_bytes": 11376,
+      "sha256": "7ad05b90d3cfabd1838e2212f9a26349800e972f9814b7076ccb3f3a18e0c9d1"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_qa_environment.py",
+      "size_bytes": 2748,
+      "sha256": "1f95090faace50d3e3300a63a18009e4db8bc30382cd2b3b20838f068ced27a2"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_qa_pipeline_status.py",
+      "size_bytes": 5445,
+      "sha256": "9d029b6776e02200ee0c2b54ae98847df6f5c0ec2ce18e2473d10a2ab976bac9"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_release_intake.py",
+      "size_bytes": 1226,
+      "sha256": "2c3608229b773abbee69c33320beae23c22b8de641082a950f2b34e151c9a76b"
+    },
+    {
+      "path": "SIM_Labs_QA/backend/tests/test_round_20261006.py",
+      "size_bytes": 3979,
+      "sha256": "aaec6be6ebc4e190f3f24863d5e6201372a2d0e5308160c3b8568676acce68f5"
+    },
+    {
+      "path": "SIM_Labs_QA/docker-compose.prod.yml",
+      "size_bytes": 677,
+      "sha256": "6d6729b19ef5feef4c16c000d9aba1bfa1da0a3baeb3570e75ee658aad4ed285"
+    },
+    {
+      "path": "SIM_Labs_QA/docker-compose.yml",
+      "size_bytes": 1240,
+      "sha256": "ce00db9b9f547f6a2eae5e1efb79f00cf17b03869cfd3951a5803c1ef72e03e6"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/AGENTES_E_CONTRATOS.json",
+      "size_bytes": 13177,
+      "sha256": "cc2f724a11e99bf923f447a5140167a956047e0b55ea6f6a0bd722a14d42fa92"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/INDICE_0_4.md",
+      "size_bytes": 335,
+      "sha256": "3af92e38ba8560026bd1d7c44561c048919c9ec57df7338b696f217885745cda"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/ARQUITETURA.md",
+      "size_bytes": 601,
+      "sha256": "108e2995661921fc5f768dd12f630e7b0ffcbeac235cdf1f80c6d64803965cd2"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/CHANGELOG.md",
+      "size_bytes": 838,
+      "sha256": "4e84a9b0e92622059aab48010c7ef4356cc6014a20b70e8ade9525dad0281bea"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/DEPLOY_24X7.md",
+      "size_bytes": 896,
+      "sha256": "dac3d10d4a72b6a9b9253b908e749db250a9eeec5f34188f5d9f50e5721fc718"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/Dockerfile",
+      "size_bytes": 497,
+      "sha256": "c5c596e2a2737584190e46cbd3488eee34365b0a446f1bfacba3e86e520cba21"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/FEEDBACK_INTEGRATION.md",
+      "size_bytes": 711,
+      "sha256": "1b5c4e86ea70802a6c0d95f65ea4085e60cbef36d1b0e5eccfe090a1fbae0027"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/LEIA_LEGADO.md",
+      "size_bytes": 188,
+      "sha256": "9483d83ccee55bec52047ab69b76c8e45b79b0106a5dfca634576bfd43b827ab"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/LIVEOPS_ARCHITECTURE.md",
+      "size_bytes": 1726,
+      "sha256": "fbdc1b19dd9f6494f143d6a2c8970a1984748bf67e07dba50cc97e2e17d631b5"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/MATRIZ_PAPEIS.md",
+      "size_bytes": 468,
+      "sha256": "a1a22c22d18f5bdfa6cf388457acaacab68d91e6121c2b3a7ffb8d6b8bb45f91"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/PROMPT_MESTRE_SIM_LABS.md",
+      "size_bytes": 19993,
+      "sha256": "e10f48b51df63e0281c98f26b12feddea576fce22e8ad346674040a89395cf24"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/ROADMAP.md",
+      "size_bytes": 805,
+      "sha256": "41ce82375eda254007207a4eca406c13b70fdba5e5449a0d347b66d1a1b24e55"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/RUNBOOK_BACKUP.md",
+      "size_bytes": 495,
+      "sha256": "df69b915f2f7e212777c53f6679dc10b238cf9d4d69e9660d13d973ad2228b53"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/SIM_LABS_ESTADO_ATUAL.md",
+      "size_bytes": 2575,
+      "sha256": "2d272abf9701a1aebe28f0ff940d531fa29c35db64d2ea3ee9d0badb63245c51"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/SUPABASE_SETUP.md",
+      "size_bytes": 917,
+      "sha256": "c8aa5e7162335d85dcf1fc8e55c8cc1b347c79f71918a8cc9fa7446f72daf01b"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/adr/ADR-001-control-plane-separado.md",
+      "size_bytes": 411,
+      "sha256": "f7ddad09e70e6d7fdde4867aea59e1051f791afadc9853151e0265a1a687d07a"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/LEGADO_LIVEOPS_0_2/docker-compose.yml",
+      "size_bytes": 1176,
+      "sha256": "efac909285331899b122662423e5d02db10c554aea8734974d0b6b56b15fcbf0"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/PROMPT_ORIGINAL_DE_MAFRA.md",
+      "size_bytes": 17961,
+      "sha256": "6579861a96245c4af9a7c3527f5867e15b663d4af1053de1245272cefe40990d"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/00_AUDITORIA_FASE_0.md",
+      "size_bytes": 38388,
+      "sha256": "2c0b324ab119c3dc036bafe3cff3acc434ac48c7f5b85a803f838c404a9223ac"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/01_TESTE_DE_HOJE.md",
+      "size_bytes": 7953,
+      "sha256": "b2d9d854492a4a99ca5f7f9606caf6710199fe6bcd70f50671ea5734a4a1298e"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/02_ARQUITETURA_E_ORGANIZACAO.md",
+      "size_bytes": 7707,
+      "sha256": "18b2b222b3012a097f3f5f46cc2d43020dbd219db179fb06497aacc6dd50f1e1"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/03_BANCO_E_INTEGRACAO_NEXGRANA.md",
+      "size_bytes": 7119,
+      "sha256": "b213a83d97ca2f297bfddaacd2f05269ac8232276ecd3a4325b1907a6fbf4a95"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/04_PROMPT_MESTRE_CONTINUIDADE.md",
+      "size_bytes": 9119,
+      "sha256": "e89e767541dc80dc874dcefa102cded9cd56a497e26c6250095dc7629a6a17c2"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/05_PROMPT_CMD_WINDOWS.md",
+      "size_bytes": 4586,
+      "sha256": "48e686ed4bc80b099d3ba1b7b15a1657121d913d3c30c0abb2f7160feb867250"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/06_IA_LOCAL_E_OPERACAO_24H.md",
+      "size_bytes": 4293,
+      "sha256": "edd2a4d026a050f20ecea002c5725358adf9103934600424efad9e703cc1a336"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/REFERENCIA_0_3/07_VALIDACAO_E_LIMITES.md",
+      "size_bytes": 4693,
+      "sha256": "b3f311fd51eb30b38efce9ca23be5a7b07b968741c144e0e119e1717d629fc41"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/SQL_REFERENCIA_POSTGRES_0003.sql",
+      "size_bytes": 6432,
+      "sha256": "69371e6371d33a3a389476768028ba13e8544c4f825bdd8eb73b6b67f96236b9"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/STARTUP_FIX_V3_2026-10-07.md",
+      "size_bytes": 1825,
+      "sha256": "4a9b2751faf92c3a000386cb35035f8e79540747e4ea7b7b725c5f1650154d52"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/ANALISE_ENTREGA_RC8.md",
+      "size_bytes": 7955,
+      "sha256": "cad95c1852dbd828a0e326ce140f60a63efeb8cf72d62c99491f0c473f36fcb5"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/BACKLOG_POS_LANCAMENTO.md",
+      "size_bytes": 1774,
+      "sha256": "b83aa1d31713130f175af9454ef25ca52b3ac7fc15742f850bc3407d4c34247c"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/BUILD_REPORT.md",
+      "size_bytes": 789,
+      "sha256": "2b581f72b8957f25fbe7d624a0a767fbf08783d8fb70acb45f4050acaf1c7ddd"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/CHANGELOG_20261006.md",
+      "size_bytes": 3327,
+      "sha256": "87dbaaf1835c7230f22e128b7c2a4f84610da99ed2373e7ad9fc1927d6c2b6f5"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/COMPLEMENTO_RC7.md",
+      "size_bytes": 1417,
+      "sha256": "e4445b3006625fc45070735b89cb5baebb91a6451e4dc2639ae429fba8b355e1"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/MAFRA_VS_SIM_LABS.md",
+      "size_bytes": 798,
+      "sha256": "936ba3a335d326f11df3cab87eede9de2fefd7a059ed2b0d7d7ded8136482b50"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/NEXGRANA_ESTADO_ATUAL.md",
+      "size_bytes": 1970,
+      "sha256": "641eeb30c8cf7331c915f20ebe67390e7222edfd1b943fe702c928127fefb7e4"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/NIGHT_OPS_REPORT.md",
+      "size_bytes": 799,
+      "sha256": "2f0314d8eb515872131d8b3ca4b4918237825224588167653c76d1eb97b8d849"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/OPERACAO_FINANCEIRA.md",
+      "size_bytes": 988,
+      "sha256": "04501f9e6d37b8b8bba3eedf4249b69081247d4db4e8077e29dac9c9eb6be1ca"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/PACKAGING_REPORT.md",
+      "size_bytes": 963,
+      "sha256": "6683225b2b7b87975e9c1ec8f8d82ba22120dc710bd3160281031092425ad94d"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/PASSO_A_PASSO_CMD.md",
+      "size_bytes": 6373,
+      "sha256": "ff6fc0c669507e699be4442eac5bbcf823e1aca0be748e81d0b128ad44df41d4"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/PERFORMANCE_REPORT.md",
+      "size_bytes": 904,
+      "sha256": "e4c9a2aa28cfeb5423898d5b6e47888e0def5a5960bb3875cf77d812e4926789"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/PESQUISA_MERCADO.md",
+      "size_bytes": 3496,
+      "sha256": "8da0804716162db27ad9a79a582714b222f0373d362c26f257f7f2133f2ca628"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/PROMPT_REUNIAO_VOZ.md",
+      "size_bytes": 4827,
+      "sha256": "8a4b1354074694822f62892fd4c197f4153ba6627746e652b3b976456c379149"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/README_INICIAR.md",
+      "size_bytes": 1255,
+      "sha256": "034e7b9616f72d0f8192d995d9bf69514831fd770f8125930250dd774823f981"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/SECURITY_REPORT.md",
+      "size_bytes": 1821,
+      "sha256": "fe1f75cb6d3d3a7e35085007994e3f26da6019c32363f55677d558460a118c77"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/SIM_LABS_SETORES.md",
+      "size_bytes": 1461,
+      "sha256": "0a7c51ac571a711703d0e8ebb3d5cfe50b24200db722666006d190ba39592d66"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/SIM_LABS_STATUS.md",
+      "size_bytes": 2341,
+      "sha256": "e01f4619a5a6a48f94169580fa3270bd8b19e5a8a38d3c43ca4f9d5fb3edac35"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/TEST_REPORT.md",
+      "size_bytes": 2427,
+      "sha256": "454e91fa0c417f8df2ef50eea9a1b3f14ce61cf1819c98d3da3273f996d9c635"
+    },
+    {
+      "path": "SIM_Labs_QA/docs/rodada_20261006/VISUAL_QA_REPORT.md",
+      "size_bytes": 1168,
+      "sha256": "92bf27e544057a7700f7975307bafa0d10fb178a16c95923485901dbdf5d0bbd"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/Dockerfile",
+      "size_bytes": 185,
+      "sha256": "97a5754feb55a109cd36fdcb627322fa590cefc603480d535c0c7a94e7f7e011"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/index.html",
+      "size_bytes": 404,
+      "sha256": "b77919987220047b2de09816bf6ce5036635185195f1879c26622e9afb0511b3"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/package-lock.json",
+      "size_bytes": 39343,
+      "sha256": "342a1248f0bc39c09c3971c133ff08874a5211255be717f3c30b2c007b4581ea"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/package.json",
+      "size_bytes": 518,
+      "sha256": "689c5bd192dd071c27e55c59cec1dbf12398cd407fa2da704d3e3c7861b4f13d"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/public/gestao-hoje.css",
+      "size_bytes": 5841,
+      "sha256": "ff988de79cde69f8cea7f461fa11b670af51979a471fa04366060606d4d9b1c5"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/public/gestao-hoje.html",
+      "size_bytes": 4309,
+      "sha256": "a495432d75bb4dc3ae624295d56225235a0657c6c52eb3646deab66e617c6e65"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/public/gestao-hoje.js",
+      "size_bytes": 11015,
+      "sha256": "37fadc06165a110a58d96e9ab7a67e9a5f03a6644b0f4b47b960ec0ffd0926e1"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/public/sim-labs-maquete.png",
+      "size_bytes": 2666035,
+      "sha256": "d3d1748c1fef4eb3c85a4b9ec0bbd6c4a2a14d050d27f32ab980a277b232a882"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/src/App.tsx",
+      "size_bytes": 36894,
+      "sha256": "a616fe926d731f6a862894a889673df2dbe014e87136a35543cb3406c08b621f"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/src/PromotionPanel.tsx",
+      "size_bytes": 12690,
+      "sha256": "ad3583ddb4c546255601b208f8e9bee32a558ff7fbc8ad624f0f79a7aaef957f"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/src/RunnerReportUpload.tsx",
+      "size_bytes": 2042,
+      "sha256": "6a3967ab5287014b8a6e6e942f02d8ebb61844e985b3fcb550a379eb0e7a78f7"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/src/api.ts",
+      "size_bytes": 1025,
+      "sha256": "a8308ada537c9f6fbba2df1b98e4dfbef586622768e6a7bfe750ace621d7f284"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/src/main.tsx",
+      "size_bytes": 225,
+      "sha256": "e81aec37c1befe991a35934ed8b90b73e7262a01e4dffae60e1ce87967ff09b4"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/src/styles.css",
+      "size_bytes": 13443,
+      "sha256": "80ca494bcd4da1268e803208caaf11a6529617f83ee2173385d006bd3b542447"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/src/vite-env.d.ts",
+      "size_bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/tests/gestao-hoje.test.cjs",
+      "size_bytes": 3722,
+      "sha256": "3e26b98d11a8801fabe79578cbaeaaee47562baf6bf57c2f7e84f44f6d4612fb"
+    },
+    {
+      "path": "SIM_Labs_QA/frontend/tsconfig.json",
+      "size_bytes": 419,
+      "sha256": "47a023d5d49bd82152be15615b8b3534a9407b4a95a885ecc61d22e1ee82a748"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/check_liveops.py",
+      "size_bytes": 693,
+      "sha256": "4ccdb168f522c41eaebfb13bbc7a037fe9b2b03ec167045864af8e305166df3b"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/check_phase_a.py",
+      "size_bytes": 507,
+      "sha256": "70f63a74980bb6caa3d52834cd58f72aabfb6d1679e52fcc902bbececd533f9b"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/control_center.py",
+      "size_bytes": 6194,
+      "sha256": "9885b74bf61a57bd657602a39d86227962b7e566f9d9ecc681ec5fd8132172e3"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/doctor.py",
+      "size_bytes": 5293,
+      "sha256": "7cd827f5cd0690c5376b3f55951d84865a4946381eae9b49e2799007b4f52cc5"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/generate_release_manifest.py",
+      "size_bytes": 6075,
+      "sha256": "253165028c4389b55250a03265eb776a10e0c70a6ce2658b614306f226e02269"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/launch_authenticated_pipeline.py",
+      "size_bytes": 13424,
+      "sha256": "68f7a88d7423adb189544923fa9e3d842042748193334bd04075ed7db8a668a8"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/link_identity.py",
+      "size_bytes": 1106,
+      "sha256": "eec2c180e1a8c72de35a08513cf94db4511388c43b8e485d98dc7d0f755917ba"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/migrate_03.py",
+      "size_bytes": 3853,
+      "sha256": "74346276e6c94cb50df0ffd30ec740605548aae886a895911daad8d52230bd9a"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/nexgrana_runner.py",
+      "size_bytes": 8116,
+      "sha256": "bc24b23989fee02da659a00f0e93fb88766139039c71b8168cd43baade9fec70"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/open_authenticated_central.py",
+      "size_bytes": 2517,
+      "sha256": "0dcfefb59c0896a8c57102aaf7ead8a74f214555b3d212585b8ea63ccf84364e"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/publish_offer_catalog.py",
+      "size_bytes": 6877,
+      "sha256": "43210d05e0e86c0223c8b63628baf7704eaefead84e63c70a1bf3081831a3c4d"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/register_latest_build.py",
+      "size_bytes": 2376,
+      "sha256": "cacf83201a9c048a993734a9ed29f2ca02a4f9ca2c25be652a93fda7c9959587"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/register_pipeline_build.py",
+      "size_bytes": 3317,
+      "sha256": "a4545c7455159302a9bb5616c8441d6bb8871ebf1b9cffa63eac1bee470fb7c7"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/register_release.py",
+      "size_bytes": 5731,
+      "sha256": "7fc400482eb0bfd07896dd113a1ce89ce29e0743beb760d719613949ac36f8f5"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/run_backend_tests.sh",
+      "size_bytes": 80,
+      "sha256": "595038e764a6b030d1b52734bf1345c5de93432fd0f23758574e4d3b3b4f1399"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/run_release_pipeline.py",
+      "size_bytes": 40423,
+      "sha256": "1cac9113e8d0b69dd4a6affde062dd1ea9e1c9b18ef23e5aa1c8511ea83ffcdc"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/tests/test_authenticated_central.py",
+      "size_bytes": 2739,
+      "sha256": "cd24eaea41c480ec1c609a0c737dc598c11a257f57f32a32b069077d2087796d"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/tests/test_manifest_consistency.py",
+      "size_bytes": 4677,
+      "sha256": "138ab01313f302df969b65ea2061601bb87880f546f830bfb5773db3e6726a2d"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/tests/test_one_click_qa.py",
+      "size_bytes": 7863,
+      "sha256": "96fb8eee82341d90b9bfd32382147e8f3cfc1ff0cb9c777d67e9a7f7afd37b2e"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/tests/test_register_pipeline_build.py",
+      "size_bytes": 2071,
+      "sha256": "9a2b7e669b56a966e68c71e5c658cfbe77d107a3085edd9c043acf384521d0db"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/tests/test_release_gate.py",
+      "size_bytes": 1455,
+      "sha256": "f64a484ecbe25487b9d517050841736064878144c13b7d374ac749f27a1237cf"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/tests/test_rescue.py",
+      "size_bytes": 5814,
+      "sha256": "3adb0d7cc80f9247ad1214ce5a4e7bf560750fa32bd33b3aa0935e8c1a7742bc"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/validate_qa_startup.py",
+      "size_bytes": 3623,
+      "sha256": "683c24de1304057ab0effb27b40dd8f022a5fb7b7d423bd140fed93f1bf6b2ca"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/verify_http_integration.py",
+      "size_bytes": 9142,
+      "sha256": "e7427c3a2948cd8f8a5b800036c42da5f7c44423e35388cb1d71c296781b09b8"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/verify_nex_assets.py",
+      "size_bytes": 1985,
+      "sha256": "bf28b299fd2a10658eca04b132e551f2da8fe1b6d58734f045a5e3ff9eb76105"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/verify_release_manifest.py",
+      "size_bytes": 1423,
+      "sha256": "5ab096cce14d941f3e42eb516db7e55552e3ab53d8f75ac4c7910033a26ee2e1"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/verify_watchdog.py",
+      "size_bytes": 2875,
+      "sha256": "08e4cc8b0a21474fef74310b704012d80af58ba8be49e8424c9486c08b184e3f"
+    },
+    {
+      "path": "SIM_Labs_QA/scripts/windows_launcher.py",
+      "size_bytes": 608,
+      "sha256": "f663dbee5f848628b786fbd47dd2a716d56e1f35bf04c06616b6806d3c59e5c8"
+    },
+    {
+      "path": "tools/CRIAR_CLONE_QA_ISOLADO.ps1",
+      "size_bytes": 4346,
+      "sha256": "9e8369bc9cb54ed3c99085508e0ea4089e01d6273855a7a0476332750b41574a"
+    },
+    {
+      "path": "tools/INVENTARIO_WINDOWS_SOMENTE_LEITURA.ps1",
+      "size_bytes": 9593,
+      "sha256": "1048d98b8785da8019c00fab6cc3df5a04eda87589f13b5ee34112df84bdd17f"
+    }
+  ]
+}
