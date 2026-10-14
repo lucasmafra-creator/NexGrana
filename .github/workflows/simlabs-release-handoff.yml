@@ -1,0 +1,79 @@
+name: NexGrana release handoff to SIM Labs
+
+on:
+  release:
+    types: [published]
+permissions:
+  contents: read
+jobs:
+  dispatch-qa:
+    name: Send release metadata to SIM Labs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch published build
+        uses: actions/github-script@v7
+        env:
+          SIMLABS_DISPATCH_TOKEN: \${{ secrets.SIMLABS_DISPATCH_TOKEN }}
+        with:
+          github-token: \${{ secrets.SIMLABS_DISPATCH_TOKEN }}
+          script: |
+            const release = context.payload.release;
+            const assets = release.assets || [];
+            const exes = assets.filter(item => /\.exe$/i.test(item.name));
+            const buildZips = assets.filter(item => /\.zip$/i.test(item.name) && /(nexgrana|windows|build|installer)/i.test(item.name));
+            let selected = null;
+            let handoffStatus = 'NO_EXE_ASSET';
+            if (exes.length === 1) {
+              selected = exes[0];
+              handoffStatus = 'ASSET_FOUND';
+            } else if (exes.length > 1) {
+              handoffStatus = 'AMBIGUOUS_EXE_ASSETS';
+            } else if (buildZips.length === 1) {
+              selected = buildZips[0];
+              handoffStatus = 'ASSET_FOUND';
+            } else if (buildZips.length > 1) {
+              handoffStatus = 'AMBIGUOUS_BUILD_ZIPS';
+            }
+
+            let sourceSha = '';
+            try {
+              const commit = await github.rest.repos.getCommit({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: release.tag_name
+              });
+              sourceSha = commit.data.sha;
+            } catch (error) {
+              core.warning('Não foi possível resolver o commit da tag: ' + error.message);
+            }
+
+            const payload = {
+              source_repo: context.repo.owner + '/' + context.repo.repo,
+              release_tag: release.tag_name,
+              source_sha: sourceSha,
+              release_url: release.html_url,
+              release_body: release.body || '',
+              asset_name: selected ? selected.name : '',
+              asset_url: selected ? selected.browser_download_url : '',
+              asset_size: selected ? selected.size : 0,
+              handoff_status: handoffStatus
+            };
+            const response = await fetch('https://api.github.com/repos/simlabscorp/SIMLABS/dispatches', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': 'Bearer ' + process.env.SIMLABS_DISPATCH_TOKEN,
+                'X-GitHub-Api-Version': '2022-11-28',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({event_type: 'nexgrana_release', client_payload: payload})
+            });
+            if (!response.ok) {
+              const details = await response.text();
+              core.setFailed('SIM Labs rejeitou o handoff (' + response.status + '): ' + details);
+              return;
+            }
+            core.notice('Handoff enviado para SIM Labs: ' + release.tag_name + ' · ' + handoffStatus);
+            if (handoffStatus !== 'ASSET_FOUND') {
+              core.setFailed('A release foi enviada, mas não há um único asset EXE/ZIP elegível. Veja a issue criada no SIM Labs.');
+            }
