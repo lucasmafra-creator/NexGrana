@@ -3,7 +3,22 @@ name: NexGrana 0.24 — validação e builds Windows + Android
 on:
   push:
     branches:
+      - main
       - codex/nexgrana-rc8-source-ci-2026-10-12
+    paths:
+      - "NexGrana/**"
+      - "SIM_Labs_QA/**"
+      - ".github/workflows/nexgrana-build.yml"
+      - "README.md"
+      - ".gitignore"
+      - "release_manifest.json"
+      - "BUILD_STATUS.md"
+      - "PROJECT_STATE.md"
+      - "QA_REPORT.md"
+      - "CHANGELOG.md"
+  pull_request:
+    branches:
+      - main
     paths:
       - "NexGrana/**"
       - "SIM_Labs_QA/**"
@@ -212,4 +227,44 @@ jobs:
             NexGrana/dist/**/build-report.json
             NexGrana/dist/**/source-manifest.json
           if-no-files-found: error
+          retention-days: 30
+
+  report:
+    name: Relatório da rodada
+    if: ${{ always() }}
+    needs: [validate, simlabs, windows, android]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gerar resumo de execução
+        env:
+          SOURCE_BRANCH: ${{ github.head_ref || github.ref_name }}
+          TESTED_SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          VALIDATE_RESULT: ${{ needs.validate.result }}
+          SIMLABS_RESULT: ${{ needs.simlabs.result }}
+          WINDOWS_RESULT: ${{ needs.windows.result }}
+          ANDROID_RESULT: ${{ needs.android.result }}
+        run: |
+          mkdir -p ci-summary
+          {
+            echo "# NexGrana CI — rodada ${GITHUB_RUN_NUMBER}"
+            echo
+            echo "- Branch: ${SOURCE_BRANCH}"
+            echo "- Commit testado: ${TESTED_SHA}"
+            echo "- Execução: [abrir no GitHub](${RUN_URL})"
+            echo
+            echo "| Etapa | Resultado |"
+            echo "|---|---|"
+            echo "| NexGrana, regras financeiras e SQL | ${VALIDATE_RESULT} |"
+            echo "| SIM Labs, Collector e UI QA | ${SIMLABS_RESULT} |"
+            echo "| Build Windows | ${WINDOWS_RESULT} |"
+            echo "| Build Android APK | ${ANDROID_RESULT} |"
+          } > ci-summary/STATUS.md
+          cat ci-summary/STATUS.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Publicar resumo como artefato
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: NexGrana-CI-Status-${{ github.run_number }}
+          path: ci-summary/STATUS.md
           retention-days: 30
