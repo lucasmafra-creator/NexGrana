@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - codex/nexgrana-rc8-source-ci-2026-10-12
     paths:
       - "NexGrana/**"
       - "SIM_Labs_QA/**"
