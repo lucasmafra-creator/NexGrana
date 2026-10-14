@@ -33,6 +33,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: nexgrana-rc8-${{ github.ref }}
@@ -267,3 +268,66 @@ jobs:
           name: NexGrana-CI-Status-${{ github.run_number }}
           path: ci-summary/STATUS.md
           retention-days: 30
+      - name: Handoff da rodada para o SIM Labs
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          SIMLABS_DISPATCH_TOKEN: ${{ secrets.SIMLABS_DISPATCH_TOKEN }}
+          VALIDATE_RESULT: ${{ needs.validate.result }}
+          SIMLABS_RESULT: ${{ needs.simlabs.result }}
+          WINDOWS_RESULT: ${{ needs.windows.result }}
+          ANDROID_RESULT: ${{ needs.android.result }}
+          TESTED_SHA: ${{ github.sha }}
+        with:
+          script: |
+            if (!process.env.SIMLABS_DISPATCH_TOKEN) {
+              core.warning('SIMLABS_DISPATCH_TOKEN não configurado; artefatos e CI continuam disponíveis aqui, mas a issue automática no SIM Labs não foi criada.');
+              return;
+            }
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const runId = context.runId;
+            const runUrl = process.env.GITHUB_SERVER_URL + '/' + process.env.GITHUB_REPOSITORY + '/actions/runs/' + runId;
+            const statuses = {
+              validate: process.env.VALIDATE_RESULT,
+              simlabs: process.env.SIMLABS_RESULT,
+              windows: process.env.WINDOWS_RESULT,
+              android: process.env.ANDROID_RESULT
+            };
+            const artifactResponse = await github.rest.actions.listWorkflowRunArtifacts({owner, repo, run_id: runId, per_page: 100});
+            const artifacts = artifactResponse.data.artifacts
+              .filter(item => /^NexGrana-(Windows|Android)-/.test(item.name))
+              .map(item => ({
+                name: item.name,
+                url: process.env.GITHUB_SERVER_URL + '/' + process.env.GITHUB_REPOSITORY + '/actions/runs/' + runId + '/artifacts/' + item.id,
+                expires_at: item.expires_at
+              }));
+            const windowsReady = artifacts.some(item => item.name.startsWith('NexGrana-Windows-'));
+            const allChecksPassed = Object.values(statuses).every(value => value === 'success');
+            const shortSha = String(process.env.TESTED_SHA || context.sha).slice(0, 12);
+            const tag = context.ref_type === 'tag' ? context.ref_name : 'build-' + context.runNumber + '-' + shortSha;
+            const payload = {
+              source_repo: owner + '/' + repo,
+              release_tag: tag,
+              source_sha: process.env.TESTED_SHA || context.sha,
+              run_url: runUrl,
+              ci_results: statuses,
+              artifacts,
+              handoff_status: allChecksPassed && windowsReady ? 'BUILD_READY' : 'CI_FAILED'
+            };
+            const response = await fetch('https://api.github.com/repos/simlabscorp/SIMLABS/dispatches', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/vnd.github+json',
+                'Authorization': 'Bearer ' + process.env.SIMLABS_DISPATCH_TOKEN,
+                'X-GitHub-Api-Version': '2022-11-28',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({event_type: 'nexgrana_release', client_payload: payload})
+            });
+            if (!response.ok) {
+              core.setFailed('SIM Labs rejeitou o registro da rodada (' + response.status + '): ' + await response.text());
+              return;
+            }
+            core.notice('Rodada ' + tag + ' registrada no SIM Labs como ' + payload.handoff_status);
+
