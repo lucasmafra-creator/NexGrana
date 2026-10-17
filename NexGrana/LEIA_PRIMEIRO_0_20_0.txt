@@ -1,0 +1,16 @@
+NEXGRANA 0.20.0 — CANDIDATA DE DESENVOLVIMENTO
+
+1. Preserve o ZIP/commit RC4 original.
+2. Extraia esta candidata em pasta curta e limpa.
+3. Leia COMANDOS_0_20_0_WINDOWS_ANDROID_IOS.txt.
+4. Rode py validate_release.py --full antes de abrir ou compilar.
+5. Faça backup e homologação antes de MIGRATION_0_20.sql.
+6. Nunca cole apenas o nome do SQL no Supabase; execute o conteúdo do arquivo.
+7. Confira Mafra e Karol separadamente. Família só pode aparecer como consolidado explícito.
+8. Não considere despesa futura no saldo atual; ela reduz no vencimento sem inventar pagamento.
+9. Não considere Windows/Android/iOS validados sem build, instalação e checklist real.
+10. Não distribua .env, logs, caches, builds antigos ou credenciais.
+
+Ícone oficial 0.20: src/assets/icon.png
+Master Nex preservado: src/assets/nex/nex_hd.png
+

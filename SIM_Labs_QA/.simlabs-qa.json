@@ -1,0 +1,11 @@
+{
+  "schema": "sim-labs.qa-clone/1.0",
+  "release_channel": "qa",
+  "bundle_id": "RC8-QA-RESCUE-20261011",
+  "sim_labs_version": "0.4.1-qa.2",
+  "engine_version": "0.4.1-qa.2-engine",
+  "source_only": true,
+  "allow_real_financial_data": false,
+  "allow_service_role": false,
+  "allow_production_endpoint": false
+}

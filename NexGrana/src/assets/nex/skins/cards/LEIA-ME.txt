@@ -1,0 +1,44 @@
+NEXGRANA — PACK DE SKINS SEPARADAS
+
+Total: 36 skins únicas.
+Cada skin está em sua própria pasta e aparece uma única vez.
+As imagens foram separadas do concept board aprovado nesta conversa.
+Formato atual: cards PNG de referência visual (não são PNGs transparentes isolados).
+
+ARQUIVOS:
+Nex_Foco/Nex_Foco.png
+Nex_Estudante/Nex_Estudante.png
+Nex_Trabalho/Nex_Trabalho.png
+Nex_Organizado/Nex_Organizado.png
+Nex_Planejamento/Nex_Planejamento.png
+Nex_Fitness/Nex_Fitness.png
+Nex_Viagem/Nex_Viagem.png
+Nex_Gamer/Nex_Gamer.png
+Nex_Pet/Nex_Pet.png
+Nex_Economico/Nex_Economico.png
+Nex_Investidor/Nex_Investidor.png
+Nex_Conquistas/Nex_Conquistas.png
+Nex_Compras/Nex_Compras.png
+Nex_Casal/Nex_Casal.png
+Nex_Tech/Nex_Tech.png
+Nex_IA/Nex_IA.png
+Nex_Criativo/Nex_Criativo.png
+Nex_Dev/Nex_Dev.png
+Nex_Profissional/Nex_Profissional.png
+Nex_Empreendedor/Nex_Empreendedor.png
+Nex_Freelancer/Nex_Freelancer.png
+Nex_Operador/Nex_Operador.png
+Nex_Administrativo/Nex_Administrativo.png
+Nex_Musica/Nex_Musica.png
+Nex_Gastronomia/Nex_Gastronomia.png
+Nex_Cinema/Nex_Cinema.png
+Nex_Natureza/Nex_Natureza.png
+Nex_Natal/Nex_Natal.png
+Nex_Ano_Novo/Nex_Ano_Novo.png
+Nex_Carnaval/Nex_Carnaval.png
+Nex_Pascoa/Nex_Pascoa.png
+Nex_Halloween/Nex_Halloween.png
+Nex_Meio_Ambiente/Nex_Meio_Ambiente.png
+Nex_Consciencia_Negra/Nex_Consciencia_Negra.png
+Nex_Dia_da_Mulher/Nex_Dia_da_Mulher.png
+Nex_Povos_Indigenas/Nex_Povos_Indigenas.png

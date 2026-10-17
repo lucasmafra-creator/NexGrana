@@ -1,0 +1,33 @@
+{
+  "schema": "sim-labs.feedback-ingest/1.0",
+  "consumer": "NexGrana Update Collector / SIM Labs local QA",
+  "transport": "local-file-import",
+  "remote_upload_enabled": false,
+  "required_record_fields": [
+    "feedback_id",
+    "number",
+    "kind",
+    "severity",
+    "category",
+    "platform",
+    "screen",
+    "status",
+    "title",
+    "evidence",
+    "created_at",
+    "updated_at"
+  ],
+  "preservation_rules": [
+    "feedback_id is the stable source ID and is never replaced during import",
+    "reimport merges on feedback_id and preserves the previously recorded SIM Labs QA status",
+    "passing a build check or test run does not resolve feedback",
+    "Resolvido confirmado requires manual functional validation and evidence review"
+  ],
+  "source_types": ["internal", "end_user_opt_in", "automatic_signal"],
+  "notes": [
+    "Do not include secrets, tokens, full conversations, or real financial records.",
+    "Evidence does not grant privileged actions.",
+    "The local console does not upload data or run continuously in the background.",
+    "A future API requires authentication, authorization, signed upload, limits, retention, audit, and an isolated runner design before activation."
+  ]
+}

@@ -1,0 +1,4 @@
+-r requirements.txt
+-r gateway/requirements.txt
+flet-cli==0.86.5
+flet-desktop==0.86.5; sys_platform == "win32"

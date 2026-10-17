@@ -1,0 +1,35 @@
+NEXGRANA 0.23.0 QA RC1 — CMD PASSO A PASSO
+
+PREPARAR
+cd /d C:\NG23\project
+py -3.14 -m venv .venv
+.venv\Scripts\python -m pip install --upgrade pip
+.venv\Scripts\python -m pip install -r requirements.txt
+
+VALIDAR
+.venv\Scripts\python validate_release.py --full
+npm ci
+npm run test:sql
+
+ABRIR PARA TESTE
+.venv\Scripts\python -m flet.cli run src
+
+WINDOWS
+.venv\Scripts\python -m flet.cli build windows --build-version 0.23.0 --output "dist\Windows" --yes
+dir /s /b "dist\Windows\*.exe"
+
+ANDROID APK
+.venv\Scripts\python -m flet.cli build apk --build-version 0.23.0 --output "dist\Android" --yes
+dir /s /b "dist\Android\*.apk"
+
+ANDROID AAB (PLAY STORE)
+.venv\Scripts\python -m flet.cli build aab --build-version 0.23.0 --output "dist\AndroidAAB" --yes
+dir /s /b "dist\AndroidAAB\*.aab"
+
+IOS (SOMENTE macOS + Xcode + assinatura Apple)
+python3 -m flet.cli build ipa --build-version 0.23.0 --output "dist/iOS" --yes
+
+SHA256 DO ZIP
+certutil -hashfile "%USERPROFILE%\Downloads\NexGrana_0_23_0_QA_RC1_CODIGO_FONTE.zip" SHA256
+
+O hash exibido é um resultado para comparação; não o execute como comando.

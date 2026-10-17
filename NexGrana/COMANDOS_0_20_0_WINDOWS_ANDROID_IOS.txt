@@ -1,0 +1,58 @@
+NEXGRANA 0.20.0 — COMANDOS DE TESTE E BUILD
+
+Use uma pasta curta e limpa. Exemplo Windows:
+C:\NG20\NexGrana_0_20_0
+
+1) ABRIR O CMD NA RAIZ
+cd /d C:\NG20\NexGrana_0_20_0
+
+2) INSTALAR DEPENDÊNCIAS
+py -m pip install -r requirements.txt
+py -m pip check
+
+3) VALIDAR O CÓDIGO
+py validate_release.py --full
+
+4) ABRIR O APP DESKTOP
+py -m flet.cli run src
+
+5) TESTES SQL LOCAIS (OPCIONAL; EXIGE NODE.JS)
+npm ci
+npm run test:sql
+
+6) BUILD WINDOWS
+py build_multiplataforma.py windows --flutter "C:\Users\lucas\flutter\3.44.8" --timeout 7200
+
+7) BUILD APK
+py build_multiplataforma.py apk --flutter "C:\Users\lucas\flutter\3.44.8" --timeout 7200
+
+8) BUILD AAB PARA PLAY STORE
+py build_multiplataforma.py aab --flutter "C:\Users\lucas\flutter\3.44.8" --timeout 7200
+
+9) APK + AAB
+py build_multiplataforma.py android --flutter "C:\Users\lucas\flutter\3.44.8" --timeout 7200
+
+10) WINDOWS + APK
+py build_multiplataforma.py both --flutter "C:\Users\lucas\flutter\3.44.8" --timeout 7200
+
+Os resultados ficam em uma nova pasta dist\DATA-HORA\, com build-report.json e log por alvo.
+Não interrompa uma primeira build apenas porque ela ficou alguns minutos sem imprimir; acompanhe o log em outro CMD.
+
+11) IOS — SOMENTE EM MACOS COM XCODE E ASSINATURA CONFIGURADOS
+cd /caminho/NexGrana_0_20_0
+python3 -m pip install -r requirements.txt
+python3 validate_release.py --full
+python3 build_multiplataforma.py ipa --timeout 7200
+
+Rodar o alvo ipa no Windows retorna BLOCKED de propósito. Isso evita chamar iOS de validado sem Mac/Xcode.
+
+12) MIGRATION 0.20
+NÃO cole o nome do arquivo no editor SQL. Abra MIGRATION_0_20.sql, copie o conteúdo completo e execute somente depois de backup e homologação.
+
+OBSERVAÇÕES
+- Não copie build/dist de versões antigas.
+- Não inclua .env, logs, cache, .venv ou node_modules no pacote.
+- Não atualize cryptography para 50.0.0 no Android; esta candidata fixa 48.0.0.
+- Não gere/publice artefato com o mesmo nome/hash depois de modificar o código.
+- Build concluída não substitui instalação e teste real.
+

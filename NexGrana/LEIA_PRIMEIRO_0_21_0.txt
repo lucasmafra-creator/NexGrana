@@ -1,0 +1,9 @@
+NEXGRANA 0.21.0 QA
+
+1. Esta é uma candidata de homologação. Preserve o ZIP 0.20.0 RC1.
+2. Leia AUDITORIA_0_21_0.md e ATUALIZACAO_0_21_0.md.
+3. Aplique MIGRATION_0_21.sql somente em homologação antes dos testes conectados.
+4. Cadastre UUIDs em qa_testers e app_admins pelo SQL Editor; não coloque service_role no app.
+5. Configure uma URL HTTPS real para confirmação de e-mail. Localhost é rejeitado.
+6. Use os comandos de COMANDOS_0_21_0_WINDOWS_ANDROID_IOS.txt e um caminho curto C:\NG21.
+7. Só promova para produção depois da validação Android e da troca do canal QA para production.

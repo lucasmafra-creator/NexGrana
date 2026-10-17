@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121d">
+  <title>Gestão de hoje · SIM Labs QA</title>
+  <link rel="stylesheet" href="/gestao-hoje.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">SIM<span>LABS</span><small>QA</small></a>
+    <div class="top-actions"><a href="/">Voltar à central</a><button id="refresh">Atualizar</button></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><div class="eyebrow">PAINEL DE DECISÃO · 20–30 MINUTOS</div><h1>Gestão de hoje</h1><p>Revise apenas dados registrados, bloqueios e decisões que precisam de você. A tela não inventa métricas nem fecha feedback por conta própria.</p></div>
+      <div class="pipeline-card"><div><span class="eyebrow">PIPELINE LOCAL QA</span><strong id="pipeline-state">Ainda não executado</strong><small id="pipeline-detail">Windows será compilado após os testes. Android fica para uma etapa separada.</small></div><button id="run-pipeline">Executar QA</button></div>
+    </section>
+    <div id="auth-message" class="notice hidden">Entre primeiro na central SIM Labs e depois volte aqui. A sessão é local e compartilhada nesta aba.</div>
+    <div id="error" class="error hidden" role="alert"></div>
+    <section class="stats" aria-label="Resumo registrado">
+      <article><span>CRÍTICOS ABERTOS</span><b id="critical-count">—</b><small>Prioridade P0 registrada</small></article>
+      <article><span>RELEASES BLOQUEADAS</span><b id="release-count">—</b><small>Gate ou status do registro</small></article>
+      <article><span>APROVAÇÕES</span><b id="decision-count">—</b><small>Decisões pendentes para você</small></article>
+      <article><span>FEEDBACKS P0/P1</span><b id="feedback-count">—</b><small>Novos ou triados</small></article>
+    </section>
+    <section class="columns">
+      <article class="panel"><div class="section-head"><h2>Roteiro de decisão</h2><span class="pill">Dados do NexGrana</span></div><ol class="steps">
+        <li><b>Críticos</b><span id="step-critical">Carregando registros P0…</span></li>
+        <li><b>Releases bloqueadas</b><span id="step-release">Carregando gates…</span></li>
+        <li><b>Aprovações</b><span id="step-decision">Carregando decisões…</span></li>
+        <li><b>Feedback importante</b><span id="step-feedback">Carregando feedback…</span></li>
+        <li><b>Gargalo</b><span id="step-bottleneck">Calculando apenas a partir de tarefas registradas…</span></li>
+        <li><b>Resumo</b><span id="step-summary">Atualize para reunir estado, riscos e pendências.</span></li>
+      </ol><a class="primary-link" href="/">Abrir decisões, evidências e feedbacks na central →</a></article>
+      <article class="panel"><div class="section-head"><h2>Resumo de estado</h2><span class="pill" id="updated-at">Sem atualização</span></div><div class="summary-block"><h3>Recentemente aprovado</h3><div id="approved-list" class="compact-list"><p>Nenhuma decisão carregada.</p></div></div><div class="summary-block"><h3>Bloqueios e pendências</h3><div id="blocker-list" class="compact-list"><p>Nenhum dado carregado.</p></div></div><p class="footnote">“Aprovado” descreve somente decisões já registradas. Aprovação de release continua sujeita aos gates técnicos e à sua decisão.</p></article>
+    </section>
+    <section class="panel departments-panel"><div class="section-head"><div><div class="eyebrow">MAPA OPERACIONAL 2.5D</div><h2>Setores clicáveis</h2></div><span class="pill">Atividade deriva de tarefas reais</span></div><div id="departments" class="departments" aria-label="Mapa de setores SIM Labs"></div><div id="department-detail" class="department-detail"><h3>Escolha um setor</h3><p>O painel mostrará tarefas e estado registrados para a área.</p></div></section>
+    <section class="safety-note"><b>Limites ativos:</b> SIM Labs QA não executa ataque ofensivo nem injeção de falhas. Red Team e Chaos Test são áreas distintas e permanecem em modo de planejamento/revisão. O pipeline só usa fontes deste pacote QA, não instala builds e não publica releases.</section>
+  </main>
+  <script src="/gestao-hoje.js" defer></script>
+</body>
+</html>
