@@ -26,3 +26,11 @@
 - Registrado relatório datado em `reports/2026-11-02-stability-audit.md`.
 - Estado: tarefa **parcial**; critérios funcionais, testes V7 e builds continuam pendentes/bloqueados.
 - Esta alteração está na branch `codex/nexgrana-review-audit-2026-11-02`; não foi feito merge.
+
+### 2026-11-12 — gate de IA externa
+
+- `FinanceHub` tem a função `nex-chat` ativa v2 com JWT obrigatório; não foi possível confirmar o secret sem executar uma chamada e não se leu seu valor.
+- O projeto `NexGrana-QA` está ativo, mas não tem funções Edge implantadas. Nenhuma chamada externa ou deploy foi feito.
+- O código da função verifica consentimento `external_ai` e RLS/policy da tabela foram consultados somente como metadados; a interface de consentimento da fonte V7 permanece não verificada.
+- Relatório: [reports/2026-11-12-ai-integration-gates.md](reports/2026-11-12-ai-integration-gates.md).
+- Estado: gate **BLOCKED** até confirmar fonte V7 e consentimento; proprietário cadastra o secret no ambiente QA depois de definido. Não usar `FinanceHub` para smoke test.
